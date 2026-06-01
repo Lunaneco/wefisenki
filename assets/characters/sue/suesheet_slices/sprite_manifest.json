@@ -1,0 +1,774 @@
+{
+  "character_id": "sue",
+  "source": "suesheet_slices",
+  "sprites": [
+    {
+      "key": "suesheet_1",
+      "file": "suesheet_slices/suesheet_1.png",
+      "size": [
+        113,
+        130
+      ]
+    },
+    {
+      "key": "suesheet_2",
+      "file": "suesheet_slices/suesheet_2.png",
+      "size": [
+        91,
+        128
+      ]
+    },
+    {
+      "key": "suesheet_3",
+      "file": "suesheet_slices/suesheet_3.png",
+      "size": [
+        89,
+        128
+      ]
+    },
+    {
+      "key": "suesheet_4",
+      "file": "suesheet_slices/suesheet_4.png",
+      "size": [
+        93,
+        128
+      ]
+    },
+    {
+      "key": "suesheet_7",
+      "file": "suesheet_slices/suesheet_7.png",
+      "size": [
+        112,
+        118
+      ]
+    },
+    {
+      "key": "suesheet_8",
+      "file": "suesheet_slices/suesheet_8.png",
+      "size": [
+        119,
+        133
+      ]
+    },
+    {
+      "key": "suesheet_9",
+      "file": "suesheet_slices/suesheet_9.png",
+      "size": [
+        118,
+        134
+      ]
+    },
+    {
+      "key": "suesheet_10",
+      "file": "suesheet_slices/suesheet_10.png",
+      "size": [
+        106,
+        119
+      ]
+    },
+    {
+      "key": "suesheet_11",
+      "file": "suesheet_slices/suesheet_11.png",
+      "size": [
+        90,
+        113
+      ]
+    },
+    {
+      "key": "suesheet_12",
+      "file": "suesheet_slices/suesheet_12.png",
+      "size": [
+        89,
+        111
+      ]
+    },
+    {
+      "key": "suesheet_13",
+      "file": "suesheet_slices/suesheet_13.png",
+      "size": [
+        88,
+        111
+      ]
+    },
+    {
+      "key": "suesheet_14",
+      "file": "suesheet_slices/suesheet_14.png",
+      "size": [
+        87,
+        111
+      ]
+    },
+    {
+      "key": "suesheet_15",
+      "file": "suesheet_slices/suesheet_15.png",
+      "size": [
+        86,
+        113
+      ]
+    },
+    {
+      "key": "suesheet_16",
+      "file": "suesheet_slices/suesheet_16.png",
+      "size": [
+        84,
+        112
+      ]
+    },
+    {
+      "key": "suesheet_17",
+      "file": "suesheet_slices/suesheet_17.png",
+      "size": [
+        90,
+        112
+      ]
+    },
+    {
+      "key": "suesheet_18",
+      "file": "suesheet_slices/suesheet_18.png",
+      "size": [
+        122,
+        116
+      ]
+    },
+    {
+      "key": "suesheet_19",
+      "file": "suesheet_slices/suesheet_19.png",
+      "size": [
+        136,
+        113
+      ]
+    },
+    {
+      "key": "suesheet_20",
+      "file": "suesheet_slices/suesheet_20.png",
+      "size": [
+        155,
+        113
+      ]
+    },
+    {
+      "key": "suesheet_21",
+      "file": "suesheet_slices/suesheet_21.png",
+      "size": [
+        81,
+        113
+      ]
+    },
+    {
+      "key": "suesheet_22",
+      "file": "suesheet_slices/suesheet_22.png",
+      "size": [
+        89,
+        107
+      ]
+    },
+    {
+      "key": "suesheet_23",
+      "file": "suesheet_slices/suesheet_23.png",
+      "size": [
+        66,
+        53
+      ]
+    },
+    {
+      "key": "suesheet_24",
+      "file": "suesheet_slices/suesheet_24.png",
+      "size": [
+        56,
+        33
+      ]
+    },
+    {
+      "key": "suesheet_25",
+      "file": "suesheet_slices/suesheet_25.png",
+      "size": [
+        184,
+        181
+      ]
+    },
+    {
+      "key": "suesheet_26",
+      "file": "suesheet_slices/suesheet_26.png",
+      "size": [
+        211,
+        183
+      ]
+    },
+    {
+      "key": "suesheet_27",
+      "file": "suesheet_slices/suesheet_27.png",
+      "size": [
+        120,
+        161
+      ]
+    },
+    {
+      "key": "suesheet_29",
+      "file": "suesheet_slices/suesheet_29.png",
+      "size": [
+        101,
+        132
+      ]
+    },
+    {
+      "key": "suesheet_30",
+      "file": "suesheet_slices/suesheet_30.png",
+      "size": [
+        109,
+        128
+      ]
+    },
+    {
+      "key": "suesheet_33",
+      "file": "suesheet_slices/suesheet_33.png",
+      "size": [
+        107,
+        153
+      ]
+    },
+    {
+      "key": "suesheet_35",
+      "file": "suesheet_slices/suesheet_35.png",
+      "size": [
+        144,
+        119
+      ]
+    },
+    {
+      "key": "suesheet_38",
+      "file": "suesheet_slices/suesheet_38.png",
+      "size": [
+        160,
+        122
+      ]
+    },
+    {
+      "key": "suesheet_40",
+      "file": "suesheet_slices/suesheet_40.png",
+      "size": [
+        123,
+        106
+      ]
+    },
+    {
+      "key": "suesheet_41",
+      "file": "suesheet_slices/suesheet_41.png",
+      "size": [
+        108,
+        95
+      ]
+    },
+    {
+      "key": "suesheet_44",
+      "file": "suesheet_slices/suesheet_44.png",
+      "size": [
+        163,
+        112
+      ]
+    },
+    {
+      "key": "suesheet_45",
+      "file": "suesheet_slices/suesheet_45.png",
+      "size": [
+        111,
+        110
+      ]
+    },
+    {
+      "key": "suesheet_46",
+      "file": "suesheet_slices/suesheet_46.png",
+      "size": [
+        77,
+        78
+      ]
+    },
+    {
+      "key": "suesheet_47",
+      "file": "suesheet_slices/suesheet_47.png",
+      "size": [
+        103,
+        78
+      ]
+    },
+    {
+      "key": "suesheet_48",
+      "file": "suesheet_slices/suesheet_48.png",
+      "size": [
+        92,
+        79
+      ]
+    },
+    {
+      "key": "suesheet_49",
+      "file": "suesheet_slices/suesheet_49.png",
+      "size": [
+        74,
+        80
+      ]
+    },
+    {
+      "key": "suesheet_50",
+      "file": "suesheet_slices/suesheet_50.png",
+      "size": [
+        74,
+        77
+      ]
+    },
+    {
+      "key": "suesheet_51",
+      "file": "suesheet_slices/suesheet_51.png",
+      "size": [
+        76,
+        78
+      ]
+    },
+    {
+      "key": "suesheet_52",
+      "file": "suesheet_slices/suesheet_52.png",
+      "size": [
+        76,
+        79
+      ]
+    },
+    {
+      "key": "suesheet_53",
+      "file": "suesheet_slices/suesheet_53.png",
+      "size": [
+        75,
+        122
+      ]
+    },
+    {
+      "key": "suesheet_54",
+      "file": "suesheet_slices/suesheet_54.png",
+      "size": [
+        90,
+        123
+      ]
+    },
+    {
+      "key": "suesheet_55",
+      "file": "suesheet_slices/suesheet_55.png",
+      "size": [
+        64,
+        117
+      ]
+    },
+    {
+      "key": "suesheet_56",
+      "file": "suesheet_slices/suesheet_56.png",
+      "size": [
+        133,
+        117
+      ]
+    },
+    {
+      "key": "suesheet_57",
+      "file": "suesheet_slices/suesheet_57.png",
+      "size": [
+        120,
+        104
+      ]
+    },
+    {
+      "key": "suesheet_58",
+      "file": "suesheet_slices/suesheet_58.png",
+      "size": [
+        120,
+        106
+      ]
+    },
+    {
+      "key": "suesheet_59",
+      "file": "suesheet_slices/suesheet_59.png",
+      "size": [
+        132,
+        130
+      ]
+    },
+    {
+      "key": "suesheet_60",
+      "file": "suesheet_slices/suesheet_60.png",
+      "size": [
+        121,
+        90
+      ]
+    },
+    {
+      "key": "suesheet_61",
+      "file": "suesheet_slices/suesheet_61.png",
+      "size": [
+        86,
+        79
+      ]
+    },
+    {
+      "key": "suesheet_62",
+      "file": "suesheet_slices/suesheet_62.png",
+      "size": [
+        73,
+        62
+      ]
+    },
+    {
+      "key": "suesheet_63",
+      "file": "suesheet_slices/suesheet_63.png",
+      "size": [
+        76,
+        65
+      ]
+    },
+    {
+      "key": "suesheet_64",
+      "file": "suesheet_slices/suesheet_64.png",
+      "size": [
+        121,
+        69
+      ]
+    },
+    {
+      "key": "suesheet_65",
+      "file": "suesheet_slices/suesheet_65.png",
+      "size": [
+        133,
+        70
+      ]
+    },
+    {
+      "key": "suesheet_66",
+      "file": "suesheet_slices/suesheet_66.png",
+      "size": [
+        99,
+        66
+      ]
+    },
+    {
+      "key": "suesheet_67",
+      "file": "suesheet_slices/suesheet_67.png",
+      "size": [
+        101,
+        60
+      ]
+    },
+    {
+      "key": "suesheet_68",
+      "file": "suesheet_slices/suesheet_68.png",
+      "size": [
+        125,
+        137
+      ]
+    },
+    {
+      "key": "suesheet_69",
+      "file": "suesheet_slices/suesheet_69.png",
+      "size": [
+        157,
+        129
+      ]
+    },
+    {
+      "key": "suesheet_70",
+      "file": "suesheet_slices/suesheet_70.png",
+      "size": [
+        231,
+        124
+      ]
+    },
+    {
+      "key": "suesheet_71",
+      "file": "suesheet_slices/suesheet_71.png",
+      "size": [
+        115,
+        115
+      ]
+    },
+    {
+      "key": "suesheet_72",
+      "file": "suesheet_slices/suesheet_72.png",
+      "size": [
+        245,
+        122
+      ]
+    },
+    {
+      "key": "suesheet_76",
+      "file": "suesheet_slices/suesheet_76.png",
+      "size": [
+        55,
+        55
+      ]
+    },
+    {
+      "key": "suesheet_77",
+      "file": "suesheet_slices/suesheet_77.png",
+      "size": [
+        80,
+        51
+      ]
+    },
+    {
+      "key": "suesheet_78",
+      "file": "suesheet_slices/suesheet_78.png",
+      "size": [
+        58,
+        56
+      ]
+    },
+    {
+      "key": "suesheet_79",
+      "file": "suesheet_slices/suesheet_79.png",
+      "size": [
+        58,
+        42
+      ]
+    },
+    {
+      "key": "suesheet_80",
+      "file": "suesheet_slices/suesheet_80.png",
+      "size": [
+        56,
+        43
+      ]
+    },
+    {
+      "key": "suesheet_81",
+      "file": "suesheet_slices/suesheet_81.png",
+      "size": [
+        50,
+        52
+      ]
+    },
+    {
+      "key": "suesheet_82",
+      "file": "suesheet_slices/suesheet_82.png",
+      "size": [
+        50,
+        51
+      ]
+    },
+    {
+      "key": "suesheet_83",
+      "file": "suesheet_slices/suesheet_83.png",
+      "size": [
+        41,
+        53
+      ]
+    },
+    {
+      "key": "suesheet_84",
+      "file": "suesheet_slices/suesheet_84.png",
+      "size": [
+        39,
+        42
+      ]
+    },
+    {
+      "key": "suesheet_85",
+      "file": "suesheet_slices/suesheet_85.png",
+      "size": [
+        42,
+        51
+      ]
+    },
+    {
+      "key": "suesheet_86",
+      "file": "suesheet_slices/suesheet_86.png",
+      "size": [
+        24,
+        28
+      ]
+    },
+    {
+      "key": "suesheet_87",
+      "file": "suesheet_slices/suesheet_87.png",
+      "size": [
+        30,
+        31
+      ]
+    },
+    {
+      "key": "suesheet_88",
+      "file": "suesheet_slices/suesheet_88.png",
+      "size": [
+        51,
+        48
+      ]
+    },
+    {
+      "key": "suesheet_89",
+      "file": "suesheet_slices/suesheet_89.png",
+      "size": [
+        49,
+        48
+      ]
+    },
+    {
+      "key": "suesheet_90",
+      "file": "suesheet_slices/suesheet_90.png",
+      "size": [
+        50,
+        48
+      ]
+    },
+    {
+      "key": "suesheet_91",
+      "file": "suesheet_slices/suesheet_91.png",
+      "size": [
+        50,
+        48
+      ]
+    },
+    {
+      "key": "suesheet_92",
+      "file": "suesheet_slices/suesheet_92.png",
+      "size": [
+        50,
+        48
+      ]
+    },
+    {
+      "key": "suesheet_93",
+      "file": "suesheet_slices/suesheet_93.png",
+      "size": [
+        49,
+        48
+      ]
+    },
+    {
+      "key": "suesheet_94",
+      "file": "suesheet_slices/suesheet_94.png",
+      "size": [
+        53,
+        45
+      ]
+    },
+    {
+      "key": "suesheet_95",
+      "file": "suesheet_slices/suesheet_95.png",
+      "size": [
+        39,
+        46
+      ]
+    },
+    {
+      "key": "suesheet_96",
+      "file": "suesheet_slices/suesheet_96.png",
+      "size": [
+        33,
+        38
+      ]
+    },
+    {
+      "key": "suesheet_97",
+      "file": "suesheet_slices/suesheet_97.png",
+      "size": [
+        34,
+        38
+      ]
+    },
+    {
+      "key": "suesheet_98",
+      "file": "suesheet_slices/suesheet_98.png",
+      "size": [
+        41,
+        41
+      ]
+    },
+    {
+      "key": "suesheet_99",
+      "file": "suesheet_slices/suesheet_99.png",
+      "size": [
+        37,
+        37
+      ]
+    },
+    {
+      "key": "suesheet_100",
+      "file": "suesheet_slices/suesheet_100.png",
+      "size": [
+        29,
+        38
+      ]
+    },
+    {
+      "key": "suesheet_101",
+      "file": "suesheet_slices/suesheet_101.png",
+      "size": [
+        33,
+        37
+      ]
+    },
+    {
+      "key": "suesheet_102",
+      "file": "suesheet_slices/suesheet_102.png",
+      "size": [
+        45,
+        45
+      ]
+    },
+    {
+      "key": "suesheet_103",
+      "file": "suesheet_slices/suesheet_103.png",
+      "size": [
+        45,
+        44
+      ]
+    },
+    {
+      "key": "suesheet_104",
+      "file": "suesheet_slices/suesheet_104.png",
+      "size": [
+        49,
+        50
+      ]
+    },
+    {
+      "key": "suesheet_105",
+      "file": "suesheet_slices/suesheet_105.png",
+      "size": [
+        55,
+        54
+      ]
+    },
+    {
+      "key": "suesheet_106",
+      "file": "suesheet_slices/suesheet_106.png",
+      "size": [
+        53,
+        51
+      ]
+    },
+    {
+      "key": "suesheet_107",
+      "file": "suesheet_slices/suesheet_107.png",
+      "size": [
+        31,
+        39
+      ]
+    },
+    {
+      "key": "suesheet_108",
+      "file": "suesheet_slices/suesheet_108.png",
+      "size": [
+        46,
+        44
+      ]
+    },
+    {
+      "key": "suesheet_109",
+      "file": "suesheet_slices/suesheet_109.png",
+      "size": [
+        25,
+        28
+      ]
+    },
+    {
+      "key": "suesheet_110",
+      "file": "suesheet_slices/suesheet_110.png",
+      "size": [
+        35,
+        34
+      ]
+    }
+  ]
+}
