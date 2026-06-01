@@ -1,0 +1,1811 @@
+{
+  "meta": {
+    "image": "hehehehehesheet.png",
+    "size": {
+      "w": 1122,
+      "h": 1402
+    }
+  },
+  "frames": {
+    "hehehehehesheet_3": {
+      "frame": {
+        "x": 11,
+        "y": 69,
+        "w": 149,
+        "h": 158
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 149,
+        "h": 158
+      },
+      "sourceSize": {
+        "w": 149,
+        "h": 158
+      }
+    },
+    "hehehehehesheet_4": {
+      "frame": {
+        "x": 173,
+        "y": 67,
+        "w": 107,
+        "h": 160
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 160
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 160
+      }
+    },
+    "hehehehehesheet_5": {
+      "frame": {
+        "x": 285,
+        "y": 68,
+        "w": 105,
+        "h": 158
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 158
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 158
+      }
+    },
+    "hehehehehesheet_6": {
+      "frame": {
+        "x": 398,
+        "y": 70,
+        "w": 131,
+        "h": 157
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 157
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 157
+      }
+    },
+    "hehehehehesheet_7": {
+      "frame": {
+        "x": 556,
+        "y": 94,
+        "w": 124,
+        "h": 133
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 124,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 124,
+        "h": 133
+      }
+    },
+    "hehehehehesheet_8": {
+      "frame": {
+        "x": 694,
+        "y": 93,
+        "w": 123,
+        "h": 134
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 134
+      }
+    },
+    "hehehehehesheet_9": {
+      "frame": {
+        "x": 833,
+        "y": 91,
+        "w": 123,
+        "h": 135
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 135
+      }
+    },
+    "hehehehehesheet_10": {
+      "frame": {
+        "x": 967,
+        "y": 90,
+        "w": 140,
+        "h": 137
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 140,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 140,
+        "h": 137
+      }
+    },
+    "hehehehehesheet_13": {
+      "frame": {
+        "x": 14,
+        "y": 292,
+        "w": 85,
+        "h": 119
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 119
+      }
+    },
+    "hehehehehesheet_14": {
+      "frame": {
+        "x": 100,
+        "y": 293,
+        "w": 84,
+        "h": 118
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 118
+      },
+      "sourceSize": {
+        "w": 84,
+        "h": 118
+      }
+    },
+    "hehehehehesheet_15": {
+      "frame": {
+        "x": 186,
+        "y": 294,
+        "w": 79,
+        "h": 117
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 117
+      }
+    },
+    "hehehehehesheet_16": {
+      "frame": {
+        "x": 897,
+        "y": 291,
+        "w": 211,
+        "h": 122
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 211,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 211,
+        "h": 122
+      }
+    },
+    "hehehehehesheet_17": {
+      "frame": {
+        "x": 268,
+        "y": 296,
+        "w": 82,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 82,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 82,
+        "h": 115
+      }
+    },
+    "hehehehehesheet_18": {
+      "frame": {
+        "x": 359,
+        "y": 300,
+        "w": 81,
+        "h": 111
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 111
+      }
+    },
+    "hehehehehesheet_19": {
+      "frame": {
+        "x": 538,
+        "y": 298,
+        "w": 95,
+        "h": 113
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 113
+      }
+    },
+    "hehehehehesheet_20": {
+      "frame": {
+        "x": 633,
+        "y": 297,
+        "w": 91,
+        "h": 113
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 113
+      }
+    },
+    "hehehehehesheet_21": {
+      "frame": {
+        "x": 726,
+        "y": 297,
+        "w": 179,
+        "h": 114
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 179,
+        "h": 114
+      },
+      "sourceSize": {
+        "w": 179,
+        "h": 114
+      }
+    },
+    "hehehehehesheet_22": {
+      "frame": {
+        "x": 443,
+        "y": 302,
+        "w": 85,
+        "h": 109
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 109
+      }
+    },
+    "hehehehehesheet_24": {
+      "frame": {
+        "x": 516,
+        "y": 463,
+        "w": 179,
+        "h": 180
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 179,
+        "h": 180
+      },
+      "sourceSize": {
+        "w": 179,
+        "h": 180
+      }
+    },
+    "hehehehehesheet_25": {
+      "frame": {
+        "x": 169,
+        "y": 477,
+        "w": 138,
+        "h": 163
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 138,
+        "h": 163
+      },
+      "sourceSize": {
+        "w": 138,
+        "h": 163
+      }
+    },
+    "hehehehehesheet_26": {
+      "frame": {
+        "x": 725,
+        "y": 474,
+        "w": 245,
+        "h": 170
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 245,
+        "h": 170
+      },
+      "sourceSize": {
+        "w": 245,
+        "h": 170
+      }
+    },
+    "hehehehehesheet_28": {
+      "frame": {
+        "x": 7,
+        "y": 506,
+        "w": 130,
+        "h": 134
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 130,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 130,
+        "h": 134
+      }
+    },
+    "hehehehehesheet_29": {
+      "frame": {
+        "x": 329,
+        "y": 509,
+        "w": 161,
+        "h": 135
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 135
+      }
+    },
+    "hehehehehesheet_30": {
+      "frame": {
+        "x": 980,
+        "y": 511,
+        "w": 129,
+        "h": 133
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 129,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 129,
+        "h": 133
+      }
+    },
+    "hehehehehesheet_40": {
+      "frame": {
+        "x": 392,
+        "y": 698,
+        "w": 141,
+        "h": 147
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 141,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 141,
+        "h": 147
+      }
+    },
+    "hehehehehesheet_41": {
+      "frame": {
+        "x": 575,
+        "y": 702,
+        "w": 134,
+        "h": 139
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 134,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 139
+      }
+    },
+    "hehehehehesheet_42": {
+      "frame": {
+        "x": 747,
+        "y": 705,
+        "w": 86,
+        "h": 135
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 86,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 86,
+        "h": 135
+      }
+    },
+    "hehehehehesheet_43": {
+      "frame": {
+        "x": 12,
+        "y": 717,
+        "w": 123,
+        "h": 122
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 122
+      }
+    },
+    "hehehehehesheet_44": {
+      "frame": {
+        "x": 931,
+        "y": 717,
+        "w": 94,
+        "h": 132
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 94,
+        "h": 132
+      },
+      "sourceSize": {
+        "w": 94,
+        "h": 132
+      }
+    },
+    "hehehehehesheet_45": {
+      "frame": {
+        "x": 838,
+        "y": 724,
+        "w": 87,
+        "h": 123
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 87,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 87,
+        "h": 123
+      }
+    },
+    "hehehehehesheet_46": {
+      "frame": {
+        "x": 1035,
+        "y": 739,
+        "w": 73,
+        "h": 100
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 100
+      }
+    },
+    "hehehehehesheet_47": {
+      "frame": {
+        "x": 166,
+        "y": 750,
+        "w": 213,
+        "h": 98
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 213,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 213,
+        "h": 98
+      }
+    },
+    "hehehehehesheet_48": {
+      "frame": {
+        "x": 206,
+        "y": 750,
+        "w": 27,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 27,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 27,
+        "h": 25
+      }
+    },
+    "hehehehehesheet_49": {
+      "frame": {
+        "x": 13,
+        "y": 874,
+        "w": 137,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 137,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 137,
+        "h": 25
+      }
+    },
+    "hehehehehesheet_51": {
+      "frame": {
+        "x": 982,
+        "y": 890,
+        "w": 125,
+        "h": 127
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 127
+      }
+    },
+    "hehehehehesheet_52": {
+      "frame": {
+        "x": 13,
+        "y": 907,
+        "w": 89,
+        "h": 87
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 87
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 87
+      }
+    },
+    "hehehehehesheet_53": {
+      "frame": {
+        "x": 105,
+        "y": 910,
+        "w": 80,
+        "h": 81
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 80,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 81
+      }
+    },
+    "hehehehehesheet_54": {
+      "frame": {
+        "x": 266,
+        "y": 914,
+        "w": 84,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 84,
+        "h": 62
+      }
+    },
+    "hehehehehesheet_55": {
+      "frame": {
+        "x": 355,
+        "y": 919,
+        "w": 43,
+        "h": 51
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 51
+      }
+    },
+    "hehehehehesheet_56": {
+      "frame": {
+        "x": 194,
+        "y": 927,
+        "w": 52,
+        "h": 44
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 52,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 52,
+        "h": 44
+      }
+    },
+    "hehehehehesheet_57": {
+      "frame": {
+        "x": 434,
+        "y": 924,
+        "w": 119,
+        "h": 200
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 200
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 200
+      }
+    },
+    "hehehehehesheet_58": {
+      "frame": {
+        "x": 550,
+        "y": 935,
+        "w": 86,
+        "h": 74
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 86,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 86,
+        "h": 74
+      }
+    },
+    "hehehehehesheet_59": {
+      "frame": {
+        "x": 642,
+        "y": 938,
+        "w": 82,
+        "h": 73
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 82,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 82,
+        "h": 73
+      }
+    },
+    "hehehehehesheet_60": {
+      "frame": {
+        "x": 729,
+        "y": 935,
+        "w": 115,
+        "h": 79
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 115,
+        "h": 79
+      },
+      "sourceSize": {
+        "w": 115,
+        "h": 79
+      }
+    },
+    "hehehehehesheet_61": {
+      "frame": {
+        "x": 853,
+        "y": 954,
+        "w": 119,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 49
+      }
+    },
+    "hehehehehesheet_62": {
+      "frame": {
+        "x": 16,
+        "y": 1008,
+        "w": 78,
+        "h": 59
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 59
+      }
+    },
+    "hehehehehesheet_63": {
+      "frame": {
+        "x": 332,
+        "y": 1009,
+        "w": 57,
+        "h": 55
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 55
+      }
+    },
+    "hehehehehesheet_64": {
+      "frame": {
+        "x": 106,
+        "y": 1018,
+        "w": 71,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 49
+      }
+    },
+    "hehehehehesheet_65": {
+      "frame": {
+        "x": 190,
+        "y": 1014,
+        "w": 50,
+        "h": 51
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 50,
+        "h": 51
+      }
+    },
+    "hehehehehesheet_66": {
+      "frame": {
+        "x": 259,
+        "y": 1015,
+        "w": 55,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 55,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 55,
+        "h": 49
+      }
+    },
+    "hehehehehesheet_67": {
+      "frame": {
+        "x": 563,
+        "y": 1022,
+        "w": 208,
+        "h": 117
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 208,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 208,
+        "h": 117
+      }
+    },
+    "hehehehehesheet_68": {
+      "frame": {
+        "x": 776,
+        "y": 1027,
+        "w": 268,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 268,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 268,
+        "h": 115
+      }
+    },
+    "hehehehehesheet_69": {
+      "frame": {
+        "x": 18,
+        "y": 1081,
+        "w": 82,
+        "h": 56
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 82,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 82,
+        "h": 56
+      }
+    },
+    "hehehehehesheet_70": {
+      "frame": {
+        "x": 123,
+        "y": 1091,
+        "w": 84,
+        "h": 44
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 84,
+        "h": 44
+      }
+    },
+    "hehehehehesheet_71": {
+      "frame": {
+        "x": 223,
+        "y": 1104,
+        "w": 30,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 28
+      }
+    },
+    "hehehehehesheet_72": {
+      "frame": {
+        "x": 286,
+        "y": 1103,
+        "w": 38,
+        "h": 30
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 38,
+        "h": 30
+      },
+      "sourceSize": {
+        "w": 38,
+        "h": 30
+      }
+    },
+    "hehehehehesheet_73": {
+      "frame": {
+        "x": 351,
+        "y": 1103,
+        "w": 31,
+        "h": 29
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 31,
+        "h": 29
+      },
+      "sourceSize": {
+        "w": 31,
+        "h": 29
+      }
+    },
+    "hehehehehesheet_74": {
+      "frame": {
+        "x": 13,
+        "y": 1152,
+        "w": 179,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 179,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 179,
+        "h": 25
+      }
+    },
+    "hehehehehesheet_75": {
+      "frame": {
+        "x": 17,
+        "y": 1184,
+        "w": 65,
+        "h": 68
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 68
+      }
+    },
+    "hehehehehesheet_76": {
+      "frame": {
+        "x": 162,
+        "y": 1181,
+        "w": 79,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 78
+      }
+    },
+    "hehehehehesheet_77": {
+      "frame": {
+        "x": 88,
+        "y": 1186,
+        "w": 67,
+        "h": 67
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 67
+      }
+    },
+    "hehehehehesheet_78": {
+      "frame": {
+        "x": 259,
+        "y": 1191,
+        "w": 68,
+        "h": 62
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 68,
+        "h": 62
+      },
+      "sourceSize": {
+        "w": 68,
+        "h": 62
+      }
+    },
+    "hehehehehesheet_79": {
+      "frame": {
+        "x": 359,
+        "y": 1187,
+        "w": 21,
+        "h": 65
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 21,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 21,
+        "h": 65
+      }
+    },
+    "hehehehehesheet_80": {
+      "frame": {
+        "x": 503,
+        "y": 1185,
+        "w": 46,
+        "h": 68
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 46,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 46,
+        "h": 68
+      }
+    },
+    "hehehehehesheet_81": {
+      "frame": {
+        "x": 385,
+        "y": 1190,
+        "w": 22,
+        "h": 60
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 22,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 22,
+        "h": 60
+      }
+    },
+    "hehehehehesheet_82": {
+      "frame": {
+        "x": 565,
+        "y": 1187,
+        "w": 26,
+        "h": 65
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 26,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 26,
+        "h": 65
+      }
+    },
+    "hehehehehesheet_83": {
+      "frame": {
+        "x": 768,
+        "y": 1188,
+        "w": 59,
+        "h": 64
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 59,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 59,
+        "h": 64
+      }
+    },
+    "hehehehehesheet_84": {
+      "frame": {
+        "x": 846,
+        "y": 1190,
+        "w": 42,
+        "h": 58
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 42,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 42,
+        "h": 58
+      }
+    },
+    "hehehehehesheet_85": {
+      "frame": {
+        "x": 426,
+        "y": 1199,
+        "w": 49,
+        "h": 44
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 49,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 49,
+        "h": 44
+      }
+    },
+    "hehehehehesheet_86": {
+      "frame": {
+        "x": 628,
+        "y": 1198,
+        "w": 37,
+        "h": 54
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 37,
+        "h": 54
+      },
+      "sourceSize": {
+        "w": 37,
+        "h": 54
+      }
+    },
+    "hehehehehesheet_87": {
+      "frame": {
+        "x": 696,
+        "y": 1197,
+        "w": 50,
+        "h": 53
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 53
+      },
+      "sourceSize": {
+        "w": 50,
+        "h": 53
+      }
+    },
+    "hehehehehesheet_88": {
+      "frame": {
+        "x": 919,
+        "y": 1197,
+        "w": 30,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 25
+      }
+    },
+    "hehehehehesheet_89": {
+      "frame": {
+        "x": 1052,
+        "y": 1201,
+        "w": 24,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 21
+      }
+    },
+    "hehehehehesheet_90": {
+      "frame": {
+        "x": 986,
+        "y": 1209,
+        "w": 31,
+        "h": 34
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 31,
+        "h": 34
+      },
+      "sourceSize": {
+        "w": 31,
+        "h": 34
+      }
+    },
+    "hehehehehesheet_91": {
+      "frame": {
+        "x": 923,
+        "y": 1225,
+        "w": 23,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 23,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 23,
+        "h": 21
+      }
+    },
+    "hehehehehesheet_92": {
+      "frame": {
+        "x": 20,
+        "y": 1270,
+        "w": 59,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 59,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 59,
+        "h": 49
+      }
+    },
+    "hehehehehesheet_93": {
+      "frame": {
+        "x": 100,
+        "y": 1270,
+        "w": 65,
+        "h": 50
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 50
+      }
+    },
+    "hehehehehesheet_94": {
+      "frame": {
+        "x": 262,
+        "y": 1272,
+        "w": 65,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 49
+      }
+    },
+    "hehehehehesheet_95": {
+      "frame": {
+        "x": 355,
+        "y": 1271,
+        "w": 100,
+        "h": 52
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 52
+      }
+    },
+    "hehehehehesheet_96": {
+      "frame": {
+        "x": 470,
+        "y": 1275,
+        "w": 78,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 49
+      }
+    },
+    "hehehehehesheet_97": {
+      "frame": {
+        "x": 565,
+        "y": 1272,
+        "w": 61,
+        "h": 51
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 51
+      }
+    },
+    "hehehehehesheet_98": {
+      "frame": {
+        "x": 658,
+        "y": 1273,
+        "w": 74,
+        "h": 53
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 74,
+        "h": 53
+      },
+      "sourceSize": {
+        "w": 74,
+        "h": 53
+      }
+    },
+    "hehehehehesheet_99": {
+      "frame": {
+        "x": 759,
+        "y": 1279,
+        "w": 44,
+        "h": 42
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 44,
+        "h": 42
+      },
+      "sourceSize": {
+        "w": 44,
+        "h": 42
+      }
+    },
+    "hehehehehesheet_100": {
+      "frame": {
+        "x": 821,
+        "y": 1277,
+        "w": 33,
+        "h": 44
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 33,
+        "h": 44
+      },
+      "sourceSize": {
+        "w": 33,
+        "h": 44
+      }
+    },
+    "hehehehehesheet_101": {
+      "frame": {
+        "x": 1071,
+        "y": 1275,
+        "w": 30,
+        "h": 33
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 30,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 33
+      }
+    },
+    "hehehehehesheet_102": {
+      "frame": {
+        "x": 182,
+        "y": 1289,
+        "w": 39,
+        "h": 30
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 39,
+        "h": 30
+      },
+      "sourceSize": {
+        "w": 39,
+        "h": 30
+      }
+    },
+    "hehehehehesheet_103": {
+      "frame": {
+        "x": 891,
+        "y": 1285,
+        "w": 23,
+        "h": 37
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 23,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 23,
+        "h": 37
+      }
+    },
+    "hehehehehesheet_104": {
+      "frame": {
+        "x": 952,
+        "y": 1293,
+        "w": 20,
+        "h": 23
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 20,
+        "h": 23
+      },
+      "sourceSize": {
+        "w": 20,
+        "h": 23
+      }
+    },
+    "hehehehehesheet_105": {
+      "frame": {
+        "x": 95,
+        "y": 1342,
+        "w": 24,
+        "h": 39
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 39
+      }
+    },
+    "hehehehehesheet_106": {
+      "frame": {
+        "x": 282,
+        "y": 1341,
+        "w": 29,
+        "h": 38
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 29,
+        "h": 38
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 38
+      }
+    },
+    "hehehehehesheet_107": {
+      "frame": {
+        "x": 340,
+        "y": 1340,
+        "w": 29,
+        "h": 39
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 29,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 39
+      }
+    },
+    "hehehehehesheet_108": {
+      "frame": {
+        "x": 400,
+        "y": 1340,
+        "w": 34,
+        "h": 41
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 34,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 34,
+        "h": 41
+      }
+    },
+    "hehehehehesheet_109": {
+      "frame": {
+        "x": 449,
+        "y": 1341,
+        "w": 34,
+        "h": 40
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 34,
+        "h": 40
+      },
+      "sourceSize": {
+        "w": 34,
+        "h": 40
+      }
+    },
+    "hehehehehesheet_110": {
+      "frame": {
+        "x": 509,
+        "y": 1344,
+        "w": 36,
+        "h": 35
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 36,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 36,
+        "h": 35
+      }
+    },
+    "hehehehehesheet_111": {
+      "frame": {
+        "x": 565,
+        "y": 1344,
+        "w": 35,
+        "h": 35
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 35,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 35,
+        "h": 35
+      }
+    },
+    "hehehehehesheet_112": {
+      "frame": {
+        "x": 808,
+        "y": 1343,
+        "w": 77,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 32
+      }
+    },
+    "hehehehehesheet_113": {
+      "frame": {
+        "x": 670,
+        "y": 1349,
+        "w": 53,
+        "h": 30
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 53,
+        "h": 30
+      },
+      "sourceSize": {
+        "w": 53,
+        "h": 30
+      }
+    },
+    "hehehehehesheet_114": {
+      "frame": {
+        "x": 910,
+        "y": 1352,
+        "w": 60,
+        "h": 24
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 24
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 24
+      }
+    },
+    "hehehehehesheet_115": {
+      "frame": {
+        "x": 1003,
+        "y": 1348,
+        "w": 83,
+        "h": 28
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 28
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 28
+      }
+    },
+    "hehehehehesheet_116": {
+      "frame": {
+        "x": 742,
+        "y": 1354,
+        "w": 50,
+        "h": 20
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 50,
+        "h": 20
+      },
+      "sourceSize": {
+        "w": 50,
+        "h": 20
+      }
+    }
+  }
+}
