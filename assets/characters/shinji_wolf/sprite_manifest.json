@@ -1,0 +1,3660 @@
+{
+  "pack": "shinji_wolf_dog_sprites_pack_fixed",
+  "displayName": "Shinji狼ドッグ / BoKaaaaaaan!! Sprite Pack - fixed precise effects",
+  "sourceImage": "shinji_wolf.png",
+  "sourceSize": {
+    "width": 1023,
+    "height": 1537
+  },
+  "coordinateSystem": "pixel coordinates from top-left of source image; bbox = [x1,y1,x2,y2]",
+  "sprites": [
+    {
+      "id": "stand_front",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：正面。会話・戦闘待機・マップ表示の基準姿勢。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "front",
+        "standing"
+      ],
+      "source_bbox_original": [
+        27,
+        64,
+        127,
+        190
+      ],
+      "source_bbox_trimmed": [
+        34,
+        65,
+        127,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 7,
+        "y": 1
+      },
+      "size": {
+        "width": 93,
+        "height": 125
+      },
+      "path": "sprites/base_pose/stand_front.png"
+    },
+    {
+      "id": "stand_left",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：左向き。サイドビューや左移動用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "left",
+        "standing"
+      ],
+      "source_bbox_original": [
+        153,
+        64,
+        253,
+        190
+      ],
+      "source_bbox_trimmed": [
+        162,
+        67,
+        253,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 9,
+        "y": 3
+      },
+      "size": {
+        "width": 91,
+        "height": 123
+      },
+      "path": "sprites/base_pose/stand_left.png"
+    },
+    {
+      "id": "stand_right",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：右向き。サイドビューや右移動用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "right",
+        "standing"
+      ],
+      "source_bbox_original": [
+        285,
+        64,
+        385,
+        190
+      ],
+      "source_bbox_trimmed": [
+        285,
+        69,
+        382,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 5
+      },
+      "size": {
+        "width": 97,
+        "height": 121
+      },
+      "path": "sprites/base_pose/stand_right.png"
+    },
+    {
+      "id": "stand_back",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：背面。フィールド上で上方向へ歩く時の基準姿勢。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "back",
+        "standing"
+      ],
+      "source_bbox_original": [
+        422,
+        64,
+        520,
+        190
+      ],
+      "source_bbox_trimmed": [
+        422,
+        67,
+        510,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 3
+      },
+      "size": {
+        "width": 88,
+        "height": 123
+      },
+      "path": "sprites/base_pose/stand_back.png"
+    },
+    {
+      "id": "idle_01",
+      "category": "idle",
+      "description": "待機アニメーション：呼吸・耳・表情のゆるいループ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "idle"
+      ],
+      "source_bbox_original": [
+        545,
+        66,
+        635,
+        190
+      ],
+      "source_bbox_trimmed": [
+        548,
+        84,
+        635,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 18
+      },
+      "size": {
+        "width": 87,
+        "height": 106
+      },
+      "path": "sprites/idle/idle_01.png"
+    },
+    {
+      "id": "idle_02",
+      "category": "idle",
+      "description": "待機アニメーション：呼吸・耳・表情のゆるいループ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "idle"
+      ],
+      "source_bbox_original": [
+        657,
+        66,
+        744,
+        190
+      ],
+      "source_bbox_trimmed": [
+        662,
+        84,
+        744,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 5,
+        "y": 18
+      },
+      "size": {
+        "width": 82,
+        "height": 106
+      },
+      "path": "sprites/idle/idle_02.png"
+    },
+    {
+      "id": "idle_03",
+      "category": "idle",
+      "description": "待機アニメーション：呼吸・耳・表情のゆるいループ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "idle"
+      ],
+      "source_bbox_original": [
+        777,
+        66,
+        865,
+        190
+      ],
+      "source_bbox_trimmed": [
+        777,
+        85,
+        865,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 19
+      },
+      "size": {
+        "width": 88,
+        "height": 105
+      },
+      "path": "sprites/idle/idle_03.png"
+    },
+    {
+      "id": "idle_04",
+      "category": "idle",
+      "description": "待機アニメーション：呼吸・耳・表情のゆるいループ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "idle"
+      ],
+      "source_bbox_original": [
+        898,
+        66,
+        987,
+        190
+      ],
+      "source_bbox_trimmed": [
+        898,
+        86,
+        987,
+        190
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 20
+      },
+      "size": {
+        "width": 89,
+        "height": 104
+      },
+      "path": "sprites/idle/idle_04.png"
+    },
+    {
+      "id": "walk_01",
+      "category": "walk",
+      "description": "歩行アニメーション：小型ユニットの横移動ループ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "walk"
+      ],
+      "source_bbox_original": [
+        20,
+        245,
+        112,
+        355
+      ],
+      "source_bbox_trimmed": [
+        30,
+        247,
+        112,
+        354
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 10,
+        "y": 2
+      },
+      "size": {
+        "width": 82,
+        "height": 107
+      },
+      "path": "sprites/walk/walk_01.png"
+    },
+    {
+      "id": "walk_02",
+      "category": "walk",
+      "description": "歩行アニメーション：小型ユニットの横移動ループ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "walk"
+      ],
+      "source_bbox_original": [
+        160,
+        245,
+        265,
+        355
+      ],
+      "source_bbox_trimmed": [
+        177,
+        247,
+        265,
+        355
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 17,
+        "y": 2
+      },
+      "size": {
+        "width": 88,
+        "height": 108
+      },
+      "path": "sprites/walk/walk_02.png"
+    },
+    {
+      "id": "walk_03",
+      "category": "walk",
+      "description": "歩行アニメーション：小型ユニットの横移動ループ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "walk"
+      ],
+      "source_bbox_original": [
+        300,
+        245,
+        407,
+        355
+      ],
+      "source_bbox_trimmed": [
+        324,
+        248,
+        407,
+        353
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 24,
+        "y": 3
+      },
+      "size": {
+        "width": 83,
+        "height": 105
+      },
+      "path": "sprites/walk/walk_03.png"
+    },
+    {
+      "id": "walk_04",
+      "category": "walk",
+      "description": "歩行アニメーション：小型ユニットの横移動ループ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "walk"
+      ],
+      "source_bbox_original": [
+        448,
+        245,
+        550,
+        355
+      ],
+      "source_bbox_trimmed": [
+        468,
+        248,
+        550,
+        355
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 20,
+        "y": 3
+      },
+      "size": {
+        "width": 82,
+        "height": 107
+      },
+      "path": "sprites/walk/walk_04.png"
+    },
+    {
+      "id": "walk_05",
+      "category": "walk",
+      "description": "歩行アニメーション：小型ユニットの横移動ループ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "walk"
+      ],
+      "source_bbox_original": [
+        600,
+        245,
+        710,
+        355
+      ],
+      "source_bbox_trimmed": [
+        604,
+        248,
+        705,
+        354
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 3
+      },
+      "size": {
+        "width": 101,
+        "height": 106
+      },
+      "path": "sprites/walk/walk_05.png"
+    },
+    {
+      "id": "walk_06",
+      "category": "walk",
+      "description": "歩行アニメーション：小型ユニットの横移動ループ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "walk"
+      ],
+      "source_bbox_original": [
+        753,
+        245,
+        852,
+        355
+      ],
+      "source_bbox_trimmed": [
+        753,
+        247,
+        841,
+        353
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 2
+      },
+      "size": {
+        "width": 88,
+        "height": 106
+      },
+      "path": "sprites/walk/walk_06.png"
+    },
+    {
+      "id": "attack_hammer_01",
+      "category": "attack",
+      "description": "攻撃アニメーション：巨大ハンマーのゴルフ/フルスイング攻撃。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "attack",
+        "hammer"
+      ],
+      "source_bbox_original": [
+        18,
+        398,
+        142,
+        550
+      ],
+      "source_bbox_trimmed": [
+        18,
+        402,
+        142,
+        541
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 4
+      },
+      "size": {
+        "width": 124,
+        "height": 139
+      },
+      "path": "sprites/attack/attack_hammer_01.png"
+    },
+    {
+      "id": "attack_hammer_02",
+      "category": "attack",
+      "description": "攻撃アニメーション：巨大ハンマーのゴルフ/フルスイング攻撃。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "attack",
+        "hammer"
+      ],
+      "source_bbox_original": [
+        178,
+        390,
+        335,
+        550
+      ],
+      "source_bbox_trimmed": [
+        178,
+        390,
+        335,
+        544
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 157,
+        "height": 154
+      },
+      "path": "sprites/attack/attack_hammer_02.png"
+    },
+    {
+      "id": "attack_hammer_03",
+      "category": "attack",
+      "description": "攻撃アニメーション：巨大ハンマーのゴルフ/フルスイング攻撃。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "attack",
+        "hammer"
+      ],
+      "source_bbox_original": [
+        377,
+        390,
+        545,
+        550
+      ],
+      "source_bbox_trimmed": [
+        377,
+        390,
+        545,
+        545
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 168,
+        "height": 155
+      },
+      "path": "sprites/attack/attack_hammer_03.png"
+    },
+    {
+      "id": "attack_hammer_04",
+      "category": "attack",
+      "description": "攻撃アニメーション：巨大ハンマーのゴルフ/フルスイング攻撃。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "attack",
+        "hammer"
+      ],
+      "source_bbox_original": [
+        588,
+        390,
+        735,
+        550
+      ],
+      "source_bbox_trimmed": [
+        588,
+        390,
+        735,
+        543
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 147,
+        "height": 153
+      },
+      "path": "sprites/attack/attack_hammer_04.png"
+    },
+    {
+      "id": "attack_hammer_05",
+      "category": "attack",
+      "description": "攻撃アニメーション：巨大ハンマーのゴルフ/フルスイング攻撃。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "attack",
+        "hammer"
+      ],
+      "source_bbox_original": [
+        770,
+        392,
+        1012,
+        555
+      ],
+      "source_bbox_trimmed": [
+        779,
+        427,
+        1005,
+        555
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 9,
+        "y": 35
+      },
+      "size": {
+        "width": 226,
+        "height": 128
+      },
+      "path": "sprites/attack/attack_hammer_05.png"
+    },
+    {
+      "id": "skill_bokaaaaaan_01",
+      "category": "skill",
+      "description": "スキル発動アニメーション：BoKaaaaaaan!! 巨大ハンマー衝撃＋岩石爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "skill",
+        "bokaaaaaan"
+      ],
+      "source_bbox_original": [
+        0,
+        590,
+        145,
+        740
+      ],
+      "source_bbox_trimmed": [
+        16,
+        611,
+        145,
+        740
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 16,
+        "y": 21
+      },
+      "size": {
+        "width": 129,
+        "height": 129
+      },
+      "path": "sprites/skill/skill_bokaaaaaan_01.png"
+    },
+    {
+      "id": "skill_bokaaaaaan_02",
+      "category": "skill",
+      "description": "スキル発動アニメーション：BoKaaaaaaan!! 巨大ハンマー衝撃＋岩石爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "skill",
+        "bokaaaaaan"
+      ],
+      "source_bbox_original": [
+        165,
+        585,
+        310,
+        740
+      ],
+      "source_bbox_trimmed": [
+        165,
+        585,
+        310,
+        740
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 145,
+        "height": 155
+      },
+      "path": "sprites/skill/skill_bokaaaaaan_02.png"
+    },
+    {
+      "id": "skill_bokaaaaaan_03",
+      "category": "skill",
+      "description": "スキル発動アニメーション：BoKaaaaaaan!! 巨大ハンマー衝撃＋岩石爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "skill",
+        "bokaaaaaan"
+      ],
+      "source_bbox_original": [
+        307,
+        585,
+        472,
+        740
+      ],
+      "source_bbox_trimmed": [
+        307,
+        585,
+        472,
+        740
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 165,
+        "height": 155
+      },
+      "path": "sprites/skill/skill_bokaaaaaan_03.png"
+    },
+    {
+      "id": "skill_bokaaaaaan_04",
+      "category": "skill",
+      "description": "スキル発動アニメーション：BoKaaaaaaan!! 巨大ハンマー衝撃＋岩石爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "skill",
+        "bokaaaaaan"
+      ],
+      "source_bbox_original": [
+        490,
+        580,
+        650,
+        740
+      ],
+      "source_bbox_trimmed": [
+        490,
+        580,
+        650,
+        740
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 160,
+        "height": 160
+      },
+      "path": "sprites/skill/skill_bokaaaaaan_04.png"
+    },
+    {
+      "id": "skill_bokaaaaaan_05",
+      "category": "skill",
+      "description": "スキル発動アニメーション：BoKaaaaaaan!! 巨大ハンマー衝撃＋岩石爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "skill",
+        "bokaaaaaan"
+      ],
+      "source_bbox_original": [
+        660,
+        572,
+        805,
+        740
+      ],
+      "source_bbox_trimmed": [
+        660,
+        577,
+        805,
+        740
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 5
+      },
+      "size": {
+        "width": 145,
+        "height": 163
+      },
+      "path": "sprites/skill/skill_bokaaaaaan_05.png"
+    },
+    {
+      "id": "skill_bokaaaaaan_06",
+      "category": "skill",
+      "description": "スキル発動アニメーション：BoKaaaaaaan!! 巨大ハンマー衝撃＋岩石爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "animation",
+        "skill",
+        "bokaaaaaan"
+      ],
+      "source_bbox_original": [
+        807,
+        575,
+        1010,
+        745
+      ],
+      "source_bbox_trimmed": [
+        807,
+        579,
+        1010,
+        745
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 4
+      },
+      "size": {
+        "width": 203,
+        "height": 166
+      },
+      "path": "sprites/skill/skill_bokaaaaaan_06.png"
+    },
+    {
+      "id": "state_damage",
+      "category": "state",
+      "description": "ダメージを受けたポーズ。星が飛ぶ被弾リアクション。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "damage",
+        "hurt"
+      ],
+      "source_bbox_original": [
+        20,
+        812,
+        160,
+        925
+      ],
+      "source_bbox_trimmed": [
+        21,
+        831,
+        160,
+        925
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 1,
+        "y": 19
+      },
+      "size": {
+        "width": 139,
+        "height": 94
+      },
+      "path": "sprites/state/state_damage.png"
+    },
+    {
+      "id": "state_down",
+      "category": "state",
+      "description": "戦闘不能/倒れポーズ。KO・気絶・敗北演出用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "down",
+        "ko"
+      ],
+      "source_bbox_original": [
+        210,
+        808,
+        405,
+        925
+      ],
+      "source_bbox_trimmed": [
+        240,
+        841,
+        405,
+        925
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 30,
+        "y": 33
+      },
+      "size": {
+        "width": 165,
+        "height": 84
+      },
+      "path": "sprites/state/state_down.png"
+    },
+    {
+      "id": "state_victory",
+      "category": "state",
+      "description": "勝利ポーズ。ハンマーを掲げたクリア/リザルト用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "tags": [
+        "victory",
+        "win"
+      ],
+      "source_bbox_original": [
+        455,
+        790,
+        588,
+        925
+      ],
+      "source_bbox_trimmed": [
+        455,
+        790,
+        588,
+        925
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 133,
+        "height": 135
+      },
+      "path": "sprites/state/state_victory.png"
+    },
+    {
+      "id": "face_normal",
+      "category": "face_icon",
+      "description": "フェイスアイコン：通常。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        620,
+        828,
+        692,
+        897
+      ],
+      "source_bbox_trimmed": [
+        645,
+        828,
+        692,
+        897
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 25,
+        "y": 0
+      },
+      "size": {
+        "width": 47,
+        "height": 69
+      },
+      "path": "sprites/face_icon/face_normal.png"
+    },
+    {
+      "id": "face_angry",
+      "category": "face_icon",
+      "description": "フェイスアイコン：怒り。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        720,
+        828,
+        792,
+        897
+      ],
+      "source_bbox_trimmed": [
+        734,
+        828,
+        792,
+        897
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 14,
+        "y": 0
+      },
+      "size": {
+        "width": 58,
+        "height": 69
+      },
+      "path": "sprites/face_icon/face_angry.png"
+    },
+    {
+      "id": "face_suspicious",
+      "category": "face_icon",
+      "description": "フェイスアイコン：不機嫌/疑い。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        813,
+        828,
+        887,
+        897
+      ],
+      "source_bbox_trimmed": [
+        824,
+        828,
+        887,
+        897
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 11,
+        "y": 0
+      },
+      "size": {
+        "width": 63,
+        "height": 69
+      },
+      "path": "sprites/face_icon/face_suspicious.png"
+    },
+    {
+      "id": "face_sleepy",
+      "category": "face_icon",
+      "description": "フェイスアイコン：眠る/半目。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        913,
+        828,
+        987,
+        897
+      ],
+      "source_bbox_trimmed": [
+        913,
+        828,
+        987,
+        897
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 74,
+        "height": 69
+      },
+      "path": "sprites/face_icon/face_sleepy.png"
+    },
+    {
+      "id": "face_shout",
+      "category": "face_icon",
+      "description": "フェイスアイコン：叫ぶ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        620,
+        928,
+        692,
+        1000
+      ],
+      "source_bbox_trimmed": [
+        642,
+        928,
+        692,
+        1000
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 22,
+        "y": 0
+      },
+      "size": {
+        "width": 50,
+        "height": 72
+      },
+      "path": "sprites/face_icon/face_shout.png"
+    },
+    {
+      "id": "face_surprised",
+      "category": "face_icon",
+      "description": "フェイスアイコン：驚き。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        720,
+        928,
+        792,
+        1000
+      ],
+      "source_bbox_trimmed": [
+        733,
+        928,
+        792,
+        1000
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 13,
+        "y": 0
+      },
+      "size": {
+        "width": 59,
+        "height": 72
+      },
+      "path": "sprites/face_icon/face_surprised.png"
+    },
+    {
+      "id": "face_smug",
+      "category": "face_icon",
+      "description": "フェイスアイコン：ドヤ顔。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        813,
+        928,
+        887,
+        1000
+      ],
+      "source_bbox_trimmed": [
+        821,
+        928,
+        887,
+        1000
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 8,
+        "y": 0
+      },
+      "size": {
+        "width": 66,
+        "height": 72
+      },
+      "path": "sprites/face_icon/face_smug.png"
+    },
+    {
+      "id": "face_prank",
+      "category": "face_icon",
+      "description": "フェイスアイコン：いたずら/ニヤリ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "face"
+      ],
+      "source_bbox_original": [
+        913,
+        928,
+        987,
+        1000
+      ],
+      "source_bbox_trimmed": [
+        913,
+        928,
+        987,
+        1000
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 74,
+        "height": 72
+      },
+      "path": "sprites/face_icon/face_prank.png"
+    },
+    {
+      "id": "item_giant_hammer",
+      "category": "item",
+      "description": "使用武器：巨大ハンマー。通常攻撃・装備アイコン用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "item"
+      ],
+      "source_bbox_original": [
+        17,
+        1078,
+        128,
+        1135
+      ],
+      "source_bbox_trimmed": [
+        24,
+        1078,
+        128,
+        1135
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 7,
+        "y": 0
+      },
+      "size": {
+        "width": 104,
+        "height": 57
+      },
+      "path": "sprites/item/item_giant_hammer.png"
+    },
+    {
+      "id": "item_shinji_wolf_tag",
+      "category": "item",
+      "description": "専用タグ：Shinji狼タグ。キャラ識別/クエストアイテム用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "item"
+      ],
+      "source_bbox_original": [
+        166,
+        1078,
+        270,
+        1134
+      ],
+      "source_bbox_trimmed": [
+        171,
+        1078,
+        270,
+        1134
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 5,
+        "y": 0
+      },
+      "size": {
+        "width": 99,
+        "height": 56
+      },
+      "path": "sprites/item/item_shinji_wolf_tag.png"
+    },
+    {
+      "id": "item_dog_food_can",
+      "category": "item",
+      "description": "ドッグフード缶。回復/好物アイテム用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "item"
+      ],
+      "source_bbox_original": [
+        322,
+        1078,
+        438,
+        1134
+      ],
+      "source_bbox_trimmed": [
+        322,
+        1078,
+        430,
+        1134
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 108,
+        "height": 56
+      },
+      "path": "sprites/item/item_dog_food_can.png"
+    },
+    {
+      "id": "item_parent_tooth",
+      "category": "item",
+      "description": "親しらずの歯。素材/ギャグ系ドロップ用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "item"
+      ],
+      "source_bbox_original": [
+        485,
+        1078,
+        560,
+        1134
+      ],
+      "source_bbox_trimmed": [
+        488,
+        1078,
+        545,
+        1134
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 0
+      },
+      "size": {
+        "width": 57,
+        "height": 56
+      },
+      "path": "sprites/item/item_parent_tooth.png"
+    },
+    {
+      "id": "item_tooth_hammer",
+      "category": "item",
+      "description": "親知らずハンマー（歯付き）。強化武器/スキル素材用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "item"
+      ],
+      "source_bbox_original": [
+        580,
+        1078,
+        700,
+        1134
+      ],
+      "source_bbox_trimmed": [
+        600,
+        1078,
+        696,
+        1134
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 20,
+        "y": 0
+      },
+      "size": {
+        "width": 96,
+        "height": 56
+      },
+      "path": "sprites/item/item_tooth_hammer.png"
+    },
+    {
+      "id": "item_wolf_paw_flag",
+      "category": "item",
+      "description": "狼の印の旗。陣地・所属シンボル・バフ旗用。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "item"
+      ],
+      "source_bbox_original": [
+        770,
+        1078,
+        864,
+        1134
+      ],
+      "source_bbox_trimmed": [
+        802,
+        1078,
+        864,
+        1134
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 32,
+        "y": 0
+      },
+      "size": {
+        "width": 62,
+        "height": 56
+      },
+      "path": "sprites/item/item_wolf_paw_flag.png"
+    },
+    {
+      "id": "attack_fx_swing_red_01",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：赤いハンマー弧。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        18,
+        1202,
+        113,
+        1278
+      ],
+      "source_bbox_trimmed": [
+        24,
+        1207,
+        113,
+        1278
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 6,
+        "y": 5
+      },
+      "size": {
+        "width": 89,
+        "height": 71
+      },
+      "path": "sprites/attack_effect/attack_fx_swing_red_01.png"
+    },
+    {
+      "id": "attack_fx_swing_white_01",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：白いハンマー弧。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        112,
+        1202,
+        174,
+        1278
+      ],
+      "source_bbox_trimmed": [
+        112,
+        1207,
+        174,
+        1278
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 5
+      },
+      "size": {
+        "width": 62,
+        "height": 71
+      },
+      "path": "sprites/attack_effect/attack_fx_swing_white_01.png"
+    },
+    {
+      "id": "attack_fx_swing_red_02",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：赤いハンマー弧・小。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        171,
+        1202,
+        223,
+        1278
+      ],
+      "source_bbox_trimmed": [
+        171,
+        1207,
+        218,
+        1278
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 5
+      },
+      "size": {
+        "width": 47,
+        "height": 71
+      },
+      "path": "sprites/attack_effect/attack_fx_swing_red_02.png"
+    },
+    {
+      "id": "attack_fx_swing_red_03",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：赤いハンマー弧・縦。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        226,
+        1202,
+        264,
+        1278
+      ],
+      "source_bbox_trimmed": [
+        227,
+        1211,
+        260,
+        1278
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 1,
+        "y": 9
+      },
+      "size": {
+        "width": 33,
+        "height": 67
+      },
+      "path": "sprites/attack_effect/attack_fx_swing_red_03.png"
+    },
+    {
+      "id": "attack_fx_rock_spike_01",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：岩柱。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        266,
+        1195,
+        335,
+        1278
+      ],
+      "source_bbox_trimmed": [
+        266,
+        1201,
+        335,
+        1278
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 6
+      },
+      "size": {
+        "width": 69,
+        "height": 77
+      },
+      "path": "sprites/attack_effect/attack_fx_rock_spike_01.png"
+    },
+    {
+      "id": "attack_fx_rock_spike_02",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：岩柱・小。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        333,
+        1195,
+        396,
+        1278
+      ],
+      "source_bbox_trimmed": [
+        333,
+        1208,
+        392,
+        1278
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 13
+      },
+      "size": {
+        "width": 59,
+        "height": 70
+      },
+      "path": "sprites/attack_effect/attack_fx_rock_spike_02.png"
+    },
+    {
+      "id": "attack_fx_debris_01",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：岩石飛散。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        8,
+        1295,
+        76,
+        1375
+      ],
+      "source_bbox_trimmed": [
+        19,
+        1299,
+        71,
+        1371
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 11,
+        "y": 4
+      },
+      "size": {
+        "width": 52,
+        "height": 71
+      },
+      "path": "sprites/attack_effect/attack_fx_debris_01.png"
+    },
+    {
+      "id": "attack_fx_debris_02",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：岩石飛散・小。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        76,
+        1292,
+        134,
+        1375
+      ],
+      "source_bbox_trimmed": [
+        81,
+        1299,
+        134,
+        1369
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 5,
+        "y": 7
+      },
+      "size": {
+        "width": 53,
+        "height": 70
+      },
+      "path": "sprites/attack_effect/attack_fx_debris_02.png"
+    },
+    {
+      "id": "attack_fx_spark_01",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：星型ヒットスパーク。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        132,
+        1295,
+        196,
+        1376
+      ],
+      "source_bbox_trimmed": [
+        132,
+        1300,
+        194,
+        1371
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 5
+      },
+      "size": {
+        "width": 61,
+        "height": 71
+      },
+      "path": "sprites/attack_effect/attack_fx_spark_01.png"
+    },
+    {
+      "id": "attack_fx_spark_02",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：強ヒットスパーク。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        190,
+        1288,
+        278,
+        1378
+      ],
+      "source_bbox_trimmed": [
+        190,
+        1296,
+        274,
+        1374
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 8
+      },
+      "size": {
+        "width": 84,
+        "height": 77
+      },
+      "path": "sprites/attack_effect/attack_fx_spark_02.png"
+    },
+    {
+      "id": "attack_fx_burst_01",
+      "category": "attack_effect",
+      "description": "攻撃エフェクト：黄金衝撃波。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "attack",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        274,
+        1288,
+        366,
+        1378
+      ],
+      "source_bbox_trimmed": [
+        278,
+        1291,
+        364,
+        1374
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 3
+      },
+      "size": {
+        "width": 86,
+        "height": 83
+      },
+      "path": "sprites/attack_effect/attack_fx_burst_01.png"
+    },
+    {
+      "id": "skill_fx_impact_column_01",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：地面からの衝撃柱。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        415,
+        1190,
+        523,
+        1301
+      ],
+      "source_bbox_trimmed": [
+        421,
+        1205,
+        518,
+        1295
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 6,
+        "y": 15
+      },
+      "size": {
+        "width": 97,
+        "height": 90
+      },
+      "path": "sprites/skill_effect/skill_fx_impact_column_01.png"
+    },
+    {
+      "id": "skill_fx_ground_explosion_01",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：地面爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        526,
+        1188,
+        664,
+        1304
+      ],
+      "source_bbox_trimmed": [
+        526,
+        1188,
+        664,
+        1299
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 138,
+        "height": 111
+      },
+      "path": "sprites/skill_effect/skill_fx_ground_explosion_01.png"
+    },
+    {
+      "id": "skill_fx_ground_explosion_02",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：強地面爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        650,
+        1188,
+        782,
+        1304
+      ],
+      "source_bbox_trimmed": [
+        650,
+        1197,
+        782,
+        1299
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 9
+      },
+      "size": {
+        "width": 132,
+        "height": 102
+      },
+      "path": "sprites/skill_effect/skill_fx_ground_explosion_02.png"
+    },
+    {
+      "id": "skill_fx_shock_ring_01",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：緑橙の衝撃リング。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        778,
+        1204,
+        881,
+        1304
+      ],
+      "source_bbox_trimmed": [
+        778,
+        1215,
+        881,
+        1296
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 11
+      },
+      "size": {
+        "width": 103,
+        "height": 81
+      },
+      "path": "sprites/skill_effect/skill_fx_shock_ring_01.png"
+    },
+    {
+      "id": "skill_fx_rock_burst_01",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：岩石大爆発。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        876,
+        1188,
+        1008,
+        1305
+      ],
+      "source_bbox_trimmed": [
+        878,
+        1195,
+        1002,
+        1298
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 7
+      },
+      "size": {
+        "width": 124,
+        "height": 103
+      },
+      "path": "sprites/skill_effect/skill_fx_rock_burst_01.png"
+    },
+    {
+      "id": "skill_fx_crater_01",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：岩山クレーター。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        415,
+        1302,
+        566,
+        1390
+      ],
+      "source_bbox_trimmed": [
+        417,
+        1309,
+        564,
+        1386
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 7
+      },
+      "size": {
+        "width": 147,
+        "height": 77
+      },
+      "path": "sprites/skill_effect/skill_fx_crater_01.png"
+    },
+    {
+      "id": "skill_fx_crater_02",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：土煙クレーター。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        580,
+        1300,
+        746,
+        1390
+      ],
+      "source_bbox_trimmed": [
+        582,
+        1305,
+        742,
+        1386
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 5
+      },
+      "size": {
+        "width": 160,
+        "height": 81
+      },
+      "path": "sprites/skill_effect/skill_fx_crater_02.png"
+    },
+    {
+      "id": "skill_fx_crater_03",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：小岩クレーター。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        748,
+        1300,
+        886,
+        1390
+      ],
+      "source_bbox_trimmed": [
+        751,
+        1308,
+        886,
+        1386
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 8
+      },
+      "size": {
+        "width": 135,
+        "height": 78
+      },
+      "path": "sprites/skill_effect/skill_fx_crater_03.png"
+    },
+    {
+      "id": "skill_fx_crater_04",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：岩盤クレーター。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "bokaaaaaan",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        840,
+        1300,
+        944,
+        1390
+      ],
+      "source_bbox_trimmed": [
+        840,
+        1308,
+        937,
+        1386
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 8
+      },
+      "size": {
+        "width": 97,
+        "height": 78
+      },
+      "path": "sprites/skill_effect/skill_fx_crater_04.png"
+    },
+    {
+      "id": "generic_sparkle_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：小さなきらめき。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        16,
+        1420,
+        62,
+        1471
+      ],
+      "source_bbox_trimmed": [
+        21,
+        1431,
+        61,
+        1471
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 5,
+        "y": 11
+      },
+      "size": {
+        "width": 40,
+        "height": 40
+      },
+      "path": "sprites/generic_effect/generic_sparkle_01.png"
+    },
+    {
+      "id": "generic_sparkle_02",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：十字星。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        66,
+        1418,
+        128,
+        1471
+      ],
+      "source_bbox_trimmed": [
+        66,
+        1418,
+        128,
+        1471
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 0
+      },
+      "size": {
+        "width": 54,
+        "height": 47
+      },
+      "path": "sprites/generic_effect/generic_sparkle_02.png"
+    },
+    {
+      "id": "generic_sparkle_03",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：細い十字光。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        112,
+        1420,
+        171,
+        1471
+      ],
+      "source_bbox_trimmed": [
+        112,
+        1427,
+        171,
+        1469
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 7
+      },
+      "size": {
+        "width": 59,
+        "height": 42
+      },
+      "path": "sprites/generic_effect/generic_sparkle_03.png"
+    },
+    {
+      "id": "generic_sparkle_04",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：強い星光。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        162,
+        1419,
+        236,
+        1471
+      ],
+      "source_bbox_trimmed": [
+        162,
+        1421,
+        236,
+        1471
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 2
+      },
+      "size": {
+        "width": 74,
+        "height": 49
+      },
+      "path": "sprites/generic_effect/generic_sparkle_04.png"
+    },
+    {
+      "id": "generic_wind_slash_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：白青の風斬撃。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        238,
+        1422,
+        336,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        238,
+        1426,
+        336,
+        1467
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 4
+      },
+      "size": {
+        "width": 98,
+        "height": 41
+      },
+      "path": "sprites/generic_effect/generic_wind_slash_01.png"
+    },
+    {
+      "id": "generic_red_slash_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：赤い斬撃線。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        338,
+        1420,
+        404,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        338,
+        1424,
+        402,
+        1463
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 4
+      },
+      "size": {
+        "width": 64,
+        "height": 39
+      },
+      "path": "sprites/generic_effect/generic_red_slash_01.png"
+    },
+    {
+      "id": "generic_magic_darts_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：金色の飛び道具。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        400,
+        1420,
+        494,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        400,
+        1422,
+        492,
+        1467
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 0,
+        "y": 2
+      },
+      "size": {
+        "width": 92,
+        "height": 45
+      },
+      "path": "sprites/generic_effect/generic_magic_darts_01.png"
+    },
+    {
+      "id": "generic_smoke_white_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：白煙。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        502,
+        1418,
+        563,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        506,
+        1418,
+        560,
+        1468
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 0
+      },
+      "size": {
+        "width": 54,
+        "height": 50
+      },
+      "path": "sprites/generic_effect/generic_smoke_white_01.png"
+    },
+    {
+      "id": "generic_smoke_green_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：緑の煙。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        562,
+        1420,
+        616,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        566,
+        1422,
+        614,
+        1466
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 2
+      },
+      "size": {
+        "width": 48,
+        "height": 44
+      },
+      "path": "sprites/generic_effect/generic_smoke_green_01.png"
+    },
+    {
+      "id": "generic_dust_01",
+      "category": "generic_effect",
+      "description": "汎用エフェクト：土煙。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        617,
+        1418,
+        672,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        620,
+        1420,
+        669,
+        1467
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 2
+      },
+      "size": {
+        "width": 49,
+        "height": 47
+      },
+      "path": "sprites/generic_effect/generic_dust_01.png"
+    },
+    {
+      "id": "generic_skull_01",
+      "category": "generic_effect",
+      "description": "汎用アイコン：毒/呪いのドクロ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        680,
+        1418,
+        724,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        684,
+        1424,
+        722,
+        1464
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 6
+      },
+      "size": {
+        "width": 38,
+        "height": 40
+      },
+      "path": "sprites/generic_effect/generic_skull_01.png"
+    },
+    {
+      "id": "generic_fire_skull_01",
+      "category": "generic_effect",
+      "description": "汎用アイコン：炎状態/危険。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        744,
+        1418,
+        790,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        748,
+        1423,
+        786,
+        1465
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 5
+      },
+      "size": {
+        "width": 38,
+        "height": 42
+      },
+      "path": "sprites/generic_effect/generic_fire_skull_01.png"
+    },
+    {
+      "id": "generic_question_01",
+      "category": "generic_effect",
+      "description": "汎用アイコン：疑問/混乱。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        810,
+        1418,
+        843,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        813,
+        1424,
+        841,
+        1465
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 6
+      },
+      "size": {
+        "width": 28,
+        "height": 41
+      },
+      "path": "sprites/generic_effect/generic_question_01.png"
+    },
+    {
+      "id": "generic_exclamation_01",
+      "category": "generic_effect",
+      "description": "汎用アイコン：注意/発見。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        876,
+        1418,
+        900,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        879,
+        1424,
+        897,
+        1465
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 6
+      },
+      "size": {
+        "width": 18,
+        "height": 41
+      },
+      "path": "sprites/generic_effect/generic_exclamation_01.png"
+    },
+    {
+      "id": "generic_water_drop_01",
+      "category": "generic_effect",
+      "description": "汎用アイコン：水/涙/濡れ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "effect",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        934,
+        1418,
+        1002,
+        1470
+      ],
+      "source_bbox_trimmed": [
+        937,
+        1427,
+        999,
+        1464
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 9
+      },
+      "size": {
+        "width": 62,
+        "height": 37
+      },
+      "path": "sprites/generic_effect/generic_water_drop_01.png"
+    },
+    {
+      "id": "ui_heart_full",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：ハート/HP。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        23,
+        1481,
+        67,
+        1524
+      ],
+      "source_bbox_trimmed": [
+        25,
+        1485,
+        65,
+        1521
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 4
+      },
+      "size": {
+        "width": 40,
+        "height": 36
+      },
+      "path": "sprites/ui_status_icon/ui_heart_full.png"
+    },
+    {
+      "id": "ui_heart_broken",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：割れたハート/HP低下。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        77,
+        1481,
+        120,
+        1524
+      ],
+      "source_bbox_trimmed": [
+        79,
+        1485,
+        118,
+        1521
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 4
+      },
+      "size": {
+        "width": 39,
+        "height": 36
+      },
+      "path": "sprites/ui_status_icon/ui_heart_broken.png"
+    },
+    {
+      "id": "ui_plus_gold",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：回復/加算。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        132,
+        1477,
+        175,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        134,
+        1480,
+        173,
+        1521
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 3
+      },
+      "size": {
+        "width": 39,
+        "height": 41
+      },
+      "path": "sprites/ui_status_icon/ui_plus_gold.png"
+    },
+    {
+      "id": "ui_shield_blue",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：防御バフ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        188,
+        1476,
+        230,
+        1526
+      ],
+      "source_bbox_trimmed": [
+        191,
+        1479,
+        228,
+        1522
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 3
+      },
+      "size": {
+        "width": 37,
+        "height": 43
+      },
+      "path": "sprites/ui_status_icon/ui_shield_blue.png"
+    },
+    {
+      "id": "ui_shield_green",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：防御/耐性バフ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        248,
+        1476,
+        287,
+        1526
+      ],
+      "source_bbox_trimmed": [
+        250,
+        1480,
+        285,
+        1522
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 4
+      },
+      "size": {
+        "width": 35,
+        "height": 42
+      },
+      "path": "sprites/ui_status_icon/ui_shield_green.png"
+    },
+    {
+      "id": "ui_arrow_up_green",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：上昇バフ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        296,
+        1476,
+        341,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        299,
+        1479,
+        339,
+        1521
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 3
+      },
+      "size": {
+        "width": 40,
+        "height": 42
+      },
+      "path": "sprites/ui_status_icon/ui_arrow_up_green.png"
+    },
+    {
+      "id": "ui_arrow_down_blue",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：下降/デバフ。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        350,
+        1477,
+        396,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        353,
+        1480,
+        394,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 3
+      },
+      "size": {
+        "width": 41,
+        "height": 43
+      },
+      "path": "sprites/ui_status_icon/ui_arrow_down_blue.png"
+    },
+    {
+      "id": "ui_ice_status",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：氷結/冷気。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        402,
+        1476,
+        446,
+        1526
+      ],
+      "source_bbox_trimmed": [
+        404,
+        1479,
+        444,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 3
+      },
+      "size": {
+        "width": 40,
+        "height": 44
+      },
+      "path": "sprites/ui_status_icon/ui_ice_status.png"
+    },
+    {
+      "id": "ui_moon_status",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：月/闇/夜属性。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        452,
+        1476,
+        497,
+        1526
+      ],
+      "source_bbox_trimmed": [
+        454,
+        1478,
+        495,
+        1522
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 2
+      },
+      "size": {
+        "width": 41,
+        "height": 44
+      },
+      "path": "sprites/ui_status_icon/ui_moon_status.png"
+    },
+    {
+      "id": "ui_fire_red",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：火属性。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        531,
+        1474,
+        579,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        533,
+        1476,
+        577,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 2
+      },
+      "size": {
+        "width": 44,
+        "height": 47
+      },
+      "path": "sprites/ui_status_icon/ui_fire_red.png"
+    },
+    {
+      "id": "ui_fire_blue",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：青炎/水火。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        588,
+        1474,
+        633,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        591,
+        1476,
+        631,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 2
+      },
+      "size": {
+        "width": 40,
+        "height": 47
+      },
+      "path": "sprites/ui_status_icon/ui_fire_blue.png"
+    },
+    {
+      "id": "ui_fire_yellow",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：黄炎/光火。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        642,
+        1474,
+        688,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        645,
+        1476,
+        686,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 2
+      },
+      "size": {
+        "width": 41,
+        "height": 47
+      },
+      "path": "sprites/ui_status_icon/ui_fire_yellow.png"
+    },
+    {
+      "id": "ui_lightning",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：雷属性。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        700,
+        1474,
+        744,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        702,
+        1477,
+        742,
+        1524
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 2,
+        "y": 3
+      },
+      "size": {
+        "width": 40,
+        "height": 47
+      },
+      "path": "sprites/ui_status_icon/ui_lightning.png"
+    },
+    {
+      "id": "ui_wind_green",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：風/自然属性。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        752,
+        1473,
+        799,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        755,
+        1475,
+        797,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 2
+      },
+      "size": {
+        "width": 42,
+        "height": 48
+      },
+      "path": "sprites/ui_status_icon/ui_wind_green.png"
+    },
+    {
+      "id": "ui_poison_purple_01",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：毒/闇属性。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        809,
+        1474,
+        854,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        812,
+        1475,
+        852,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 1
+      },
+      "size": {
+        "width": 40,
+        "height": 48
+      },
+      "path": "sprites/ui_status_icon/ui_poison_purple_01.png"
+    },
+    {
+      "id": "ui_poison_purple_02",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：毒/闇属性強。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        865,
+        1474,
+        910,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        868,
+        1476,
+        908,
+        1523
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 3,
+        "y": 2
+      },
+      "size": {
+        "width": 40,
+        "height": 47
+      },
+      "path": "sprites/ui_status_icon/ui_poison_purple_02.png"
+    },
+    {
+      "id": "ui_sleep_zzz",
+      "category": "ui_status_icon",
+      "description": "UIアイコン：睡眠状態。",
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "tags": [
+        "ui",
+        "fixed_precise_crop"
+      ],
+      "source_bbox_original": [
+        920,
+        1475,
+        1003,
+        1525
+      ],
+      "source_bbox_trimmed": [
+        924,
+        1485,
+        1001,
+        1516
+      ],
+      "trim_offset_from_original_crop": {
+        "x": 4,
+        "y": 10
+      },
+      "size": {
+        "width": 77,
+        "height": 31
+      },
+      "path": "sprites/ui_status_icon/ui_sleep_zzz.png"
+    }
+  ],
+  "animations": [
+    {
+      "id": "idle_4",
+      "description": "待機4フレーム：耳と表情のゆるい待機ループ。",
+      "frames": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04"
+      ],
+      "path": "animations/idle_4.png",
+      "frameWidth": 89,
+      "frameHeight": 106,
+      "frameCount": 4,
+      "frameRate": 6,
+      "repeat": -1,
+      "alignment": "center-bottom",
+      "placements": [
+        {
+          "frame": "idle_01",
+          "x": 1,
+          "y": 0
+        },
+        {
+          "frame": "idle_02",
+          "x": 3,
+          "y": 0
+        },
+        {
+          "frame": "idle_03",
+          "x": 0,
+          "y": 1
+        },
+        {
+          "frame": "idle_04",
+          "x": 0,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "walk_6",
+      "description": "歩行6フレーム：横移動ループ。",
+      "frames": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05",
+        "walk_06"
+      ],
+      "path": "animations/walk_6.png",
+      "frameWidth": 101,
+      "frameHeight": 108,
+      "frameCount": 6,
+      "frameRate": 10,
+      "repeat": -1,
+      "alignment": "center-bottom",
+      "placements": [
+        {
+          "frame": "walk_01",
+          "x": 9,
+          "y": 1
+        },
+        {
+          "frame": "walk_02",
+          "x": 6,
+          "y": 0
+        },
+        {
+          "frame": "walk_03",
+          "x": 9,
+          "y": 3
+        },
+        {
+          "frame": "walk_04",
+          "x": 9,
+          "y": 1
+        },
+        {
+          "frame": "walk_05",
+          "x": 0,
+          "y": 2
+        },
+        {
+          "frame": "walk_06",
+          "x": 6,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "id": "attack_hammer_5",
+      "description": "通常攻撃5フレーム：巨大ハンマーのフルスイング。",
+      "frames": [
+        "attack_hammer_01",
+        "attack_hammer_02",
+        "attack_hammer_03",
+        "attack_hammer_04",
+        "attack_hammer_05"
+      ],
+      "path": "animations/attack_hammer_5.png",
+      "frameWidth": 226,
+      "frameHeight": 155,
+      "frameCount": 5,
+      "frameRate": 12,
+      "repeat": 0,
+      "alignment": "center-bottom",
+      "placements": [
+        {
+          "frame": "attack_hammer_01",
+          "x": 51,
+          "y": 16
+        },
+        {
+          "frame": "attack_hammer_02",
+          "x": 34,
+          "y": 1
+        },
+        {
+          "frame": "attack_hammer_03",
+          "x": 29,
+          "y": 0
+        },
+        {
+          "frame": "attack_hammer_04",
+          "x": 39,
+          "y": 2
+        },
+        {
+          "frame": "attack_hammer_05",
+          "x": 0,
+          "y": 27
+        }
+      ]
+    },
+    {
+      "id": "skill_bokaaaaaan_6",
+      "description": "スキル6フレーム：BoKaaaaaaan!! ハンマー衝撃と地面爆発。",
+      "frames": [
+        "skill_bokaaaaaan_01",
+        "skill_bokaaaaaan_02",
+        "skill_bokaaaaaan_03",
+        "skill_bokaaaaaan_04",
+        "skill_bokaaaaaan_05",
+        "skill_bokaaaaaan_06"
+      ],
+      "path": "animations/skill_bokaaaaaan_6.png",
+      "frameWidth": 203,
+      "frameHeight": 166,
+      "frameCount": 6,
+      "frameRate": 10,
+      "repeat": 0,
+      "alignment": "center-bottom",
+      "placements": [
+        {
+          "frame": "skill_bokaaaaaan_01",
+          "x": 37,
+          "y": 37
+        },
+        {
+          "frame": "skill_bokaaaaaan_02",
+          "x": 29,
+          "y": 11
+        },
+        {
+          "frame": "skill_bokaaaaaan_03",
+          "x": 19,
+          "y": 11
+        },
+        {
+          "frame": "skill_bokaaaaaan_04",
+          "x": 21,
+          "y": 6
+        },
+        {
+          "frame": "skill_bokaaaaaan_05",
+          "x": 29,
+          "y": 3
+        },
+        {
+          "frame": "skill_bokaaaaaan_06",
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "face_icons_8",
+      "description": "表情アイコン8種。UIで1フレームずつ使用。",
+      "frames": [
+        "face_normal",
+        "face_angry",
+        "face_suspicious",
+        "face_sleepy",
+        "face_shout",
+        "face_surprised",
+        "face_smug",
+        "face_prank"
+      ],
+      "path": "animations/face_icons_8.png",
+      "frameWidth": 74,
+      "frameHeight": 72,
+      "frameCount": 8,
+      "frameRate": 1,
+      "repeat": 0,
+      "alignment": "center-bottom",
+      "placements": [
+        {
+          "frame": "face_normal",
+          "x": 13,
+          "y": 3
+        },
+        {
+          "frame": "face_angry",
+          "x": 8,
+          "y": 3
+        },
+        {
+          "frame": "face_suspicious",
+          "x": 5,
+          "y": 3
+        },
+        {
+          "frame": "face_sleepy",
+          "x": 0,
+          "y": 3
+        },
+        {
+          "frame": "face_shout",
+          "x": 12,
+          "y": 0
+        },
+        {
+          "frame": "face_surprised",
+          "x": 7,
+          "y": 0
+        },
+        {
+          "frame": "face_smug",
+          "x": 4,
+          "y": 0
+        },
+        {
+          "frame": "face_prank",
+          "x": 0,
+          "y": 0
+        }
+      ]
+    },
+    {
+      "id": "attack_fx_swing_4",
+      "description": "ハンマー斬撃エフェクト4フレーム。精密再切り出し・下中央揃え版。",
+      "frames": [
+        "attack_fx_swing_red_01",
+        "attack_fx_swing_white_01",
+        "attack_fx_swing_red_02",
+        "attack_fx_swing_red_03"
+      ],
+      "path": "animations/attack_fx_swing_4.png",
+      "frameWidth": 97,
+      "frameHeight": 79,
+      "frameCount": 4,
+      "frameRate": 14,
+      "repeat": 0,
+      "alignment": "center-bottom + 4px bottom padding",
+      "placements": [
+        {
+          "frame": "attack_fx_swing_red_01",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "frame": "attack_fx_swing_white_01",
+          "x": 17,
+          "y": 4
+        },
+        {
+          "frame": "attack_fx_swing_red_02",
+          "x": 25,
+          "y": 4
+        },
+        {
+          "frame": "attack_fx_swing_red_03",
+          "x": 32,
+          "y": 8
+        }
+      ],
+      "origin": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "fixed": "2026-05-24 precise effect realignment"
+    },
+    {
+      "id": "attack_fx_spark_3",
+      "description": "ヒットスパーク3フレーム。精密再切り出し・下中央揃え版。",
+      "frames": [
+        "attack_fx_spark_01",
+        "attack_fx_spark_02",
+        "attack_fx_burst_01"
+      ],
+      "path": "animations/attack_fx_spark_3.png",
+      "frameWidth": 94,
+      "frameHeight": 91,
+      "frameCount": 3,
+      "frameRate": 16,
+      "repeat": 0,
+      "alignment": "center-bottom + 4px bottom padding",
+      "placements": [
+        {
+          "frame": "attack_fx_spark_01",
+          "x": 16,
+          "y": 16
+        },
+        {
+          "frame": "attack_fx_spark_02",
+          "x": 5,
+          "y": 10
+        },
+        {
+          "frame": "attack_fx_burst_01",
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "origin": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "fixed": "2026-05-24 precise effect realignment"
+    },
+    {
+      "id": "skill_fx_bokaaaaaan_9",
+      "description": "BoKaaaaaaan!! 用スキルエフェクト9フレーム。精密再切り出し・下中央揃え版。",
+      "frames": [
+        "skill_fx_impact_column_01",
+        "skill_fx_ground_explosion_01",
+        "skill_fx_ground_explosion_02",
+        "skill_fx_shock_ring_01",
+        "skill_fx_rock_burst_01",
+        "skill_fx_crater_01",
+        "skill_fx_crater_02",
+        "skill_fx_crater_03",
+        "skill_fx_crater_04"
+      ],
+      "path": "animations/skill_fx_bokaaaaaan_9.png",
+      "frameWidth": 168,
+      "frameHeight": 119,
+      "frameCount": 9,
+      "frameRate": 12,
+      "repeat": 0,
+      "alignment": "center-bottom + 4px bottom padding",
+      "placements": [
+        {
+          "frame": "skill_fx_impact_column_01",
+          "x": 35,
+          "y": 25
+        },
+        {
+          "frame": "skill_fx_ground_explosion_01",
+          "x": 15,
+          "y": 4
+        },
+        {
+          "frame": "skill_fx_ground_explosion_02",
+          "x": 18,
+          "y": 13
+        },
+        {
+          "frame": "skill_fx_shock_ring_01",
+          "x": 32,
+          "y": 34
+        },
+        {
+          "frame": "skill_fx_rock_burst_01",
+          "x": 22,
+          "y": 12
+        },
+        {
+          "frame": "skill_fx_crater_01",
+          "x": 10,
+          "y": 38
+        },
+        {
+          "frame": "skill_fx_crater_02",
+          "x": 4,
+          "y": 34
+        },
+        {
+          "frame": "skill_fx_crater_03",
+          "x": 16,
+          "y": 37
+        },
+        {
+          "frame": "skill_fx_crater_04",
+          "x": 35,
+          "y": 37
+        }
+      ],
+      "origin": {
+        "x": 0.5,
+        "y": 1.0
+      },
+      "fixed": "2026-05-24 precise effect realignment"
+    }
+  ],
+  "revision": "effect-crop-fix-2026-05-24",
+  "fixNotes": {
+    "summary": "攻撃/スキル/汎用/UIエフェクトを元画像から手動座標+境界洪水塗りで再切り出し。ラベル線や隣接素材の混入を除去し、エフェクト用アニメーションストリップを下中央揃えで再生成。",
+    "changedSpriteCount": 52,
+    "changedCategories": [
+      "attack_effect",
+      "skill_effect",
+      "generic_effect",
+      "ui_status_icon"
+    ]
+  }
+}
