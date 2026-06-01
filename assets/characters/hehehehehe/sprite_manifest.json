@@ -1,0 +1,3338 @@
+{
+  "source_image": "hehehehehe.png",
+  "source_size": [
+    1024,
+    1536
+  ],
+  "asset_count": 103,
+  "notes_ja": "元画像から透明背景PNGとして切り分け。source_rectは元スプライトシート上の範囲、trimmed_source_rectは透明余白を詰めた実際の範囲です。",
+  "assets": [
+    {
+      "id": "standing_poses__front",
+      "section": "standing_poses",
+      "name": "front",
+      "role_ja": "正面立ち。会話・ステータス画面・待機開始に使える基本ポーズ。",
+      "source_rect": [
+        30,
+        36,
+        120,
+        190
+      ],
+      "animation": "standing",
+      "frame_index": 0,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        30,
+        36,
+        120,
+        189
+      ],
+      "file": "sprites/standing_poses/front.png",
+      "size": [
+        120,
+        189
+      ]
+    },
+    {
+      "id": "standing_poses__left",
+      "section": "standing_poses",
+      "name": "left",
+      "role_ja": "左向き立ち。横移動・NPC配置用。",
+      "source_rect": [
+        166,
+        36,
+        108,
+        190
+      ],
+      "animation": "standing",
+      "frame_index": 1,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        167,
+        36,
+        106,
+        189
+      ],
+      "file": "sprites/standing_poses/left.png",
+      "size": [
+        106,
+        189
+      ]
+    },
+    {
+      "id": "standing_poses__right",
+      "section": "standing_poses",
+      "name": "right",
+      "role_ja": "右向き立ち。横移動・NPC配置用。",
+      "source_rect": [
+        294,
+        34,
+        110,
+        192
+      ],
+      "animation": "standing",
+      "frame_index": 2,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        294,
+        34,
+        108,
+        191
+      ],
+      "file": "sprites/standing_poses/right.png",
+      "size": [
+        108,
+        191
+      ]
+    },
+    {
+      "id": "standing_poses__back",
+      "section": "standing_poses",
+      "name": "back",
+      "role_ja": "背面立ち。フィールド移動の上方向・後ろ姿用。",
+      "source_rect": [
+        422,
+        36,
+        124,
+        190
+      ],
+      "animation": "standing",
+      "frame_index": 3,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        422,
+        36,
+        122,
+        189
+      ],
+      "file": "sprites/standing_poses/back.png",
+      "size": [
+        122,
+        189
+      ]
+    },
+    {
+      "id": "idle_animation__idle_01",
+      "section": "idle_animation",
+      "name": "idle_01",
+      "role_ja": "待機1。腕組みで静止。",
+      "source_rect": [
+        560,
+        48,
+        110,
+        180
+      ],
+      "animation": "idle",
+      "frame_index": 0,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        562,
+        49,
+        105,
+        177
+      ],
+      "file": "sprites/idle_animation/idle_01.png",
+      "size": [
+        105,
+        177
+      ]
+    },
+    {
+      "id": "idle_animation__idle_02",
+      "section": "idle_animation",
+      "name": "idle_02",
+      "role_ja": "待機2。わずかな呼吸・姿勢変化。",
+      "source_rect": [
+        676,
+        48,
+        108,
+        180
+      ],
+      "animation": "idle",
+      "frame_index": 1,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        678,
+        49,
+        103,
+        175
+      ],
+      "file": "sprites/idle_animation/idle_02.png",
+      "size": [
+        103,
+        175
+      ]
+    },
+    {
+      "id": "idle_animation__idle_03",
+      "section": "idle_animation",
+      "name": "idle_03",
+      "role_ja": "待機3。表情と重心の変化。",
+      "source_rect": [
+        790,
+        48,
+        108,
+        180
+      ],
+      "animation": "idle",
+      "frame_index": 2,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        790,
+        49,
+        104,
+        175
+      ],
+      "file": "sprites/idle_animation/idle_03.png",
+      "size": [
+        104,
+        175
+      ]
+    },
+    {
+      "id": "idle_animation__idle_04_sparkle",
+      "section": "idle_animation",
+      "name": "idle_04_sparkle",
+      "role_ja": "待機4。キラッと光る演出付き。",
+      "source_rect": [
+        904,
+        48,
+        108,
+        180
+      ],
+      "animation": "idle",
+      "frame_index": 3,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        904,
+        49,
+        104,
+        176
+      ],
+      "file": "sprites/idle_animation/idle_04_sparkle.png",
+      "size": [
+        104,
+        176
+      ]
+    },
+    {
+      "id": "walking_animation__walk_01",
+      "section": "walking_animation",
+      "name": "walk_01",
+      "role_ja": "歩行1。右向きの走り出し。",
+      "source_rect": [
+        8,
+        290,
+        120,
+        155
+      ],
+      "animation": "walk",
+      "frame_index": 0,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        8,
+        292,
+        120,
+        151
+      ],
+      "file": "sprites/walking_animation/walk_01.png",
+      "size": [
+        120,
+        151
+      ]
+    },
+    {
+      "id": "walking_animation__walk_02",
+      "section": "walking_animation",
+      "name": "walk_02",
+      "role_ja": "歩行2。足の入れ替え。",
+      "source_rect": [
+        120,
+        290,
+        118,
+        155
+      ],
+      "animation": "walk",
+      "frame_index": 1,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        120,
+        292,
+        116,
+        151
+      ],
+      "file": "sprites/walking_animation/walk_02.png",
+      "size": [
+        116,
+        151
+      ]
+    },
+    {
+      "id": "walking_animation__walk_03",
+      "section": "walking_animation",
+      "name": "walk_03",
+      "role_ja": "歩行3。中間フレーム。",
+      "source_rect": [
+        236,
+        290,
+        110,
+        155
+      ],
+      "animation": "walk",
+      "frame_index": 2,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        237,
+        292,
+        109,
+        151
+      ],
+      "file": "sprites/walking_animation/walk_03.png",
+      "size": [
+        109,
+        151
+      ]
+    },
+    {
+      "id": "walking_animation__walk_04",
+      "section": "walking_animation",
+      "name": "walk_04",
+      "role_ja": "歩行4。踏み込み。",
+      "source_rect": [
+        338,
+        290,
+        110,
+        155
+      ],
+      "animation": "walk",
+      "frame_index": 3,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        338,
+        292,
+        110,
+        150
+      ],
+      "file": "sprites/walking_animation/walk_04.png",
+      "size": [
+        110,
+        150
+      ]
+    },
+    {
+      "id": "walking_animation__walk_05",
+      "section": "walking_animation",
+      "name": "walk_05",
+      "role_ja": "歩行5。戻り。",
+      "source_rect": [
+        438,
+        290,
+        105,
+        155
+      ],
+      "animation": "walk",
+      "frame_index": 4,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        438,
+        292,
+        104,
+        151
+      ],
+      "file": "sprites/walking_animation/walk_05.png",
+      "size": [
+        104,
+        151
+      ]
+    },
+    {
+      "id": "walking_animation__walk_06",
+      "section": "walking_animation",
+      "name": "walk_06",
+      "role_ja": "歩行6。ループ終端。",
+      "source_rect": [
+        536,
+        290,
+        112,
+        155
+      ],
+      "animation": "walk",
+      "frame_index": 5,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        536,
+        292,
+        110,
+        151
+      ],
+      "file": "sprites/walking_animation/walk_06.png",
+      "size": [
+        110,
+        151
+      ]
+    },
+    {
+      "id": "damage_pose__damage_dizzy",
+      "section": "damage_pose",
+      "name": "damage_dizzy",
+      "role_ja": "被ダメージ・怯み。星と汗つきでヒット時の一瞬に使える。",
+      "source_rect": [
+        665,
+        286,
+        155,
+        170
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "combat",
+        "hurt"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        667,
+        289,
+        147,
+        162
+      ],
+      "file": "sprites/damage_pose/damage_dizzy.png",
+      "size": [
+        147,
+        162
+      ]
+    },
+    {
+      "id": "victory_pose__victory_fist_sparkle",
+      "section": "victory_pose",
+      "name": "victory_fist_sparkle",
+      "role_ja": "勝利ポーズ。拳を上げて笑うリザルト・勝利演出向け。",
+      "source_rect": [
+        835,
+        286,
+        180,
+        175
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "result",
+        "win"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        842,
+        286,
+        147,
+        170
+      ],
+      "file": "sprites/victory_pose/victory_fist_sparkle.png",
+      "size": [
+        147,
+        170
+      ]
+    },
+    {
+      "id": "attack_animation__attack_01_dual_blades",
+      "section": "attack_animation",
+      "name": "attack_01_dual_blades",
+      "role_ja": "攻撃1。包丁を構える予備動作。",
+      "source_rect": [
+        10,
+        486,
+        145,
+        155
+      ],
+      "animation": "attack",
+      "frame_index": 0,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        11,
+        490,
+        144,
+        145
+      ],
+      "file": "sprites/attack_animation/attack_01_dual_blades.png",
+      "size": [
+        144,
+        145
+      ]
+    },
+    {
+      "id": "attack_animation__attack_02_ready",
+      "section": "attack_animation",
+      "name": "attack_02_ready",
+      "role_ja": "攻撃2。低く構えて突進準備。",
+      "source_rect": [
+        148,
+        486,
+        135,
+        155
+      ],
+      "animation": "attack",
+      "frame_index": 1,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        150,
+        491,
+        133,
+        144
+      ],
+      "file": "sprites/attack_animation/attack_02_ready.png",
+      "size": [
+        133,
+        144
+      ]
+    },
+    {
+      "id": "attack_animation__attack_03_head_glow",
+      "section": "attack_animation",
+      "name": "attack_03_head_glow",
+      "role_ja": "攻撃3。頭部発光・怒りの溜め。",
+      "source_rect": [
+        275,
+        486,
+        135,
+        155
+      ],
+      "animation": "attack",
+      "frame_index": 2,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        275,
+        508,
+        135,
+        126
+      ],
+      "file": "sprites/attack_animation/attack_03_head_glow.png",
+      "size": [
+        135,
+        126
+      ]
+    },
+    {
+      "id": "attack_animation__attack_04_dash_start",
+      "section": "attack_animation",
+      "name": "attack_04_dash_start",
+      "role_ja": "攻撃4。前傾ダッシュ開始。",
+      "source_rect": [
+        398,
+        486,
+        145,
+        155
+      ],
+      "animation": "attack",
+      "frame_index": 3,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        398,
+        492,
+        145,
+        142
+      ],
+      "file": "sprites/attack_animation/attack_04_dash_start.png",
+      "size": [
+        145,
+        142
+      ]
+    },
+    {
+      "id": "attack_animation__attack_05_fire_dash",
+      "section": "attack_animation",
+      "name": "attack_05_fire_dash",
+      "role_ja": "攻撃5。炎をまとった突進。",
+      "source_rect": [
+        520,
+        484,
+        250,
+        160
+      ],
+      "animation": "attack",
+      "frame_index": 4,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        520,
+        487,
+        250,
+        150
+      ],
+      "file": "sprites/attack_animation/attack_05_fire_dash.png",
+      "size": [
+        250,
+        150
+      ]
+    },
+    {
+      "id": "attack_animation__attack_06_fire_impact",
+      "section": "attack_animation",
+      "name": "attack_06_fire_impact",
+      "role_ja": "攻撃6。炎の衝撃波・フィニッシュ。",
+      "source_rect": [
+        758,
+        470,
+        260,
+        180
+      ],
+      "animation": "attack",
+      "frame_index": 5,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        758,
+        473,
+        257,
+        169
+      ],
+      "file": "sprites/attack_animation/attack_06_fire_impact.png",
+      "size": [
+        257,
+        169
+      ]
+    },
+    {
+      "id": "skill_animation_high_blood_pressure__skill_hbp_01_angry_idle",
+      "section": "skill_animation_high_blood_pressure",
+      "name": "skill_hbp_01_angry_idle",
+      "role_ja": "スキル1。怒りマーク付きの発動前ポーズ。",
+      "source_rect": [
+        8,
+        672,
+        120,
+        190
+      ],
+      "animation": "high_blood_pressure",
+      "frame_index": 0,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        9,
+        672,
+        119,
+        187
+      ],
+      "file": "sprites/skill_animation_high_blood_pressure/skill_hbp_01_angry_idle.png",
+      "size": [
+        119,
+        187
+      ]
+    },
+    {
+      "id": "skill_animation_high_blood_pressure__skill_hbp_02_aura_rise",
+      "section": "skill_animation_high_blood_pressure",
+      "name": "skill_hbp_02_aura_rise",
+      "role_ja": "スキル2。赤いオーラが立ち上がる。",
+      "source_rect": [
+        118,
+        672,
+        132,
+        190
+      ],
+      "animation": "high_blood_pressure",
+      "frame_index": 1,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        118,
+        672,
+        132,
+        186
+      ],
+      "file": "sprites/skill_animation_high_blood_pressure/skill_hbp_02_aura_rise.png",
+      "size": [
+        132,
+        186
+      ]
+    },
+    {
+      "id": "skill_animation_high_blood_pressure__skill_hbp_03_aura_strong",
+      "section": "skill_animation_high_blood_pressure",
+      "name": "skill_hbp_03_aura_strong",
+      "role_ja": "スキル3。血圧オーラが強化。",
+      "source_rect": [
+        248,
+        672,
+        130,
+        190
+      ],
+      "animation": "high_blood_pressure",
+      "frame_index": 2,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        248,
+        672,
+        130,
+        188
+      ],
+      "file": "sprites/skill_animation_high_blood_pressure/skill_hbp_03_aura_strong.png",
+      "size": [
+        130,
+        188
+      ]
+    },
+    {
+      "id": "skill_animation_high_blood_pressure__skill_hbp_04_roar",
+      "section": "skill_animation_high_blood_pressure",
+      "name": "skill_hbp_04_roar",
+      "role_ja": "スキル4。咆哮して最大出力へ。",
+      "source_rect": [
+        374,
+        672,
+        145,
+        190
+      ],
+      "animation": "high_blood_pressure",
+      "frame_index": 3,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        374,
+        672,
+        145,
+        189
+      ],
+      "file": "sprites/skill_animation_high_blood_pressure/skill_hbp_04_roar.png",
+      "size": [
+        145,
+        189
+      ]
+    },
+    {
+      "id": "skill_animation_high_blood_pressure__skill_hbp_05_pressure_burst",
+      "section": "skill_animation_high_blood_pressure",
+      "name": "skill_hbp_05_pressure_burst",
+      "role_ja": "スキル5。血圧計と巨大波紋の必殺演出。",
+      "source_rect": [
+        520,
+        664,
+        348,
+        205
+      ],
+      "animation": "high_blood_pressure",
+      "frame_index": 4,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        520,
+        664,
+        345,
+        199
+      ],
+      "file": "sprites/skill_animation_high_blood_pressure/skill_hbp_05_pressure_burst.png",
+      "size": [
+        345,
+        199
+      ]
+    },
+    {
+      "id": "skill_animation_high_blood_pressure__skill_hbp_06_stone_afterglow",
+      "section": "skill_animation_high_blood_pressure",
+      "name": "skill_hbp_06_stone_afterglow",
+      "role_ja": "スキル6。岩片と赤熱状態の余韻。",
+      "source_rect": [
+        866,
+        672,
+        145,
+        190
+      ],
+      "animation": "high_blood_pressure",
+      "frame_index": 5,
+      "tags": [],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        868,
+        677,
+        135,
+        180
+      ],
+      "file": "sprites/skill_animation_high_blood_pressure/skill_hbp_06_stone_afterglow.png",
+      "size": [
+        135,
+        180
+      ]
+    },
+    {
+      "id": "knocked_down_fallen_pose__fallen_with_stars",
+      "section": "knocked_down_fallen_pose",
+      "name": "fallen_with_stars",
+      "role_ja": "ノックダウン・敗北状態。倒れ込み、星、落ちた道具まで含む一枚。",
+      "source_rect": [
+        10,
+        904,
+        330,
+        112
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "combat",
+        "dead",
+        "down"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        55,
+        912,
+        285,
+        99
+      ],
+      "file": "sprites/knocked_down_fallen_pose/fallen_with_stars.png",
+      "size": [
+        285,
+        99
+      ]
+    },
+    {
+      "id": "small_face_icons_portraits__portrait_normal",
+      "section": "small_face_icons_portraits",
+      "name": "portrait_normal",
+      "role_ja": "顔アイコン通常。会話UI・ステータス用。",
+      "source_rect": [
+        536,
+        902,
+        108,
+        112
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "ui",
+        "portrait"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        536,
+        904,
+        108,
+        110
+      ],
+      "file": "sprites/small_face_icons_portraits/portrait_normal.png",
+      "size": [
+        108,
+        110
+      ]
+    },
+    {
+      "id": "small_face_icons_portraits__portrait_rage",
+      "section": "small_face_icons_portraits",
+      "name": "portrait_rage",
+      "role_ja": "顔アイコン怒り・必殺時。カットインやスキル発動用。",
+      "source_rect": [
+        658,
+        902,
+        110,
+        112
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "ui",
+        "portrait"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        658,
+        903,
+        110,
+        111
+      ],
+      "file": "sprites/small_face_icons_portraits/portrait_rage.png",
+      "size": [
+        110,
+        111
+      ]
+    },
+    {
+      "id": "small_face_icons_portraits__portrait_smile",
+      "section": "small_face_icons_portraits",
+      "name": "portrait_smile",
+      "role_ja": "顔アイコン笑顔。勝利・好感度・報酬画面向け。",
+      "source_rect": [
+        780,
+        902,
+        112,
+        112
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "ui",
+        "portrait"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        781,
+        904,
+        109,
+        110
+      ],
+      "file": "sprites/small_face_icons_portraits/portrait_smile.png",
+      "size": [
+        109,
+        110
+      ]
+    },
+    {
+      "id": "weapons_signature_items__cleaver",
+      "section": "weapons_signature_items",
+      "name": "cleaver",
+      "role_ja": "大包丁。近接武器アイコン・攻撃素材。",
+      "source_rect": [
+        14,
+        1048,
+        102,
+        90
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        15,
+        1051,
+        99,
+        83
+      ],
+      "file": "sprites/weapons_signature_items/cleaver.png",
+      "size": [
+        99,
+        83
+      ]
+    },
+    {
+      "id": "weapons_signature_items__ladle",
+      "section": "weapons_signature_items",
+      "name": "ladle",
+      "role_ja": "おたま。料理人らしさを出すサブ武器・アイテム。",
+      "source_rect": [
+        118,
+        1048,
+        100,
+        90
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        119,
+        1050,
+        94,
+        83
+      ],
+      "file": "sprites/weapons_signature_items/ladle.png",
+      "size": [
+        94,
+        83
+      ]
+    },
+    {
+      "id": "weapons_signature_items__frying_pan",
+      "section": "weapons_signature_items",
+      "name": "frying_pan",
+      "role_ja": "フライパン。防御・打撃・料理道具アイコン。",
+      "source_rect": [
+        216,
+        1046,
+        118,
+        94
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        216,
+        1046,
+        118,
+        90
+      ],
+      "file": "sprites/weapons_signature_items/frying_pan.png",
+      "size": [
+        118,
+        90
+      ]
+    },
+    {
+      "id": "weapons_signature_items__chef_knife",
+      "section": "weapons_signature_items",
+      "name": "chef_knife",
+      "role_ja": "包丁。通常攻撃・装備アイコン。",
+      "source_rect": [
+        324,
+        1046,
+        100,
+        90
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        324,
+        1046,
+        100,
+        86
+      ],
+      "file": "sprites/weapons_signature_items/chef_knife.png",
+      "size": [
+        100,
+        86
+      ]
+    },
+    {
+      "id": "weapons_signature_items__emblem_pan",
+      "section": "weapons_signature_items",
+      "name": "emblem_pan",
+      "role_ja": "紋章入りフライパン。レア装備・称号アイコン。",
+      "source_rect": [
+        418,
+        1040,
+        118,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        419,
+        1043,
+        115,
+        93
+      ],
+      "file": "sprites/weapons_signature_items/emblem_pan.png",
+      "size": [
+        115,
+        93
+      ]
+    },
+    {
+      "id": "weapons_signature_items__apron_banner",
+      "section": "weapons_signature_items",
+      "name": "apron_banner",
+      "role_ja": "「厨神」旗。キャラ紋章・ユニット旗。",
+      "source_rect": [
+        552,
+        1018,
+        100,
+        126
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        554,
+        1020,
+        96,
+        121
+      ],
+      "file": "sprites/weapons_signature_items/apron_banner.png",
+      "size": [
+        96,
+        121
+      ]
+    },
+    {
+      "id": "weapons_signature_items__chef_pouch",
+      "section": "weapons_signature_items",
+      "name": "chef_pouch",
+      "role_ja": "腰袋/札。装備・素材アイコン。",
+      "source_rect": [
+        652,
+        1038,
+        118,
+        102
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        656,
+        1039,
+        110,
+        98
+      ],
+      "file": "sprites/weapons_signature_items/chef_pouch.png",
+      "size": [
+        110,
+        98
+      ]
+    },
+    {
+      "id": "weapons_signature_items__heart_monitor",
+      "section": "weapons_signature_items",
+      "name": "heart_monitor",
+      "role_ja": "心電図モニター。血圧スキル演出・状態異常UI。",
+      "source_rect": [
+        776,
+        1042,
+        116,
+        94
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        779,
+        1045,
+        109,
+        90
+      ],
+      "file": "sprites/weapons_signature_items/heart_monitor.png",
+      "size": [
+        109,
+        90
+      ]
+    },
+    {
+      "id": "weapons_signature_items__pressure_gauge",
+      "section": "weapons_signature_items",
+      "name": "pressure_gauge",
+      "role_ja": "血圧計ゲージ。必殺技UI・危険度メーター。",
+      "source_rect": [
+        892,
+        1038,
+        116,
+        96
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "item",
+        "ui"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        895,
+        1040,
+        107,
+        94
+      ],
+      "file": "sprites/weapons_signature_items/pressure_gauge.png",
+      "size": [
+        107,
+        94
+      ]
+    },
+    {
+      "id": "attack_effects__fire_slash_01",
+      "section": "attack_effects",
+      "name": "fire_slash_01",
+      "role_ja": "炎の斬撃小。通常攻撃の前半エフェクト。",
+      "source_rect": [
+        30,
+        1176,
+        100,
+        60
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        31,
+        1176,
+        99,
+        53
+      ],
+      "file": "sprites/attack_effects/fire_slash_01.png",
+      "size": [
+        99,
+        53
+      ]
+    },
+    {
+      "id": "attack_effects__fire_slash_02",
+      "section": "attack_effects",
+      "name": "fire_slash_02",
+      "role_ja": "炎の斬撃大。強攻撃・クリティカル用。",
+      "source_rect": [
+        134,
+        1160,
+        120,
+        75
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        134,
+        1160,
+        116,
+        71
+      ],
+      "file": "sprites/attack_effects/fire_slash_02.png",
+      "size": [
+        116,
+        71
+      ]
+    },
+    {
+      "id": "attack_effects__impact_spark_01",
+      "section": "attack_effects",
+      "name": "impact_spark_01",
+      "role_ja": "火花インパクト小。ヒットフラッシュ。",
+      "source_rect": [
+        252,
+        1142,
+        118,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        252,
+        1143,
+        118,
+        99
+      ],
+      "file": "sprites/attack_effects/impact_spark_01.png",
+      "size": [
+        118,
+        99
+      ]
+    },
+    {
+      "id": "attack_effects__impact_spark_02",
+      "section": "attack_effects",
+      "name": "impact_spark_02",
+      "role_ja": "火花インパクト大。ヒットストップ演出。",
+      "source_rect": [
+        370,
+        1148,
+        100,
+        92
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        370,
+        1150,
+        97,
+        90
+      ],
+      "file": "sprites/attack_effects/impact_spark_02.png",
+      "size": [
+        97,
+        90
+      ]
+    },
+    {
+      "id": "attack_effects__flaming_head_dash",
+      "section": "attack_effects",
+      "name": "flaming_head_dash",
+      "role_ja": "燃える頭の突進残像。キャラ固有攻撃エフェクト。",
+      "source_rect": [
+        470,
+        1142,
+        160,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        472,
+        1144,
+        158,
+        94
+      ],
+      "file": "sprites/attack_effects/flaming_head_dash.png",
+      "size": [
+        158,
+        94
+      ]
+    },
+    {
+      "id": "attack_effects__fire_orb_ring",
+      "section": "attack_effects",
+      "name": "fire_orb_ring",
+      "role_ja": "火球とリング。飛び道具・チャージ弾。",
+      "source_rect": [
+        620,
+        1152,
+        130,
+        90
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        620,
+        1154,
+        130,
+        85
+      ],
+      "file": "sprites/attack_effects/fire_orb_ring.png",
+      "size": [
+        130,
+        85
+      ]
+    },
+    {
+      "id": "attack_effects__fire_magic_circle",
+      "section": "attack_effects",
+      "name": "fire_magic_circle",
+      "role_ja": "炎の魔法陣。着弾前兆・範囲攻撃。",
+      "source_rect": [
+        754,
+        1155,
+        112,
+        84
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        755,
+        1155,
+        107,
+        82
+      ],
+      "file": "sprites/attack_effects/fire_magic_circle.png",
+      "size": [
+        107,
+        82
+      ]
+    },
+    {
+      "id": "attack_effects__fire_explosion",
+      "section": "attack_effects",
+      "name": "fire_explosion",
+      "role_ja": "炎爆発。攻撃フィニッシュ・範囲ヒット。",
+      "source_rect": [
+        862,
+        1134,
+        154,
+        120
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "attack"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        863,
+        1137,
+        150,
+        112
+      ],
+      "file": "sprites/attack_effects/fire_explosion.png",
+      "size": [
+        150,
+        112
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__red_target_ring",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "red_target_ring",
+      "role_ja": "赤い照準リング。スキル対象指定・ロックオン。",
+      "source_rect": [
+        10,
+        1264,
+        88,
+        94
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        10,
+        1268,
+        88,
+        86
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/red_target_ring.png",
+      "size": [
+        88,
+        86
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__heartbeat_line",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "heartbeat_line",
+      "role_ja": "心拍波形。血圧上昇・状態異常表示。",
+      "source_rect": [
+        90,
+        1264,
+        90,
+        94
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        92,
+        1268,
+        88,
+        82
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/heartbeat_line.png",
+      "size": [
+        88,
+        82
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__red_target_pulse",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "red_target_pulse",
+      "role_ja": "赤い照準パルス。警告・チャージ中表示。",
+      "source_rect": [
+        174,
+        1264,
+        90,
+        94
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        175,
+        1268,
+        83,
+        86
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/red_target_pulse.png",
+      "size": [
+        83,
+        86
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__blood_spike",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "blood_spike",
+      "role_ja": "血柱スパイク。地面からのダメージ表現。",
+      "source_rect": [
+        262,
+        1260,
+        65,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        262,
+        1260,
+        65,
+        95
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/blood_spike.png",
+      "size": [
+        65,
+        95
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__red_energy_column",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "red_energy_column",
+      "role_ja": "赤いエネルギー柱。範囲スキルの中心演出。",
+      "source_rect": [
+        326,
+        1260,
+        90,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        326,
+        1260,
+        90,
+        97
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/red_energy_column.png",
+      "size": [
+        90,
+        97
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__red_pressure_vortex",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "red_pressure_vortex",
+      "role_ja": "赤い血圧ボルテックス。持続範囲・溜めエフェクト。",
+      "source_rect": [
+        416,
+        1260,
+        130,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        416,
+        1260,
+        125,
+        97
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/red_pressure_vortex.png",
+      "size": [
+        125,
+        97
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__red_cage_dome",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "red_cage_dome",
+      "role_ja": "赤いドーム/檻。スキル結界・爆心地。",
+      "source_rect": [
+        542,
+        1260,
+        128,
+        104
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        543,
+        1260,
+        121,
+        100
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/red_cage_dome.png",
+      "size": [
+        121,
+        100
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__red_lightning_crack",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "red_lightning_crack",
+      "role_ja": "赤い稲妻亀裂。デバフ・地割れ表現。",
+      "source_rect": [
+        666,
+        1260,
+        126,
+        98
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        667,
+        1260,
+        119,
+        95
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/red_lightning_crack.png",
+      "size": [
+        119,
+        95
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__blood_pressure_impact",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "blood_pressure_impact",
+      "role_ja": "煙と血圧衝撃波。スキル着弾。",
+      "source_rect": [
+        788,
+        1260,
+        140,
+        100
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        789,
+        1260,
+        135,
+        96
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/blood_pressure_impact.png",
+      "size": [
+        135,
+        96
+      ]
+    },
+    {
+      "id": "skill_effects_high_blood_pressure__heart_icon",
+      "section": "skill_effects_high_blood_pressure",
+      "name": "heart_icon",
+      "role_ja": "赤い心臓アイコン。血圧・心拍・危険状態UI。",
+      "source_rect": [
+        926,
+        1264,
+        86,
+        94
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "skill",
+        "hbp"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        927,
+        1266,
+        81,
+        87
+      ],
+      "file": "sprites/skill_effects_high_blood_pressure/heart_icon.png",
+      "size": [
+        81,
+        87
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_01",
+      "role_ja": "汎用キラ星1。獲得・強調・光演出。",
+      "source_rect": [
+        14,
+        1392,
+        48,
+        52
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        14,
+        1394,
+        47,
+        48
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_01.png",
+      "size": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_02",
+      "role_ja": "汎用キラ星2。獲得・強調・光演出。",
+      "source_rect": [
+        70,
+        1392,
+        48,
+        52
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        72,
+        1394,
+        44,
+        48
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_02.png",
+      "size": [
+        44,
+        48
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_03",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_03",
+      "role_ja": "汎用キラ星3。獲得・強調・光演出。",
+      "source_rect": [
+        124,
+        1393,
+        44,
+        50
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        124,
+        1395,
+        43,
+        46
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_03.png",
+      "size": [
+        43,
+        46
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_small",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_small",
+      "role_ja": "小さなキラ星。UIアクセント。",
+      "source_rect": [
+        174,
+        1388,
+        34,
+        45
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        174,
+        1395,
+        22,
+        28
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_small.png",
+      "size": [
+        22,
+        28
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_04",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_04",
+      "role_ja": "汎用キラ星4。レア演出用。",
+      "source_rect": [
+        202,
+        1390,
+        50,
+        56
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        204,
+        1393,
+        46,
+        49
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_04.png",
+      "size": [
+        46,
+        49
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_tiny",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_tiny",
+      "role_ja": "極小キラ星。細かな装飾。",
+      "source_rect": [
+        258,
+        1392,
+        30,
+        45
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        258,
+        1396,
+        26,
+        23
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_tiny.png",
+      "size": [
+        26,
+        23
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_05",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_05",
+      "role_ja": "汎用キラ星5。",
+      "source_rect": [
+        284,
+        1400,
+        40,
+        44
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        284,
+        1404,
+        37,
+        38
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_05.png",
+      "size": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_06",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_06",
+      "role_ja": "汎用キラ星6。",
+      "source_rect": [
+        328,
+        1394,
+        48,
+        50
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        329,
+        1395,
+        45,
+        47
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_06.png",
+      "size": [
+        45,
+        47
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_07",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_07",
+      "role_ja": "汎用キラ星7。",
+      "source_rect": [
+        382,
+        1392,
+        48,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        384,
+        1393,
+        44,
+        50
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_07.png",
+      "size": [
+        44,
+        50
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__star_sparkle_08",
+      "section": "generic_effects_decorative_icons",
+      "name": "star_sparkle_08",
+      "role_ja": "汎用キラ星8。",
+      "source_rect": [
+        438,
+        1390,
+        46,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        438,
+        1391,
+        45,
+        49
+      ],
+      "file": "sprites/generic_effects_decorative_icons/star_sparkle_08.png",
+      "size": [
+        45,
+        49
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__smoke_puff_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "smoke_puff_01",
+      "role_ja": "白煙1。ダッシュ・着地・消滅用。",
+      "source_rect": [
+        488,
+        1390,
+        54,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        490,
+        1393,
+        49,
+        47
+      ],
+      "file": "sprites/generic_effects_decorative_icons/smoke_puff_01.png",
+      "size": [
+        49,
+        47
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__smoke_puff_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "smoke_puff_02",
+      "role_ja": "白煙2。大きめの煙。",
+      "source_rect": [
+        540,
+        1378,
+        66,
+        64
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        543,
+        1380,
+        59,
+        60
+      ],
+      "file": "sprites/generic_effects_decorative_icons/smoke_puff_02.png",
+      "size": [
+        59,
+        60
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__smoke_puff_03",
+      "section": "generic_effects_decorative_icons",
+      "name": "smoke_puff_03",
+      "role_ja": "白煙3。横長の煙。",
+      "source_rect": [
+        610,
+        1378,
+        62,
+        64
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        612,
+        1380,
+        58,
+        59
+      ],
+      "file": "sprites/generic_effects_decorative_icons/smoke_puff_03.png",
+      "size": [
+        58,
+        59
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__small_rocks_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "small_rocks_01",
+      "role_ja": "小石/土煙1。地面衝撃用。",
+      "source_rect": [
+        676,
+        1378,
+        66,
+        66
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        676,
+        1380,
+        62,
+        59
+      ],
+      "file": "sprites/generic_effects_decorative_icons/small_rocks_01.png",
+      "size": [
+        62,
+        59
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__rubble_rocks",
+      "section": "generic_effects_decorative_icons",
+      "name": "rubble_rocks",
+      "role_ja": "岩石破片。破壊・重撃演出。",
+      "source_rect": [
+        742,
+        1378,
+        70,
+        66
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        745,
+        1381,
+        65,
+        59
+      ],
+      "file": "sprites/generic_effects_decorative_icons/rubble_rocks.png",
+      "size": [
+        65,
+        59
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__small_rocks_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "small_rocks_02",
+      "role_ja": "小石/土煙2。地面移動用。",
+      "source_rect": [
+        816,
+        1390,
+        64,
+        52
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        816,
+        1390,
+        61,
+        50
+      ],
+      "file": "sprites/generic_effects_decorative_icons/small_rocks_02.png",
+      "size": [
+        61,
+        50
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__exclamation_mark",
+      "section": "generic_effects_decorative_icons",
+      "name": "exclamation_mark",
+      "role_ja": "赤い「！」。警告・発見アイコン。",
+      "source_rect": [
+        900,
+        1370,
+        36,
+        74
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        901,
+        1373,
+        31,
+        67
+      ],
+      "file": "sprites/generic_effects_decorative_icons/exclamation_mark.png",
+      "size": [
+        31,
+        67
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__question_mark",
+      "section": "generic_effects_decorative_icons",
+      "name": "question_mark",
+      "role_ja": "青い「？」。疑問・未発見アイコン。",
+      "source_rect": [
+        954,
+        1370,
+        56,
+        74
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        958,
+        1374,
+        45,
+        66
+      ],
+      "file": "sprites/generic_effects_decorative_icons/question_mark.png",
+      "size": [
+        45,
+        66
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__yellow_crescent_slash_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "yellow_crescent_slash_01",
+      "role_ja": "黄色三日月斬撃1。近接攻撃。",
+      "source_rect": [
+        10,
+        1448,
+        70,
+        70
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        12,
+        1449,
+        65,
+        65
+      ],
+      "file": "sprites/generic_effects_decorative_icons/yellow_crescent_slash_01.png",
+      "size": [
+        65,
+        65
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__yellow_crescent_slash_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "yellow_crescent_slash_02",
+      "role_ja": "黄色三日月斬撃2。連撃。",
+      "source_rect": [
+        78,
+        1448,
+        54,
+        60
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        78,
+        1450,
+        51,
+        52
+      ],
+      "file": "sprites/generic_effects_decorative_icons/yellow_crescent_slash_02.png",
+      "size": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_crescent_slash_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_crescent_slash_01",
+      "role_ja": "青い三日月斬撃1。水・風属性攻撃。",
+      "source_rect": [
+        134,
+        1448,
+        80,
+        70
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        136,
+        1449,
+        75,
+        66
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_crescent_slash_01.png",
+      "size": [
+        75,
+        66
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_crescent_slash_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_crescent_slash_02",
+      "role_ja": "青い三日月斬撃2。",
+      "source_rect": [
+        220,
+        1446,
+        60,
+        68
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        222,
+        1447,
+        57,
+        63
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_crescent_slash_02.png",
+      "size": [
+        57,
+        63
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_wave_slash_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_wave_slash_01",
+      "role_ja": "青い波斬撃1。素早い攻撃。",
+      "source_rect": [
+        280,
+        1446,
+        65,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        295,
+        1446,
+        48,
+        49
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_wave_slash_01.png",
+      "size": [
+        48,
+        49
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_wave_slash_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_wave_slash_02",
+      "role_ja": "青い波斬撃2。",
+      "source_rect": [
+        352,
+        1448,
+        78,
+        50
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        355,
+        1450,
+        71,
+        43
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_wave_slash_02.png",
+      "size": [
+        71,
+        43
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_ice_burst",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_ice_burst",
+      "role_ja": "青い氷/光バースト。ヒット・凍結。",
+      "source_rect": [
+        436,
+        1444,
+        56,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        436,
+        1446,
+        53,
+        49
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_ice_burst.png",
+      "size": [
+        53,
+        49
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_lightning_slash",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_lightning_slash",
+      "role_ja": "青い雷斬撃。高速ヒット。",
+      "source_rect": [
+        490,
+        1444,
+        90,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        493,
+        1446,
+        87,
+        45
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_lightning_slash.png",
+      "size": [
+        87,
+        45
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_plus_heal",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_plus_heal",
+      "role_ja": "緑の回復プラス。回復UI。",
+      "source_rect": [
+        596,
+        1444,
+        50,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        598,
+        1446,
+        44,
+        46
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_plus_heal.png",
+      "size": [
+        44,
+        46
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_arrow_up_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_arrow_up_01",
+      "role_ja": "緑の上矢印1。バフ・上昇表示。",
+      "source_rect": [
+        652,
+        1446,
+        46,
+        52
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        655,
+        1455,
+        39,
+        36
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_arrow_up_01.png",
+      "size": [
+        39,
+        36
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_shield",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_shield",
+      "role_ja": "緑盾。防御バフ。",
+      "source_rect": [
+        706,
+        1446,
+        52,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        710,
+        1448,
+        44,
+        48
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_shield.png",
+      "size": [
+        44,
+        48
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__blue_shield",
+      "section": "generic_effects_decorative_icons",
+      "name": "blue_shield",
+      "role_ja": "青盾。シールド・耐性アップ。",
+      "source_rect": [
+        768,
+        1446,
+        50,
+        54
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        770,
+        1448,
+        45,
+        48
+      ],
+      "file": "sprites/generic_effects_decorative_icons/blue_shield.png",
+      "size": [
+        45,
+        48
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_arrow_up_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_arrow_up_02",
+      "role_ja": "緑の上矢印2。",
+      "source_rect": [
+        828,
+        1448,
+        46,
+        48
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        832,
+        1455,
+        38,
+        37
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_arrow_up_02.png",
+      "size": [
+        38,
+        37
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_arrow_up_03",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_arrow_up_03",
+      "role_ja": "緑の上矢印3。",
+      "source_rect": [
+        872,
+        1448,
+        46,
+        48
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        876,
+        1454,
+        38,
+        38
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_arrow_up_03.png",
+      "size": [
+        38,
+        38
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_arrow_up_04",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_arrow_up_04",
+      "role_ja": "緑の上矢印4。",
+      "source_rect": [
+        916,
+        1448,
+        46,
+        48
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        920,
+        1454,
+        37,
+        38
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_arrow_up_04.png",
+      "size": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__skull_icon",
+      "section": "generic_effects_decorative_icons",
+      "name": "skull_icon",
+      "role_ja": "骸骨。撃破・毒・死亡アイコン。",
+      "source_rect": [
+        964,
+        1452,
+        50,
+        64
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        965,
+        1456,
+        49,
+        58
+      ],
+      "file": "sprites/generic_effects_decorative_icons/skull_icon.png",
+      "size": [
+        49,
+        58
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__purple_magic_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "purple_magic_01",
+      "role_ja": "紫の魔法陣1。闇属性・呪い。",
+      "source_rect": [
+        280,
+        1494,
+        66,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        282,
+        1497,
+        64,
+        35
+      ],
+      "file": "sprites/generic_effects_decorative_icons/purple_magic_01.png",
+      "size": [
+        64,
+        35
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__purple_magic_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "purple_magic_02",
+      "role_ja": "紫の魔法陣2。",
+      "source_rect": [
+        358,
+        1494,
+        64,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        358,
+        1495,
+        64,
+        37
+      ],
+      "file": "sprites/generic_effects_decorative_icons/purple_magic_02.png",
+      "size": [
+        64,
+        37
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__purple_magic_03",
+      "section": "generic_effects_decorative_icons",
+      "name": "purple_magic_03",
+      "role_ja": "紫の魔法陣3。",
+      "source_rect": [
+        430,
+        1494,
+        64,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        430,
+        1498,
+        64,
+        34
+      ],
+      "file": "sprites/generic_effects_decorative_icons/purple_magic_03.png",
+      "size": [
+        64,
+        34
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__purple_magic_04",
+      "section": "generic_effects_decorative_icons",
+      "name": "purple_magic_04",
+      "role_ja": "紫の魔法陣4。",
+      "source_rect": [
+        506,
+        1494,
+        56,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        506,
+        1498,
+        56,
+        32
+      ],
+      "file": "sprites/generic_effects_decorative_icons/purple_magic_04.png",
+      "size": [
+        56,
+        32
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__green_splash",
+      "section": "generic_effects_decorative_icons",
+      "name": "green_splash",
+      "role_ja": "緑の着弾スプラッシュ。毒/回復の着弾。",
+      "source_rect": [
+        580,
+        1494,
+        66,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        582,
+        1496,
+        61,
+        36
+      ],
+      "file": "sprites/generic_effects_decorative_icons/green_splash.png",
+      "size": [
+        61,
+        36
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__orange_splash_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "orange_splash_01",
+      "role_ja": "橙の着弾スプラッシュ1。火属性ヒット。",
+      "source_rect": [
+        642,
+        1494,
+        66,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        645,
+        1498,
+        60,
+        34
+      ],
+      "file": "sprites/generic_effects_decorative_icons/orange_splash_01.png",
+      "size": [
+        60,
+        34
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__orange_splash_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "orange_splash_02",
+      "role_ja": "橙の着弾スプラッシュ2。",
+      "source_rect": [
+        706,
+        1494,
+        66,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        709,
+        1497,
+        59,
+        35
+      ],
+      "file": "sprites/generic_effects_decorative_icons/orange_splash_02.png",
+      "size": [
+        59,
+        35
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__gray_splash",
+      "section": "generic_effects_decorative_icons",
+      "name": "gray_splash",
+      "role_ja": "灰色の着弾スプラッシュ。土煙。",
+      "source_rect": [
+        770,
+        1494,
+        62,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        771,
+        1499,
+        56,
+        31
+      ],
+      "file": "sprites/generic_effects_decorative_icons/gray_splash.png",
+      "size": [
+        56,
+        31
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__fire_splash_01",
+      "section": "generic_effects_decorative_icons",
+      "name": "fire_splash_01",
+      "role_ja": "火花スプラッシュ1。",
+      "source_rect": [
+        832,
+        1494,
+        60,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        832,
+        1496,
+        56,
+        33
+      ],
+      "file": "sprites/generic_effects_decorative_icons/fire_splash_01.png",
+      "size": [
+        56,
+        33
+      ]
+    },
+    {
+      "id": "generic_effects_decorative_icons__fire_splash_02",
+      "section": "generic_effects_decorative_icons",
+      "name": "fire_splash_02",
+      "role_ja": "火花スプラッシュ2。",
+      "source_rect": [
+        888,
+        1494,
+        70,
+        40
+      ],
+      "animation": null,
+      "frame_index": null,
+      "tags": [
+        "vfx",
+        "ui",
+        "decor"
+      ],
+      "tight_crop": true,
+      "trimmed_source_rect": [
+        892,
+        1498,
+        59,
+        30
+      ],
+      "file": "sprites/generic_effects_decorative_icons/fire_splash_02.png",
+      "size": [
+        59,
+        30
+      ]
+    }
+  ],
+  "animations": {
+    "standing": {
+      "file": "animations/standing_4f_strip.png",
+      "frameWidth": 122,
+      "frameHeight": 192,
+      "frameCount": 4,
+      "alignment": "bottom-center",
+      "fps_suggestion": 6,
+      "frames": [
+        {
+          "frame": 0,
+          "asset_id": "standing_poses__front",
+          "x": 1,
+          "y": 3,
+          "w": 120,
+          "h": 189
+        },
+        {
+          "frame": 1,
+          "asset_id": "standing_poses__left",
+          "x": 8,
+          "y": 3,
+          "w": 106,
+          "h": 189
+        },
+        {
+          "frame": 2,
+          "asset_id": "standing_poses__right",
+          "x": 7,
+          "y": 1,
+          "w": 108,
+          "h": 191
+        },
+        {
+          "frame": 3,
+          "asset_id": "standing_poses__back",
+          "x": 0,
+          "y": 3,
+          "w": 122,
+          "h": 189
+        }
+      ]
+    },
+    "idle": {
+      "file": "animations/idle_4f_strip.png",
+      "frameWidth": 106,
+      "frameHeight": 178,
+      "frameCount": 4,
+      "alignment": "bottom-center",
+      "fps_suggestion": 6,
+      "frames": [
+        {
+          "frame": 0,
+          "asset_id": "idle_animation__idle_01",
+          "x": 0,
+          "y": 1,
+          "w": 105,
+          "h": 177
+        },
+        {
+          "frame": 1,
+          "asset_id": "idle_animation__idle_02",
+          "x": 1,
+          "y": 3,
+          "w": 103,
+          "h": 175
+        },
+        {
+          "frame": 2,
+          "asset_id": "idle_animation__idle_03",
+          "x": 1,
+          "y": 3,
+          "w": 104,
+          "h": 175
+        },
+        {
+          "frame": 3,
+          "asset_id": "idle_animation__idle_04_sparkle",
+          "x": 1,
+          "y": 2,
+          "w": 104,
+          "h": 176
+        }
+      ]
+    },
+    "walk": {
+      "file": "animations/walk_6f_strip.png",
+      "frameWidth": 120,
+      "frameHeight": 152,
+      "frameCount": 6,
+      "alignment": "bottom-center",
+      "fps_suggestion": 10,
+      "frames": [
+        {
+          "frame": 0,
+          "asset_id": "walking_animation__walk_01",
+          "x": 0,
+          "y": 1,
+          "w": 120,
+          "h": 151
+        },
+        {
+          "frame": 1,
+          "asset_id": "walking_animation__walk_02",
+          "x": 2,
+          "y": 1,
+          "w": 116,
+          "h": 151
+        },
+        {
+          "frame": 2,
+          "asset_id": "walking_animation__walk_03",
+          "x": 5,
+          "y": 1,
+          "w": 109,
+          "h": 151
+        },
+        {
+          "frame": 3,
+          "asset_id": "walking_animation__walk_04",
+          "x": 5,
+          "y": 2,
+          "w": 110,
+          "h": 150
+        },
+        {
+          "frame": 4,
+          "asset_id": "walking_animation__walk_05",
+          "x": 8,
+          "y": 1,
+          "w": 104,
+          "h": 151
+        },
+        {
+          "frame": 5,
+          "asset_id": "walking_animation__walk_06",
+          "x": 5,
+          "y": 1,
+          "w": 110,
+          "h": 151
+        }
+      ]
+    },
+    "attack": {
+      "file": "animations/attack_6f_strip.png",
+      "frameWidth": 258,
+      "frameHeight": 170,
+      "frameCount": 6,
+      "alignment": "bottom-center",
+      "fps_suggestion": 8,
+      "frames": [
+        {
+          "frame": 0,
+          "asset_id": "attack_animation__attack_01_dual_blades",
+          "x": 57,
+          "y": 25,
+          "w": 144,
+          "h": 145
+        },
+        {
+          "frame": 1,
+          "asset_id": "attack_animation__attack_02_ready",
+          "x": 62,
+          "y": 26,
+          "w": 133,
+          "h": 144
+        },
+        {
+          "frame": 2,
+          "asset_id": "attack_animation__attack_03_head_glow",
+          "x": 61,
+          "y": 44,
+          "w": 135,
+          "h": 126
+        },
+        {
+          "frame": 3,
+          "asset_id": "attack_animation__attack_04_dash_start",
+          "x": 56,
+          "y": 28,
+          "w": 145,
+          "h": 142
+        },
+        {
+          "frame": 4,
+          "asset_id": "attack_animation__attack_05_fire_dash",
+          "x": 4,
+          "y": 20,
+          "w": 250,
+          "h": 150
+        },
+        {
+          "frame": 5,
+          "asset_id": "attack_animation__attack_06_fire_impact",
+          "x": 0,
+          "y": 1,
+          "w": 257,
+          "h": 169
+        }
+      ]
+    },
+    "high_blood_pressure": {
+      "file": "animations/high_blood_pressure_6f_strip.png",
+      "frameWidth": 346,
+      "frameHeight": 200,
+      "frameCount": 6,
+      "alignment": "bottom-center",
+      "fps_suggestion": 8,
+      "frames": [
+        {
+          "frame": 0,
+          "asset_id": "skill_animation_high_blood_pressure__skill_hbp_01_angry_idle",
+          "x": 113,
+          "y": 13,
+          "w": 119,
+          "h": 187
+        },
+        {
+          "frame": 1,
+          "asset_id": "skill_animation_high_blood_pressure__skill_hbp_02_aura_rise",
+          "x": 107,
+          "y": 14,
+          "w": 132,
+          "h": 186
+        },
+        {
+          "frame": 2,
+          "asset_id": "skill_animation_high_blood_pressure__skill_hbp_03_aura_strong",
+          "x": 108,
+          "y": 12,
+          "w": 130,
+          "h": 188
+        },
+        {
+          "frame": 3,
+          "asset_id": "skill_animation_high_blood_pressure__skill_hbp_04_roar",
+          "x": 100,
+          "y": 11,
+          "w": 145,
+          "h": 189
+        },
+        {
+          "frame": 4,
+          "asset_id": "skill_animation_high_blood_pressure__skill_hbp_05_pressure_burst",
+          "x": 0,
+          "y": 1,
+          "w": 345,
+          "h": 199
+        },
+        {
+          "frame": 5,
+          "asset_id": "skill_animation_high_blood_pressure__skill_hbp_06_stone_afterglow",
+          "x": 105,
+          "y": 20,
+          "w": 135,
+          "h": 180
+        }
+      ]
+    }
+  }
+}
