@@ -1,0 +1,926 @@
+{
+  "unit_name": "usamaru_duo_slices",
+  "source_image": "../usamaru.png",
+  "sprites": [
+    {
+      "key": "usamaru_5",
+      "file": "usamaru_slices/usamaru_5.png",
+      "size": [
+        127,
+        128
+      ]
+    },
+    {
+      "key": "usamaru_6",
+      "file": "usamaru_slices/usamaru_6.png",
+      "size": [
+        132,
+        130
+      ]
+    },
+    {
+      "key": "usamaru_8",
+      "file": "usamaru_slices/usamaru_8.png",
+      "size": [
+        137,
+        127
+      ]
+    },
+    {
+      "key": "usamaru_13",
+      "file": "usamaru_slices/usamaru_13.png",
+      "size": [
+        280,
+        25
+      ]
+    },
+    {
+      "key": "usamaru_14",
+      "file": "usamaru_slices/usamaru_14.png",
+      "size": [
+        253,
+        24
+      ]
+    },
+    {
+      "key": "usamaru_16",
+      "file": "usamaru_slices/usamaru_16.png",
+      "size": [
+        97,
+        108
+      ]
+    },
+    {
+      "key": "usamaru_17",
+      "file": "usamaru_slices/usamaru_17.png",
+      "size": [
+        103,
+        107
+      ]
+    },
+    {
+      "key": "usamaru_18",
+      "file": "usamaru_slices/usamaru_18.png",
+      "size": [
+        103,
+        104
+      ]
+    },
+    {
+      "key": "usamaru_19",
+      "file": "usamaru_slices/usamaru_19.png",
+      "size": [
+        86,
+        103
+      ]
+    },
+    {
+      "key": "usamaru_21",
+      "file": "usamaru_slices/usamaru_21.png",
+      "size": [
+        85,
+        103
+      ]
+    },
+    {
+      "key": "usamaru_22",
+      "file": "usamaru_slices/usamaru_22.png",
+      "size": [
+        80,
+        103
+      ]
+    },
+    {
+      "key": "usamaru_23",
+      "file": "usamaru_slices/usamaru_23.png",
+      "size": [
+        89,
+        102
+      ]
+    },
+    {
+      "key": "usamaru_28",
+      "file": "usamaru_slices/usamaru_28.png",
+      "size": [
+        324,
+        25
+      ]
+    },
+    {
+      "key": "usamaru_34",
+      "file": "usamaru_slices/usamaru_34.png",
+      "size": [
+        92,
+        105
+      ]
+    },
+    {
+      "key": "usamaru_36",
+      "file": "usamaru_slices/usamaru_36.png",
+      "size": [
+        95,
+        104
+      ]
+    },
+    {
+      "key": "usamaru_37",
+      "file": "usamaru_slices/usamaru_37.png",
+      "size": [
+        94,
+        101
+      ]
+    },
+    {
+      "key": "usamaru_38",
+      "file": "usamaru_slices/usamaru_38.png",
+      "size": [
+        105,
+        101
+      ]
+    },
+    {
+      "key": "usamaru_42",
+      "file": "usamaru_slices/usamaru_42.png",
+      "size": [
+        99,
+        97
+      ]
+    },
+    {
+      "key": "usamaru_52",
+      "file": "usamaru_slices/usamaru_52.png",
+      "size": [
+        151,
+        116
+      ]
+    },
+    {
+      "key": "usamaru_53",
+      "file": "usamaru_slices/usamaru_53.png",
+      "size": [
+        173,
+        108
+      ]
+    },
+    {
+      "key": "usamaru_55",
+      "file": "usamaru_slices/usamaru_55.png",
+      "size": [
+        211,
+        24
+      ]
+    },
+    {
+      "key": "usamaru_56",
+      "file": "usamaru_slices/usamaru_56.png",
+      "size": [
+        183,
+        94
+      ]
+    },
+    {
+      "key": "usamaru_57",
+      "file": "usamaru_slices/usamaru_57.png",
+      "size": [
+        62,
+        72
+      ]
+    },
+    {
+      "key": "usamaru_59",
+      "file": "usamaru_slices/usamaru_59.png",
+      "size": [
+        35,
+        52
+      ]
+    },
+    {
+      "key": "usamaru_93",
+      "file": "usamaru_slices/usamaru_93.png",
+      "size": [
+        108,
+        81
+      ]
+    },
+    {
+      "key": "usamaru_96",
+      "file": "usamaru_slices/usamaru_96.png",
+      "size": [
+        68,
+        65
+      ]
+    },
+    {
+      "key": "usamaru_98",
+      "file": "usamaru_slices/usamaru_98.png",
+      "size": [
+        111,
+        56
+      ]
+    },
+    {
+      "key": "usamaru_104",
+      "file": "usamaru_slices/usamaru_104.png",
+      "size": [
+        157,
+        103
+      ]
+    },
+    {
+      "key": "usamaru_105",
+      "file": "usamaru_slices/usamaru_105.png",
+      "size": [
+        66,
+        123
+      ]
+    },
+    {
+      "key": "usamaru_106",
+      "file": "usamaru_slices/usamaru_106.png",
+      "size": [
+        64,
+        122
+      ]
+    },
+    {
+      "key": "usamaru_107",
+      "file": "usamaru_slices/usamaru_107.png",
+      "size": [
+        65,
+        123
+      ]
+    },
+    {
+      "key": "usamaru_108",
+      "file": "usamaru_slices/usamaru_108.png",
+      "size": [
+        101,
+        97
+      ]
+    },
+    {
+      "key": "usamaru_109",
+      "file": "usamaru_slices/usamaru_109.png",
+      "size": [
+        130,
+        122
+      ]
+    },
+    {
+      "key": "usamaru_112",
+      "file": "usamaru_slices/usamaru_112.png",
+      "size": [
+        93,
+        62
+      ]
+    },
+    {
+      "key": "usamaru_113",
+      "file": "usamaru_slices/usamaru_113.png",
+      "size": [
+        102,
+        58
+      ]
+    },
+    {
+      "key": "usamaru_115",
+      "file": "usamaru_slices/usamaru_115.png",
+      "size": [
+        71,
+        66
+      ]
+    },
+    {
+      "key": "usamaru_116",
+      "file": "usamaru_slices/usamaru_116.png",
+      "size": [
+        56,
+        57
+      ]
+    },
+    {
+      "key": "usamaru_117",
+      "file": "usamaru_slices/usamaru_117.png",
+      "size": [
+        62,
+        60
+      ]
+    },
+    {
+      "key": "usamaru_118",
+      "file": "usamaru_slices/usamaru_118.png",
+      "size": [
+        72,
+        61
+      ]
+    },
+    {
+      "key": "usamaru_119",
+      "file": "usamaru_slices/usamaru_119.png",
+      "size": [
+        70,
+        59
+      ]
+    },
+    {
+      "key": "usamaru_120",
+      "file": "usamaru_slices/usamaru_120.png",
+      "size": [
+        77,
+        60
+      ]
+    },
+    {
+      "key": "usamaru_121",
+      "file": "usamaru_slices/usamaru_121.png",
+      "size": [
+        61,
+        57
+      ]
+    },
+    {
+      "key": "usamaru_122",
+      "file": "usamaru_slices/usamaru_122.png",
+      "size": [
+        63,
+        56
+      ]
+    },
+    {
+      "key": "usamaru_123",
+      "file": "usamaru_slices/usamaru_123.png",
+      "size": [
+        58,
+        60
+      ]
+    },
+    {
+      "key": "usamaru_124",
+      "file": "usamaru_slices/usamaru_124.png",
+      "size": [
+        61,
+        60
+      ]
+    },
+    {
+      "key": "usamaru_125",
+      "file": "usamaru_slices/usamaru_125.png",
+      "size": [
+        57,
+        51
+      ]
+    },
+    {
+      "key": "usamaru_127",
+      "file": "usamaru_slices/usamaru_127.png",
+      "size": [
+        246,
+        86
+      ]
+    },
+    {
+      "key": "usamaru_128",
+      "file": "usamaru_slices/usamaru_128.png",
+      "size": [
+        120,
+        86
+      ]
+    },
+    {
+      "key": "usamaru_129",
+      "file": "usamaru_slices/usamaru_129.png",
+      "size": [
+        112,
+        73
+      ]
+    },
+    {
+      "key": "usamaru_130",
+      "file": "usamaru_slices/usamaru_130.png",
+      "size": [
+        82,
+        67
+      ]
+    },
+    {
+      "key": "usamaru_131",
+      "file": "usamaru_slices/usamaru_131.png",
+      "size": [
+        34,
+        45
+      ]
+    },
+    {
+      "key": "usamaru_132",
+      "file": "usamaru_slices/usamaru_132.png",
+      "size": [
+        63,
+        54
+      ]
+    },
+    {
+      "key": "usamaru_133",
+      "file": "usamaru_slices/usamaru_133.png",
+      "size": [
+        75,
+        52
+      ]
+    },
+    {
+      "key": "usamaru_134",
+      "file": "usamaru_slices/usamaru_134.png",
+      "size": [
+        24,
+        24
+      ]
+    },
+    {
+      "key": "usamaru_135",
+      "file": "usamaru_slices/usamaru_135.png",
+      "size": [
+        22,
+        22
+      ]
+    },
+    {
+      "key": "usamaru_140",
+      "file": "usamaru_slices/usamaru_140.png",
+      "size": [
+        156,
+        82
+      ]
+    },
+    {
+      "key": "usamaru_141",
+      "file": "usamaru_slices/usamaru_141.png",
+      "size": [
+        90,
+        82
+      ]
+    },
+    {
+      "key": "usamaru_142",
+      "file": "usamaru_slices/usamaru_142.png",
+      "size": [
+        25,
+        27
+      ]
+    },
+    {
+      "key": "usamaru_143",
+      "file": "usamaru_slices/usamaru_143.png",
+      "size": [
+        108,
+        60
+      ]
+    },
+    {
+      "key": "usamaru_144",
+      "file": "usamaru_slices/usamaru_144.png",
+      "size": [
+        88,
+        61
+      ]
+    },
+    {
+      "key": "usamaru_145",
+      "file": "usamaru_slices/usamaru_145.png",
+      "size": [
+        24,
+        21
+      ]
+    },
+    {
+      "key": "usamaru_146",
+      "file": "usamaru_slices/usamaru_146.png",
+      "size": [
+        21,
+        28
+      ]
+    },
+    {
+      "key": "usamaru_147",
+      "file": "usamaru_slices/usamaru_147.png",
+      "size": [
+        80,
+        62
+      ]
+    },
+    {
+      "key": "usamaru_148",
+      "file": "usamaru_slices/usamaru_148.png",
+      "size": [
+        22,
+        27
+      ]
+    },
+    {
+      "key": "usamaru_149",
+      "file": "usamaru_slices/usamaru_149.png",
+      "size": [
+        89,
+        54
+      ]
+    },
+    {
+      "key": "usamaru_150",
+      "file": "usamaru_slices/usamaru_150.png",
+      "size": [
+        24,
+        29
+      ]
+    },
+    {
+      "key": "usamaru_151",
+      "file": "usamaru_slices/usamaru_151.png",
+      "size": [
+        39,
+        40
+      ]
+    },
+    {
+      "key": "usamaru_152",
+      "file": "usamaru_slices/usamaru_152.png",
+      "size": [
+        37,
+        42
+      ]
+    },
+    {
+      "key": "usamaru_153",
+      "file": "usamaru_slices/usamaru_153.png",
+      "size": [
+        49,
+        45
+      ]
+    },
+    {
+      "key": "usamaru_154",
+      "file": "usamaru_slices/usamaru_154.png",
+      "size": [
+        19,
+        21
+      ]
+    },
+    {
+      "key": "usamaru_155",
+      "file": "usamaru_slices/usamaru_155.png",
+      "size": [
+        489,
+        25
+      ]
+    },
+    {
+      "key": "usamaru_156",
+      "file": "usamaru_slices/usamaru_156.png",
+      "size": [
+        31,
+        41
+      ]
+    },
+    {
+      "key": "usamaru_157",
+      "file": "usamaru_slices/usamaru_157.png",
+      "size": [
+        35,
+        42
+      ]
+    },
+    {
+      "key": "usamaru_158",
+      "file": "usamaru_slices/usamaru_158.png",
+      "size": [
+        46,
+        48
+      ]
+    },
+    {
+      "key": "usamaru_159",
+      "file": "usamaru_slices/usamaru_159.png",
+      "size": [
+        22,
+        39
+      ]
+    },
+    {
+      "key": "usamaru_160",
+      "file": "usamaru_slices/usamaru_160.png",
+      "size": [
+        32,
+        38
+      ]
+    },
+    {
+      "key": "usamaru_161",
+      "file": "usamaru_slices/usamaru_161.png",
+      "size": [
+        37,
+        42
+      ]
+    },
+    {
+      "key": "usamaru_162",
+      "file": "usamaru_slices/usamaru_162.png",
+      "size": [
+        41,
+        42
+      ]
+    },
+    {
+      "key": "usamaru_163",
+      "file": "usamaru_slices/usamaru_163.png",
+      "size": [
+        62,
+        44
+      ]
+    },
+    {
+      "key": "usamaru_164",
+      "file": "usamaru_slices/usamaru_164.png",
+      "size": [
+        61,
+        41
+      ]
+    },
+    {
+      "key": "usamaru_165",
+      "file": "usamaru_slices/usamaru_165.png",
+      "size": [
+        66,
+        39
+      ]
+    },
+    {
+      "key": "usamaru_166",
+      "file": "usamaru_slices/usamaru_166.png",
+      "size": [
+        54,
+        45
+      ]
+    },
+    {
+      "key": "usamaru_167",
+      "file": "usamaru_slices/usamaru_167.png",
+      "size": [
+        23,
+        41
+      ]
+    },
+    {
+      "key": "usamaru_168",
+      "file": "usamaru_slices/usamaru_168.png",
+      "size": [
+        38,
+        44
+      ]
+    },
+    {
+      "key": "usamaru_169",
+      "file": "usamaru_slices/usamaru_169.png",
+      "size": [
+        48,
+        52
+      ]
+    },
+    {
+      "key": "usamaru_170",
+      "file": "usamaru_slices/usamaru_170.png",
+      "size": [
+        60,
+        55
+      ]
+    },
+    {
+      "key": "usamaru_171",
+      "file": "usamaru_slices/usamaru_171.png",
+      "size": [
+        106,
+        97
+      ]
+    },
+    {
+      "key": "usamaru_172",
+      "file": "usamaru_slices/usamaru_172.png",
+      "size": [
+        42,
+        28
+      ]
+    },
+    {
+      "key": "usamaru_173",
+      "file": "usamaru_slices/usamaru_173.png",
+      "size": [
+        37,
+        27
+      ]
+    },
+    {
+      "key": "usamaru_174",
+      "file": "usamaru_slices/usamaru_174.png",
+      "size": [
+        21,
+        22
+      ]
+    },
+    {
+      "key": "usamaru_175",
+      "file": "usamaru_slices/usamaru_175.png",
+      "size": [
+        61,
+        45
+      ]
+    },
+    {
+      "key": "usamaru_176",
+      "file": "usamaru_slices/usamaru_176.png",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "key": "usamaru_177",
+      "file": "usamaru_slices/usamaru_177.png",
+      "size": [
+        46,
+        48
+      ]
+    },
+    {
+      "key": "usamaru_178",
+      "file": "usamaru_slices/usamaru_178.png",
+      "size": [
+        27,
+        43
+      ]
+    },
+    {
+      "key": "usamaru_179",
+      "file": "usamaru_slices/usamaru_179.png",
+      "size": [
+        33,
+        43
+      ]
+    },
+    {
+      "key": "usamaru_180",
+      "file": "usamaru_slices/usamaru_180.png",
+      "size": [
+        45,
+        54
+      ]
+    },
+    {
+      "key": "usamaru_181",
+      "file": "usamaru_slices/usamaru_181.png",
+      "size": [
+        57,
+        41
+      ]
+    },
+    {
+      "key": "usamaru_182",
+      "file": "usamaru_slices/usamaru_182.png",
+      "size": [
+        50,
+        42
+      ]
+    },
+    {
+      "key": "usamaru_183",
+      "file": "usamaru_slices/usamaru_183.png",
+      "size": [
+        49,
+        41
+      ]
+    },
+    {
+      "key": "usamaru_184",
+      "file": "usamaru_slices/usamaru_184.png",
+      "size": [
+        48,
+        42
+      ]
+    },
+    {
+      "key": "usamaru_185",
+      "file": "usamaru_slices/usamaru_185.png",
+      "size": [
+        59,
+        44
+      ]
+    },
+    {
+      "key": "usamaru_186",
+      "file": "usamaru_slices/usamaru_186.png",
+      "size": [
+        64,
+        25
+      ]
+    },
+    {
+      "key": "usamaru_187",
+      "file": "usamaru_slices/usamaru_187.png",
+      "size": [
+        74,
+        30
+      ]
+    },
+    {
+      "key": "usamaru_188",
+      "file": "usamaru_slices/usamaru_188.png",
+      "size": [
+        58,
+        56
+      ]
+    },
+    {
+      "key": "usamaru_189",
+      "file": "usamaru_slices/usamaru_189.png",
+      "size": [
+        66,
+        61
+      ]
+    },
+    {
+      "key": "usamaru_190",
+      "file": "usamaru_slices/usamaru_190.png",
+      "size": [
+        72,
+        55
+      ]
+    },
+    {
+      "key": "usamaru_191",
+      "file": "usamaru_slices/usamaru_191.png",
+      "size": [
+        56,
+        56
+      ]
+    },
+    {
+      "key": "usamaru_192",
+      "file": "usamaru_slices/usamaru_192.png",
+      "size": [
+        101,
+        58
+      ]
+    },
+    {
+      "key": "usamaru_193",
+      "file": "usamaru_slices/usamaru_193.png",
+      "size": [
+        77,
+        62
+      ]
+    },
+    {
+      "key": "usamaru_194",
+      "file": "usamaru_slices/usamaru_194.png",
+      "size": [
+        59,
+        62
+      ]
+    },
+    {
+      "key": "usamaru_195",
+      "file": "usamaru_slices/usamaru_195.png",
+      "size": [
+        65,
+        65
+      ]
+    },
+    {
+      "key": "usamaru_196",
+      "file": "usamaru_slices/usamaru_196.png",
+      "size": [
+        50,
+        47
+      ]
+    },
+    {
+      "key": "usamaru_197",
+      "file": "usamaru_slices/usamaru_197.png",
+      "size": [
+        60,
+        51
+      ]
+    },
+    {
+      "key": "usamaru_198",
+      "file": "usamaru_slices/usamaru_198.png",
+      "size": [
+        54,
+        54
+      ]
+    },
+    {
+      "key": "usamaru_200",
+      "file": "usamaru_slices/usamaru_200.png",
+      "size": [
+        142,
+        129
+      ]
+    }
+  ]
+}
