@@ -14,7 +14,7 @@
   const CW = canvas.width;
   const CH = canvas.height;
   const STORAGE_KEY = "wefi-sengoku-save-v1";
-  const DATA_VERSION = "20260531-stageplanet19";
+  const DATA_VERSION = "20260531-stageplanet20";
   const STAGE_MAP_SOURCE = { w: 941, h: 1672 };
   const STAGE_ENEMY_SLOT_COUNT = 5;
   const STAGE_NORMAL_ENEMY_COUNT = 4;
@@ -1276,7 +1276,10 @@
     quickActions.addEventListener("click", handleActionClick);
     sidePanel.addEventListener("click", handleActionClick);
     if (mapHotspots) mapHotspots.addEventListener("click", handleActionClick);
-    if (battleOverlayControls) battleOverlayControls.addEventListener("click", handleActionClick);
+    if (battleOverlayControls) {
+      battleOverlayControls.addEventListener("pointerdown", handleBattleOverlayPointerDown);
+      battleOverlayControls.addEventListener("click", handleActionClick);
+    }
 
     const mapCloseBtn = document.querySelector(".map-close-button");
     if (mapCloseBtn) mapCloseBtn.addEventListener("click", handleActionClick);
@@ -1309,6 +1312,33 @@
     renderDom(true);
   }
 
+  function runBattleOverlayAction(action) {
+    if (state.view !== "battle" || !state.battle || state.battle.result || state.battle.dialogue) return false;
+    if (action === "manual-attack") {
+      manualAttack();
+      renderDom(true);
+      return true;
+    }
+    if (action === "primary-skill") {
+      const ally = activeBattleAlly();
+      const skill = ally ? activeSkillForAlly(ally) : null;
+      if (ally && skill) useSkill(skill.id, ally.id);
+      renderDom(true);
+      return true;
+    }
+    return false;
+  }
+
+  function handleBattleOverlayPointerDown(event) {
+    const button = event.target.closest("[data-action]");
+    if (!button || button.disabled) return;
+    const action = button.dataset.action || "";
+    if (!runBattleOverlayAction(action)) return;
+    button.dataset.pointerHandledAt = String(Date.now());
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
   function handleActionClick(event) {
     // 加入説明画面が表示されている場合、サイドパネル内のどこをクリックしても閉じるようにする
     if (state.showJoinCardAlly) {
@@ -1330,6 +1360,14 @@
 
     const button = event.target.closest("[data-action]");
     const action = button?.dataset.action || "";
+    if (button?.dataset.pointerHandledAt) {
+      const handledAt = Number(button.dataset.pointerHandledAt) || 0;
+      if (Date.now() - handledAt < 700) {
+        event.preventDefault();
+        return;
+      }
+      delete button.dataset.pointerHandledAt;
+    }
 
     // 戦闘結果（リザルト）画面が表示されている場合、サイドパネル内のどこをクリックしても進むようにする
     if (state.view === "battle" && state.battle?.result && !state.battle.dialogue) {
@@ -1374,13 +1412,9 @@
       useSkill(button.dataset.skillId, button.dataset.allyId);
       renderDom(true);
     } else if (action === "manual-attack") {
-      manualAttack();
-      renderDom(true);
+      runBattleOverlayAction(action);
     } else if (action === "primary-skill") {
-      const ally = activeBattleAlly();
-      const skill = ally ? activeSkillForAlly(ally) : null;
-      if (ally && skill) useSkill(skill.id, ally.id);
-      renderDom(true);
+      runBattleOverlayAction(action);
     } else if (action === "pause") {
       if (state.battle) state.battle.paused = !state.battle.paused;
       renderDom(true);
