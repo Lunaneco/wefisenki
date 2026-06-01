@@ -1,0 +1,766 @@
+{
+  "character_id": "nyannmichan",
+  "source": "nyanmichan_slices",
+  "sprites": [
+    {
+      "key": "nyanmichan_3",
+      "file": "nyanmichan_slices/nyanmichan_3.png",
+      "size": [
+        105,
+        134
+      ]
+    },
+    {
+      "key": "nyanmichan_4",
+      "file": "nyanmichan_slices/nyanmichan_4.png",
+      "size": [
+        88,
+        128
+      ]
+    },
+    {
+      "key": "nyanmichan_5",
+      "file": "nyanmichan_slices/nyanmichan_5.png",
+      "size": [
+        102,
+        129
+      ]
+    },
+    {
+      "key": "nyanmichan_6",
+      "file": "nyanmichan_slices/nyanmichan_6.png",
+      "size": [
+        88,
+        129
+      ]
+    },
+    {
+      "key": "nyanmichan_7",
+      "file": "nyanmichan_slices/nyanmichan_7.png",
+      "size": [
+        108,
+        130
+      ]
+    },
+    {
+      "key": "nyanmichan_8",
+      "file": "nyanmichan_slices/nyanmichan_8.png",
+      "size": [
+        114,
+        129
+      ]
+    },
+    {
+      "key": "nyanmichan_9",
+      "file": "nyanmichan_slices/nyanmichan_9.png",
+      "size": [
+        112,
+        129
+      ]
+    },
+    {
+      "key": "nyanmichan_10",
+      "file": "nyanmichan_slices/nyanmichan_10.png",
+      "size": [
+        131,
+        130
+      ]
+    },
+    {
+      "key": "nyanmichan_16",
+      "file": "nyanmichan_slices/nyanmichan_16.png",
+      "size": [
+        99,
+        113
+      ]
+    },
+    {
+      "key": "nyanmichan_17",
+      "file": "nyanmichan_slices/nyanmichan_17.png",
+      "size": [
+        94,
+        109
+      ]
+    },
+    {
+      "key": "nyanmichan_18",
+      "file": "nyanmichan_slices/nyanmichan_18.png",
+      "size": [
+        101,
+        111
+      ]
+    },
+    {
+      "key": "nyanmichan_19",
+      "file": "nyanmichan_slices/nyanmichan_19.png",
+      "size": [
+        97,
+        111
+      ]
+    },
+    {
+      "key": "nyanmichan_20",
+      "file": "nyanmichan_slices/nyanmichan_20.png",
+      "size": [
+        100,
+        111
+      ]
+    },
+    {
+      "key": "nyanmichan_21",
+      "file": "nyanmichan_slices/nyanmichan_21.png",
+      "size": [
+        101,
+        115
+      ]
+    },
+    {
+      "key": "nyanmichan_22",
+      "file": "nyanmichan_slices/nyanmichan_22.png",
+      "size": [
+        103,
+        112
+      ]
+    },
+    {
+      "key": "nyanmichan_24",
+      "file": "nyanmichan_slices/nyanmichan_24.png",
+      "size": [
+        127,
+        120
+      ]
+    },
+    {
+      "key": "nyanmichan_25",
+      "file": "nyanmichan_slices/nyanmichan_25.png",
+      "size": [
+        137,
+        117
+      ]
+    },
+    {
+      "key": "nyanmichan_26",
+      "file": "nyanmichan_slices/nyanmichan_26.png",
+      "size": [
+        157,
+        118
+      ]
+    },
+    {
+      "key": "nyanmichan_27",
+      "file": "nyanmichan_slices/nyanmichan_27.png",
+      "size": [
+        131,
+        117
+      ]
+    },
+    {
+      "key": "nyanmichan_28",
+      "file": "nyanmichan_slices/nyanmichan_28.png",
+      "size": [
+        143,
+        117
+      ]
+    },
+    {
+      "key": "nyanmichan_29",
+      "file": "nyanmichan_slices/nyanmichan_29.png",
+      "size": [
+        126,
+        115
+      ]
+    },
+    {
+      "key": "nyanmichan_30",
+      "file": "nyanmichan_slices/nyanmichan_30.png",
+      "size": [
+        68,
+        36
+      ]
+    },
+    {
+      "key": "nyanmichan_32",
+      "file": "nyanmichan_slices/nyanmichan_32.png",
+      "size": [
+        191,
+        176
+      ]
+    },
+    {
+      "key": "nyanmichan_33",
+      "file": "nyanmichan_slices/nyanmichan_33.png",
+      "size": [
+        146,
+        139
+      ]
+    },
+    {
+      "key": "nyanmichan_34",
+      "file": "nyanmichan_slices/nyanmichan_34.png",
+      "size": [
+        141,
+        126
+      ]
+    },
+    {
+      "key": "nyanmichan_35",
+      "file": "nyanmichan_slices/nyanmichan_35.png",
+      "size": [
+        156,
+        134
+      ]
+    },
+    {
+      "key": "nyanmichan_36",
+      "file": "nyanmichan_slices/nyanmichan_36.png",
+      "size": [
+        158,
+        121
+      ]
+    },
+    {
+      "key": "nyanmichan_37",
+      "file": "nyanmichan_slices/nyanmichan_37.png",
+      "size": [
+        177,
+        116
+      ]
+    },
+    {
+      "key": "nyanmichan_44",
+      "file": "nyanmichan_slices/nyanmichan_44.png",
+      "size": [
+        104,
+        83
+      ]
+    },
+    {
+      "key": "nyanmichan_45",
+      "file": "nyanmichan_slices/nyanmichan_45.png",
+      "size": [
+        94,
+        81
+      ]
+    },
+    {
+      "key": "nyanmichan_46",
+      "file": "nyanmichan_slices/nyanmichan_46.png",
+      "size": [
+        92,
+        80
+      ]
+    },
+    {
+      "key": "nyanmichan_47",
+      "file": "nyanmichan_slices/nyanmichan_47.png",
+      "size": [
+        90,
+        78
+      ]
+    },
+    {
+      "key": "nyanmichan_48",
+      "file": "nyanmichan_slices/nyanmichan_48.png",
+      "size": [
+        135,
+        137
+      ]
+    },
+    {
+      "key": "nyanmichan_49",
+      "file": "nyanmichan_slices/nyanmichan_49.png",
+      "size": [
+        110,
+        125
+      ]
+    },
+    {
+      "key": "nyanmichan_50",
+      "file": "nyanmichan_slices/nyanmichan_50.png",
+      "size": [
+        146,
+        84
+      ]
+    },
+    {
+      "key": "nyanmichan_52",
+      "file": "nyanmichan_slices/nyanmichan_52.png",
+      "size": [
+        93,
+        80
+      ]
+    },
+    {
+      "key": "nyanmichan_53",
+      "file": "nyanmichan_slices/nyanmichan_53.png",
+      "size": [
+        92,
+        80
+      ]
+    },
+    {
+      "key": "nyanmichan_54",
+      "file": "nyanmichan_slices/nyanmichan_54.png",
+      "size": [
+        89,
+        80
+      ]
+    },
+    {
+      "key": "nyanmichan_55",
+      "file": "nyanmichan_slices/nyanmichan_55.png",
+      "size": [
+        92,
+        79
+      ]
+    },
+    {
+      "key": "nyanmichan_57",
+      "file": "nyanmichan_slices/nyanmichan_57.png",
+      "size": [
+        122,
+        95
+      ]
+    },
+    {
+      "key": "nyanmichan_58",
+      "file": "nyanmichan_slices/nyanmichan_58.png",
+      "size": [
+        97,
+        89
+      ]
+    },
+    {
+      "key": "nyanmichan_59",
+      "file": "nyanmichan_slices/nyanmichan_59.png",
+      "size": [
+        53,
+        71
+      ]
+    },
+    {
+      "key": "nyanmichan_60",
+      "file": "nyanmichan_slices/nyanmichan_60.png",
+      "size": [
+        153,
+        82
+      ]
+    },
+    {
+      "key": "nyanmichan_61",
+      "file": "nyanmichan_slices/nyanmichan_61.png",
+      "size": [
+        51,
+        74
+      ]
+    },
+    {
+      "key": "nyanmichan_62",
+      "file": "nyanmichan_slices/nyanmichan_62.png",
+      "size": [
+        52,
+        76
+      ]
+    },
+    {
+      "key": "nyanmichan_63",
+      "file": "nyanmichan_slices/nyanmichan_63.png",
+      "size": [
+        104,
+        82
+      ]
+    },
+    {
+      "key": "nyanmichan_71",
+      "file": "nyanmichan_slices/nyanmichan_71.png",
+      "size": [
+        89,
+        113
+      ]
+    },
+    {
+      "key": "nyanmichan_72",
+      "file": "nyanmichan_slices/nyanmichan_72.png",
+      "size": [
+        98,
+        100
+      ]
+    },
+    {
+      "key": "nyanmichan_73",
+      "file": "nyanmichan_slices/nyanmichan_73.png",
+      "size": [
+        103,
+        89
+      ]
+    },
+    {
+      "key": "nyanmichan_74",
+      "file": "nyanmichan_slices/nyanmichan_74.png",
+      "size": [
+        83,
+        75
+      ]
+    },
+    {
+      "key": "nyanmichan_75",
+      "file": "nyanmichan_slices/nyanmichan_75.png",
+      "size": [
+        73,
+        75
+      ]
+    },
+    {
+      "key": "nyanmichan_76",
+      "file": "nyanmichan_slices/nyanmichan_76.png",
+      "size": [
+        85,
+        63
+      ]
+    },
+    {
+      "key": "nyanmichan_77",
+      "file": "nyanmichan_slices/nyanmichan_77.png",
+      "size": [
+        90,
+        73
+      ]
+    },
+    {
+      "key": "nyanmichan_80",
+      "file": "nyanmichan_slices/nyanmichan_80.png",
+      "size": [
+        88,
+        98
+      ]
+    },
+    {
+      "key": "nyanmichan_85",
+      "file": "nyanmichan_slices/nyanmichan_85.png",
+      "size": [
+        95,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_86",
+      "file": "nyanmichan_slices/nyanmichan_86.png",
+      "size": [
+        81,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_87",
+      "file": "nyanmichan_slices/nyanmichan_87.png",
+      "size": [
+        235,
+        35
+      ]
+    },
+    {
+      "key": "nyanmichan_88",
+      "file": "nyanmichan_slices/nyanmichan_88.png",
+      "size": [
+        85,
+        83
+      ]
+    },
+    {
+      "key": "nyanmichan_89",
+      "file": "nyanmichan_slices/nyanmichan_89.png",
+      "size": [
+        70,
+        57
+      ]
+    },
+    {
+      "key": "nyanmichan_90",
+      "file": "nyanmichan_slices/nyanmichan_90.png",
+      "size": [
+        69,
+        77
+      ]
+    },
+    {
+      "key": "nyanmichan_91",
+      "file": "nyanmichan_slices/nyanmichan_91.png",
+      "size": [
+        24,
+        30
+      ]
+    },
+    {
+      "key": "nyanmichan_92",
+      "file": "nyanmichan_slices/nyanmichan_92.png",
+      "size": [
+        23,
+        23
+      ]
+    },
+    {
+      "key": "nyanmichan_93",
+      "file": "nyanmichan_slices/nyanmichan_93.png",
+      "size": [
+        43,
+        54
+      ]
+    },
+    {
+      "key": "nyanmichan_94",
+      "file": "nyanmichan_slices/nyanmichan_94.png",
+      "size": [
+        57,
+        53
+      ]
+    },
+    {
+      "key": "nyanmichan_95",
+      "file": "nyanmichan_slices/nyanmichan_95.png",
+      "size": [
+        46,
+        42
+      ]
+    },
+    {
+      "key": "nyanmichan_96",
+      "file": "nyanmichan_slices/nyanmichan_96.png",
+      "size": [
+        42,
+        44
+      ]
+    },
+    {
+      "key": "nyanmichan_97",
+      "file": "nyanmichan_slices/nyanmichan_97.png",
+      "size": [
+        58,
+        38
+      ]
+    },
+    {
+      "key": "nyanmichan_98",
+      "file": "nyanmichan_slices/nyanmichan_98.png",
+      "size": [
+        19,
+        21
+      ]
+    },
+    {
+      "key": "nyanmichan_99",
+      "file": "nyanmichan_slices/nyanmichan_99.png",
+      "size": [
+        40,
+        28
+      ]
+    },
+    {
+      "key": "nyanmichan_100",
+      "file": "nyanmichan_slices/nyanmichan_100.png",
+      "size": [
+        21,
+        20
+      ]
+    },
+    {
+      "key": "nyanmichan_101",
+      "file": "nyanmichan_slices/nyanmichan_101.png",
+      "size": [
+        18,
+        28
+      ]
+    },
+    {
+      "key": "nyanmichan_102",
+      "file": "nyanmichan_slices/nyanmichan_102.png",
+      "size": [
+        18,
+        23
+      ]
+    },
+    {
+      "key": "nyanmichan_103",
+      "file": "nyanmichan_slices/nyanmichan_103.png",
+      "size": [
+        22,
+        24
+      ]
+    },
+    {
+      "key": "nyanmichan_104",
+      "file": "nyanmichan_slices/nyanmichan_104.png",
+      "size": [
+        54,
+        36
+      ]
+    },
+    {
+      "key": "nyanmichan_105",
+      "file": "nyanmichan_slices/nyanmichan_105.png",
+      "size": [
+        58,
+        37
+      ]
+    },
+    {
+      "key": "nyanmichan_106",
+      "file": "nyanmichan_slices/nyanmichan_106.png",
+      "size": [
+        70,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_107",
+      "file": "nyanmichan_slices/nyanmichan_107.png",
+      "size": [
+        45,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_108",
+      "file": "nyanmichan_slices/nyanmichan_108.png",
+      "size": [
+        59,
+        19
+      ]
+    },
+    {
+      "key": "nyanmichan_109",
+      "file": "nyanmichan_slices/nyanmichan_109.png",
+      "size": [
+        56,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_110",
+      "file": "nyanmichan_slices/nyanmichan_110.png",
+      "size": [
+        71,
+        19
+      ]
+    },
+    {
+      "key": "nyanmichan_111",
+      "file": "nyanmichan_slices/nyanmichan_111.png",
+      "size": [
+        79,
+        59
+      ]
+    },
+    {
+      "key": "nyanmichan_112",
+      "file": "nyanmichan_slices/nyanmichan_112.png",
+      "size": [
+        52,
+        39
+      ]
+    },
+    {
+      "key": "nyanmichan_113",
+      "file": "nyanmichan_slices/nyanmichan_113.png",
+      "size": [
+        74,
+        62
+      ]
+    },
+    {
+      "key": "nyanmichan_114",
+      "file": "nyanmichan_slices/nyanmichan_114.png",
+      "size": [
+        80,
+        51
+      ]
+    },
+    {
+      "key": "nyanmichan_115",
+      "file": "nyanmichan_slices/nyanmichan_115.png",
+      "size": [
+        70,
+        33
+      ]
+    },
+    {
+      "key": "nyanmichan_116",
+      "file": "nyanmichan_slices/nyanmichan_116.png",
+      "size": [
+        76,
+        30
+      ]
+    },
+    {
+      "key": "nyanmichan_117",
+      "file": "nyanmichan_slices/nyanmichan_117.png",
+      "size": [
+        64,
+        41
+      ]
+    },
+    {
+      "key": "nyanmichan_118",
+      "file": "nyanmichan_slices/nyanmichan_118.png",
+      "size": [
+        49,
+        34
+      ]
+    },
+    {
+      "key": "nyanmichan_119",
+      "file": "nyanmichan_slices/nyanmichan_119.png",
+      "size": [
+        38,
+        23
+      ]
+    },
+    {
+      "key": "nyanmichan_120",
+      "file": "nyanmichan_slices/nyanmichan_120.png",
+      "size": [
+        54,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_121",
+      "file": "nyanmichan_slices/nyanmichan_121.png",
+      "size": [
+        31,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_122",
+      "file": "nyanmichan_slices/nyanmichan_122.png",
+      "size": [
+        42,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_123",
+      "file": "nyanmichan_slices/nyanmichan_123.png",
+      "size": [
+        41,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_124",
+      "file": "nyanmichan_slices/nyanmichan_124.png",
+      "size": [
+        41,
+        18
+      ]
+    },
+    {
+      "key": "nyanmichan_125",
+      "file": "nyanmichan_slices/nyanmichan_125.png",
+      "size": [
+        42,
+        18
+      ]
+    }
+  ]
+}
