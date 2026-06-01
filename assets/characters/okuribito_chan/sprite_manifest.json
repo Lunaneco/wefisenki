@@ -1,0 +1,2101 @@
+{
+  "name": "wefi_vesting_girl_sprites_pack_ultraprecise",
+  "source_image": "/mnt/data/ghostwriter_images/context/4ae10a19-f2ce-59ba-b479-5dd6b70deff4.png",
+  "sprite_count": 127,
+  "sprites": [
+    {
+      "key": "pose_front",
+      "category": "pose",
+      "description": "基本立ちポーズ 正面",
+      "source_box": [
+        18,
+        42,
+        151,
+        222
+      ],
+      "file": "sprites/pose/pose_front.png",
+      "size": [
+        124,
+        176
+      ]
+    },
+    {
+      "key": "pose_left",
+      "category": "pose",
+      "description": "基本立ちポーズ 左向き",
+      "source_box": [
+        161,
+        42,
+        272,
+        222
+      ],
+      "file": "sprites/pose/pose_left.png",
+      "size": [
+        111,
+        172
+      ]
+    },
+    {
+      "key": "pose_right",
+      "category": "pose",
+      "description": "基本立ちポーズ 右向き",
+      "source_box": [
+        271,
+        42,
+        381,
+        222
+      ],
+      "file": "sprites/pose/pose_right.png",
+      "size": [
+        110,
+        172
+      ]
+    },
+    {
+      "key": "pose_back",
+      "category": "pose",
+      "description": "基本立ちポーズ 背面",
+      "source_box": [
+        382,
+        42,
+        489,
+        222
+      ],
+      "file": "sprites/pose/pose_back.png",
+      "size": [
+        106,
+        180
+      ]
+    },
+    {
+      "key": "idle_01",
+      "category": "idle",
+      "description": "アイドル / 待機 1/4",
+      "source_box": [
+        497,
+        42,
+        621,
+        222
+      ],
+      "file": "sprites/idle/idle_01.png",
+      "size": [
+        117,
+        171
+      ]
+    },
+    {
+      "key": "idle_02",
+      "category": "idle",
+      "description": "アイドル / 待機 2/4",
+      "source_box": [
+        628,
+        42,
+        749,
+        222
+      ],
+      "file": "sprites/idle/idle_02.png",
+      "size": [
+        117,
+        170
+      ]
+    },
+    {
+      "key": "idle_03",
+      "category": "idle",
+      "description": "アイドル / 待機 3/4",
+      "source_box": [
+        753,
+        42,
+        878,
+        222
+      ],
+      "file": "sprites/idle/idle_03.png",
+      "size": [
+        122,
+        170
+      ]
+    },
+    {
+      "key": "idle_04",
+      "category": "idle",
+      "description": "アイドル / 待機 4/4",
+      "source_box": [
+        883,
+        42,
+        1014,
+        222
+      ],
+      "file": "sprites/idle/idle_04.png",
+      "size": [
+        119,
+        170
+      ]
+    },
+    {
+      "key": "walk_01",
+      "category": "walk",
+      "description": "歩行 1/6",
+      "source_box": [
+        8,
+        273,
+        102,
+        420
+      ],
+      "file": "sprites/walk/walk_01.png",
+      "size": [
+        94,
+        137
+      ]
+    },
+    {
+      "key": "walk_02",
+      "category": "walk",
+      "description": "歩行 2/6",
+      "source_box": [
+        97,
+        273,
+        197,
+        420
+      ],
+      "file": "sprites/walk/walk_02.png",
+      "size": [
+        100,
+        132
+      ]
+    },
+    {
+      "key": "walk_03",
+      "category": "walk",
+      "description": "歩行 3/6",
+      "source_box": [
+        197,
+        273,
+        299,
+        420
+      ],
+      "file": "sprites/walk/walk_03.png",
+      "size": [
+        102,
+        135
+      ]
+    },
+    {
+      "key": "walk_04",
+      "category": "walk",
+      "description": "歩行 4/6",
+      "source_box": [
+        298,
+        273,
+        399,
+        420
+      ],
+      "file": "sprites/walk/walk_04.png",
+      "size": [
+        101,
+        134
+      ]
+    },
+    {
+      "key": "walk_05",
+      "category": "walk",
+      "description": "歩行 5/6",
+      "source_box": [
+        398,
+        273,
+        501,
+        420
+      ],
+      "file": "sprites/walk/walk_05.png",
+      "size": [
+        103,
+        145
+      ]
+    },
+    {
+      "key": "walk_06",
+      "category": "walk",
+      "description": "歩行 6/6",
+      "source_box": [
+        488,
+        273,
+        550,
+        420
+      ],
+      "file": "sprites/walk/walk_06.png",
+      "size": [
+        62,
+        131
+      ]
+    },
+    {
+      "key": "attack_01",
+      "category": "attack",
+      "description": "通常攻撃 WFIマイニング斬り 1/6",
+      "source_box": [
+        487,
+        281,
+        576,
+        430
+      ],
+      "file": "sprites/attack/attack_01.png",
+      "size": [
+        89,
+        143
+      ]
+    },
+    {
+      "key": "attack_02",
+      "category": "attack",
+      "description": "通常攻撃 WFIマイニング斬り 2/6",
+      "source_box": [
+        570,
+        281,
+        646,
+        430
+      ],
+      "file": "sprites/attack/attack_02.png",
+      "size": [
+        76,
+        132
+      ]
+    },
+    {
+      "key": "attack_03",
+      "category": "attack",
+      "description": "通常攻撃 WFIマイニング斬り 3/6",
+      "source_box": [
+        640,
+        281,
+        717,
+        430
+      ],
+      "file": "sprites/attack/attack_03.png",
+      "size": [
+        77,
+        114
+      ]
+    },
+    {
+      "key": "attack_04",
+      "category": "attack",
+      "description": "通常攻撃 WFIマイニング斬り 4/6",
+      "source_box": [
+        710,
+        281,
+        788,
+        430
+      ],
+      "file": "sprites/attack/attack_04.png",
+      "size": [
+        78,
+        141
+      ]
+    },
+    {
+      "key": "attack_05",
+      "category": "attack",
+      "description": "通常攻撃 WFIマイニング斬り 5/6",
+      "source_box": [
+        780,
+        268,
+        898,
+        430
+      ],
+      "file": "sprites/attack/attack_05.png",
+      "size": [
+        118,
+        152
+      ]
+    },
+    {
+      "key": "attack_06",
+      "category": "attack",
+      "description": "通常攻撃 WFIマイニング斬り 6/6",
+      "source_box": [
+        890,
+        268,
+        1024,
+        430
+      ],
+      "file": "sprites/attack/attack_06.png",
+      "size": [
+        133,
+        145
+      ]
+    },
+    {
+      "key": "skill_half_awakening_01",
+      "category": "skill_half_awakening",
+      "description": "スキル発動 半減期覚醒 1/6",
+      "source_box": [
+        8,
+        485,
+        160,
+        630
+      ],
+      "file": "sprites/skill_half_awakening/skill_half_awakening_01.png",
+      "size": [
+        148,
+        134
+      ]
+    },
+    {
+      "key": "skill_half_awakening_02",
+      "category": "skill_half_awakening",
+      "description": "スキル発動 半減期覚醒 2/6",
+      "source_box": [
+        160,
+        485,
+        326,
+        630
+      ],
+      "file": "sprites/skill_half_awakening/skill_half_awakening_02.png",
+      "size": [
+        152,
+        134
+      ]
+    },
+    {
+      "key": "skill_half_awakening_03",
+      "category": "skill_half_awakening",
+      "description": "スキル発動 半減期覚醒 3/6",
+      "source_box": [
+        326,
+        485,
+        495,
+        630
+      ],
+      "file": "sprites/skill_half_awakening/skill_half_awakening_03.png",
+      "size": [
+        143,
+        135
+      ]
+    },
+    {
+      "key": "skill_half_awakening_04",
+      "category": "skill_half_awakening",
+      "description": "スキル発動 半減期覚醒 4/6",
+      "source_box": [
+        495,
+        485,
+        653,
+        630
+      ],
+      "file": "sprites/skill_half_awakening/skill_half_awakening_04.png",
+      "size": [
+        133,
+        136
+      ]
+    },
+    {
+      "key": "skill_half_awakening_05",
+      "category": "skill_half_awakening",
+      "description": "スキル発動 半減期覚醒 5/6",
+      "source_box": [
+        653,
+        485,
+        821,
+        630
+      ],
+      "file": "sprites/skill_half_awakening/skill_half_awakening_05.png",
+      "size": [
+        158,
+        138
+      ]
+    },
+    {
+      "key": "skill_half_awakening_06",
+      "category": "skill_half_awakening",
+      "description": "スキル発動 半減期覚醒 6/6",
+      "source_box": [
+        821,
+        485,
+        1024,
+        630
+      ],
+      "file": "sprites/skill_half_awakening/skill_half_awakening_06.png",
+      "size": [
+        193,
+        145
+      ]
+    },
+    {
+      "key": "finisher_future_city_01",
+      "category": "finisher_future_city",
+      "description": "フィニッシャー 未来形成 1/4",
+      "source_box": [
+        10,
+        677,
+        112,
+        830
+      ],
+      "file": "sprites/finisher_future_city/finisher_future_city_01.png",
+      "size": [
+        102,
+        142
+      ]
+    },
+    {
+      "key": "finisher_future_city_02",
+      "category": "finisher_future_city",
+      "description": "フィニッシャー 未来形成 2/4",
+      "source_box": [
+        112,
+        677,
+        220,
+        830
+      ],
+      "file": "sprites/finisher_future_city/finisher_future_city_02.png",
+      "size": [
+        108,
+        150
+      ]
+    },
+    {
+      "key": "finisher_future_city_03",
+      "category": "finisher_future_city",
+      "description": "フィニッシャー 未来形成 3/4",
+      "source_box": [
+        220,
+        677,
+        330,
+        830
+      ],
+      "file": "sprites/finisher_future_city/finisher_future_city_03.png",
+      "size": [
+        110,
+        147
+      ]
+    },
+    {
+      "key": "finisher_future_city_04",
+      "category": "finisher_future_city",
+      "description": "フィニッシャー 未来形成 4/4",
+      "source_box": [
+        330,
+        660,
+        520,
+        830
+      ],
+      "file": "sprites/finisher_future_city/finisher_future_city_04.png",
+      "size": [
+        189,
+        170
+      ]
+    },
+    {
+      "key": "skill_5year_lock_01",
+      "category": "skill_5year_lock",
+      "description": "スキル 5年ロック 1/4",
+      "source_box": [
+        520,
+        678,
+        650,
+        830
+      ],
+      "file": "sprites/skill_5year_lock/skill_5year_lock_01.png",
+      "size": [
+        129,
+        151
+      ]
+    },
+    {
+      "key": "skill_5year_lock_02",
+      "category": "skill_5year_lock",
+      "description": "スキル 5年ロック 2/4",
+      "source_box": [
+        650,
+        678,
+        770,
+        830
+      ],
+      "file": "sprites/skill_5year_lock/skill_5year_lock_02.png",
+      "size": [
+        120,
+        152
+      ]
+    },
+    {
+      "key": "skill_5year_lock_03",
+      "category": "skill_5year_lock",
+      "description": "スキル 5年ロック 3/4",
+      "source_box": [
+        770,
+        678,
+        895,
+        830
+      ],
+      "file": "sprites/skill_5year_lock/skill_5year_lock_03.png",
+      "size": [
+        125,
+        152
+      ]
+    },
+    {
+      "key": "skill_5year_lock_04",
+      "category": "skill_5year_lock",
+      "description": "スキル 5年ロック 4/4",
+      "source_box": [
+        895,
+        678,
+        1024,
+        830
+      ],
+      "file": "sprites/skill_5year_lock/skill_5year_lock_04.png",
+      "size": [
+        125,
+        152
+      ]
+    },
+    {
+      "key": "state_damage",
+      "category": "state",
+      "description": "ダメージ",
+      "source_box": [
+        10,
+        874,
+        157,
+        1018
+      ],
+      "file": "sprites/state/state_damage.png",
+      "size": [
+        129,
+        144
+      ]
+    },
+    {
+      "key": "state_knockdown_01",
+      "category": "state",
+      "description": "ノックダウン A",
+      "source_box": [
+        170,
+        885,
+        320,
+        1018
+      ],
+      "file": "sprites/state/state_knockdown_01.png",
+      "size": [
+        143,
+        80
+      ]
+    },
+    {
+      "key": "state_knockdown_02",
+      "category": "state",
+      "description": "ノックダウン B",
+      "source_box": [
+        323,
+        874,
+        476,
+        1018
+      ],
+      "file": "sprites/state/state_knockdown_02.png",
+      "size": [
+        148,
+        131
+      ]
+    },
+    {
+      "key": "state_victory",
+      "category": "state",
+      "description": "勝利ポーズ",
+      "source_box": [
+        484,
+        855,
+        660,
+        1018
+      ],
+      "file": "sprites/state/state_victory.png",
+      "size": [
+        159,
+        163
+      ]
+    },
+    {
+      "key": "face_normal",
+      "category": "face_icon",
+      "description": "表情アイコン normal",
+      "source_box": [
+        668,
+        877,
+        733,
+        941
+      ],
+      "file": "sprites/face_icon/face_normal.png",
+      "size": [
+        65,
+        62
+      ]
+    },
+    {
+      "key": "face_happy",
+      "category": "face_icon",
+      "description": "表情アイコン happy",
+      "source_box": [
+        736,
+        877,
+        802,
+        941
+      ],
+      "file": "sprites/face_icon/face_happy.png",
+      "size": [
+        66,
+        62
+      ]
+    },
+    {
+      "key": "face_surprised",
+      "category": "face_icon",
+      "description": "表情アイコン surprised",
+      "source_box": [
+        805,
+        877,
+        871,
+        941
+      ],
+      "file": "sprites/face_icon/face_surprised.png",
+      "size": [
+        66,
+        62
+      ]
+    },
+    {
+      "key": "face_sparkle",
+      "category": "face_icon",
+      "description": "表情アイコン sparkle",
+      "source_box": [
+        874,
+        877,
+        940,
+        941
+      ],
+      "file": "sprites/face_icon/face_sparkle.png",
+      "size": [
+        65,
+        62
+      ]
+    },
+    {
+      "key": "face_teary",
+      "category": "face_icon",
+      "description": "表情アイコン teary",
+      "source_box": [
+        943,
+        877,
+        1009,
+        941
+      ],
+      "file": "sprites/face_icon/face_teary.png",
+      "size": [
+        66,
+        62
+      ]
+    },
+    {
+      "key": "face_laugh",
+      "category": "face_icon",
+      "description": "表情アイコン laugh",
+      "source_box": [
+        668,
+        944,
+        733,
+        1008
+      ],
+      "file": "sprites/face_icon/face_laugh.png",
+      "size": [
+        65,
+        64
+      ]
+    },
+    {
+      "key": "face_wink",
+      "category": "face_icon",
+      "description": "表情アイコン wink",
+      "source_box": [
+        736,
+        944,
+        802,
+        1008
+      ],
+      "file": "sprites/face_icon/face_wink.png",
+      "size": [
+        66,
+        64
+      ]
+    },
+    {
+      "key": "face_joy",
+      "category": "face_icon",
+      "description": "表情アイコン joy",
+      "source_box": [
+        805,
+        944,
+        871,
+        1008
+      ],
+      "file": "sprites/face_icon/face_joy.png",
+      "size": [
+        65,
+        64
+      ]
+    },
+    {
+      "key": "face_grin",
+      "category": "face_icon",
+      "description": "表情アイコン grin",
+      "source_box": [
+        874,
+        944,
+        940,
+        1008
+      ],
+      "file": "sprites/face_icon/face_grin.png",
+      "size": [
+        65,
+        64
+      ]
+    },
+    {
+      "key": "face_crying_laugh",
+      "category": "face_icon",
+      "description": "表情アイコン crying_laugh",
+      "source_box": [
+        943,
+        944,
+        1009,
+        1008
+      ],
+      "file": "sprites/face_icon/face_crying_laugh.png",
+      "size": [
+        66,
+        64
+      ]
+    },
+    {
+      "key": "item_chainsaw",
+      "category": "item",
+      "description": "チェーンソー",
+      "source_box": [
+        12,
+        1058,
+        106,
+        1098
+      ],
+      "file": "sprites/item/item_chainsaw.png",
+      "size": [
+        94,
+        29
+      ]
+    },
+    {
+      "key": "item_wfi_coin",
+      "category": "item",
+      "description": "WFIコイン",
+      "source_box": [
+        108,
+        1056,
+        182,
+        1100
+      ],
+      "file": "sprites/item/item_wfi_coin.png",
+      "size": [
+        61,
+        44
+      ]
+    },
+    {
+      "key": "item_pink_ribbon",
+      "category": "item",
+      "description": "ピンクリボン",
+      "source_box": [
+        182,
+        1056,
+        250,
+        1096
+      ],
+      "file": "sprites/item/item_pink_ribbon.png",
+      "size": [
+        60,
+        25
+      ]
+    },
+    {
+      "key": "item_smartphone",
+      "category": "item",
+      "description": "スマホ配信",
+      "source_box": [
+        250,
+        1054,
+        320,
+        1098
+      ],
+      "file": "sprites/item/item_smartphone.png",
+      "size": [
+        65,
+        44
+      ]
+    },
+    {
+      "key": "item_mining_block",
+      "category": "item",
+      "description": "マイニングブロック",
+      "source_box": [
+        320,
+        1054,
+        392,
+        1098
+      ],
+      "file": "sprites/item/item_mining_block.png",
+      "size": [
+        72,
+        35
+      ]
+    },
+    {
+      "key": "item_lock_chain",
+      "category": "item",
+      "description": "ロックチェーン",
+      "source_box": [
+        392,
+        1052,
+        474,
+        1098
+      ],
+      "file": "sprites/item/item_lock_chain.png",
+      "size": [
+        75,
+        37
+      ]
+    },
+    {
+      "key": "item_future_city_crest",
+      "category": "item",
+      "description": "未来都市クレスト",
+      "source_box": [
+        474,
+        1050,
+        586,
+        1100
+      ],
+      "file": "sprites/item/item_future_city_crest.png",
+      "size": [
+        106,
+        44
+      ]
+    },
+    {
+      "key": "item_heart_support",
+      "category": "item",
+      "description": "ハートサポート",
+      "source_box": [
+        586,
+        1054,
+        646,
+        1100
+      ],
+      "file": "sprites/item/item_heart_support.png",
+      "size": [
+        57,
+        37
+      ]
+    },
+    {
+      "key": "item_gift_box",
+      "category": "item",
+      "description": "ありがとうギフト",
+      "source_box": [
+        646,
+        1052,
+        724,
+        1098
+      ],
+      "file": "sprites/item/item_gift_box.png",
+      "size": [
+        63,
+        40
+      ]
+    },
+    {
+      "key": "item_stable_coin",
+      "category": "item",
+      "description": "ステーブルコイン",
+      "source_box": [
+        724,
+        1054,
+        800,
+        1100
+      ],
+      "file": "sprites/item/item_stable_coin.png",
+      "size": [
+        67,
+        38
+      ]
+    },
+    {
+      "key": "item_price_rise",
+      "category": "item",
+      "description": "積み上げチャート",
+      "source_box": [
+        800,
+        1052,
+        882,
+        1098
+      ],
+      "file": "sprites/item/item_price_rise.png",
+      "size": [
+        51,
+        35
+      ]
+    },
+    {
+      "key": "item_half_term",
+      "category": "item",
+      "description": "半減期アイコン",
+      "source_box": [
+        882,
+        1052,
+        960,
+        1098
+      ],
+      "file": "sprites/item/item_half_term.png",
+      "size": [
+        76,
+        31
+      ]
+    },
+    {
+      "key": "item_cat_neko",
+      "category": "item",
+      "description": "ネコちゃん",
+      "source_box": [
+        960,
+        1050,
+        1024,
+        1098
+      ],
+      "file": "sprites/item/item_cat_neko.png",
+      "size": [
+        52,
+        35
+      ]
+    },
+    {
+      "key": "attack_fx_slash_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        14,
+        1202,
+        66,
+        1248
+      ],
+      "file": "sprites/attack_effect/attack_fx_slash_01.png",
+      "size": [
+        52,
+        37
+      ]
+    },
+    {
+      "key": "attack_fx_slash_02",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        66,
+        1202,
+        128,
+        1248
+      ],
+      "file": "sprites/attack_effect/attack_fx_slash_02.png",
+      "size": [
+        62,
+        45
+      ]
+    },
+    {
+      "key": "attack_fx_slash_03",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        128,
+        1198,
+        194,
+        1250
+      ],
+      "file": "sprites/attack_effect/attack_fx_slash_03.png",
+      "size": [
+        66,
+        48
+      ]
+    },
+    {
+      "key": "attack_fx_impact_star",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        194,
+        1196,
+        272,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_impact_star.png",
+      "size": [
+        78,
+        53
+      ]
+    },
+    {
+      "key": "attack_fx_coin_cluster_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        272,
+        1194,
+        338,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_coin_cluster_01.png",
+      "size": [
+        66,
+        57
+      ]
+    },
+    {
+      "key": "attack_fx_coin_cluster_02",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        338,
+        1194,
+        410,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_coin_cluster_02.png",
+      "size": [
+        72,
+        58
+      ]
+    },
+    {
+      "key": "attack_fx_coins_large",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        410,
+        1190,
+        492,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_coins_large.png",
+      "size": [
+        82,
+        62
+      ]
+    },
+    {
+      "key": "attack_fx_sparkle_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        492,
+        1194,
+        542,
+        1250
+      ],
+      "file": "sprites/attack_effect/attack_fx_sparkle_01.png",
+      "size": [
+        50,
+        54
+      ]
+    },
+    {
+      "key": "attack_fx_sparkle_02",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        542,
+        1194,
+        598,
+        1250
+      ],
+      "file": "sprites/attack_effect/attack_fx_sparkle_02.png",
+      "size": [
+        56,
+        42
+      ]
+    },
+    {
+      "key": "attack_fx_sparkle_03",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        598,
+        1194,
+        660,
+        1250
+      ],
+      "file": "sprites/attack_effect/attack_fx_sparkle_03.png",
+      "size": [
+        62,
+        50
+      ]
+    },
+    {
+      "key": "attack_fx_sparkle_04",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        660,
+        1194,
+        728,
+        1250
+      ],
+      "file": "sprites/attack_effect/attack_fx_sparkle_04.png",
+      "size": [
+        68,
+        55
+      ]
+    },
+    {
+      "key": "attack_fx_magic_circle_small",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        728,
+        1192,
+        794,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_magic_circle_small.png",
+      "size": [
+        66,
+        59
+      ]
+    },
+    {
+      "key": "attack_fx_impact_burst",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        794,
+        1190,
+        860,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_impact_burst.png",
+      "size": [
+        66,
+        62
+      ]
+    },
+    {
+      "key": "attack_fx_sigil_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        860,
+        1188,
+        916,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_sigil_01.png",
+      "size": [
+        56,
+        64
+      ]
+    },
+    {
+      "key": "attack_fx_sigil_02",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        916,
+        1188,
+        972,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_sigil_02.png",
+      "size": [
+        56,
+        64
+      ]
+    },
+    {
+      "key": "attack_fx_sigil_03",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト",
+      "source_box": [
+        972,
+        1188,
+        1024,
+        1252
+      ],
+      "file": "sprites/attack_effect/attack_fx_sigil_03.png",
+      "size": [
+        41,
+        63
+      ]
+    },
+    {
+      "key": "power_fx_coin_ring",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        10,
+        1298,
+        82,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_coin_ring.png",
+      "size": [
+        66,
+        51
+      ]
+    },
+    {
+      "key": "power_fx_coin_burst",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        82,
+        1298,
+        156,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_coin_burst.png",
+      "size": [
+        72,
+        52
+      ]
+    },
+    {
+      "key": "power_fx_locked_coin",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        156,
+        1296,
+        252,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_locked_coin.png",
+      "size": [
+        92,
+        55
+      ]
+    },
+    {
+      "key": "power_fx_chain_lock",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        252,
+        1296,
+        352,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_chain_lock.png",
+      "size": [
+        98,
+        54
+      ]
+    },
+    {
+      "key": "power_fx_bankless_banner",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        352,
+        1296,
+        470,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_bankless_banner.png",
+      "size": [
+        118,
+        51
+      ]
+    },
+    {
+      "key": "power_fx_growth_chart",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        470,
+        1296,
+        544,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_growth_chart.png",
+      "size": [
+        74,
+        54
+      ]
+    },
+    {
+      "key": "power_fx_shield_sun",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        544,
+        1296,
+        622,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_shield_sun.png",
+      "size": [
+        78,
+        55
+      ]
+    },
+    {
+      "key": "power_fx_shield_hex",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        622,
+        1296,
+        702,
+        1360
+      ],
+      "file": "sprites/power_effect/power_fx_shield_hex.png",
+      "size": [
+        80,
+        55
+      ]
+    },
+    {
+      "key": "power_fx_future_city_gate",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        702,
+        1292,
+        850,
+        1364
+      ],
+      "file": "sprites/power_effect/power_fx_future_city_gate.png",
+      "size": [
+        148,
+        72
+      ]
+    },
+    {
+      "key": "power_fx_dome_city",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        850,
+        1292,
+        944,
+        1364
+      ],
+      "file": "sprites/power_effect/power_fx_dome_city.png",
+      "size": [
+        94,
+        59
+      ]
+    },
+    {
+      "key": "power_fx_magic_sigil_large",
+      "category": "power_effect",
+      "description": "スキル / パワーアップエフェクト",
+      "source_box": [
+        944,
+        1292,
+        1024,
+        1364
+      ],
+      "file": "sprites/power_effect/power_fx_magic_sigil_large.png",
+      "size": [
+        70,
+        72
+      ]
+    },
+    {
+      "key": "generic_effect_arrow",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        8,
+        1400,
+        58,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_arrow.png",
+      "size": [
+        48,
+        39
+      ]
+    },
+    {
+      "key": "generic_effect_starburst",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        58,
+        1400,
+        108,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_starburst.png",
+      "size": [
+        50,
+        42
+      ]
+    },
+    {
+      "key": "generic_effect_smoke_green",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        108,
+        1400,
+        160,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_smoke_green.png",
+      "size": [
+        52,
+        42
+      ]
+    },
+    {
+      "key": "generic_effect_star_gold",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        160,
+        1400,
+        214,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_star_gold.png",
+      "size": [
+        54,
+        40
+      ]
+    },
+    {
+      "key": "generic_effect_smoke_yellow",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        214,
+        1400,
+        264,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_smoke_yellow.png",
+      "size": [
+        50,
+        42
+      ]
+    },
+    {
+      "key": "generic_effect_smoke_gray",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        264,
+        1400,
+        320,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_smoke_gray.png",
+      "size": [
+        56,
+        42
+      ]
+    },
+    {
+      "key": "generic_effect_orb_gray",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        320,
+        1400,
+        354,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_orb_gray.png",
+      "size": [
+        34,
+        40
+      ]
+    },
+    {
+      "key": "generic_effect_cross_sparkle",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        354,
+        1400,
+        402,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_cross_sparkle.png",
+      "size": [
+        48,
+        37
+      ]
+    },
+    {
+      "key": "generic_effect_mini_burst",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        402,
+        1400,
+        448,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_mini_burst.png",
+      "size": [
+        46,
+        37
+      ]
+    },
+    {
+      "key": "generic_effect_star_cluster",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        448,
+        1400,
+        504,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_star_cluster.png",
+      "size": [
+        55,
+        32
+      ]
+    },
+    {
+      "key": "generic_effect_guitar",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        504,
+        1400,
+        554,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_guitar.png",
+      "size": [
+        46,
+        31
+      ]
+    },
+    {
+      "key": "generic_effect_blue_orb",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        554,
+        1400,
+        604,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_blue_orb.png",
+      "size": [
+        50,
+        31
+      ]
+    },
+    {
+      "key": "generic_effect_green_arrow",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        604,
+        1400,
+        648,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_green_arrow.png",
+      "size": [
+        44,
+        36
+      ]
+    },
+    {
+      "key": "generic_effect_purple_arrow_1",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        648,
+        1400,
+        690,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_purple_arrow_1.png",
+      "size": [
+        42,
+        35
+      ]
+    },
+    {
+      "key": "generic_effect_purple_arrow_2",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        690,
+        1400,
+        732,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_purple_arrow_2.png",
+      "size": [
+        32,
+        35
+      ]
+    },
+    {
+      "key": "generic_effect_pink_shield",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        732,
+        1400,
+        776,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_pink_shield.png",
+      "size": [
+        36,
+        33
+      ]
+    },
+    {
+      "key": "generic_effect_skull_gold",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        776,
+        1400,
+        820,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_skull_gold.png",
+      "size": [
+        44,
+        34
+      ]
+    },
+    {
+      "key": "generic_effect_shield_blue",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        820,
+        1400,
+        866,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_shield_blue.png",
+      "size": [
+        46,
+        35
+      ]
+    },
+    {
+      "key": "generic_effect_snowflake",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        866,
+        1400,
+        910,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_snowflake.png",
+      "size": [
+        44,
+        35
+      ]
+    },
+    {
+      "key": "generic_effect_orb_purple",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        910,
+        1400,
+        952,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_orb_purple.png",
+      "size": [
+        42,
+        32
+      ]
+    },
+    {
+      "key": "generic_effect_crystal_pink",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        952,
+        1400,
+        996,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_crystal_pink.png",
+      "size": [
+        44,
+        33
+      ]
+    },
+    {
+      "key": "generic_effect_green_star",
+      "category": "generic_effect",
+      "description": "汎用エフェクト",
+      "source_box": [
+        996,
+        1400,
+        1024,
+        1442
+      ],
+      "file": "sprites/generic_effect/generic_effect_green_star.png",
+      "size": [
+        13,
+        28
+      ]
+    },
+    {
+      "key": "ui_hp_recover",
+      "category": "ui_icon",
+      "description": "HP回復",
+      "source_box": [
+        6,
+        1480,
+        72,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_hp_recover.png",
+      "size": [
+        29,
+        28
+      ]
+    },
+    {
+      "key": "ui_mp_recover",
+      "category": "ui_icon",
+      "description": "MP回復",
+      "source_box": [
+        72,
+        1480,
+        144,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_mp_recover.png",
+      "size": [
+        30,
+        28
+      ]
+    },
+    {
+      "key": "ui_attack_up",
+      "category": "ui_icon",
+      "description": "攻撃UP",
+      "source_box": [
+        144,
+        1480,
+        212,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_attack_up.png",
+      "size": [
+        68,
+        28
+      ]
+    },
+    {
+      "key": "ui_guard_up",
+      "category": "ui_icon",
+      "description": "防御UP",
+      "source_box": [
+        212,
+        1480,
+        282,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_guard_up.png",
+      "size": [
+        70,
+        28
+      ]
+    },
+    {
+      "key": "ui_speed_up",
+      "category": "ui_icon",
+      "description": "速度UP",
+      "source_box": [
+        282,
+        1480,
+        352,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_speed_up.png",
+      "size": [
+        32,
+        28
+      ]
+    },
+    {
+      "key": "ui_critical",
+      "category": "ui_icon",
+      "description": "クリティカル",
+      "source_box": [
+        352,
+        1480,
+        416,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_critical.png",
+      "size": [
+        64,
+        28
+      ]
+    },
+    {
+      "key": "ui_heal_up",
+      "category": "ui_icon",
+      "description": "回復UP",
+      "source_box": [
+        416,
+        1480,
+        486,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_heal_up.png",
+      "size": [
+        70,
+        28
+      ]
+    },
+    {
+      "key": "ui_attack_down",
+      "category": "ui_icon",
+      "description": "攻撃DOWN",
+      "source_box": [
+        486,
+        1480,
+        560,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_attack_down.png",
+      "size": [
+        30,
+        28
+      ]
+    },
+    {
+      "key": "ui_defense_down",
+      "category": "ui_icon",
+      "description": "防御DOWN",
+      "source_box": [
+        560,
+        1480,
+        628,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_defense_down.png",
+      "size": [
+        33,
+        28
+      ]
+    },
+    {
+      "key": "ui_dark",
+      "category": "ui_icon",
+      "description": "闇",
+      "source_box": [
+        628,
+        1480,
+        686,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_dark.png",
+      "size": [
+        56,
+        28
+      ]
+    },
+    {
+      "key": "ui_stun",
+      "category": "ui_icon",
+      "description": "スタン",
+      "source_box": [
+        686,
+        1480,
+        742,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_stun.png",
+      "size": [
+        56,
+        28
+      ]
+    },
+    {
+      "key": "ui_sleep",
+      "category": "ui_icon",
+      "description": "睡眠",
+      "source_box": [
+        742,
+        1480,
+        800,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_sleep.png",
+      "size": [
+        58,
+        28
+      ]
+    },
+    {
+      "key": "ui_stone",
+      "category": "ui_icon",
+      "description": "石化",
+      "source_box": [
+        800,
+        1480,
+        862,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_stone.png",
+      "size": [
+        50,
+        28
+      ]
+    },
+    {
+      "key": "ui_confuse",
+      "category": "ui_icon",
+      "description": "弱化",
+      "source_box": [
+        862,
+        1480,
+        918,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_confuse.png",
+      "size": [
+        56,
+        28
+      ]
+    },
+    {
+      "key": "ui_coin",
+      "category": "ui_icon",
+      "description": "コイン",
+      "source_box": [
+        918,
+        1480,
+        972,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_coin.png",
+      "size": [
+        54,
+        23
+      ]
+    },
+    {
+      "key": "ui_exp",
+      "category": "ui_icon",
+      "description": "EXP",
+      "source_box": [
+        972,
+        1480,
+        1010,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_exp.png",
+      "size": [
+        26,
+        28
+      ]
+    },
+    {
+      "key": "ui_advance",
+      "category": "ui_icon",
+      "description": "アクション",
+      "source_box": [
+        1010,
+        1480,
+        1024,
+        1508
+      ],
+      "file": "sprites/ui_icon/ui_advance.png",
+      "size": [
+        1,
+        1
+      ]
+    }
+  ],
+  "animations": {
+    "idle_4": {
+      "frames": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04"
+      ],
+      "strip": "strips/idle_4.png"
+    },
+    "walk_6": {
+      "frames": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05",
+        "walk_06"
+      ],
+      "strip": "strips/walk_6.png"
+    },
+    "attack_6": {
+      "frames": [
+        "attack_01",
+        "attack_02",
+        "attack_03",
+        "attack_04",
+        "attack_05",
+        "attack_06"
+      ],
+      "strip": "strips/attack_6.png"
+    },
+    "skill_half_awakening_6": {
+      "frames": [
+        "skill_half_awakening_01",
+        "skill_half_awakening_02",
+        "skill_half_awakening_03",
+        "skill_half_awakening_04",
+        "skill_half_awakening_05",
+        "skill_half_awakening_06"
+      ],
+      "strip": "strips/skill_half_awakening_6.png"
+    },
+    "finisher_future_city_4": {
+      "frames": [
+        "finisher_future_city_01",
+        "finisher_future_city_02",
+        "finisher_future_city_03",
+        "finisher_future_city_04"
+      ],
+      "strip": "strips/finisher_future_city_4.png"
+    },
+    "skill_5year_lock_4": {
+      "frames": [
+        "skill_5year_lock_01",
+        "skill_5year_lock_02",
+        "skill_5year_lock_03",
+        "skill_5year_lock_04"
+      ],
+      "strip": "strips/skill_5year_lock_4.png"
+    }
+  }
+}
