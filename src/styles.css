@@ -1212,9 +1212,9 @@ body.map-detail-active .play-surface {
   inset: 10px;
   z-index: 1000;
   width: calc(100% - 20px) !important;
-  max-width: 420px;
+  max-width: 440px;
   height: calc(100dvh - 20px) !important;
-  max-height: 560px;
+  max-height: 580px;
   margin: auto;
   background: rgba(8, 12, 22, 0.98);
   border: 2px solid var(--gold);
