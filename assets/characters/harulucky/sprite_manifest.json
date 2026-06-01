@@ -1,0 +1,4108 @@
+{
+  "pack_name": "lucky_cookie_bunny_sprites_pack",
+  "display_name": "ラッキークッキーバニー / Wラビットゴルファー",
+  "source_image": "harulucky.png",
+  "source_size": {
+    "width": 1024,
+    "height": 1536
+  },
+  "notes": [
+    "黒背景を透明化し、ゲーム実装向けに個別PNG・アニメーションストリップ・Phaser 3用コードへ整理。",
+    "画像内表記では一部フレーム数が6とあるが、視認できる独立スプライトは全て収録。歩行は8フレームとして同梱。",
+    "source_boxは元画像上の切り出し座標 [x, y, width, height]。"
+  ],
+  "sprites": [
+    {
+      "id": "base_back",
+      "category": "basic_pose",
+      "jp_name": "基本立ち・後ろ向き",
+      "role": "上方向移動/背面表示用",
+      "file": "sprites/basic_pose/base_back.png",
+      "source_box": [
+        359,
+        34,
+        96,
+        132
+      ],
+      "original_box": [
+        352,
+        34,
+        106,
+        134
+      ],
+      "size": {
+        "width": 96,
+        "height": 132
+      },
+      "pivot": {
+        "x": 48,
+        "y": 132
+      },
+      "tags": [
+        "character",
+        "direction"
+      ]
+    },
+    {
+      "id": "base_side_right",
+      "category": "basic_pose",
+      "jp_name": "基本立ち・右向き",
+      "role": "右向き移動/会話時の立ちポーズ",
+      "file": "sprites/basic_pose/base_side_right.png",
+      "source_box": [
+        136,
+        37,
+        90,
+        129
+      ],
+      "original_box": [
+        132,
+        37,
+        94,
+        131
+      ],
+      "size": {
+        "width": 90,
+        "height": 129
+      },
+      "pivot": {
+        "x": 45,
+        "y": 129
+      },
+      "tags": [
+        "character",
+        "direction"
+      ]
+    },
+    {
+      "id": "base_side_left",
+      "category": "basic_pose",
+      "jp_name": "基本立ち・左向き",
+      "role": "左向き移動/会話時の立ちポーズ",
+      "file": "sprites/basic_pose/base_side_left.png",
+      "source_box": [
+        251,
+        37,
+        75,
+        129
+      ],
+      "original_box": [
+        248,
+        37,
+        82,
+        131
+      ],
+      "size": {
+        "width": 75,
+        "height": 129
+      },
+      "pivot": {
+        "x": 38,
+        "y": 129
+      },
+      "tags": [
+        "character",
+        "direction"
+      ]
+    },
+    {
+      "id": "base_front",
+      "category": "basic_pose",
+      "jp_name": "基本立ち・正面",
+      "role": "マップ/戦闘での正面待機ポーズ",
+      "file": "sprites/basic_pose/base_front.png",
+      "source_box": [
+        18,
+        38,
+        87,
+        130
+      ],
+      "original_box": [
+        18,
+        38,
+        96,
+        130
+      ],
+      "size": {
+        "width": 87,
+        "height": 130
+      },
+      "pivot": {
+        "x": 44,
+        "y": 130
+      },
+      "tags": [
+        "character",
+        "direction"
+      ]
+    },
+    {
+      "id": "idle_04",
+      "category": "idle_animation",
+      "jp_name": "待機アニメ",
+      "role": "杖や体の揺れを表現する待機ループ",
+      "file": "sprites/idle_animation/idle_04.png",
+      "source_box": [
+        893,
+        37,
+        97,
+        125
+      ],
+      "original_box": [
+        893,
+        37,
+        97,
+        128
+      ],
+      "size": {
+        "width": 97,
+        "height": 125
+      },
+      "pivot": {
+        "x": 48,
+        "y": 125
+      },
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "id": "idle_01",
+      "category": "idle_animation",
+      "jp_name": "待機アニメ",
+      "role": "杖や体の揺れを表現する待機ループ",
+      "file": "sprites/idle_animation/idle_01.png",
+      "source_box": [
+        497,
+        39,
+        99,
+        125
+      ],
+      "original_box": [
+        497,
+        39,
+        99,
+        126
+      ],
+      "size": {
+        "width": 99,
+        "height": 125
+      },
+      "pivot": {
+        "x": 50,
+        "y": 125
+      },
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "id": "idle_02",
+      "category": "idle_animation",
+      "jp_name": "待機アニメ",
+      "role": "杖や体の揺れを表現する待機ループ",
+      "file": "sprites/idle_animation/idle_02.png",
+      "source_box": [
+        613,
+        39,
+        101,
+        123
+      ],
+      "original_box": [
+        613,
+        39,
+        101,
+        126
+      ],
+      "size": {
+        "width": 101,
+        "height": 123
+      },
+      "pivot": {
+        "x": 50,
+        "y": 123
+      },
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "id": "idle_03",
+      "category": "idle_animation",
+      "jp_name": "待機アニメ",
+      "role": "杖や体の揺れを表現する待機ループ",
+      "file": "sprites/idle_animation/idle_03.png",
+      "source_box": [
+        747,
+        40,
+        97,
+        123
+      ],
+      "original_box": [
+        747,
+        40,
+        97,
+        125
+      ],
+      "size": {
+        "width": 97,
+        "height": 123
+      },
+      "pivot": {
+        "x": 48,
+        "y": 123
+      },
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "id": "walk_01",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_01.png",
+      "source_box": [
+        8,
+        201,
+        98,
+        120
+      ],
+      "original_box": [
+        8,
+        201,
+        98,
+        120
+      ],
+      "size": {
+        "width": 98,
+        "height": 120
+      },
+      "pivot": {
+        "x": 49,
+        "y": 120
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_02",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_02.png",
+      "source_box": [
+        125,
+        201,
+        97,
+        120
+      ],
+      "original_box": [
+        125,
+        201,
+        97,
+        120
+      ],
+      "size": {
+        "width": 97,
+        "height": 120
+      },
+      "pivot": {
+        "x": 48,
+        "y": 120
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_04",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_04.png",
+      "source_box": [
+        379,
+        201,
+        99,
+        121
+      ],
+      "original_box": [
+        379,
+        201,
+        99,
+        121
+      ],
+      "size": {
+        "width": 99,
+        "height": 121
+      },
+      "pivot": {
+        "x": 50,
+        "y": 121
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_05",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_05.png",
+      "source_box": [
+        520,
+        204,
+        81,
+        117
+      ],
+      "original_box": [
+        503,
+        201,
+        98,
+        120
+      ],
+      "size": {
+        "width": 81,
+        "height": 117
+      },
+      "pivot": {
+        "x": 40,
+        "y": 117
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_06",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_06.png",
+      "source_box": [
+        643,
+        205,
+        72,
+        116
+      ],
+      "original_box": [
+        615,
+        201,
+        100,
+        120
+      ],
+      "size": {
+        "width": 72,
+        "height": 116
+      },
+      "pivot": {
+        "x": 36,
+        "y": 116
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_07",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_07.png",
+      "source_box": [
+        775,
+        204,
+        81,
+        117
+      ],
+      "original_box": [
+        746,
+        201,
+        110,
+        120
+      ],
+      "size": {
+        "width": 81,
+        "height": 117
+      },
+      "pivot": {
+        "x": 40,
+        "y": 117
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_08",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_08.png",
+      "source_box": [
+        911,
+        210,
+        93,
+        111
+      ],
+      "original_box": [
+        911,
+        201,
+        101,
+        120
+      ],
+      "size": {
+        "width": 93,
+        "height": 111
+      },
+      "pivot": {
+        "x": 46,
+        "y": 111
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "walk_03",
+      "category": "walk_animation",
+      "jp_name": "歩行アニメ",
+      "role": "歩行・小走り移動のループフレーム",
+      "file": "sprites/walk_animation/walk_03.png",
+      "source_box": [
+        250,
+        202,
+        94,
+        119
+      ],
+      "original_box": [
+        250,
+        202,
+        102,
+        119
+      ],
+      "size": {
+        "width": 94,
+        "height": 119
+      },
+      "pivot": {
+        "x": 47,
+        "y": 119
+      },
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "id": "attack_golf_02",
+      "category": "attack_animation",
+      "jp_name": "ゴルフショット・振りかぶり",
+      "role": "通常攻撃「ゴルフショット」の連続フレーム",
+      "file": "sprites/attack_animation/attack_golf_02.png",
+      "source_box": [
+        170,
+        348,
+        110,
+        111
+      ],
+      "original_box": [
+        170,
+        348,
+        110,
+        111
+      ],
+      "size": {
+        "width": 110,
+        "height": 111
+      },
+      "pivot": {
+        "x": 55,
+        "y": 111
+      },
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_golf_05",
+      "category": "attack_animation",
+      "jp_name": "ゴルフショット・打撃直後",
+      "role": "通常攻撃「ゴルフショット」の連続フレーム",
+      "file": "sprites/attack_animation/attack_golf_05.png",
+      "source_box": [
+        743,
+        357,
+        146,
+        102
+      ],
+      "original_box": [
+        743,
+        354,
+        146,
+        105
+      ],
+      "size": {
+        "width": 146,
+        "height": 102
+      },
+      "pivot": {
+        "x": 73,
+        "y": 102
+      },
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_golf_01",
+      "category": "attack_animation",
+      "jp_name": "ゴルフショット・構え",
+      "role": "通常攻撃「ゴルフショット」の連続フレーム",
+      "file": "sprites/attack_animation/attack_golf_01.png",
+      "source_box": [
+        31,
+        355,
+        84,
+        104
+      ],
+      "original_box": [
+        31,
+        355,
+        84,
+        104
+      ],
+      "size": {
+        "width": 84,
+        "height": 104
+      },
+      "pivot": {
+        "x": 42,
+        "y": 104
+      },
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_golf_03",
+      "category": "attack_animation",
+      "jp_name": "ゴルフショット・スイング準備",
+      "role": "通常攻撃「ゴルフショット」の連続フレーム",
+      "file": "sprites/attack_animation/attack_golf_03.png",
+      "source_box": [
+        344,
+        355,
+        105,
+        104
+      ],
+      "original_box": [
+        344,
+        355,
+        131,
+        104
+      ],
+      "size": {
+        "width": 105,
+        "height": 104
+      },
+      "pivot": {
+        "x": 52,
+        "y": 104
+      },
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_golf_04",
+      "category": "attack_animation",
+      "jp_name": "ゴルフショット・フルスイング衝撃波",
+      "role": "通常攻撃「ゴルフショット」の連続フレーム",
+      "file": "sprites/attack_animation/attack_golf_04.png",
+      "source_box": [
+        495,
+        355,
+        201,
+        104
+      ],
+      "original_box": [
+        489,
+        355,
+        207,
+        104
+      ],
+      "size": {
+        "width": 201,
+        "height": 104
+      },
+      "pivot": {
+        "x": 100,
+        "y": 104
+      },
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_golf_06",
+      "category": "attack_animation",
+      "jp_name": "ゴルフショット・Wボール弾",
+      "role": "通常攻撃「ゴルフショット」の連続フレーム",
+      "file": "sprites/attack_animation/attack_golf_06.png",
+      "source_box": [
+        879,
+        390,
+        121,
+        62
+      ],
+      "original_box": [
+        879,
+        390,
+        133,
+        70
+      ],
+      "size": {
+        "width": 121,
+        "height": 62
+      },
+      "pivot": {
+        "x": 60,
+        "y": 62
+      },
+      "tags": [
+        "effect",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "id": "skill_lucky_cookie_06",
+      "category": "skill_animation",
+      "jp_name": "ラッキークッキー・祝福フィールド",
+      "role": "スキル「ラッキークッキーハルラッキー・w」の演出フレーム",
+      "file": "sprites/skill_animation/skill_lucky_cookie_06.png",
+      "source_box": [
+        849,
+        520,
+        164,
+        149
+      ],
+      "original_box": [
+        849,
+        520,
+        164,
+        149
+      ],
+      "size": {
+        "width": 164,
+        "height": 149
+      },
+      "pivot": {
+        "x": 82,
+        "y": 149
+      },
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_lucky_cookie_05",
+      "category": "skill_animation",
+      "jp_name": "ラッキークッキー・Wコア発動",
+      "role": "スキル「ラッキークッキーハルラッキー・w」の演出フレーム",
+      "file": "sprites/skill_animation/skill_lucky_cookie_05.png",
+      "source_box": [
+        654,
+        522,
+        148,
+        147
+      ],
+      "original_box": [
+        654,
+        522,
+        148,
+        147
+      ],
+      "size": {
+        "width": 148,
+        "height": 147
+      },
+      "pivot": {
+        "x": 74,
+        "y": 147
+      },
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_lucky_cookie_01",
+      "category": "skill_animation",
+      "jp_name": "ラッキークッキー・幸運を呼ぶ構え",
+      "role": "スキル「ラッキークッキーハルラッキー・w」の演出フレーム",
+      "file": "sprites/skill_animation/skill_lucky_cookie_01.png",
+      "source_box": [
+        10,
+        523,
+        119,
+        146
+      ],
+      "original_box": [
+        10,
+        523,
+        119,
+        146
+      ],
+      "size": {
+        "width": 119,
+        "height": 146
+      },
+      "pivot": {
+        "x": 60,
+        "y": 146
+      },
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_lucky_cookie_04",
+      "category": "skill_animation",
+      "jp_name": "ラッキークッキー・杖掲げ",
+      "role": "スキル「ラッキークッキーハルラッキー・w」の演出フレーム",
+      "file": "sprites/skill_animation/skill_lucky_cookie_04.png",
+      "source_box": [
+        525,
+        523,
+        95,
+        146
+      ],
+      "original_box": [
+        525,
+        523,
+        95,
+        146
+      ],
+      "size": {
+        "width": 95,
+        "height": 146
+      },
+      "pivot": {
+        "x": 48,
+        "y": 146
+      },
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_lucky_cookie_03",
+      "category": "skill_animation",
+      "jp_name": "ラッキークッキー・着地インパクト",
+      "role": "スキル「ラッキークッキーハルラッキー・w」の演出フレーム",
+      "file": "sprites/skill_animation/skill_lucky_cookie_03.png",
+      "source_box": [
+        288,
+        524,
+        204,
+        145
+      ],
+      "original_box": [
+        288,
+        524,
+        204,
+        145
+      ],
+      "size": {
+        "width": 204,
+        "height": 145
+      },
+      "pivot": {
+        "x": 102,
+        "y": 145
+      },
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_lucky_cookie_02",
+      "category": "skill_animation",
+      "jp_name": "ラッキークッキー・クッキー召喚",
+      "role": "スキル「ラッキークッキーハルラッキー・w」の演出フレーム",
+      "file": "sprites/skill_animation/skill_lucky_cookie_02.png",
+      "source_box": [
+        137,
+        526,
+        133,
+        143
+      ],
+      "original_box": [
+        137,
+        526,
+        133,
+        143
+      ],
+      "size": {
+        "width": 133,
+        "height": 143
+      },
+      "pivot": {
+        "x": 66,
+        "y": 143
+      },
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "state_damage",
+      "category": "state_pose",
+      "jp_name": "ダメージ",
+      "role": "被弾・ひるみ時のリアクション",
+      "file": "sprites/state_pose/state_damage.png",
+      "source_box": [
+        26,
+        715,
+        100,
+        127
+      ],
+      "original_box": [
+        22,
+        713,
+        104,
+        133
+      ],
+      "size": {
+        "width": 100,
+        "height": 127
+      },
+      "pivot": {
+        "x": 50,
+        "y": 127
+      },
+      "tags": [
+        "character",
+        "state"
+      ]
+    },
+    {
+      "id": "state_victory",
+      "category": "state_pose",
+      "jp_name": "勝利ポーズ",
+      "role": "クリア/勝利後の杖掲げポーズ",
+      "file": "sprites/state_pose/state_victory.png",
+      "source_box": [
+        418,
+        713,
+        89,
+        130
+      ],
+      "original_box": [
+        390,
+        713,
+        117,
+        137
+      ],
+      "size": {
+        "width": 89,
+        "height": 130
+      },
+      "pivot": {
+        "x": 44,
+        "y": 130
+      },
+      "tags": [
+        "character",
+        "state",
+        "victory"
+      ]
+    },
+    {
+      "id": "state_knockout",
+      "category": "state_pose",
+      "jp_name": "戦闘不能",
+      "role": "倒れ/KO状態。石と渦で気絶表現",
+      "file": "sprites/state_pose/state_knockout.png",
+      "source_box": [
+        176,
+        746,
+        157,
+        99
+      ],
+      "original_box": [
+        173,
+        724,
+        160,
+        121
+      ],
+      "size": {
+        "width": 157,
+        "height": 99
+      },
+      "pivot": {
+        "x": 78,
+        "y": 99
+      },
+      "tags": [
+        "character",
+        "state",
+        "ko"
+      ]
+    },
+    {
+      "id": "face_01",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・通常",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_01.png",
+      "source_box": [
+        568,
+        710,
+        116,
+        73
+      ],
+      "original_box": [
+        568,
+        710,
+        116,
+        73
+      ],
+      "size": {
+        "width": 116,
+        "height": 73
+      },
+      "pivot": {
+        "x": 58,
+        "y": 73
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_02",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・にっこり",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_02.png",
+      "source_box": [
+        683,
+        710,
+        103,
+        73
+      ],
+      "original_box": [
+        683,
+        710,
+        103,
+        73
+      ],
+      "size": {
+        "width": 103,
+        "height": 73
+      },
+      "pivot": {
+        "x": 52,
+        "y": 73
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_03",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・大笑い/祝福",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_03.png",
+      "source_box": [
+        793,
+        710,
+        100,
+        73
+      ],
+      "original_box": [
+        793,
+        710,
+        100,
+        73
+      ],
+      "size": {
+        "width": 100,
+        "height": 73
+      },
+      "pivot": {
+        "x": 50,
+        "y": 73
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_04",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・泣き顔",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_04.png",
+      "source_box": [
+        914,
+        710,
+        99,
+        73
+      ],
+      "original_box": [
+        914,
+        710,
+        99,
+        73
+      ],
+      "size": {
+        "width": 99,
+        "height": 73
+      },
+      "pivot": {
+        "x": 50,
+        "y": 73
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_05",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・真顔/クール",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_05.png",
+      "source_box": [
+        569,
+        785,
+        115,
+        72
+      ],
+      "original_box": [
+        569,
+        785,
+        115,
+        72
+      ],
+      "size": {
+        "width": 115,
+        "height": 72
+      },
+      "pivot": {
+        "x": 58,
+        "y": 72
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_06",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・微笑み",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_06.png",
+      "source_box": [
+        683,
+        785,
+        101,
+        72
+      ],
+      "original_box": [
+        683,
+        785,
+        103,
+        72
+      ],
+      "size": {
+        "width": 101,
+        "height": 72
+      },
+      "pivot": {
+        "x": 50,
+        "y": 72
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_07",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・ウィンク",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_07.png",
+      "source_box": [
+        793,
+        785,
+        100,
+        72
+      ],
+      "original_box": [
+        793,
+        785,
+        100,
+        72
+      ],
+      "size": {
+        "width": 100,
+        "height": 72
+      },
+      "pivot": {
+        "x": 50,
+        "y": 72
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "face_08",
+      "category": "face_icon",
+      "jp_name": "フェイスアイコン・照れ",
+      "role": "会話UI・ステータス画面・カットイン用表情アイコン",
+      "file": "sprites/face_icon/face_08.png",
+      "source_box": [
+        914,
+        785,
+        96,
+        72
+      ],
+      "original_box": [
+        914,
+        785,
+        99,
+        72
+      ],
+      "size": {
+        "width": 96,
+        "height": 72
+      },
+      "pivot": {
+        "x": 48,
+        "y": 72
+      },
+      "tags": [
+        "ui",
+        "face"
+      ]
+    },
+    {
+      "id": "item_bunny_keychain",
+      "category": "weapon_item",
+      "jp_name": "うさ耳キーホルダー",
+      "role": "キャラ固有アクセサリー/装備アイコン",
+      "file": "sprites/weapon_item/item_bunny_keychain.png",
+      "source_box": [
+        355,
+        896,
+        70,
+        69
+      ],
+      "original_box": [
+        355,
+        896,
+        70,
+        69
+      ],
+      "size": {
+        "width": 70,
+        "height": 69
+      },
+      "pivot": {
+        "x": 35,
+        "y": 69
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_w_money_bag",
+      "category": "weapon_item",
+      "jp_name": "Wコイン袋",
+      "role": "通貨/報酬/ドロップアイテム",
+      "file": "sprites/weapon_item/item_w_money_bag.png",
+      "source_box": [
+        466,
+        896,
+        78,
+        69
+      ],
+      "original_box": [
+        466,
+        896,
+        78,
+        69
+      ],
+      "size": {
+        "width": 78,
+        "height": 69
+      },
+      "pivot": {
+        "x": 39,
+        "y": 69
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_clover_charm",
+      "category": "weapon_item",
+      "jp_name": "クローバーチャーム",
+      "role": "ラッキー系パッシブ/装備",
+      "file": "sprites/weapon_item/item_clover_charm.png",
+      "source_box": [
+        924,
+        898,
+        75,
+        67
+      ],
+      "original_box": [
+        924,
+        898,
+        75,
+        67
+      ],
+      "size": {
+        "width": 75,
+        "height": 67
+      },
+      "pivot": {
+        "x": 38,
+        "y": 67
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_omamori_daikichi",
+      "category": "weapon_item",
+      "jp_name": "大吉お守り",
+      "role": "幸運バフ/お守り装備",
+      "file": "sprites/weapon_item/item_omamori_daikichi.png",
+      "source_box": [
+        746,
+        901,
+        79,
+        64
+      ],
+      "original_box": [
+        746,
+        901,
+        79,
+        64
+      ],
+      "size": {
+        "width": 79,
+        "height": 64
+      },
+      "pivot": {
+        "x": 40,
+        "y": 64
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_golf_club",
+      "category": "weapon_item",
+      "jp_name": "ゴルフクラブ",
+      "role": "通常攻撃に使うメイン武器",
+      "file": "sprites/weapon_item/item_golf_club.png",
+      "source_box": [
+        31,
+        904,
+        95,
+        60
+      ],
+      "original_box": [
+        22,
+        904,
+        104,
+        60
+      ],
+      "size": {
+        "width": 95,
+        "height": 60
+      },
+      "pivot": {
+        "x": 48,
+        "y": 60
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_w_flag",
+      "category": "weapon_item",
+      "jp_name": "W旗",
+      "role": "拠点・勝利・占領状態の目印",
+      "file": "sprites/weapon_item/item_w_flag.png",
+      "source_box": [
+        622,
+        908,
+        63,
+        57
+      ],
+      "original_box": [
+        622,
+        908,
+        72,
+        57
+      ],
+      "size": {
+        "width": 63,
+        "height": 57
+      },
+      "pivot": {
+        "x": 32,
+        "y": 57
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_cookie",
+      "category": "weapon_item",
+      "jp_name": "ラッキークッキー",
+      "role": "スキル演出・回復/幸運アイテム",
+      "file": "sprites/weapon_item/item_cookie.png",
+      "source_box": [
+        252,
+        912,
+        57,
+        52
+      ],
+      "original_box": [
+        244,
+        909,
+        75,
+        55
+      ],
+      "size": {
+        "width": 57,
+        "height": 52
+      },
+      "pivot": {
+        "x": 28,
+        "y": 52
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "item_w_ball",
+      "category": "weapon_item",
+      "jp_name": "Wボール",
+      "role": "ショット用のWロゴ入りボール",
+      "file": "sprites/weapon_item/item_w_ball.png",
+      "source_box": [
+        158,
+        918,
+        44,
+        43
+      ],
+      "original_box": [
+        151,
+        913,
+        51,
+        51
+      ],
+      "size": {
+        "width": 44,
+        "height": 43
+      },
+      "pivot": {
+        "x": 22,
+        "y": 43
+      },
+      "tags": [
+        "item",
+        "equipment"
+      ]
+    },
+    {
+      "id": "attack_fx_yellow_burst",
+      "category": "attack_effect",
+      "jp_name": "黄爆発",
+      "role": "命中時の明るい爆発",
+      "file": "sprites/attack_effect/attack_fx_yellow_burst.png",
+      "source_box": [
+        648,
+        1013,
+        78,
+        75
+      ],
+      "original_box": [
+        646,
+        1010,
+        83,
+        78
+      ],
+      "size": {
+        "width": 78,
+        "height": 75
+      },
+      "pivot": {
+        "x": 39,
+        "y": 75
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_star_explosion",
+      "category": "attack_effect",
+      "jp_name": "星型爆発",
+      "role": "強打/クリティカル用の大爆発",
+      "file": "sprites/attack_effect/attack_fx_star_explosion.png",
+      "source_box": [
+        918,
+        1010,
+        94,
+        78
+      ],
+      "original_box": [
+        918,
+        1010,
+        97,
+        78
+      ],
+      "size": {
+        "width": 94,
+        "height": 78
+      },
+      "pivot": {
+        "x": 47,
+        "y": 78
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_ball_flash",
+      "category": "attack_effect",
+      "jp_name": "白金チャージ",
+      "role": "発射点/命中点の白金フラッシュ",
+      "file": "sprites/attack_effect/attack_fx_ball_flash.png",
+      "source_box": [
+        570,
+        1015,
+        74,
+        73
+      ],
+      "original_box": [
+        570,
+        1013,
+        76,
+        75
+      ],
+      "size": {
+        "width": 74,
+        "height": 73
+      },
+      "pivot": {
+        "x": 37,
+        "y": 73
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_swing_arc_02",
+      "category": "attack_effect",
+      "jp_name": "ゴルフ斬撃・飛沫",
+      "role": "地面を削る白金スイング軌跡",
+      "file": "sprites/attack_effect/attack_fx_swing_arc_02.png",
+      "source_box": [
+        112,
+        1017,
+        88,
+        71
+      ],
+      "original_box": [
+        112,
+        1015,
+        92,
+        73
+      ],
+      "size": {
+        "width": 88,
+        "height": 71
+      },
+      "pivot": {
+        "x": 44,
+        "y": 71
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_swing_arc_01",
+      "category": "attack_effect",
+      "jp_name": "ゴルフ斬撃・大三日月",
+      "role": "近距離スイングの大きい三日月軌跡",
+      "file": "sprites/attack_effect/attack_fx_swing_arc_01.png",
+      "source_box": [
+        18,
+        1018,
+        84,
+        70
+      ],
+      "original_box": [
+        18,
+        1016,
+        85,
+        72
+      ],
+      "size": {
+        "width": 84,
+        "height": 70
+      },
+      "pivot": {
+        "x": 42,
+        "y": 70
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_ball_trail_w",
+      "category": "attack_effect",
+      "jp_name": "Wボール高速弾・W",
+      "role": "Wロゴ入りボールの高速弾",
+      "file": "sprites/attack_effect/attack_fx_ball_trail_w.png",
+      "source_box": [
+        405,
+        1021,
+        82,
+        67
+      ],
+      "original_box": [
+        402,
+        1018,
+        90,
+        70
+      ],
+      "size": {
+        "width": 82,
+        "height": 67
+      },
+      "pivot": {
+        "x": 41,
+        "y": 67
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_ball_trail_big",
+      "category": "attack_effect",
+      "jp_name": "Wボール高速弾・大",
+      "role": "横方向へ飛ぶ大きい球弾エフェクト",
+      "file": "sprites/attack_effect/attack_fx_ball_trail_big.png",
+      "source_box": [
+        306,
+        1022,
+        83,
+        66
+      ],
+      "original_box": [
+        304,
+        1019,
+        89,
+        69
+      ],
+      "size": {
+        "width": 83,
+        "height": 66
+      },
+      "pivot": {
+        "x": 42,
+        "y": 66
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_ground_impact_01",
+      "category": "attack_effect",
+      "jp_name": "地面衝撃・小",
+      "role": "クラブが地面を叩いた瞬間の破片",
+      "file": "sprites/attack_effect/attack_fx_ground_impact_01.png",
+      "source_box": [
+        213,
+        1025,
+        86,
+        63
+      ],
+      "original_box": [
+        212,
+        1022,
+        90,
+        66
+      ],
+      "size": {
+        "width": 86,
+        "height": 63
+      },
+      "pivot": {
+        "x": 43,
+        "y": 63
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_dust_cloud",
+      "category": "attack_effect",
+      "jp_name": "土煙",
+      "role": "着弾後の煙・ダスト",
+      "file": "sprites/attack_effect/attack_fx_dust_cloud.png",
+      "source_box": [
+        829,
+        1026,
+        76,
+        62
+      ],
+      "original_box": [
+        828,
+        1026,
+        78,
+        62
+      ],
+      "size": {
+        "width": 76,
+        "height": 62
+      },
+      "pivot": {
+        "x": 38,
+        "y": 62
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_ball_trail_small",
+      "category": "attack_effect",
+      "jp_name": "小型Wボール弾",
+      "role": "小さく高速で飛ぶ球弾",
+      "file": "sprites/attack_effect/attack_fx_ball_trail_small.png",
+      "source_box": [
+        490,
+        1034,
+        58,
+        48
+      ],
+      "original_box": [
+        488,
+        1028,
+        62,
+        56
+      ],
+      "size": {
+        "width": 58,
+        "height": 48
+      },
+      "pivot": {
+        "x": 29,
+        "y": 48
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "attack_fx_dust_crescent",
+      "category": "attack_effect",
+      "jp_name": "土煙三日月",
+      "role": "地面を巻き上げる衝撃",
+      "file": "sprites/attack_effect/attack_fx_dust_crescent.png",
+      "source_box": [
+        745,
+        1033,
+        72,
+        55
+      ],
+      "original_box": [
+        743,
+        1030,
+        76,
+        58
+      ],
+      "size": {
+        "width": 72,
+        "height": 55
+      },
+      "pivot": {
+        "x": 36,
+        "y": 55
+      },
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "id": "skill_fx_green_crystal_burst",
+      "category": "skill_effect",
+      "jp_name": "緑クリスタル爆発",
+      "role": "スキル完了/強化完了の輝き",
+      "file": "sprites/skill_effect/skill_fx_green_crystal_burst.png",
+      "source_box": [
+        927,
+        1116,
+        89,
+        107
+      ],
+      "original_box": [
+        927,
+        1116,
+        89,
+        110
+      ],
+      "size": {
+        "width": 89,
+        "height": 107
+      },
+      "pivot": {
+        "x": 44,
+        "y": 107
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_clover_orb",
+      "category": "skill_effect",
+      "jp_name": "クローバー結界",
+      "role": "防御/幸運バフの円形オーラ",
+      "file": "sprites/skill_effect/skill_fx_clover_orb.png",
+      "source_box": [
+        124,
+        1120,
+        101,
+        103
+      ],
+      "original_box": [
+        124,
+        1120,
+        101,
+        103
+      ],
+      "size": {
+        "width": 101,
+        "height": 103
+      },
+      "pivot": {
+        "x": 50,
+        "y": 103
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_w_orb_circle",
+      "category": "skill_effect",
+      "jp_name": "Wコア魔法陣",
+      "role": "Wロゴの発動コア",
+      "file": "sprites/skill_effect/skill_fx_w_orb_circle.png",
+      "source_box": [
+        248,
+        1121,
+        115,
+        102
+      ],
+      "original_box": [
+        248,
+        1121,
+        115,
+        102
+      ],
+      "size": {
+        "width": 115,
+        "height": 102
+      },
+      "pivot": {
+        "x": 58,
+        "y": 102
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_cookie_ring",
+      "category": "skill_effect",
+      "jp_name": "クッキー祝福",
+      "role": "クッキーとクローバーの回転演出",
+      "file": "sprites/skill_effect/skill_fx_cookie_ring.png",
+      "source_box": [
+        392,
+        1121,
+        114,
+        100
+      ],
+      "original_box": [
+        392,
+        1121,
+        114,
+        100
+      ],
+      "size": {
+        "width": 114,
+        "height": 100
+      },
+      "pivot": {
+        "x": 57,
+        "y": 100
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_clover_magic_circle",
+      "category": "skill_effect",
+      "jp_name": "クローバー魔法陣",
+      "role": "幸運フィールド展開",
+      "file": "sprites/skill_effect/skill_fx_clover_magic_circle.png",
+      "source_box": [
+        788,
+        1121,
+        113,
+        102
+      ],
+      "original_box": [
+        788,
+        1121,
+        113,
+        102
+      ],
+      "size": {
+        "width": 113,
+        "height": 102
+      },
+      "pivot": {
+        "x": 56,
+        "y": 102
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_cookie_explosion",
+      "category": "skill_effect",
+      "jp_name": "クッキー爆発",
+      "role": "クッキーが割れて幸運が広がる演出",
+      "file": "sprites/skill_effect/skill_fx_cookie_explosion.png",
+      "source_box": [
+        519,
+        1124,
+        126,
+        101
+      ],
+      "original_box": [
+        519,
+        1124,
+        126,
+        101
+      ],
+      "size": {
+        "width": 126,
+        "height": 101
+      },
+      "pivot": {
+        "x": 63,
+        "y": 101
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_green_magic_circle",
+      "category": "skill_effect",
+      "jp_name": "緑魔法陣",
+      "role": "バフ/回復系スキルの地面魔法陣",
+      "file": "sprites/skill_effect/skill_fx_green_magic_circle.png",
+      "source_box": [
+        666,
+        1124,
+        110,
+        97
+      ],
+      "original_box": [
+        666,
+        1124,
+        110,
+        97
+      ],
+      "size": {
+        "width": 110,
+        "height": 97
+      },
+      "pivot": {
+        "x": 55,
+        "y": 97
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_clover_summon",
+      "category": "skill_effect",
+      "jp_name": "クローバー召喚陣",
+      "role": "四つ葉と光柱の幸運召喚",
+      "file": "sprites/skill_effect/skill_fx_clover_summon.png",
+      "source_box": [
+        6,
+        1125,
+        113,
+        98
+      ],
+      "original_box": [
+        4,
+        1125,
+        115,
+        98
+      ],
+      "size": {
+        "width": 113,
+        "height": 98
+      },
+      "pivot": {
+        "x": 56,
+        "y": 98
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_blessing_fountain",
+      "category": "skill_effect",
+      "jp_name": "祝福の泉",
+      "role": "クッキーとクローバーが噴き上がる最終演出",
+      "file": "sprites/skill_effect/skill_fx_blessing_fountain.png",
+      "source_box": [
+        773,
+        1216,
+        107,
+        79
+      ],
+      "original_box": [
+        773,
+        1216,
+        107,
+        79
+      ],
+      "size": {
+        "width": 107,
+        "height": 79
+      },
+      "pivot": {
+        "x": 54,
+        "y": 79
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_fire_explosion",
+      "category": "skill_effect",
+      "jp_name": "赤爆発",
+      "role": "敵側/失敗時などにも使える爆発",
+      "file": "sprites/skill_effect/skill_fx_fire_explosion.png",
+      "source_box": [
+        898,
+        1217,
+        113,
+        79
+      ],
+      "original_box": [
+        895,
+        1217,
+        127,
+        79
+      ],
+      "size": {
+        "width": 113,
+        "height": 79
+      },
+      "pivot": {
+        "x": 56,
+        "y": 79
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_portal_gate",
+      "category": "skill_effect",
+      "jp_name": "緑ポータル",
+      "role": "召喚/ワープ/大技の入口",
+      "file": "sprites/skill_effect/skill_fx_portal_gate.png",
+      "source_box": [
+        650,
+        1218,
+        94,
+        75
+      ],
+      "original_box": [
+        650,
+        1218,
+        94,
+        75
+      ],
+      "size": {
+        "width": 94,
+        "height": 75
+      },
+      "pivot": {
+        "x": 47,
+        "y": 75
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_golden_heal_circle",
+      "category": "skill_effect",
+      "jp_name": "黄金回復サークル",
+      "role": "回復/祝福の上昇光",
+      "file": "sprites/skill_effect/skill_fx_golden_heal_circle.png",
+      "source_box": [
+        152,
+        1222,
+        104,
+        70
+      ],
+      "original_box": [
+        140,
+        1222,
+        116,
+        70
+      ],
+      "size": {
+        "width": 104,
+        "height": 70
+      },
+      "pivot": {
+        "x": 52,
+        "y": 70
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_green_pillars",
+      "category": "skill_effect",
+      "jp_name": "緑光柱",
+      "role": "回復・浄化・復活の柱",
+      "file": "sprites/skill_effect/skill_fx_green_pillars.png",
+      "source_box": [
+        533,
+        1222,
+        68,
+        71
+      ],
+      "original_box": [
+        533,
+        1222,
+        90,
+        71
+      ],
+      "size": {
+        "width": 68,
+        "height": 71
+      },
+      "pivot": {
+        "x": 34,
+        "y": 71
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_cross_buff",
+      "category": "skill_effect",
+      "jp_name": "十字バフ",
+      "role": "ステータス上昇の十字光",
+      "file": "sprites/skill_effect/skill_fx_cross_buff.png",
+      "source_box": [
+        426,
+        1223,
+        61,
+        69
+      ],
+      "original_box": [
+        426,
+        1223,
+        80,
+        69
+      ],
+      "size": {
+        "width": 61,
+        "height": 69
+      },
+      "pivot": {
+        "x": 30,
+        "y": 69
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_level_up",
+      "category": "skill_effect",
+      "jp_name": "レベルアップ矢印",
+      "role": "能力上昇・強化表示",
+      "file": "sprites/skill_effect/skill_fx_level_up.png",
+      "source_box": [
+        314,
+        1248,
+        53,
+        46
+      ],
+      "original_box": [
+        298,
+        1227,
+        79,
+        67
+      ],
+      "size": {
+        "width": 53,
+        "height": 46
+      },
+      "pivot": {
+        "x": 26,
+        "y": 46
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "skill_fx_dust_cloud",
+      "category": "skill_effect",
+      "jp_name": "大きな土煙",
+      "role": "着地/召喚後の白い煙",
+      "file": "sprites/skill_effect/skill_fx_dust_cloud.png",
+      "source_box": [
+        24,
+        1245,
+        91,
+        46
+      ],
+      "original_box": [
+        16,
+        1234,
+        99,
+        57
+      ],
+      "size": {
+        "width": 91,
+        "height": 46
+      },
+      "pivot": {
+        "x": 46,
+        "y": 46
+      },
+      "tags": [
+        "effect",
+        "skill",
+        "lucky"
+      ]
+    },
+    {
+      "id": "generic_sparkle_02",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_02.png",
+      "source_box": [
+        62,
+        1359,
+        55,
+        55
+      ],
+      "original_box": [
+        62,
+        1357,
+        55,
+        59
+      ],
+      "size": {
+        "width": 55,
+        "height": 55
+      },
+      "pivot": {
+        "x": 28,
+        "y": 55
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_08",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_08.png",
+      "source_box": [
+        402,
+        1358,
+        67,
+        57
+      ],
+      "original_box": [
+        402,
+        1357,
+        67,
+        59
+      ],
+      "size": {
+        "width": 67,
+        "height": 57
+      },
+      "pivot": {
+        "x": 34,
+        "y": 57
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_09",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_09.png",
+      "source_box": [
+        474,
+        1358,
+        62,
+        58
+      ],
+      "original_box": [
+        474,
+        1357,
+        62,
+        59
+      ],
+      "size": {
+        "width": 62,
+        "height": 58
+      },
+      "pivot": {
+        "x": 31,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_01",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_01.png",
+      "source_box": [
+        12,
+        1362,
+        46,
+        50
+      ],
+      "original_box": [
+        12,
+        1358,
+        46,
+        56
+      ],
+      "size": {
+        "width": 46,
+        "height": 50
+      },
+      "pivot": {
+        "x": 23,
+        "y": 50
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_06",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_06.png",
+      "source_box": [
+        282,
+        1359,
+        60,
+        55
+      ],
+      "original_box": [
+        282,
+        1358,
+        60,
+        58
+      ],
+      "size": {
+        "width": 60,
+        "height": 55
+      },
+      "pivot": {
+        "x": 30,
+        "y": 55
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_05",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_05.png",
+      "source_box": [
+        235,
+        1360,
+        50,
+        55
+      ],
+      "original_box": [
+        235,
+        1359,
+        50,
+        57
+      ],
+      "size": {
+        "width": 50,
+        "height": 55
+      },
+      "pivot": {
+        "x": 25,
+        "y": 55
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_11",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_11.png",
+      "source_box": [
+        593,
+        1359,
+        52,
+        55
+      ],
+      "original_box": [
+        593,
+        1359,
+        52,
+        57
+      ],
+      "size": {
+        "width": 52,
+        "height": 55
+      },
+      "pivot": {
+        "x": 26,
+        "y": 55
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_12",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_12.png",
+      "source_box": [
+        654,
+        1360,
+        49,
+        54
+      ],
+      "original_box": [
+        654,
+        1359,
+        49,
+        57
+      ],
+      "size": {
+        "width": 49,
+        "height": 54
+      },
+      "pivot": {
+        "x": 24,
+        "y": 54
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_03",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_03.png",
+      "source_box": [
+        123,
+        1361,
+        52,
+        52
+      ],
+      "original_box": [
+        123,
+        1360,
+        52,
+        54
+      ],
+      "size": {
+        "width": 52,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 52
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_04",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_04.png",
+      "source_box": [
+        180,
+        1361,
+        50,
+        52
+      ],
+      "original_box": [
+        180,
+        1360,
+        50,
+        54
+      ],
+      "size": {
+        "width": 50,
+        "height": 52
+      },
+      "pivot": {
+        "x": 25,
+        "y": 52
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_sparkle_07",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_07.png",
+      "source_box": [
+        349,
+        1361,
+        52,
+        51
+      ],
+      "original_box": [
+        349,
+        1360,
+        52,
+        54
+      ],
+      "size": {
+        "width": 52,
+        "height": 51
+      },
+      "pivot": {
+        "x": 26,
+        "y": 51
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_rock_fragments",
+      "category": "generic_effect",
+      "jp_name": "岩片",
+      "role": "小石・破片。地面衝撃に使用",
+      "file": "sprites/generic_effect/generic_rock_fragments.png",
+      "source_box": [
+        712,
+        1364,
+        46,
+        45
+      ],
+      "original_box": [
+        712,
+        1362,
+        47,
+        49
+      ],
+      "size": {
+        "width": 46,
+        "height": 45
+      },
+      "pivot": {
+        "x": 23,
+        "y": 45
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "dust"
+      ]
+    },
+    {
+      "id": "generic_dust_cloud_01",
+      "category": "generic_effect",
+      "jp_name": "白土煙",
+      "role": "白い土煙/着地煙",
+      "file": "sprites/generic_effect/generic_dust_cloud_01.png",
+      "source_box": [
+        767,
+        1364,
+        49,
+        45
+      ],
+      "original_box": [
+        766,
+        1362,
+        51,
+        49
+      ],
+      "size": {
+        "width": 49,
+        "height": 45
+      },
+      "pivot": {
+        "x": 24,
+        "y": 45
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "dust"
+      ]
+    },
+    {
+      "id": "generic_sparkle_10",
+      "category": "generic_effect",
+      "jp_name": "光・きらめき",
+      "role": "汎用の星型キラキラ。獲得/バフ/演出に使用",
+      "file": "sprites/generic_effect/generic_sparkle_10.png",
+      "source_box": [
+        543,
+        1364,
+        42,
+        46
+      ],
+      "original_box": [
+        543,
+        1363,
+        42,
+        48
+      ],
+      "size": {
+        "width": 42,
+        "height": 46
+      },
+      "pivot": {
+        "x": 21,
+        "y": 46
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "sparkle"
+      ]
+    },
+    {
+      "id": "generic_dust_cloud_02",
+      "category": "generic_effect",
+      "jp_name": "茶土煙",
+      "role": "茶色の土煙/地面衝撃",
+      "file": "sprites/generic_effect/generic_dust_cloud_02.png",
+      "source_box": [
+        826,
+        1365,
+        42,
+        45
+      ],
+      "original_box": [
+        826,
+        1364,
+        42,
+        47
+      ],
+      "size": {
+        "width": 42,
+        "height": 45
+      },
+      "pivot": {
+        "x": 21,
+        "y": 45
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "dust"
+      ]
+    },
+    {
+      "id": "generic_black_smoke_01",
+      "category": "generic_effect",
+      "jp_name": "黒煙・小",
+      "role": "闇/火傷/失敗演出",
+      "file": "sprites/generic_effect/generic_black_smoke_01.png",
+      "source_box": [
+        934,
+        1365,
+        30,
+        47
+      ],
+      "original_box": [
+        933,
+        1364,
+        32,
+        48
+      ],
+      "size": {
+        "width": 30,
+        "height": 47
+      },
+      "pivot": {
+        "x": 15,
+        "y": 47
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "dust"
+      ]
+    },
+    {
+      "id": "generic_black_smoke_02",
+      "category": "generic_effect",
+      "jp_name": "黒煙・大",
+      "role": "強い黒煙/重いダメージ",
+      "file": "sprites/generic_effect/generic_black_smoke_02.png",
+      "source_box": [
+        976,
+        1365,
+        30,
+        47
+      ],
+      "original_box": [
+        975,
+        1364,
+        32,
+        48
+      ],
+      "size": {
+        "width": 30,
+        "height": 47
+      },
+      "pivot": {
+        "x": 15,
+        "y": 47
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "dust"
+      ]
+    },
+    {
+      "id": "generic_smoke_01",
+      "category": "generic_effect",
+      "jp_name": "灰色煙",
+      "role": "灰色の煙/爆発後",
+      "file": "sprites/generic_effect/generic_smoke_01.png",
+      "source_box": [
+        877,
+        1367,
+        45,
+        44
+      ],
+      "original_box": [
+        877,
+        1366,
+        45,
+        45
+      ],
+      "size": {
+        "width": 45,
+        "height": 44
+      },
+      "pivot": {
+        "x": 22,
+        "y": 44
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "dust"
+      ]
+    },
+    {
+      "id": "generic_magic_circle_red",
+      "category": "generic_effect",
+      "jp_name": "赤魔法陣",
+      "role": "攻撃/炎/警告系",
+      "file": "sprites/generic_effect/generic_magic_circle_red.png",
+      "source_box": [
+        341,
+        1413,
+        91,
+        65
+      ],
+      "original_box": [
+        340,
+        1412,
+        93,
+        66
+      ],
+      "size": {
+        "width": 91,
+        "height": 65
+      },
+      "pivot": {
+        "x": 46,
+        "y": 65
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_orb_purple",
+      "category": "generic_effect",
+      "jp_name": "紫魔法核",
+      "role": "闇/魔力チャージ用",
+      "file": "sprites/generic_effect/generic_orb_purple.png",
+      "source_box": [
+        440,
+        1412,
+        72,
+        64
+      ],
+      "original_box": [
+        439,
+        1412,
+        74,
+        65
+      ],
+      "size": {
+        "width": 72,
+        "height": 64
+      },
+      "pivot": {
+        "x": 36,
+        "y": 64
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_magic_circle_blue",
+      "category": "generic_effect",
+      "jp_name": "青魔法陣",
+      "role": "防御/水属性/冷却系",
+      "file": "sprites/generic_effect/generic_magic_circle_blue.png",
+      "source_box": [
+        123,
+        1415,
+        95,
+        59
+      ],
+      "original_box": [
+        122,
+        1414,
+        97,
+        61
+      ],
+      "size": {
+        "width": 95,
+        "height": 59
+      },
+      "pivot": {
+        "x": 48,
+        "y": 59
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_magic_circle_cyan",
+      "category": "generic_effect",
+      "jp_name": "水色魔法陣",
+      "role": "浄化/回復/透明感のあるスキル",
+      "file": "sprites/generic_effect/generic_magic_circle_cyan.png",
+      "source_box": [
+        230,
+        1415,
+        95,
+        58
+      ],
+      "original_box": [
+        229,
+        1414,
+        97,
+        61
+      ],
+      "size": {
+        "width": 95,
+        "height": 58
+      },
+      "pivot": {
+        "x": 48,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_orb_pink",
+      "category": "generic_effect",
+      "jp_name": "桃紫魔法核",
+      "role": "妖精/魅了系エフェクト",
+      "file": "sprites/generic_effect/generic_orb_pink.png",
+      "source_box": [
+        524,
+        1415,
+        60,
+        61
+      ],
+      "original_box": [
+        523,
+        1414,
+        62,
+        63
+      ],
+      "size": {
+        "width": 60,
+        "height": 61
+      },
+      "pivot": {
+        "x": 30,
+        "y": 61
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_ice_spikes",
+      "category": "generic_effect",
+      "jp_name": "氷柱",
+      "role": "氷属性攻撃/凍結",
+      "file": "sprites/generic_effect/generic_ice_spikes.png",
+      "source_box": [
+        594,
+        1416,
+        64,
+        58
+      ],
+      "original_box": [
+        593,
+        1414,
+        65,
+        61
+      ],
+      "size": {
+        "width": 64,
+        "height": 58
+      },
+      "pivot": {
+        "x": 32,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_red_crystal",
+      "category": "generic_effect",
+      "jp_name": "赤水晶",
+      "role": "炎/攻撃属性クリスタル",
+      "file": "sprites/generic_effect/generic_red_crystal.png",
+      "source_box": [
+        658,
+        1416,
+        44,
+        58
+      ],
+      "original_box": [
+        657,
+        1415,
+        46,
+        60
+      ],
+      "size": {
+        "width": 44,
+        "height": 58
+      },
+      "pivot": {
+        "x": 22,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_green_crystal_01",
+      "category": "generic_effect",
+      "jp_name": "緑水晶・大",
+      "role": "自然/回復属性クリスタル",
+      "file": "sprites/generic_effect/generic_green_crystal_01.png",
+      "source_box": [
+        713,
+        1416,
+        46,
+        58
+      ],
+      "original_box": [
+        712,
+        1415,
+        48,
+        61
+      ],
+      "size": {
+        "width": 46,
+        "height": 58
+      },
+      "pivot": {
+        "x": 23,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_green_crystal_02",
+      "category": "generic_effect",
+      "jp_name": "緑水晶・細",
+      "role": "自然/回復属性クリスタル差分",
+      "file": "sprites/generic_effect/generic_green_crystal_02.png",
+      "source_box": [
+        776,
+        1416,
+        48,
+        59
+      ],
+      "original_box": [
+        775,
+        1415,
+        50,
+        61
+      ],
+      "size": {
+        "width": 48,
+        "height": 59
+      },
+      "pivot": {
+        "x": 24,
+        "y": 59
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_purple_crystal",
+      "category": "generic_effect",
+      "jp_name": "紫水晶",
+      "role": "魔法/闇属性クリスタル",
+      "file": "sprites/generic_effect/generic_purple_crystal.png",
+      "source_box": [
+        948,
+        1416,
+        44,
+        58
+      ],
+      "original_box": [
+        947,
+        1415,
+        46,
+        61
+      ],
+      "size": {
+        "width": 44,
+        "height": 58
+      },
+      "pivot": {
+        "x": 22,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_blue_crystal",
+      "category": "generic_effect",
+      "jp_name": "青水晶",
+      "role": "水/氷属性クリスタル",
+      "file": "sprites/generic_effect/generic_blue_crystal.png",
+      "source_box": [
+        837,
+        1417,
+        38,
+        58
+      ],
+      "original_box": [
+        836,
+        1416,
+        39,
+        60
+      ],
+      "size": {
+        "width": 38,
+        "height": 58
+      },
+      "pivot": {
+        "x": 19,
+        "y": 58
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_pink_crystal",
+      "category": "generic_effect",
+      "jp_name": "桃水晶",
+      "role": "愛/回復属性クリスタル",
+      "file": "sprites/generic_effect/generic_pink_crystal.png",
+      "source_box": [
+        894,
+        1419,
+        38,
+        55
+      ],
+      "original_box": [
+        893,
+        1418,
+        40,
+        57
+      ],
+      "size": {
+        "width": 38,
+        "height": 55
+      },
+      "pivot": {
+        "x": 19,
+        "y": 55
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "generic_magic_circle_pink",
+      "category": "generic_effect",
+      "jp_name": "桃色魔法陣",
+      "role": "回復/可愛いバフ用魔法陣",
+      "file": "sprites/generic_effect/generic_magic_circle_pink.png",
+      "source_box": [
+        13,
+        1423,
+        103,
+        49
+      ],
+      "original_box": [
+        13,
+        1422,
+        104,
+        51
+      ],
+      "size": {
+        "width": 103,
+        "height": 49
+      },
+      "pivot": {
+        "x": 52,
+        "y": 49
+      },
+      "tags": [
+        "effect",
+        "generic",
+        "magic"
+      ]
+    },
+    {
+      "id": "ui_icon_question",
+      "category": "ui_status_icon",
+      "jp_name": "？",
+      "role": "疑問/未発見/クエストヒント",
+      "file": "sprites/ui_status_icon/ui_icon_question.png",
+      "source_box": [
+        946,
+        1481,
+        33,
+        47
+      ],
+      "original_box": [
+        944,
+        1480,
+        36,
+        48
+      ],
+      "size": {
+        "width": 33,
+        "height": 47
+      },
+      "pivot": {
+        "x": 16,
+        "y": 47
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_shield",
+      "category": "ui_status_icon",
+      "jp_name": "盾",
+      "role": "防御アップ/シールド状態",
+      "file": "sprites/ui_status_icon/ui_icon_shield.png",
+      "source_box": [
+        153,
+        1482,
+        44,
+        47
+      ],
+      "original_box": [
+        152,
+        1481,
+        46,
+        49
+      ],
+      "size": {
+        "width": 44,
+        "height": 47
+      },
+      "pivot": {
+        "x": 22,
+        "y": 47
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_clover",
+      "category": "ui_status_icon",
+      "jp_name": "クローバー",
+      "role": "幸運/バフ状態アイコン",
+      "file": "sprites/ui_status_icon/ui_icon_clover.png",
+      "source_box": [
+        20,
+        1483,
+        50,
+        46
+      ],
+      "original_box": [
+        19,
+        1482,
+        52,
+        48
+      ],
+      "size": {
+        "width": 50,
+        "height": 46
+      },
+      "pivot": {
+        "x": 25,
+        "y": 46
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_arrow_up",
+      "category": "ui_status_icon",
+      "jp_name": "上昇矢印",
+      "role": "ステータスアップ表示",
+      "file": "sprites/ui_status_icon/ui_icon_arrow_up.png",
+      "source_box": [
+        217,
+        1483,
+        38,
+        44
+      ],
+      "original_box": [
+        216,
+        1482,
+        40,
+        46
+      ],
+      "size": {
+        "width": 38,
+        "height": 44
+      },
+      "pivot": {
+        "x": 19,
+        "y": 44
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_skull",
+      "category": "ui_status_icon",
+      "jp_name": "ドクロ",
+      "role": "毒/戦闘不能/呪い",
+      "file": "sprites/ui_status_icon/ui_icon_skull.png",
+      "source_box": [
+        685,
+        1483,
+        40,
+        44
+      ],
+      "original_box": [
+        684,
+        1482,
+        42,
+        46
+      ],
+      "size": {
+        "width": 40,
+        "height": 44
+      },
+      "pivot": {
+        "x": 20,
+        "y": 44
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_water",
+      "category": "ui_status_icon",
+      "jp_name": "水属性",
+      "role": "水/冷却/循環の属性アイコン",
+      "file": "sprites/ui_status_icon/ui_icon_water.png",
+      "source_box": [
+        745,
+        1483,
+        46,
+        45
+      ],
+      "original_box": [
+        744,
+        1482,
+        48,
+        47
+      ],
+      "size": {
+        "width": 46,
+        "height": 45
+      },
+      "pivot": {
+        "x": 23,
+        "y": 45
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_exclamation",
+      "category": "ui_status_icon",
+      "jp_name": "！",
+      "role": "警告/発見/驚き",
+      "file": "sprites/ui_status_icon/ui_icon_exclamation.png",
+      "source_box": [
+        897,
+        1483,
+        24,
+        44
+      ],
+      "original_box": [
+        895,
+        1482,
+        28,
+        46
+      ],
+      "size": {
+        "width": 24,
+        "height": 44
+      },
+      "pivot": {
+        "x": 12,
+        "y": 44
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_heart",
+      "category": "ui_status_icon",
+      "jp_name": "ハート",
+      "role": "HP/回復/好感度アイコン",
+      "file": "sprites/ui_status_icon/ui_icon_heart.png",
+      "source_box": [
+        90,
+        1485,
+        45,
+        42
+      ],
+      "original_box": [
+        89,
+        1484,
+        47,
+        44
+      ],
+      "size": {
+        "width": 45,
+        "height": 42
+      },
+      "pivot": {
+        "x": 22,
+        "y": 42
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_text_def",
+      "category": "ui_status_icon",
+      "jp_name": "DEF",
+      "role": "防御力アップ/防御ステータス",
+      "file": "sprites/ui_status_icon/ui_text_def.png",
+      "source_box": [
+        353,
+        1486,
+        52,
+        36
+      ],
+      "original_box": [
+        352,
+        1485,
+        54,
+        38
+      ],
+      "size": {
+        "width": 52,
+        "height": 36
+      },
+      "pivot": {
+        "x": 26,
+        "y": 36
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_icon_sleep",
+      "category": "ui_status_icon",
+      "jp_name": "Zzz",
+      "role": "睡眠/眠り状態",
+      "file": "sprites/ui_status_icon/ui_icon_sleep.png",
+      "source_box": [
+        816,
+        1486,
+        50,
+        41
+      ],
+      "original_box": [
+        814,
+        1485,
+        53,
+        43
+      ],
+      "size": {
+        "width": 50,
+        "height": 41
+      },
+      "pivot": {
+        "x": 25,
+        "y": 41
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_text_atk",
+      "category": "ui_status_icon",
+      "jp_name": "ATK",
+      "role": "攻撃力アップ/攻撃ステータス",
+      "file": "sprites/ui_status_icon/ui_text_atk.png",
+      "source_box": [
+        276,
+        1488,
+        59,
+        34
+      ],
+      "original_box": [
+        275,
+        1487,
+        61,
+        36
+      ],
+      "size": {
+        "width": 59,
+        "height": 34
+      },
+      "pivot": {
+        "x": 30,
+        "y": 34
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_text_spd",
+      "category": "ui_status_icon",
+      "jp_name": "SPD",
+      "role": "速度アップ/速度ステータス",
+      "file": "sprites/ui_status_icon/ui_text_spd.png",
+      "source_box": [
+        422,
+        1488,
+        53,
+        34
+      ],
+      "original_box": [
+        421,
+        1487,
+        55,
+        36
+      ],
+      "size": {
+        "width": 53,
+        "height": 34
+      },
+      "pivot": {
+        "x": 26,
+        "y": 34
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_text_crit",
+      "category": "ui_status_icon",
+      "jp_name": "CRIT",
+      "role": "クリティカル率アップ",
+      "file": "sprites/ui_status_icon/ui_text_crit.png",
+      "source_box": [
+        493,
+        1488,
+        57,
+        34
+      ],
+      "original_box": [
+        492,
+        1487,
+        59,
+        36
+      ],
+      "size": {
+        "width": 57,
+        "height": 34
+      },
+      "pivot": {
+        "x": 28,
+        "y": 34
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_text_hp_plus",
+      "category": "ui_status_icon",
+      "jp_name": "HP+",
+      "role": "HP回復/最大HP上昇",
+      "file": "sprites/ui_status_icon/ui_text_hp_plus.png",
+      "source_box": [
+        564,
+        1488,
+        51,
+        34
+      ],
+      "original_box": [
+        564,
+        1487,
+        52,
+        36
+      ],
+      "size": {
+        "width": 51,
+        "height": 34
+      },
+      "pivot": {
+        "x": 26,
+        "y": 34
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    },
+    {
+      "id": "ui_text_mp_plus",
+      "category": "ui_status_icon",
+      "jp_name": "MP+",
+      "role": "MP回復/最大MP上昇",
+      "file": "sprites/ui_status_icon/ui_text_mp_plus.png",
+      "source_box": [
+        621,
+        1488,
+        53,
+        34
+      ],
+      "original_box": [
+        620,
+        1487,
+        55,
+        36
+      ],
+      "size": {
+        "width": 53,
+        "height": 34
+      },
+      "pivot": {
+        "x": 26,
+        "y": 34
+      },
+      "tags": [
+        "ui",
+        "icon"
+      ]
+    }
+  ],
+  "strips": [
+    {
+      "id": "anim_idle_4",
+      "category": "character_animation",
+      "file": "strips/anim_idle_4.png",
+      "frame_ids": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04"
+      ],
+      "frame_width": 101,
+      "frame_height": 125,
+      "frame_count": 4,
+      "align": "bottom_center",
+      "description": "待機ループ4フレーム"
+    },
+    {
+      "id": "anim_walk_8_detected",
+      "category": "character_animation",
+      "file": "strips/anim_walk_8_detected.png",
+      "frame_ids": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05",
+        "walk_06",
+        "walk_07",
+        "walk_08"
+      ],
+      "frame_width": 99,
+      "frame_height": 121,
+      "frame_count": 8,
+      "align": "bottom_center",
+      "description": "歩行/小走りループ。画像から独立8フレームを検出して収録"
+    },
+    {
+      "id": "anim_attack_golf_6",
+      "category": "character_animation",
+      "file": "strips/anim_attack_golf_6.png",
+      "frame_ids": [
+        "attack_golf_01",
+        "attack_golf_02",
+        "attack_golf_03",
+        "attack_golf_04",
+        "attack_golf_05",
+        "attack_golf_06"
+      ],
+      "frame_width": 201,
+      "frame_height": 111,
+      "frame_count": 6,
+      "align": "bottom_center",
+      "description": "通常攻撃ゴルフショット6ステップ"
+    },
+    {
+      "id": "anim_skill_lucky_cookie_6",
+      "category": "character_animation",
+      "file": "strips/anim_skill_lucky_cookie_6.png",
+      "frame_ids": [
+        "skill_lucky_cookie_01",
+        "skill_lucky_cookie_02",
+        "skill_lucky_cookie_03",
+        "skill_lucky_cookie_04",
+        "skill_lucky_cookie_05",
+        "skill_lucky_cookie_06"
+      ],
+      "frame_width": 204,
+      "frame_height": 149,
+      "frame_count": 6,
+      "align": "bottom_center",
+      "description": "スキル「ラッキークッキーハルラッキー・w」6フレーム"
+    },
+    {
+      "id": "anim_face_icons_8",
+      "category": "ui_animation",
+      "file": "strips/anim_face_icons_8.png",
+      "frame_ids": [
+        "face_01",
+        "face_02",
+        "face_03",
+        "face_04",
+        "face_05",
+        "face_06",
+        "face_07",
+        "face_08"
+      ],
+      "frame_width": 116,
+      "frame_height": 73,
+      "frame_count": 8,
+      "align": "center",
+      "description": "フェイスアイコン8種横並び"
+    },
+    {
+      "id": "anim_attack_fx_11",
+      "category": "effect_animation",
+      "file": "strips/anim_attack_fx_11.png",
+      "frame_ids": [
+        "attack_fx_swing_arc_01",
+        "attack_fx_swing_arc_02",
+        "attack_fx_ground_impact_01",
+        "attack_fx_ball_trail_big",
+        "attack_fx_ball_trail_w",
+        "attack_fx_ball_trail_small",
+        "attack_fx_ball_flash",
+        "attack_fx_yellow_burst",
+        "attack_fx_dust_crescent",
+        "attack_fx_dust_cloud",
+        "attack_fx_star_explosion"
+      ],
+      "frame_width": 94,
+      "frame_height": 78,
+      "frame_count": 11,
+      "align": "center",
+      "description": "通常攻撃エフェクト11種"
+    },
+    {
+      "id": "anim_skill_fx_16",
+      "category": "effect_animation",
+      "file": "strips/anim_skill_fx_16.png",
+      "frame_ids": [
+        "skill_fx_clover_summon",
+        "skill_fx_clover_orb",
+        "skill_fx_w_orb_circle",
+        "skill_fx_cookie_ring",
+        "skill_fx_cookie_explosion",
+        "skill_fx_green_magic_circle",
+        "skill_fx_clover_magic_circle",
+        "skill_fx_green_crystal_burst",
+        "skill_fx_dust_cloud",
+        "skill_fx_golden_heal_circle",
+        "skill_fx_level_up",
+        "skill_fx_cross_buff",
+        "skill_fx_green_pillars",
+        "skill_fx_portal_gate",
+        "skill_fx_blessing_fountain",
+        "skill_fx_fire_explosion"
+      ],
+      "frame_width": 126,
+      "frame_height": 107,
+      "frame_count": 16,
+      "align": "center",
+      "description": "ラッキー系スキルエフェクト16種"
+    },
+    {
+      "id": "anim_generic_sparkles_12",
+      "category": "effect_animation",
+      "file": "strips/anim_generic_sparkles_12.png",
+      "frame_ids": [
+        "generic_sparkle_01",
+        "generic_sparkle_02",
+        "generic_sparkle_03",
+        "generic_sparkle_04",
+        "generic_sparkle_05",
+        "generic_sparkle_06",
+        "generic_sparkle_07",
+        "generic_sparkle_08",
+        "generic_sparkle_09",
+        "generic_sparkle_10",
+        "generic_sparkle_11",
+        "generic_sparkle_12"
+      ],
+      "frame_width": 67,
+      "frame_height": 58,
+      "frame_count": 12,
+      "align": "center",
+      "description": "汎用きらめき12種"
+    },
+    {
+      "id": "anim_generic_magic_crystals_13",
+      "category": "effect_animation",
+      "file": "strips/anim_generic_magic_crystals_13.png",
+      "frame_ids": [
+        "generic_magic_circle_pink",
+        "generic_magic_circle_blue",
+        "generic_magic_circle_cyan",
+        "generic_magic_circle_red",
+        "generic_orb_purple",
+        "generic_orb_pink",
+        "generic_ice_spikes",
+        "generic_red_crystal",
+        "generic_green_crystal_01",
+        "generic_green_crystal_02",
+        "generic_blue_crystal",
+        "generic_pink_crystal",
+        "generic_purple_crystal"
+      ],
+      "frame_width": 103,
+      "frame_height": 65,
+      "frame_count": 13,
+      "align": "center",
+      "description": "汎用魔法陣・属性クリスタル13種"
+    },
+    {
+      "id": "anim_ui_status_icons_15",
+      "category": "ui_animation",
+      "file": "strips/anim_ui_status_icons_15.png",
+      "frame_ids": [
+        "ui_icon_clover",
+        "ui_icon_heart",
+        "ui_icon_shield",
+        "ui_icon_arrow_up",
+        "ui_text_atk",
+        "ui_text_def",
+        "ui_text_spd",
+        "ui_text_crit",
+        "ui_text_hp_plus",
+        "ui_text_mp_plus",
+        "ui_icon_skull",
+        "ui_icon_water",
+        "ui_icon_sleep",
+        "ui_icon_exclamation",
+        "ui_icon_question"
+      ],
+      "frame_width": 59,
+      "frame_height": 47,
+      "frame_count": 15,
+      "align": "center",
+      "description": "UIステータスアイコン15種"
+    }
+  ],
+  "animations": [
+    {
+      "key": "anim_idle_4",
+      "strip_id": "anim_idle_4",
+      "frame_rate": 5,
+      "repeat": -1,
+      "description": "待機ループ4フレーム"
+    },
+    {
+      "key": "anim_walk_8_detected",
+      "strip_id": "anim_walk_8_detected",
+      "frame_rate": 9,
+      "repeat": -1,
+      "description": "歩行/小走りループ。画像から独立8フレームを検出して収録"
+    },
+    {
+      "key": "anim_attack_golf_6",
+      "strip_id": "anim_attack_golf_6",
+      "frame_rate": 10,
+      "repeat": 0,
+      "description": "通常攻撃ゴルフショット6ステップ"
+    },
+    {
+      "key": "anim_skill_lucky_cookie_6",
+      "strip_id": "anim_skill_lucky_cookie_6",
+      "frame_rate": 8,
+      "repeat": 0,
+      "description": "スキル「ラッキークッキーハルラッキー・w」6フレーム"
+    },
+    {
+      "key": "anim_face_icons_8",
+      "strip_id": "anim_face_icons_8",
+      "frame_rate": 1,
+      "repeat": 0,
+      "description": "フェイスアイコン8種横並び"
+    },
+    {
+      "key": "anim_attack_fx_11",
+      "strip_id": "anim_attack_fx_11",
+      "frame_rate": 12,
+      "repeat": 0,
+      "description": "通常攻撃エフェクト11種"
+    },
+    {
+      "key": "anim_skill_fx_16",
+      "strip_id": "anim_skill_fx_16",
+      "frame_rate": 10,
+      "repeat": 0,
+      "description": "ラッキー系スキルエフェクト16種"
+    },
+    {
+      "key": "anim_generic_sparkles_12",
+      "strip_id": "anim_generic_sparkles_12",
+      "frame_rate": 12,
+      "repeat": 0,
+      "description": "汎用きらめき12種"
+    },
+    {
+      "key": "anim_generic_magic_crystals_13",
+      "strip_id": "anim_generic_magic_crystals_13",
+      "frame_rate": 8,
+      "repeat": 0,
+      "description": "汎用魔法陣・属性クリスタル13種"
+    },
+    {
+      "key": "anim_ui_status_icons_15",
+      "strip_id": "anim_ui_status_icons_15",
+      "frame_rate": 1,
+      "repeat": 0,
+      "description": "UIステータスアイコン15種"
+    }
+  ]
+}
