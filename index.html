@@ -21,6 +21,7 @@
 
       <section class="game-layout">
         <section class="play-surface" aria-label="game field">
+          <button class="map-close-button action-button" data-action="close-map-detail">閉じる ✕</button>
           <canvas id="game-canvas" width="420" height="560"></canvas>
           <div class="map-hotspots" id="map-hotspots" aria-label="stage pins"></div>
           <div class="canvas-hud">
@@ -37,7 +38,6 @@
         <nav class="tabbar" aria-label="main navigation">
           <button class="tab-button is-active" data-view="map">地図</button>
           <button class="tab-button" data-view="battle">戦闘</button>
-          <button class="tab-button" data-view="roster">部隊</button>
           <button class="tab-button" data-view="logistics">兵站</button>
         </nav>
         <div class="quick-actions" id="quick-actions"></div>
