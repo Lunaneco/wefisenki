@@ -1156,26 +1156,7 @@
 
       loadSave();
 
-      let _clearTested = false;
-      try {
-        _clearTested = window.localStorage.getItem("wfi_cheat_clear_tested") === "true";
-      } catch (e) {}
 
-      if (!_clearTested) {
-        // ラスボス討伐直前の状態へ強制上書き
-        state.unlockedStageId = 14;
-        state.selectedStageId = "final-darkrive22";
-        state.clearedStages = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, "secret-line", "secret-ten", "secret-bakuniki"]);
-        state.unlockedAllyIds = new Set(state.allies.map(a => a.id));
-        state.resources = { wfi: 999999, energy: 999999, food: 999999 };
-        state.openingDone = true;
-        state.charSelectDone = true;
-        state.heheheheheAwakened = true;
-        state.allies.forEach(ally => {
-          state.charLevels[ally.id] = 10;
-        });
-        saveGame();
-      }
 
       applyHeheheheKakusei();
       // セーブデータのレベルを全キャラに適用
@@ -1228,53 +1209,7 @@
         });
       }
 
-      // ラスボス撃破直後の状態を直接注入（クリア画面のタップ動作をテスト用）
-      const _finalStage = SECRET_STAGES.find((s) => s.id === FINAL_BOSS_STAGE_ID);
-      let _hasTestedClear = false;
-      try {
-        _hasTestedClear = window.localStorage.getItem("wfi_cheat_clear_tested") === "true";
-      } catch (e) {}
 
-      if (_finalStage && !_hasTestedClear) {
-        const _reward = _finalStage.reward;
-        state.view = "battle";
-        const _dummyAlly = state.allies[0];
-        state.battle = {
-          stage: _finalStage,
-          wave: 1,
-          maxWave: 1,
-          elapsed: 0,
-          spawnTimer: 0,
-          spawned: 1,
-          killed: 1,
-          waveTarget: 1,
-          enemies: [],
-          particles: [],
-          projectiles: [],
-          baseHp: 12500,
-          baseMaxHp: 12500,
-          activeAllyId: _dummyAlly?.id || "",
-          moveTargetX: 96,
-          moveTargetY: 292,
-          paused: false,
-          dialogue: null,
-          result: {
-            victory: true,
-            title: "クリア",
-            message: `ダークリーヴ２２を撃破。地球は守られました。WFI +${_reward.wfi} / Energy +${_reward.energy} / 食料 +${_reward.food}`,
-            joinAlly: null,
-            needsAllySelect: false,
-            newGamePlus: true,
-            clearScreen: true,
-            clearImage: CLEAR_RESULT_IMAGE,
-            tapped: false
-          }
-        };
-        loadImage(CLEAR_RESULT_IMAGE).then(() => renderDom(true));
-        document.querySelectorAll(".tab-button").forEach((btn) => {
-          btn.classList.toggle("is-active", btn.dataset.view === "battle");
-        });
-      }
 
       requestAnimationFrame(loop);
     } catch (error) {
@@ -3316,15 +3251,15 @@
 
     // 話者名
     ctx.fillStyle = "#79d7ff";
-    ctx.font = "700 13px sans-serif";
+    ctx.font = "700 15px sans-serif";
     ctx.textAlign = "left";
     ctx.textBaseline = "alphabetic";
     ctx.fillText(dialogue.speaker, 28, boxY + 24);
 
     // セリフ
     ctx.fillStyle = "#f5edd7";
-    ctx.font = "13px sans-serif";
-    wrapCanvasText(dialogue.text, 28, boxY + 54, CW - 56, 19);
+    ctx.font = "15px sans-serif";
+    wrapCanvasText(dialogue.text, 28, boxY + 54, CW - 56, 21);
 
     // 進むボタン
     const isLast = state.openingStep >= OPENING_DIALOGUES.length - 1;
@@ -3334,7 +3269,7 @@
     ctx.lineWidth = 1;
     ctx.strokeRect(CW - 144, boxY + 144, 124, 26);
     ctx.fillStyle = "#d9efff";
-    ctx.font = "700 11px sans-serif";
+    ctx.font = "700 13px sans-serif";
     ctx.textAlign = "center";
     ctx.fillText(isLast ? "キャラを選ぶ →" : "次へ →", CW - 82, boxY + 161);
 
@@ -3403,7 +3338,7 @@
     ctx.fillStyle = "rgba(8, 12, 20, 0.88)";
     ctx.fillRect(0, 0, CW, 82);
     ctx.fillStyle = "#ffe2a1";
-    ctx.font = "700 16px sans-serif";
+    ctx.font = "700 18px sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     const title = state.joinAllySelectPhase
@@ -3411,7 +3346,7 @@
       : (state.timeRewindPhase ? "再出撃するWefi戦士を選べ" : "Wefi戦士を選べ");
     ctx.fillText(title, CW / 2, 30);
     ctx.fillStyle = "#79d7ff";
-    ctx.font = "11px sans-serif";
+    ctx.font = "13px sans-serif";
     const subTitle = state.joinAllySelectPhase
       ? "未アンロックの戦士から1人を選択"
       : (state.timeRewindPhase ? "巧んで巻き戻し—全員HP全回復" : "隠しキャラ以外から1人を選択");
@@ -3436,7 +3371,7 @@
 
       // 名前
       ctx.fillStyle = isSelected ? "#ffe2a1" : "#f5edd7";
-      ctx.font = isSelected ? "700 9px sans-serif" : "9px sans-serif";
+      ctx.font = isSelected ? "700 11px sans-serif" : "11px sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "alphabetic";
       const nameShort = Array.from(ally.name).length > 7 ? `${Array.from(ally.name).slice(0, 6).join("")}…` : ally.name;
@@ -3445,7 +3380,7 @@
       // レベルバッジ
       const lv = allyLevel(ally.id);
       ctx.fillStyle = isSelected ? "#ffe2a1" : "rgba(85, 175, 215, 0.7)";
-      ctx.font = "700 8px sans-serif";
+      ctx.font = "700 10px sans-serif";
       ctx.textAlign = "right";
       ctx.fillText(`Lv${lv}`, x + hw - 3, y - hh + 12);
     });
@@ -3461,7 +3396,7 @@
         ctx.lineWidth = 2;
         ctx.strokeRect(CW / 2 - 94, btnY, 188, 34);
         ctx.fillStyle = "#d9efff";
-        ctx.font = "700 12px sans-serif";
+        ctx.font = "700 14px sans-serif";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         const rawBtnText = state.joinAllySelectPhase
@@ -3582,7 +3517,7 @@
     ctx.fillRect(x - 2, y + 7, 4, 2);
 
     ctx.fillStyle = "#fff3c8";
-    ctx.font = selected ? "700 12px sans-serif" : "700 10px sans-serif";
+    ctx.font = selected ? "700 14px sans-serif" : "700 12px sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(String(stage.id), x, y - radius - 10);
@@ -3594,7 +3529,7 @@
       ctx.strokeStyle = "rgba(216, 161, 60, 0.7)";
       ctx.strokeRect(x - 42, y + radius + 5, 84, 22);
       ctx.fillStyle = "#ffe2a1";
-      ctx.font = "700 11px sans-serif";
+      ctx.font = "700 13px sans-serif";
       ctx.fillText(label, x, y + radius + 17);
     }
 
@@ -3696,10 +3631,10 @@
       ctx.strokeStyle = "#d8a13c";
       ctx.strokeRect(38, 210, 344, 96);
       ctx.fillStyle = "#f5edd7";
-      ctx.font = "700 18px sans-serif";
+      ctx.font = "700 20px sans-serif";
       ctx.textAlign = "center";
       ctx.fillText("出撃待ち", 210, 252);
-      ctx.font = "12px sans-serif";
+      ctx.font = "14px sans-serif";
       ctx.fillText("ステージを選んで出撃", 210, 276);
       return;
     }
@@ -3725,7 +3660,7 @@
     ctx.strokeStyle = "rgba(216, 161, 60, 0.75)";
     ctx.strokeRect(8, 8, 164, 48);
     ctx.fillStyle = "#f5edd7";
-    ctx.font = "700 12px sans-serif";
+    ctx.font = "700 14px sans-serif";
     ctx.textAlign = "left";
     ctx.fillText("本陣耐久", 18, 26);
     const hpRatio = battle ? battle.baseHp / battle.baseMaxHp : 1;
@@ -3913,7 +3848,7 @@
     ctx.strokeStyle = ally.id === state.selectedAllyId ? "rgba(85, 175, 215, 0.9)" : "rgba(216, 161, 60, 0.36)";
     ctx.strokeRect(x - width / 2, y - 10, width, 17);
     ctx.fillStyle = "#f6edce";
-    ctx.font = "700 9px sans-serif";
+    ctx.font = "700 11px sans-serif";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText(clipped, x, y - 1);
@@ -4167,7 +4102,7 @@
     const activeStatus = Object.keys(enemy.status).find((key) => enemy.status[key] > 0);
     if (activeStatus) {
       ctx.fillStyle = statusColor(activeStatus);
-      ctx.font = "700 9px sans-serif";
+      ctx.font = "700 11px sans-serif";
       ctx.textAlign = "center";
       ctx.fillText(statusLabel(activeStatus), enemy.x, enemy.y - spriteHeight - 13 * scale);
     }
