@@ -654,6 +654,13 @@
 
   function saveGame() {
     ensureSelectedAllyUnlocked();
+    const charStatus = {};
+    state.allies.forEach((ally) => {
+      charStatus[ally.id] = {
+        hp: ally.hp,
+        skillGauge: ally.skillGauge || 0
+      };
+    });
     const payload = {
       unlockedStageId: state.unlockedStageId,
       selectedStageId: state.selectedStageId,
@@ -665,7 +672,8 @@
       charLevels: state.charLevels,
       openingDone: state.openingDone,
       charSelectDone: state.charSelectDone,
-      heheheheheAwakened: state.heheheheheAwakened
+      heheheheheAwakened: state.heheheheheAwakened,
+      charStatus: charStatus
     };
     const saved = storageSet(STORAGE_KEY, JSON.stringify(payload));
     addLog(saved ? "進行状況を保存しました。" : "この起動方法では保存が使えません。");
@@ -695,6 +703,9 @@
       state.openingDone = !!payload.openingDone;
       state.charSelectDone = !!payload.charSelectDone;
       state.heheheheheAwakened = !!payload.heheheheheAwakened && clearedStageIds.has(KAKUSEI_STAGE.id);
+      if (payload.charStatus && typeof payload.charStatus === "object") {
+        state.loadedCharStatus = payload.charStatus;
+      }
       // 既存セーブ（進行実績あり）にはオープニングをスキップ
       if (!payload.openingDone && (clearedStageIds.size > 0 || (Array.isArray(payload.unlockedAllyIds) && payload.unlockedAllyIds.length > 0))) {
         state.openingDone = true;
@@ -731,6 +742,7 @@
     state.allies.forEach((ally) => {
       ally.maxHp = ally.stats.hp;
       ally.hp = ally.maxHp;
+      ally.skillGauge = 0;
     });
     addLog("進行状況を初期化しました。");
   }
@@ -1165,8 +1177,18 @@
       applyHeheheheKakusei();
       // セーブデータのレベルを全キャラに適用
       applyAllLevels();
-      // セッション開始時はHPをレベル補正後の最大値にセット
-      state.allies.forEach((ally) => { ally.hp = ally.maxHp; });
+      // HPとスキルゲージの復元（セーブデータがある場合は適用、ない場合はデフォルト値）
+      state.allies.forEach((ally) => {
+        const saved = state.loadedCharStatus?.[ally.id];
+        if (saved) {
+          ally.hp = Math.min(Math.max(0, Number(saved.hp) || 0), ally.maxHp);
+          ally.skillGauge = Math.min(Math.max(0, Number(saved.skillGauge) || 0), 1);
+        } else {
+          ally.hp = ally.maxHp;
+          ally.skillGauge = 0;
+        }
+      });
+      delete state.loadedCharStatus;
       ensureSelectedAllyUnlocked();
 
       const imagePaths = new Set(Object.values(ASSETS));
