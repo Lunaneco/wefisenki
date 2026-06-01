@@ -14,7 +14,7 @@
   const CW = canvas.width;
   const CH = canvas.height;
   const STORAGE_KEY = "wefi-sengoku-save-v1";
-  const DATA_VERSION = "20260531-stageplanet29";
+  const DATA_VERSION = "20260531-stageplanet31";
   const STAGE_MAP_SOURCE = { w: 941, h: 1672 };
   const STAGE_ENEMY_SLOT_COUNT = 5;
   const STAGE_NORMAL_ENEMY_COUNT = 4;

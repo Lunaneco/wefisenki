@@ -1102,7 +1102,7 @@ body.is-battle-view .app-shell {
   body.is-battle-view .tabbar {
     left: 9px;
     right: auto;
-    bottom: 128px;
+    bottom: 90px;
     grid-template-columns: 52px;
   }
 
@@ -1114,7 +1114,7 @@ body.is-battle-view .app-shell {
 
   .battle-overlay-controls {
     right: 9px;
-    bottom: 10px;
+    bottom: 90px;
     grid-template-columns: repeat(2, 52px);
     gap: 6px;
   }
