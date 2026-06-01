@@ -1,0 +1,2484 @@
+{
+  "pack_id": "fud_burst_rebel_sprites_pack",
+  "character_name": "FUDバースト・リベル / 紫FUD反逆者",
+  "source_image": {
+    "file": "line.png",
+    "width": 1024,
+    "height": 1536
+  },
+  "notes_ja": [
+    "元画像の透明情報を利用して、各素材を個別PNGとしてトリミングしました。",
+    "source_box は元画像上の [x, y, width, height] です。",
+    "pivot はキャラクター系は bottom_center、UI/エフェクト系は center を基本にしています。",
+    "黒背景ではなく透明PNGです。ゲームエンジン側では nearest / pixelArt 表示推奨です。"
+  ],
+  "category_counts": {
+    "base_pose": 4,
+    "idle": 4,
+    "walk": 6,
+    "attack": 6,
+    "skill_animation": 6,
+    "state": 3,
+    "face_icon": 8,
+    "item": 8,
+    "attack_effect": 12,
+    "skill_effect": 15,
+    "generic_effect": 10,
+    "status_icon": 11,
+    "anti_character": 6,
+    "mini_portrait": 4
+  },
+  "assets": [
+    {
+      "index": 1,
+      "id": "base_front",
+      "category": "base_pose",
+      "description_ja": "基本立ちポーズ：前向き。プレイヤー待機・メニュー表示向け。",
+      "file": "sprites/base_pose/base_front.png",
+      "source_box": [
+        21,
+        38,
+        91,
+        142
+      ],
+      "size": [
+        91,
+        142
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "pose"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "base_left",
+      "category": "base_pose",
+      "description_ja": "基本立ちポーズ：左向き。横移動・会話立ち絵向け。",
+      "file": "sprites/base_pose/base_left.png",
+      "source_box": [
+        135,
+        38,
+        80,
+        138
+      ],
+      "size": [
+        80,
+        138
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "pose"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "base_right",
+      "category": "base_pose",
+      "description_ja": "基本立ちポーズ：右向き。横移動・会話立ち絵向け。",
+      "file": "sprites/base_pose/base_right.png",
+      "source_box": [
+        230,
+        38,
+        73,
+        141
+      ],
+      "size": [
+        73,
+        141
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "pose"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "base_back",
+      "category": "base_pose",
+      "description_ja": "基本立ちポーズ：後ろ向き。背面移動・マップ表示向け。",
+      "file": "sprites/base_pose/base_back.png",
+      "source_box": [
+        320,
+        38,
+        83,
+        145
+      ],
+      "size": [
+        83,
+        145
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "pose"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "idle_01",
+      "category": "idle",
+      "description_ja": "アイドル待機アニメ 1/4。紫のFUDオーラをまとった待機フレーム。",
+      "file": "sprites/idle/idle_01.png",
+      "source_box": [
+        457,
+        35,
+        98,
+        138
+      ],
+      "size": [
+        98,
+        138
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "idle_02",
+      "category": "idle",
+      "description_ja": "アイドル待機アニメ 2/4。紫のFUDオーラをまとった待機フレーム。",
+      "file": "sprites/idle/idle_02.png",
+      "source_box": [
+        580,
+        35,
+        99,
+        138
+      ],
+      "size": [
+        99,
+        138
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "idle_03",
+      "category": "idle",
+      "description_ja": "アイドル待機アニメ 3/4。紫のFUDオーラをまとった待機フレーム。",
+      "file": "sprites/idle/idle_03.png",
+      "source_box": [
+        704,
+        39,
+        97,
+        133
+      ],
+      "size": [
+        97,
+        133
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "idle_04",
+      "category": "idle",
+      "description_ja": "アイドル待機アニメ 4/4。紫のFUDオーラをまとった待機フレーム。",
+      "file": "sprites/idle/idle_04.png",
+      "source_box": [
+        824,
+        41,
+        99,
+        132
+      ],
+      "size": [
+        99,
+        132
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "walk_01",
+      "category": "walk",
+      "description_ja": "歩行アニメ 1/6。サイドビュー移動用フレーム。",
+      "file": "sprites/walk/walk_01.png",
+      "source_box": [
+        7,
+        237,
+        62,
+        105
+      ],
+      "size": [
+        62,
+        105
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "walk_02",
+      "category": "walk",
+      "description_ja": "歩行アニメ 2/6。サイドビュー移動用フレーム。",
+      "file": "sprites/walk/walk_02.png",
+      "source_box": [
+        71,
+        237,
+        68,
+        105
+      ],
+      "size": [
+        68,
+        105
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "index": 11,
+      "id": "walk_03",
+      "category": "walk",
+      "description_ja": "歩行アニメ 3/6。サイドビュー移動用フレーム。",
+      "file": "sprites/walk/walk_03.png",
+      "source_box": [
+        140,
+        238,
+        70,
+        101
+      ],
+      "size": [
+        70,
+        101
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "index": 12,
+      "id": "walk_04",
+      "category": "walk",
+      "description_ja": "歩行アニメ 4/6。サイドビュー移動用フレーム。",
+      "file": "sprites/walk/walk_04.png",
+      "source_box": [
+        205,
+        238,
+        75,
+        101
+      ],
+      "size": [
+        75,
+        101
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "index": 13,
+      "id": "walk_05",
+      "category": "walk",
+      "description_ja": "歩行アニメ 5/6。サイドビュー移動用フレーム。",
+      "file": "sprites/walk/walk_05.png",
+      "source_box": [
+        275,
+        237,
+        70,
+        103
+      ],
+      "size": [
+        70,
+        103
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "index": 14,
+      "id": "walk_06",
+      "category": "walk",
+      "description_ja": "歩行アニメ 6/6。サイドビュー移動用フレーム。",
+      "file": "sprites/walk/walk_06.png",
+      "source_box": [
+        340,
+        239,
+        64,
+        101
+      ],
+      "size": [
+        64,
+        101
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ]
+    },
+    {
+      "index": 15,
+      "id": "attack_01",
+      "category": "attack",
+      "description_ja": "攻撃アニメ 1/6：構え。怒りのラン卜攻撃の始動。",
+      "file": "sprites/attack/attack_01.png",
+      "source_box": [
+        443,
+        237,
+        82,
+        113
+      ],
+      "size": [
+        82,
+        113
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "index": 16,
+      "id": "attack_02",
+      "category": "attack",
+      "description_ja": "攻撃アニメ 2/6：踏み込み。紫オーラを加速。",
+      "file": "sprites/attack/attack_02.png",
+      "source_box": [
+        518,
+        232,
+        107,
+        120
+      ],
+      "size": [
+        107,
+        120
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "index": 17,
+      "id": "attack_03",
+      "category": "attack",
+      "description_ja": "攻撃アニメ 3/6：突き出し。攻撃の放出前。",
+      "file": "sprites/attack/attack_03.png",
+      "source_box": [
+        630,
+        236,
+        90,
+        113
+      ],
+      "size": [
+        90,
+        113
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "index": 18,
+      "id": "attack_04",
+      "category": "attack",
+      "description_ja": "攻撃アニメ 4/6：FUDブレード発射。紫の斬撃が伸びる。",
+      "file": "sprites/attack/attack_04.png",
+      "source_box": [
+        700,
+        237,
+        122,
+        113
+      ],
+      "size": [
+        122,
+        113
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "index": 19,
+      "id": "attack_05",
+      "category": "attack",
+      "description_ja": "攻撃アニメ 5/6：着弾衝撃。地面から紫の爆発。",
+      "file": "sprites/attack/attack_05.png",
+      "source_box": [
+        818,
+        233,
+        114,
+        120
+      ],
+      "size": [
+        114,
+        120
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "index": 20,
+      "id": "attack_06",
+      "category": "attack",
+      "description_ja": "攻撃アニメ 6/6：攻撃後の戻り。",
+      "file": "sprites/attack/attack_06.png",
+      "source_box": [
+        943,
+        233,
+        71,
+        114
+      ],
+      "size": [
+        71,
+        114
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "attack"
+      ]
+    },
+    {
+      "index": 21,
+      "id": "skill_fud_beam_01",
+      "category": "skill_animation",
+      "description_ja": "スキルアニメ 1/6：滅びのバーストFUDビーム開始。紫の力を手元へ集中。",
+      "file": "sprites/skill_animation/skill_fud_beam_01.png",
+      "source_box": [
+        10,
+        411,
+        120,
+        124
+      ],
+      "size": [
+        120,
+        124
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 22,
+      "id": "skill_fud_beam_02",
+      "category": "skill_animation",
+      "description_ja": "スキルアニメ 2/6：W/FUDシンボルを展開。",
+      "file": "sprites/skill_animation/skill_fud_beam_02.png",
+      "source_box": [
+        142,
+        407,
+        163,
+        120
+      ],
+      "size": [
+        163,
+        120
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 23,
+      "id": "skill_fud_beam_03",
+      "category": "skill_animation",
+      "description_ja": "スキルアニメ 3/6：FUDビーム放出。",
+      "file": "sprites/skill_animation/skill_fud_beam_03.png",
+      "source_box": [
+        298,
+        410,
+        180,
+        118
+      ],
+      "size": [
+        180,
+        118
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 24,
+      "id": "skill_fud_beam_04",
+      "category": "skill_animation",
+      "description_ja": "スキルアニメ 4/6：高出力ビーム持続。",
+      "file": "sprites/skill_animation/skill_fud_beam_04.png",
+      "source_box": [
+        487,
+        405,
+        160,
+        122
+      ],
+      "size": [
+        160,
+        122
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 25,
+      "id": "skill_fud_beam_05",
+      "category": "skill_animation",
+      "description_ja": "スキルアニメ 5/6：ビーム本体。敵方向へ強烈な紫閃光。",
+      "file": "sprites/skill_animation/skill_fud_beam_05.png",
+      "source_box": [
+        642,
+        397,
+        188,
+        132
+      ],
+      "size": [
+        188,
+        132
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 26,
+      "id": "skill_fud_beam_06",
+      "category": "skill_animation",
+      "description_ja": "スキルアニメ 6/6：FUD爆散。ビーム終端の大爆発。",
+      "file": "sprites/skill_animation/skill_fud_beam_06.png",
+      "source_box": [
+        823,
+        397,
+        173,
+        128
+      ],
+      "size": [
+        173,
+        128
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 27,
+      "id": "state_damage",
+      "category": "state",
+      "description_ja": "ダメージモーション。紫の瘴気を受けてのけぞる被弾表現。",
+      "file": "sprites/state/state_damage.png",
+      "source_box": [
+        19,
+        587,
+        171,
+        126
+      ],
+      "size": [
+        171,
+        126
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "state"
+      ]
+    },
+    {
+      "index": 28,
+      "id": "state_down",
+      "category": "state",
+      "description_ja": "倒れるモーション。戦闘不能・ノックダウン用。",
+      "file": "sprites/state/state_down.png",
+      "source_box": [
+        249,
+        642,
+        165,
+        67
+      ],
+      "size": [
+        165,
+        67
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "state"
+      ]
+    },
+    {
+      "index": 29,
+      "id": "state_victory",
+      "category": "state",
+      "description_ja": "勝利モーション。指差し勝利ポーズ。",
+      "file": "sprites/state/state_victory.png",
+      "source_box": [
+        451,
+        575,
+        135,
+        143
+      ],
+      "size": [
+        135,
+        143
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "character",
+        "state"
+      ]
+    },
+    {
+      "index": 30,
+      "id": "face_angry",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：怒り。会話UI・カットイン用。",
+      "file": "sprites/face_icon/face_angry.png",
+      "source_box": [
+        641,
+        579,
+        83,
+        74
+      ],
+      "size": [
+        83,
+        74
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 31,
+      "id": "face_neutral",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：通常。会話UI用。",
+      "file": "sprites/face_icon/face_neutral.png",
+      "source_box": [
+        737,
+        581,
+        80,
+        72
+      ],
+      "size": [
+        80,
+        72
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 32,
+      "id": "face_smile",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：笑顔。勝利・煽り台詞用。",
+      "file": "sprites/face_icon/face_smile.png",
+      "source_box": [
+        829,
+        580,
+        77,
+        73
+      ],
+      "size": [
+        77,
+        73
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 33,
+      "id": "face_serious",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：真顔。説明・警戒用。",
+      "file": "sprites/face_icon/face_serious.png",
+      "source_box": [
+        918,
+        580,
+        78,
+        73
+      ],
+      "size": [
+        78,
+        73
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 34,
+      "id": "face_rage",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：激怒。必殺技カットイン用。",
+      "file": "sprites/face_icon/face_rage.png",
+      "source_box": [
+        639,
+        653,
+        91,
+        78
+      ],
+      "size": [
+        91,
+        78
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 35,
+      "id": "face_blank",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：無表情。呆れ・低テンション用。",
+      "file": "sprites/face_icon/face_blank.png",
+      "source_box": [
+        735,
+        653,
+        75,
+        77
+      ],
+      "size": [
+        75,
+        77
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 36,
+      "id": "face_grin",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：ニヤリ。挑発・勝利用。",
+      "file": "sprites/face_icon/face_grin.png",
+      "source_box": [
+        828,
+        653,
+        74,
+        77
+      ],
+      "size": [
+        74,
+        77
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 37,
+      "id": "face_shout",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：叫び。攻撃・被弾・警告用。",
+      "file": "sprites/face_icon/face_shout.png",
+      "source_box": [
+        919,
+        653,
+        76,
+        77
+      ],
+      "size": [
+        76,
+        77
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "face",
+        "portrait"
+      ]
+    },
+    {
+      "index": 38,
+      "id": "item_w_coin",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：紫のWコイン。通貨・スキル触媒・UI素材。",
+      "file": "sprites/item/item_w_coin.png",
+      "source_box": [
+        15,
+        777,
+        70,
+        79
+      ],
+      "size": [
+        70,
+        79
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 39,
+      "id": "item_fud_badge",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：FUDバッジ。敵対勢力・デバフ素材。",
+      "file": "sprites/item/item_fud_badge.png",
+      "source_box": [
+        88,
+        777,
+        75,
+        84
+      ],
+      "size": [
+        75,
+        84
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 40,
+      "id": "item_fud_flag",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：FUD旗/タグ。状態異常や敵アイテム向け。",
+      "file": "sprites/item/item_fud_flag.png",
+      "source_box": [
+        164,
+        777,
+        53,
+        87
+      ],
+      "size": [
+        53,
+        87
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 41,
+      "id": "item_mystery_note",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：謎の張り紙。クエスト・イベント用。",
+      "file": "sprites/item/item_mystery_note.png",
+      "source_box": [
+        221,
+        777,
+        86,
+        83
+      ],
+      "size": [
+        86,
+        83
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 42,
+      "id": "item_megaphone",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：メガホン。FUD拡散・警告演出用。",
+      "file": "sprites/item/item_megaphone.png",
+      "source_box": [
+        300,
+        792,
+        73,
+        64
+      ],
+      "size": [
+        73,
+        64
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 43,
+      "id": "item_crash_diary",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：暴落日記。ストーリー小物。",
+      "file": "sprites/item/item_crash_diary.png",
+      "source_box": [
+        382,
+        778,
+        73,
+        86
+      ],
+      "size": [
+        73,
+        86
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 44,
+      "id": "item_key",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：古い鍵。アンロック・宝箱用。",
+      "file": "sprites/item/item_key.png",
+      "source_box": [
+        450,
+        787,
+        55,
+        77
+      ],
+      "size": [
+        55,
+        77
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 45,
+      "id": "item_w_keychain",
+      "category": "item",
+      "description_ja": "シグネチャーアイテム：Wキーホルダー。装備・報酬用。",
+      "file": "sprites/item/item_w_keychain.png",
+      "source_box": [
+        502,
+        782,
+        63,
+        83
+      ],
+      "size": [
+        63,
+        83
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "item"
+      ]
+    },
+    {
+      "index": 46,
+      "id": "attack_fx_slash_crescent_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：紫の三日月斬撃。",
+      "file": "sprites/attack_effect/attack_fx_slash_crescent_01.png",
+      "source_box": [
+        11,
+        914,
+        79,
+        77
+      ],
+      "size": [
+        79,
+        77
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 47,
+      "id": "attack_fx_slash_streak_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：横流れの紫斬撃。",
+      "file": "sprites/attack_effect/attack_fx_slash_streak_01.png",
+      "source_box": [
+        94,
+        917,
+        86,
+        71
+      ],
+      "size": [
+        86,
+        71
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 48,
+      "id": "attack_fx_projectile_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：紫の弾丸/飛翔体。",
+      "file": "sprites/attack_effect/attack_fx_projectile_01.png",
+      "source_box": [
+        183,
+        922,
+        91,
+        66
+      ],
+      "size": [
+        91,
+        66
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 49,
+      "id": "attack_fx_hit_flash_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：着弾フラッシュ小。",
+      "file": "sprites/attack_effect/attack_fx_hit_flash_01.png",
+      "source_box": [
+        276,
+        925,
+        61,
+        58
+      ],
+      "size": [
+        61,
+        58
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 50,
+      "id": "attack_fx_hit_flash_02",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：着弾フラッシュ大。",
+      "file": "sprites/attack_effect/attack_fx_hit_flash_02.png",
+      "source_box": [
+        339,
+        914,
+        65,
+        70
+      ],
+      "size": [
+        65,
+        70
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 51,
+      "id": "attack_fx_smoke_burst_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：紫の煙爆発。",
+      "file": "sprites/attack_effect/attack_fx_smoke_burst_01.png",
+      "source_box": [
+        415,
+        916,
+        81,
+        69
+      ],
+      "size": [
+        81,
+        69
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 52,
+      "id": "attack_fx_smoke_burst_02",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：紫の煙流れ。",
+      "file": "sprites/attack_effect/attack_fx_smoke_burst_02.png",
+      "source_box": [
+        499,
+        915,
+        67,
+        72
+      ],
+      "size": [
+        67,
+        72
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 53,
+      "id": "attack_fx_dark_claw_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：闇の爪痕1。",
+      "file": "sprites/attack_effect/attack_fx_dark_claw_01.png",
+      "source_box": [
+        17,
+        990,
+        59,
+        65
+      ],
+      "size": [
+        59,
+        65
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 54,
+      "id": "attack_fx_dark_claw_02",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：闇の爪痕2。",
+      "file": "sprites/attack_effect/attack_fx_dark_claw_02.png",
+      "source_box": [
+        93,
+        1003,
+        55,
+        51
+      ],
+      "size": [
+        55,
+        51
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 55,
+      "id": "attack_fx_dark_claw_03",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：闇の爪痕3。",
+      "file": "sprites/attack_effect/attack_fx_dark_claw_03.png",
+      "source_box": [
+        173,
+        999,
+        65,
+        52
+      ],
+      "size": [
+        65,
+        52
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 56,
+      "id": "attack_fx_dark_splash_01",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：紫のスプラッシュ。",
+      "file": "sprites/attack_effect/attack_fx_dark_splash_01.png",
+      "source_box": [
+        266,
+        993,
+        60,
+        62
+      ],
+      "size": [
+        60,
+        62
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 57,
+      "id": "attack_fx_dark_splash_02",
+      "category": "attack_effect",
+      "description_ja": "通常攻撃エフェクト：紫の闇煙。",
+      "file": "sprites/attack_effect/attack_fx_dark_splash_02.png",
+      "source_box": [
+        393,
+        991,
+        62,
+        67
+      ],
+      "size": [
+        62,
+        67
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "attack"
+      ]
+    },
+    {
+      "index": 58,
+      "id": "skill_fx_fud_spark_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：FUDビーム用の紫スパーク。",
+      "file": "sprites/skill_effect/skill_fx_fud_spark_01.png",
+      "source_box": [
+        582,
+        776,
+        88,
+        72
+      ],
+      "size": [
+        88,
+        72
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 59,
+      "id": "skill_fx_fud_swirl_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫の渦。",
+      "file": "sprites/skill_effect/skill_fx_fud_swirl_01.png",
+      "source_box": [
+        658,
+        784,
+        90,
+        71
+      ],
+      "size": [
+        90,
+        71
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 60,
+      "id": "skill_fx_magic_circle_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫の魔法陣。詠唱・召喚用。",
+      "file": "sprites/skill_effect/skill_fx_magic_circle_01.png",
+      "source_box": [
+        735,
+        781,
+        123,
+        74
+      ],
+      "size": [
+        123,
+        74
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 61,
+      "id": "skill_fx_fud_burst_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫爆発。",
+      "file": "sprites/skill_effect/skill_fx_fud_burst_01.png",
+      "source_box": [
+        880,
+        776,
+        134,
+        80
+      ],
+      "size": [
+        134,
+        80
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 62,
+      "id": "skill_fx_fud_beam_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：横長FUDビーム1。",
+      "file": "sprites/skill_effect/skill_fx_fud_beam_01.png",
+      "source_box": [
+        582,
+        863,
+        240,
+        72
+      ],
+      "size": [
+        240,
+        72
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 63,
+      "id": "skill_fx_fud_beam_02",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：横長FUDビーム2。",
+      "file": "sprites/skill_effect/skill_fx_fud_beam_02.png",
+      "source_box": [
+        824,
+        865,
+        190,
+        70
+      ],
+      "size": [
+        190,
+        70
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 64,
+      "id": "skill_fx_w_burst_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：W刻印つき爆心。",
+      "file": "sprites/skill_effect/skill_fx_w_burst_01.png",
+      "source_box": [
+        582,
+        928,
+        127,
+        116
+      ],
+      "size": [
+        127,
+        116
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 65,
+      "id": "skill_fx_dark_crack_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：闇の亀裂/ブラックホール。",
+      "file": "sprites/skill_effect/skill_fx_dark_crack_01.png",
+      "source_box": [
+        736,
+        930,
+        108,
+        111
+      ],
+      "size": [
+        108,
+        111
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 66,
+      "id": "skill_fx_fud_eruption_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫の地面噴出。",
+      "file": "sprites/skill_effect/skill_fx_fud_eruption_01.png",
+      "source_box": [
+        869,
+        927,
+        145,
+        121
+      ],
+      "size": [
+        145,
+        121
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 67,
+      "id": "skill_fx_column_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫結晶の柱。",
+      "file": "sprites/skill_effect/skill_fx_column_01.png",
+      "source_box": [
+        582,
+        1044,
+        122,
+        104
+      ],
+      "size": [
+        122,
+        104
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 68,
+      "id": "skill_fx_flame_pool_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫炎の床。",
+      "file": "sprites/skill_effect/skill_fx_flame_pool_01.png",
+      "source_box": [
+        724,
+        1046,
+        99,
+        102
+      ],
+      "size": [
+        99,
+        102
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 69,
+      "id": "skill_fx_ground_splash_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：地面からの紫スパーク。",
+      "file": "sprites/skill_effect/skill_fx_ground_splash_01.png",
+      "source_box": [
+        905,
+        1061,
+        110,
+        81
+      ],
+      "size": [
+        110,
+        81
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 70,
+      "id": "skill_fx_large_magic_circle_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：大型紫魔法陣。",
+      "file": "sprites/skill_effect/skill_fx_large_magic_circle_01.png",
+      "source_box": [
+        582,
+        1132,
+        176,
+        100
+      ],
+      "size": [
+        176,
+        100
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 71,
+      "id": "skill_fx_crystal_burst_01",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：小型クリスタル爆発。",
+      "file": "sprites/skill_effect/skill_fx_crystal_burst_01.png",
+      "source_box": [
+        756,
+        1148,
+        104,
+        73
+      ],
+      "size": [
+        104,
+        73
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 72,
+      "id": "skill_fx_dark_burst_02",
+      "category": "skill_effect",
+      "description_ja": "スキルエフェクト：紫の大爆散。",
+      "file": "sprites/skill_effect/skill_fx_dark_burst_02.png",
+      "source_box": [
+        902,
+        1160,
+        108,
+        68
+      ],
+      "size": [
+        108,
+        68
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "skill",
+        "fud_beam"
+      ]
+    },
+    {
+      "index": 73,
+      "id": "generic_light_sparkle_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：白紫の小さなきらめき。",
+      "file": "sprites/generic_effect/generic_light_sparkle_01.png",
+      "source_box": [
+        12,
+        1113,
+        30,
+        45
+      ],
+      "size": [
+        30,
+        45
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 74,
+      "id": "generic_light_sparkle_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：青白いきらめき。",
+      "file": "sprites/generic_effect/generic_light_sparkle_02.png",
+      "source_box": [
+        42,
+        1119,
+        36,
+        38
+      ],
+      "size": [
+        36,
+        38
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 75,
+      "id": "generic_light_projectile_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：細い光の弾道。",
+      "file": "sprites/generic_effect/generic_light_projectile_01.png",
+      "source_box": [
+        92,
+        1118,
+        86,
+        40
+      ],
+      "size": [
+        86,
+        40
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 76,
+      "id": "generic_light_projectile_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：短い光の弾道。",
+      "file": "sprites/generic_effect/generic_light_projectile_02.png",
+      "source_box": [
+        176,
+        1126,
+        42,
+        29
+      ],
+      "size": [
+        42,
+        29
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 77,
+      "id": "generic_light_burst_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：紫白の衝撃星。",
+      "file": "sprites/generic_effect/generic_light_burst_01.png",
+      "source_box": [
+        216,
+        1122,
+        46,
+        40
+      ],
+      "size": [
+        46,
+        40
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 78,
+      "id": "generic_light_burst_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：大きな星型衝撃。",
+      "file": "sprites/generic_effect/generic_light_burst_02.png",
+      "source_box": [
+        264,
+        1111,
+        66,
+        52
+      ],
+      "size": [
+        66,
+        52
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 79,
+      "id": "generic_smoke_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：小さな灰煙1。",
+      "file": "sprites/generic_effect/generic_smoke_01.png",
+      "source_box": [
+        326,
+        1110,
+        39,
+        52
+      ],
+      "size": [
+        39,
+        52
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 80,
+      "id": "generic_smoke_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：灰煙2。",
+      "file": "sprites/generic_effect/generic_smoke_02.png",
+      "source_box": [
+        379,
+        1110,
+        55,
+        52
+      ],
+      "size": [
+        55,
+        52
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 81,
+      "id": "generic_question_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：疑問符/混乱。",
+      "file": "sprites/generic_effect/generic_question_01.png",
+      "source_box": [
+        440,
+        1114,
+        53,
+        60
+      ],
+      "size": [
+        53,
+        60
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 82,
+      "id": "generic_question_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：大きな疑問符。",
+      "file": "sprites/generic_effect/generic_question_02.png",
+      "source_box": [
+        498,
+        1124,
+        70,
+        45
+      ],
+      "size": [
+        70,
+        45
+      ],
+      "pivot": "center",
+      "tags": [
+        "effect",
+        "generic"
+      ]
+    },
+    {
+      "index": 83,
+      "id": "status_spiral",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：混乱/めまい。",
+      "file": "sprites/status_icon/status_spiral.png",
+      "source_box": [
+        13,
+        1180,
+        43,
+        41
+      ],
+      "size": [
+        43,
+        41
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 84,
+      "id": "status_skull_gray",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：戦闘不能/即死グレー。",
+      "file": "sprites/status_icon/status_skull_gray.png",
+      "source_box": [
+        66,
+        1181,
+        36,
+        40
+      ],
+      "size": [
+        36,
+        40
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 85,
+      "id": "status_skull_green",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：毒/呪い。",
+      "file": "sprites/status_icon/status_skull_green.png",
+      "source_box": [
+        117,
+        1183,
+        34,
+        37
+      ],
+      "size": [
+        34,
+        37
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 86,
+      "id": "status_sleep",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：睡眠。",
+      "file": "sprites/status_icon/status_sleep.png",
+      "source_box": [
+        168,
+        1178,
+        39,
+        37
+      ],
+      "size": [
+        39,
+        37
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 87,
+      "id": "status_lightning",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：麻痺/雷。",
+      "file": "sprites/status_icon/status_lightning.png",
+      "source_box": [
+        220,
+        1178,
+        35,
+        48
+      ],
+      "size": [
+        35,
+        48
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 88,
+      "id": "status_shield_green",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：防御アップ。",
+      "file": "sprites/status_icon/status_shield_green.png",
+      "source_box": [
+        266,
+        1174,
+        43,
+        52
+      ],
+      "size": [
+        43,
+        52
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 89,
+      "id": "status_shield_blue",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：シールド。",
+      "file": "sprites/status_icon/status_shield_blue.png",
+      "source_box": [
+        317,
+        1173,
+        43,
+        52
+      ],
+      "size": [
+        43,
+        52
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 90,
+      "id": "status_up",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：上昇/バフ。",
+      "file": "sprites/status_icon/status_up.png",
+      "source_box": [
+        376,
+        1178,
+        39,
+        45
+      ],
+      "size": [
+        39,
+        45
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 91,
+      "id": "status_down",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：下降/デバフ。",
+      "file": "sprites/status_icon/status_down.png",
+      "source_box": [
+        417,
+        1180,
+        40,
+        44
+      ],
+      "size": [
+        40,
+        44
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 92,
+      "id": "status_dizzy_spiral",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：混乱スパイラル。",
+      "file": "sprites/status_icon/status_dizzy_spiral.png",
+      "source_box": [
+        462,
+        1176,
+        45,
+        46
+      ],
+      "size": [
+        45,
+        46
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 93,
+      "id": "status_rock_debris",
+      "category": "status_icon",
+      "description_ja": "状態アイコン：瓦礫/土属性。",
+      "file": "sprites/status_icon/status_rock_debris.png",
+      "source_box": [
+        508,
+        1182,
+        53,
+        37
+      ],
+      "size": [
+        53,
+        37
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "status"
+      ]
+    },
+    {
+      "index": 94,
+      "id": "enemy_banking_elite",
+      "category": "anti_character",
+      "description_ja": "その他アンチキャラクター：銀行家エリート。敵ユニット・NPC向け。",
+      "file": "sprites/anti_character/enemy_banking_elite.png",
+      "source_box": [
+        15,
+        1295,
+        92,
+        144
+      ],
+      "size": [
+        92,
+        144
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "enemy",
+        "npc"
+      ]
+    },
+    {
+      "index": 95,
+      "id": "enemy_wefi_believer",
+      "category": "anti_character",
+      "description_ja": "その他アンチキャラクター：WeFi信者/Wマスク。敵ユニット・NPC向け。",
+      "file": "sprites/anti_character/enemy_wefi_believer.png",
+      "source_box": [
+        120,
+        1290,
+        90,
+        148
+      ],
+      "size": [
+        90,
+        148
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "enemy",
+        "npc"
+      ]
+    },
+    {
+      "index": 96,
+      "id": "enemy_tax_collector",
+      "category": "anti_character",
+      "description_ja": "その他アンチキャラクター：税金取り立て屋。敵ユニット・NPC向け。",
+      "file": "sprites/anti_character/enemy_tax_collector.png",
+      "source_box": [
+        218,
+        1292,
+        108,
+        130
+      ],
+      "size": [
+        108,
+        130
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "enemy",
+        "npc"
+      ]
+    },
+    {
+      "index": 97,
+      "id": "enemy_regulation_officer",
+      "category": "anti_character",
+      "description_ja": "その他アンチキャラクター：規制官僚。敵ユニット・NPC向け。",
+      "file": "sprites/anti_character/enemy_regulation_officer.png",
+      "source_box": [
+        337,
+        1296,
+        92,
+        126
+      ],
+      "size": [
+        92,
+        126
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "enemy",
+        "npc"
+      ]
+    },
+    {
+      "index": 98,
+      "id": "enemy_programmer_cultist",
+      "category": "anti_character",
+      "description_ja": "その他アンチキャラクター：プログラマー信奉者。敵ユニット・NPC向け。",
+      "file": "sprites/anti_character/enemy_programmer_cultist.png",
+      "source_box": [
+        444,
+        1292,
+        99,
+        130
+      ],
+      "size": [
+        99,
+        130
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "enemy",
+        "npc"
+      ]
+    },
+    {
+      "index": 99,
+      "id": "enemy_fud_drone",
+      "category": "anti_character",
+      "description_ja": "その他アンチキャラクター：FUD警備ドローン。浮遊敵向け。",
+      "file": "sprites/anti_character/enemy_fud_drone.png",
+      "source_box": [
+        560,
+        1290,
+        117,
+        94
+      ],
+      "size": [
+        117,
+        94
+      ],
+      "pivot": "bottom_center",
+      "tags": [
+        "enemy",
+        "npc"
+      ]
+    },
+    {
+      "index": 100,
+      "id": "mini_portrait_pointing_01",
+      "category": "mini_portrait",
+      "description_ja": "ミニポートレート：指差しカットイン1。会話・スキル演出用。",
+      "file": "sprites/mini_portrait/mini_portrait_pointing_01.png",
+      "source_box": [
+        691,
+        1295,
+        144,
+        80
+      ],
+      "size": [
+        144,
+        80
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "portrait",
+        "cutin"
+      ]
+    },
+    {
+      "index": 101,
+      "id": "mini_portrait_angry_01",
+      "category": "mini_portrait",
+      "description_ja": "ミニポートレート：怒りカットイン1。",
+      "file": "sprites/mini_portrait/mini_portrait_angry_01.png",
+      "source_box": [
+        835,
+        1295,
+        173,
+        80
+      ],
+      "size": [
+        173,
+        80
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "portrait",
+        "cutin"
+      ]
+    },
+    {
+      "index": 102,
+      "id": "mini_portrait_pointing_02",
+      "category": "mini_portrait",
+      "description_ja": "ミニポートレート：指差しカットイン2。",
+      "file": "sprites/mini_portrait/mini_portrait_pointing_02.png",
+      "source_box": [
+        691,
+        1370,
+        144,
+        85
+      ],
+      "size": [
+        144,
+        85
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "portrait",
+        "cutin"
+      ]
+    },
+    {
+      "index": 103,
+      "id": "mini_portrait_angry_02",
+      "category": "mini_portrait",
+      "description_ja": "ミニポートレート：怒りカットイン2。",
+      "file": "sprites/mini_portrait/mini_portrait_angry_02.png",
+      "source_box": [
+        835,
+        1370,
+        173,
+        85
+      ],
+      "size": [
+        173,
+        85
+      ],
+      "pivot": "center",
+      "tags": [
+        "ui",
+        "portrait",
+        "cutin"
+      ]
+    }
+  ],
+  "animations": [
+    {
+      "id": "anim_idle_4",
+      "file": "strips/anim_idle_4.png",
+      "frames": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04"
+      ],
+      "frame_count": 4,
+      "frame_width": 99,
+      "frame_height": 138,
+      "fps": 6,
+      "loop": true,
+      "description_ja": "アイドル待機4フレーム。紫オーラが揺れるループ。"
+    },
+    {
+      "id": "anim_walk_6",
+      "file": "strips/anim_walk_6.png",
+      "frames": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05",
+        "walk_06"
+      ],
+      "frame_count": 6,
+      "frame_width": 75,
+      "frame_height": 105,
+      "fps": 8,
+      "loop": true,
+      "description_ja": "歩行6フレーム。横方向移動ループ。"
+    },
+    {
+      "id": "anim_attack_6",
+      "file": "strips/anim_attack_6.png",
+      "frames": [
+        "attack_01",
+        "attack_02",
+        "attack_03",
+        "attack_04",
+        "attack_05",
+        "attack_06"
+      ],
+      "frame_count": 6,
+      "frame_width": 122,
+      "frame_height": 120,
+      "fps": 10,
+      "loop": false,
+      "description_ja": "怒りの暴言ラント攻撃6フレーム。"
+    },
+    {
+      "id": "anim_skill_fud_beam_6",
+      "file": "strips/anim_skill_fud_beam_6.png",
+      "frames": [
+        "skill_fud_beam_01",
+        "skill_fud_beam_02",
+        "skill_fud_beam_03",
+        "skill_fud_beam_04",
+        "skill_fud_beam_05",
+        "skill_fud_beam_06"
+      ],
+      "frame_count": 6,
+      "frame_width": 188,
+      "frame_height": 132,
+      "fps": 8,
+      "loop": false,
+      "description_ja": "必殺技『滅びのバーストFUDビーム』6フレーム。"
+    },
+    {
+      "id": "anim_damage_down_victory_3",
+      "file": "strips/anim_damage_down_victory_3.png",
+      "frames": [
+        "state_damage",
+        "state_down",
+        "state_victory"
+      ],
+      "frame_count": 3,
+      "frame_width": 171,
+      "frame_height": 143,
+      "fps": 5,
+      "loop": false,
+      "description_ja": "状態ポーズ3種を並べた確認用ストリップ。"
+    },
+    {
+      "id": "anim_attack_fx_12",
+      "file": "strips/anim_attack_fx_12.png",
+      "frames": [
+        "attack_fx_slash_crescent_01",
+        "attack_fx_slash_streak_01",
+        "attack_fx_projectile_01",
+        "attack_fx_hit_flash_01",
+        "attack_fx_hit_flash_02",
+        "attack_fx_smoke_burst_01",
+        "attack_fx_smoke_burst_02",
+        "attack_fx_dark_claw_01",
+        "attack_fx_dark_claw_02",
+        "attack_fx_dark_claw_03",
+        "attack_fx_dark_splash_01",
+        "attack_fx_dark_splash_02"
+      ],
+      "frame_count": 12,
+      "frame_width": 91,
+      "frame_height": 77,
+      "fps": 12,
+      "loop": false,
+      "description_ja": "通常攻撃エフェクト12点の確認用ストリップ。"
+    },
+    {
+      "id": "anim_skill_fx_fud_15",
+      "file": "strips/anim_skill_fx_fud_15.png",
+      "frames": [
+        "skill_fx_fud_spark_01",
+        "skill_fx_fud_swirl_01",
+        "skill_fx_magic_circle_01",
+        "skill_fx_fud_burst_01",
+        "skill_fx_fud_beam_01",
+        "skill_fx_fud_beam_02",
+        "skill_fx_w_burst_01",
+        "skill_fx_dark_crack_01",
+        "skill_fx_fud_eruption_01",
+        "skill_fx_column_01",
+        "skill_fx_flame_pool_01",
+        "skill_fx_ground_splash_01",
+        "skill_fx_large_magic_circle_01",
+        "skill_fx_crystal_burst_01",
+        "skill_fx_dark_burst_02"
+      ],
+      "frame_count": 15,
+      "frame_width": 240,
+      "frame_height": 121,
+      "fps": 10,
+      "loop": false,
+      "description_ja": "FUDビーム関連スキルエフェクト15点の確認用ストリップ。"
+    }
+  ]
+}
