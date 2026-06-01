@@ -14,7 +14,7 @@
   const CW = canvas.width;
   const CH = canvas.height;
   const STORAGE_KEY = "wefi-sengoku-save-v1";
-  const DATA_VERSION = "20260531-stageplanet20";
+  const DATA_VERSION = "20260531-stageplanet29";
   const STAGE_MAP_SOURCE = { w: 941, h: 1672 };
   const STAGE_ENEMY_SLOT_COUNT = 5;
   const STAGE_NORMAL_ENEMY_COUNT = 4;
@@ -3771,22 +3771,14 @@
 
   function drawBattleTopUi() {
     const battle = state.battle;
-    ctx.fillStyle = "rgba(8, 10, 10, 0.78)";
-    ctx.fillRect(8, 8, 164, 48);
-    ctx.strokeStyle = "rgba(216, 161, 60, 0.75)";
-    ctx.strokeRect(8, 8, 164, 48);
-    ctx.fillStyle = "#f5edd7";
-    ctx.font = "700 14px sans-serif";
-    ctx.textAlign = "left";
-    ctx.fillText("本陣耐久", 18, 26);
-    const hpRatio = battle ? battle.baseHp / battle.baseMaxHp : 1;
-    drawMeter(18, 36, 132, 7, hpRatio, "#70d45e");
-
     if (!battle) return;
     ctx.fillStyle = "rgba(8, 10, 10, 0.78)";
+    ctx.strokeStyle = "rgba(216, 161, 60, 0.75)";
     ctx.fillRect(274, 8, 138, 48);
     ctx.strokeRect(274, 8, 138, 48);
     ctx.fillStyle = "#f5edd7";
+    ctx.font = "700 14px sans-serif";
+    ctx.textAlign = "left";
     ctx.fillText(`Wave ${battle.wave}/${battle.maxWave}`, 284, 27);
     drawMeter(284, 37, 108, 7, battle.spawned / Math.max(1, battle.waveTarget), "#55afd7");
   }

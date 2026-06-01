@@ -367,7 +367,7 @@ h1 {
 }
 
 body.is-battle-view .game-layout {
-  grid-template-columns: minmax(320px, 420px);
+  grid-template-columns: minmax(320px, min(540px, calc((100dvh - 104px) * 0.75), 100%));
   justify-content: center;
 }
 
@@ -378,32 +378,55 @@ body.is-battle-view .tab-button:not([data-view="map"]) {
 }
 
 body.is-battle-view .tabbar {
+  position: absolute;
+  left: 12px;
+  right: auto;
+  bottom: 174px;
+  z-index: 5;
   display: grid;
-  grid-template-columns: 44px;
+  grid-template-columns: 52px;
   overflow: visible;
+  pointer-events: auto;
 }
 
 body.is-battle-view .tab-button[data-view="map"] {
   position: relative;
-  min-width: 44px;
-  width: 44px;
+  min-width: 52px;
+  width: 52px;
+  min-height: 52px;
   padding: 0;
+  border-color: rgba(122, 223, 255, 0.88);
+  border-radius: 10px;
+  background: rgba(9, 17, 22, 0.94);
+  box-shadow:
+    0 0 0 2px rgba(0, 242, 255, 0.22),
+    0 8px 18px rgba(0, 0, 0, 0.52);
   font-size: 0;
+  touch-action: manipulation;
 }
 
 body.is-battle-view .tab-button[data-view="map"]::before {
   content: "";
   position: absolute;
-  left: 12px;
-  top: 9px;
-  width: 19px;
-  height: 18px;
+  left: 14px;
+  top: 11px;
+  width: 23px;
+  height: 21px;
   border: 2px solid #ffe2a1;
   border-radius: 2px;
   background:
     linear-gradient(90deg, transparent 0 30%, rgba(255, 226, 161, 0.75) 31% 35%, transparent 36% 64%, rgba(255, 226, 161, 0.75) 65% 69%, transparent 70%),
     linear-gradient(135deg, rgba(85, 175, 215, 0.22), rgba(216, 161, 60, 0.22));
   transform: skewY(-8deg);
+}
+
+body.is-battle-view .roster-rail {
+  position: absolute;
+  left: 12px;
+  bottom: 14px;
+  z-index: 5;
+  width: min(calc(100vw - 24px), 640px);
+  pointer-events: auto;
 }
 
 #view-title,
@@ -416,6 +439,20 @@ body.is-battle-view .tab-button[data-view="map"]::before {
   color: var(--ink);
   font-size: 12px;
   line-height: 1.25;
+}
+
+body.is-battle-view .canvas-hud {
+  justify-content: flex-start;
+}
+
+body.is-battle-view #battle-clock {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  min-width: 54px;
+  max-width: none;
+  text-align: center;
+  transform: translateX(-50%);
 }
 
 .side-panel {
@@ -484,6 +521,18 @@ body.is-battle-view .tab-button[data-view="map"]::before {
   display: block;
   color: var(--muted);
   font-size: 10px;
+}
+
+body.is-battle-view .command-area {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  min-height: 0;
+  pointer-events: none;
+}
+
+body.is-battle-view .app-shell {
+  grid-template-rows: auto minmax(0, 1fr);
 }
 
 .stat strong {
@@ -960,7 +1009,7 @@ body.is-battle-view .tab-button[data-view="map"]::before {
   }
 
   body.is-battle-view .play-surface {
-    width: min(100%, 540px, max(270px, calc((100dvh - 240px) * 0.75)));
+    width: min(100%, 540px, max(300px, calc((100dvh - 98px) * 0.75)));
   }
 
   .side-panel {
@@ -1051,7 +1100,16 @@ body.is-battle-view .tab-button[data-view="map"]::before {
   }
 
   body.is-battle-view .tabbar {
-    grid-template-columns: 42px;
+    left: 9px;
+    right: auto;
+    bottom: 128px;
+    grid-template-columns: 52px;
+  }
+
+  body.is-battle-view .roster-rail {
+    left: 9px;
+    bottom: 10px;
+    width: min(calc(100vw - 18px), 420px);
   }
 
   .battle-overlay-controls {
