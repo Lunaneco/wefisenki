@@ -14,7 +14,7 @@
   const CW = canvas.width;
   const CH = canvas.height;
   const STORAGE_KEY = "wefi-sengoku-save-v1";
-  const DATA_VERSION = "20260531-stageplanet18";
+  const DATA_VERSION = "20260531-stageplanet19";
   const STAGE_MAP_SOURCE = { w: 941, h: 1672 };
   const STAGE_ENEMY_SLOT_COUNT = 5;
   const STAGE_NORMAL_ENEMY_COUNT = 4;
@@ -552,6 +552,7 @@
       ally.hp = options.fullHp ? ally.maxHp : Math.min(ally.hp, ally.maxHp);
       ally.shield = 0;
       ally.skillGauge = 0;
+      ally.attackQueuedUntil = 0;
       ally.cooldowns = {};
       ally.buffs = {};
       ally.anim = "idle";
@@ -743,6 +744,7 @@
       ally.maxHp = ally.stats.hp;
       ally.hp = ally.maxHp;
       ally.skillGauge = 0;
+      ally.attackQueuedUntil = 0;
     });
     addLog("進行状況を初期化しました。");
   }
@@ -769,6 +771,7 @@
       ally.hp = ally.maxHp;
       ally.shield = 0;
       ally.skillGauge = 0;
+      ally.attackQueuedUntil = 0;
       ally.cooldowns = {};
       ally.buffs = {};
     });
@@ -790,6 +793,7 @@
       homeX: 0,
       homeY: 0,
       attackTimer: 0,
+      attackQueuedUntil: 0,
       cooldowns: {},
       buffs: {},
       battleX: 0,
@@ -1713,6 +1717,7 @@
     next.visualDirection = current?.visualDirection || "front";
     next.moving = false;
     next.anim = "idle";
+    next.attackQueuedUntil = 0;
     next.animUntil = battle.elapsed + 0.25;
     battle.activeAllyId = next.id;
     state.selectedAllyId = next.id;
@@ -1800,6 +1805,7 @@
       // HPはステージ間で引き継ぐ（skipHpResetの場合はconfirmCharSelectで全回復済み）
       ally.shield = 0;
       ally.attackTimer = index * 0.18;
+      ally.attackQueuedUntil = 0;
       ally.cooldowns = {};
       ally.buffs = {};
       ally.skillGauge = 0;
@@ -2530,6 +2536,11 @@
     if (!ally.moving && battle.elapsed >= ally.animUntil) {
       ally.anim = "idle";
     }
+    if ((ally.attackQueuedUntil || 0) > battle.elapsed && ally.attackTimer <= 0) {
+      tryAllyAttack(ally, { queued: true });
+    } else if ((ally.attackQueuedUntil || 0) <= battle.elapsed) {
+      ally.attackQueuedUntil = 0;
+    }
   }
 
   function directionFromMotion(dx, dy, fallback = "front") {
@@ -2542,25 +2553,51 @@
     const battle = state.battle;
     const ally = ensureActiveBattleAlly();
     if (!battle || battle.result || battle.paused || !ally) return;
+    tryAllyAttack(ally, { manual: true });
+  }
+
+  function tryAllyAttack(ally, options = {}) {
+    const battle = state.battle;
+    if (!battle || battle.result || battle.paused || !ally) return false;
     if (ally.hp <= 0) {
-      addLog(`${ally.name} は戦闘不能です。`);
-      return;
+      if (options.manual) addLog(`${ally.name} は戦闘不能です。`);
+      return false;
     }
     if (ally.attackTimer > 0) {
-      addLog("攻撃準備中です。");
-      return;
+      if (options.manual && ally.moving) {
+        queueMovingAttack(ally);
+      } else if (options.manual) {
+        addLog("攻撃準備中です。");
+      }
+      return false;
     }
 
     const target = nearestEnemy(ally.battleX, ally.battleY);
     const range = allyAttackRange(ally);
     const dist = target ? Math.hypot(target.x - ally.battleX, target.y - ally.battleY) : 999;
     if (!target || dist > range) {
-      addLog("敵が射程内にいません。");
-      addParticle(ally.battleX, ally.battleY - 56, "MISS", "#f2cc7a", 0.65);
-      ally.attackTimer = 0.28;
-      return;
+      if ((options.manual || options.queued) && ally.moving) {
+        queueMovingAttack(ally);
+      } else if (options.manual) {
+        addLog("敵が射程内にいません。");
+        addParticle(ally.battleX, ally.battleY - 56, "MISS", "#f2cc7a", 0.65);
+        ally.attackTimer = 0.28;
+      }
+      return false;
     }
 
+    performAllyAttack(ally, target);
+    return true;
+  }
+
+  function queueMovingAttack(ally) {
+    const battle = state.battle;
+    if (!battle) return;
+    ally.attackQueuedUntil = Math.max(ally.attackQueuedUntil || 0, battle.elapsed + 1.15);
+  }
+
+  function performAllyAttack(ally, target) {
+    const battle = state.battle;
     const mult = levelMultiplier(allyLevel(ally.id));
     let baseDamage = (ally.stats.attack * mult) * 0.62;
     if (ally.buffs.attack > 0) baseDamage *= 1.22;
@@ -2572,6 +2609,7 @@
     const crit = Math.random() < (ally.buffs.lucky ? 0.24 : 0.1);
     const damage = baseDamage * (crit ? 1.85 : 1);
     target.hp -= damage;
+    ally.attackQueuedUntil = 0;
     ally.skillGauge = clamp((ally.skillGauge || 0) + (crit ? 18 : 12), 0, 100);
     ally.facing = target.x >= ally.battleX ? 1 : -1;
     ally.attackTargetX = target.x;
