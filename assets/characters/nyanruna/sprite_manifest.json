@@ -1,0 +1,2555 @@
+{
+  "character_id": "nyanruna_sleep_luna",
+  "display_name_ja": "ニャンルナ / すやすやルナー",
+  "source_image": "nyanruna.png",
+  "source_size": {
+    "width": 1024,
+    "height": 1536
+  },
+  "sprite_count": 106,
+  "notes_ja": [
+    "黒/透明背景のスプライトシートから、ゲーム実装で使いやすいように各素材を透明PNGで切り分けています。",
+    "切り出しは元画像座標に基づくため、同じ座標系で再調整できます。",
+    "歩行欄は見出しでは6フレーム表記ですが、画像上で独立して見える歩行姿勢は5点です。アニメーションストリップではループを自然にするため1フレーム目を末尾に複製した6枚版も同梱しています。"
+  ],
+  "sprites": [
+    {
+      "id": 1,
+      "name": "pose_front",
+      "category": "basic_pose",
+      "description_ja": "基本ポーズ：正面。通常待機、会話立ち絵、選択画面向け。",
+      "tags": [
+        "character",
+        "front"
+      ],
+      "source_box_xyxy": [
+        0,
+        45,
+        145,
+        225
+      ],
+      "trimmed_size": {
+        "width": 136,
+        "height": 179
+      },
+      "file": "sprites/basic_pose/pose_front.png",
+      "md5_short": "4905b38e9c"
+    },
+    {
+      "id": 2,
+      "name": "pose_left",
+      "category": "basic_pose",
+      "description_ja": "基本ポーズ：左向き。横移動や左方向の待機用。",
+      "tags": [
+        "character",
+        "left"
+      ],
+      "source_box_xyxy": [
+        130,
+        45,
+        260,
+        225
+      ],
+      "trimmed_size": {
+        "width": 130,
+        "height": 179
+      },
+      "file": "sprites/basic_pose/pose_left.png",
+      "md5_short": "4cb44e0dbe"
+    },
+    {
+      "id": 3,
+      "name": "pose_right",
+      "category": "basic_pose",
+      "description_ja": "基本ポーズ：右向き。横移動や右方向の待機用。",
+      "tags": [
+        "character",
+        "right"
+      ],
+      "source_box_xyxy": [
+        255,
+        45,
+        365,
+        225
+      ],
+      "trimmed_size": {
+        "width": 98,
+        "height": 178
+      },
+      "file": "sprites/basic_pose/pose_right.png",
+      "md5_short": "df7d9d919d"
+    },
+    {
+      "id": 4,
+      "name": "pose_back",
+      "category": "basic_pose",
+      "description_ja": "基本ポーズ：後ろ向き。マップ移動や背面表示用。",
+      "tags": [
+        "character",
+        "back"
+      ],
+      "source_box_xyxy": [
+        360,
+        45,
+        470,
+        225
+      ],
+      "trimmed_size": {
+        "width": 94,
+        "height": 157
+      },
+      "file": "sprites/basic_pose/pose_back.png",
+      "md5_short": "fb5a7fba99"
+    },
+    {
+      "id": 5,
+      "name": "face_icon_01_neutral",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：通常/微笑み。会話UI・ステータス表示向け。",
+      "tags": [
+        "portrait",
+        "ui",
+        "face"
+      ],
+      "source_box_xyxy": [
+        475,
+        65,
+        562,
+        155
+      ],
+      "trimmed_size": {
+        "width": 84,
+        "height": 90
+      },
+      "file": "sprites/face_icon/face_icon_01_neutral.png",
+      "md5_short": "7cbcfb78c5"
+    },
+    {
+      "id": 6,
+      "name": "face_icon_02_happy",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：笑顔。好感度・成功時の表情。",
+      "tags": [
+        "portrait",
+        "ui",
+        "face"
+      ],
+      "source_box_xyxy": [
+        562,
+        65,
+        649,
+        155
+      ],
+      "trimmed_size": {
+        "width": 83,
+        "height": 90
+      },
+      "file": "sprites/face_icon/face_icon_02_happy.png",
+      "md5_short": "ad325a3fe8"
+    },
+    {
+      "id": 7,
+      "name": "face_icon_03_calm",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：落ち着き/通常。メニュー・プロフィール向け。",
+      "tags": [
+        "portrait",
+        "ui",
+        "face"
+      ],
+      "source_box_xyxy": [
+        648,
+        65,
+        735,
+        155
+      ],
+      "trimmed_size": {
+        "width": 84,
+        "height": 90
+      },
+      "file": "sprites/face_icon/face_icon_03_calm.png",
+      "md5_short": "d0f5447854"
+    },
+    {
+      "id": 8,
+      "name": "face_icon_04_cheerful",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：明るい笑顔。勝利・喜び演出向け。",
+      "tags": [
+        "portrait",
+        "ui",
+        "face"
+      ],
+      "source_box_xyxy": [
+        475,
+        158,
+        562,
+        250
+      ],
+      "trimmed_size": {
+        "width": 83,
+        "height": 89
+      },
+      "file": "sprites/face_icon/face_icon_04_cheerful.png",
+      "md5_short": "b2f1d7aef3"
+    },
+    {
+      "id": 9,
+      "name": "face_icon_05_sleepy",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：眠たげ/照れ。睡眠スキルや休憩イベント向け。",
+      "tags": [
+        "portrait",
+        "ui",
+        "face"
+      ],
+      "source_box_xyxy": [
+        562,
+        158,
+        649,
+        250
+      ],
+      "trimmed_size": {
+        "width": 86,
+        "height": 90
+      },
+      "file": "sprites/face_icon/face_icon_05_sleepy.png",
+      "md5_short": "1cf2963d89"
+    },
+    {
+      "id": 10,
+      "name": "face_icon_06_wink",
+      "category": "face_icon",
+      "description_ja": "フェイスアイコン：ウインク。スキル成功・親密演出向け。",
+      "tags": [
+        "portrait",
+        "ui",
+        "face"
+      ],
+      "source_box_xyxy": [
+        648,
+        158,
+        735,
+        250
+      ],
+      "trimmed_size": {
+        "width": 84,
+        "height": 89
+      },
+      "file": "sprites/face_icon/face_icon_06_wink.png",
+      "md5_short": "960e08212c"
+    },
+    {
+      "id": 11,
+      "name": "item_moon_night_staff",
+      "category": "signature_item",
+      "description_ja": "武器：月夜のステッキ。通常攻撃・詠唱・立ち絵装備用。",
+      "tags": [
+        "weapon",
+        "staff",
+        "moon"
+      ],
+      "source_box_xyxy": [
+        755,
+        60,
+        875,
+        157
+      ],
+      "trimmed_size": {
+        "width": 106,
+        "height": 89
+      },
+      "file": "sprites/signature_item/item_moon_night_staff.png",
+      "md5_short": "dee0524818"
+    },
+    {
+      "id": 12,
+      "name": "item_moon_charm",
+      "category": "signature_item",
+      "description_ja": "シグネチャー：月見のお守り。装備品・アクセサリ枠向け。",
+      "tags": [
+        "item",
+        "charm"
+      ],
+      "source_box_xyxy": [
+        900,
+        75,
+        990,
+        155
+      ],
+      "trimmed_size": {
+        "width": 65,
+        "height": 69
+      },
+      "file": "sprites/signature_item/item_moon_charm.png",
+      "md5_short": "686fd15c2a"
+    },
+    {
+      "id": 13,
+      "name": "item_herb_tea",
+      "category": "signature_item",
+      "description_ja": "消耗品/小物：ハーブティー。回復・休憩演出向け。",
+      "tags": [
+        "item",
+        "tea"
+      ],
+      "source_box_xyxy": [
+        745,
+        178,
+        815,
+        232
+      ],
+      "trimmed_size": {
+        "width": 58,
+        "height": 31
+      },
+      "file": "sprites/signature_item/item_herb_tea.png",
+      "md5_short": "61d70bfcb3"
+    },
+    {
+      "id": 14,
+      "name": "item_spicy_curry",
+      "category": "signature_item",
+      "description_ja": "消耗品/小物：激辛カレー。バフ・スタミナ回復演出向け。",
+      "tags": [
+        "item",
+        "food"
+      ],
+      "source_box_xyxy": [
+        820,
+        178,
+        900,
+        232
+      ],
+      "trimmed_size": {
+        "width": 66,
+        "height": 25
+      },
+      "file": "sprites/signature_item/item_spicy_curry.png",
+      "md5_short": "9e4fe13216"
+    },
+    {
+      "id": 15,
+      "name": "item_fluffy_pillow",
+      "category": "signature_item",
+      "description_ja": "シグネチャー：ふわふわまくら。睡眠・休憩スキルのキーアイテム。",
+      "tags": [
+        "item",
+        "sleep",
+        "pillow"
+      ],
+      "source_box_xyxy": [
+        910,
+        178,
+        1010,
+        232
+      ],
+      "trimmed_size": {
+        "width": 80,
+        "height": 38
+      },
+      "file": "sprites/signature_item/item_fluffy_pillow.png",
+      "md5_short": "5da6927da4"
+    },
+    {
+      "id": 16,
+      "name": "idle_01",
+      "category": "idle_animation",
+      "description_ja": "待機アニメ1：正面で静かに構える。",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ],
+      "source_box_xyxy": [
+        15,
+        320,
+        135,
+        445
+      ],
+      "trimmed_size": {
+        "width": 116,
+        "height": 125
+      },
+      "file": "sprites/idle_animation/idle_01.png",
+      "md5_short": "e0d7710140"
+    },
+    {
+      "id": 17,
+      "name": "idle_02",
+      "category": "idle_animation",
+      "description_ja": "待機アニメ2：ステッキを持って軽く揺れる。",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ],
+      "source_box_xyxy": [
+        125,
+        320,
+        245,
+        445
+      ],
+      "trimmed_size": {
+        "width": 120,
+        "height": 123
+      },
+      "file": "sprites/idle_animation/idle_02.png",
+      "md5_short": "0c31187b3f"
+    },
+    {
+      "id": 18,
+      "name": "idle_03",
+      "category": "idle_animation",
+      "description_ja": "待機アニメ3：髪と衣装が揺れる中間フレーム。",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ],
+      "source_box_xyxy": [
+        230,
+        320,
+        360,
+        445
+      ],
+      "trimmed_size": {
+        "width": 130,
+        "height": 125
+      },
+      "file": "sprites/idle_animation/idle_03.png",
+      "md5_short": "1ebe3d2096"
+    },
+    {
+      "id": 19,
+      "name": "idle_04",
+      "category": "idle_animation",
+      "description_ja": "待機アニメ4：待機ループの戻りフレーム。",
+      "tags": [
+        "character",
+        "animation",
+        "idle"
+      ],
+      "source_box_xyxy": [
+        375,
+        320,
+        505,
+        445
+      ],
+      "trimmed_size": {
+        "width": 129,
+        "height": 125
+      },
+      "file": "sprites/idle_animation/idle_04.png",
+      "md5_short": "6c1f36460c"
+    },
+    {
+      "id": 20,
+      "name": "walk_01",
+      "category": "walk_animation",
+      "description_ja": "歩行アニメ1：踏み出し開始。",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ],
+      "source_box_xyxy": [
+        490,
+        320,
+        610,
+        445
+      ],
+      "trimmed_size": {
+        "width": 120,
+        "height": 125
+      },
+      "file": "sprites/walk_animation/walk_01.png",
+      "md5_short": "063812493f"
+    },
+    {
+      "id": 21,
+      "name": "walk_02",
+      "category": "walk_animation",
+      "description_ja": "歩行アニメ2：足の入れ替え。",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ],
+      "source_box_xyxy": [
+        595,
+        320,
+        720,
+        445
+      ],
+      "trimmed_size": {
+        "width": 122,
+        "height": 125
+      },
+      "file": "sprites/walk_animation/walk_02.png",
+      "md5_short": "c06522bdfd"
+    },
+    {
+      "id": 22,
+      "name": "walk_03",
+      "category": "walk_animation",
+      "description_ja": "歩行アニメ3：中間姿勢。",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ],
+      "source_box_xyxy": [
+        715,
+        320,
+        815,
+        445
+      ],
+      "trimmed_size": {
+        "width": 94,
+        "height": 125
+      },
+      "file": "sprites/walk_animation/walk_03.png",
+      "md5_short": "92ab1afa13"
+    },
+    {
+      "id": 23,
+      "name": "walk_04",
+      "category": "walk_animation",
+      "description_ja": "歩行アニメ4：大きめの歩幅。",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ],
+      "source_box_xyxy": [
+        790,
+        320,
+        910,
+        445
+      ],
+      "trimmed_size": {
+        "width": 120,
+        "height": 125
+      },
+      "file": "sprites/walk_animation/walk_04.png",
+      "md5_short": "a008d027ec"
+    },
+    {
+      "id": 24,
+      "name": "walk_05",
+      "category": "walk_animation",
+      "description_ja": "歩行アニメ5：ループ終端。",
+      "tags": [
+        "character",
+        "animation",
+        "walk"
+      ],
+      "source_box_xyxy": [
+        895,
+        320,
+        1015,
+        445
+      ],
+      "trimmed_size": {
+        "width": 116,
+        "height": 125
+      },
+      "file": "sprites/walk_animation/walk_05.png",
+      "md5_short": "9f683ca08c"
+    },
+    {
+      "id": 25,
+      "name": "attack_cast_01",
+      "category": "attack_animation",
+      "description_ja": "攻撃アニメ1：ステッキを構えて詠唱準備。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        30,
+        500,
+        170,
+        635
+      ],
+      "trimmed_size": {
+        "width": 129,
+        "height": 120
+      },
+      "file": "sprites/attack_animation/attack_cast_01.png",
+      "md5_short": "f75894b7e9"
+    },
+    {
+      "id": 26,
+      "name": "attack_cast_02",
+      "category": "attack_animation",
+      "description_ja": "攻撃アニメ2：ステッキを掲げる。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        205,
+        490,
+        345,
+        635
+      ],
+      "trimmed_size": {
+        "width": 130,
+        "height": 133
+      },
+      "file": "sprites/attack_animation/attack_cast_02.png",
+      "md5_short": "009fbf48cc"
+    },
+    {
+      "id": 27,
+      "name": "attack_cast_03",
+      "category": "attack_animation",
+      "description_ja": "攻撃アニメ3：月魔力をためる。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        340,
+        500,
+        500,
+        635
+      ],
+      "trimmed_size": {
+        "width": 152,
+        "height": 117
+      },
+      "file": "sprites/attack_animation/attack_cast_03.png",
+      "md5_short": "92ab8cd045"
+    },
+    {
+      "id": 28,
+      "name": "attack_cast_04",
+      "category": "attack_animation",
+      "description_ja": "攻撃アニメ4：発射直前の構え。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        510,
+        500,
+        650,
+        635
+      ],
+      "trimmed_size": {
+        "width": 131,
+        "height": 120
+      },
+      "file": "sprites/attack_animation/attack_cast_04.png",
+      "md5_short": "22fb315e2a"
+    },
+    {
+      "id": 29,
+      "name": "attack_projectile_01",
+      "category": "attack_animation",
+      "description_ja": "攻撃弾1：小さな月光弾。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        640,
+        500,
+        760,
+        615
+      ],
+      "trimmed_size": {
+        "width": 120,
+        "height": 95
+      },
+      "file": "sprites/attack_animation/attack_projectile_01.png",
+      "md5_short": "7ce64790df"
+    },
+    {
+      "id": 30,
+      "name": "attack_projectile_02",
+      "category": "attack_animation",
+      "description_ja": "攻撃弾2：大きい三日月斬撃。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        765,
+        495,
+        890,
+        620
+      ],
+      "trimmed_size": {
+        "width": 125,
+        "height": 105
+      },
+      "file": "sprites/attack_animation/attack_projectile_02.png",
+      "md5_short": "ab6b57f9af"
+    },
+    {
+      "id": 31,
+      "name": "attack_projectile_03",
+      "category": "attack_animation",
+      "description_ja": "攻撃弾3：輝く三日月フィニッシュ。",
+      "tags": [
+        "animation",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        885,
+        495,
+        1005,
+        620
+      ],
+      "trimmed_size": {
+        "width": 115,
+        "height": 116
+      },
+      "file": "sprites/attack_animation/attack_projectile_03.png",
+      "md5_short": "f9e189a8ea"
+    },
+    {
+      "id": 32,
+      "name": "skill_sleep_luna_01",
+      "category": "skill_animation_sleep_luna",
+      "description_ja": "スキル「すやすやルナー」1：眠気の月光が立ち上がる開始フレーム。",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        5,
+        680,
+        175,
+        840
+      ],
+      "trimmed_size": {
+        "width": 156,
+        "height": 153
+      },
+      "file": "sprites/skill_animation_sleep_luna/skill_sleep_luna_01.png",
+      "md5_short": "2ee288c38d"
+    },
+    {
+      "id": 33,
+      "name": "skill_sleep_luna_02",
+      "category": "skill_animation_sleep_luna",
+      "description_ja": "スキル「すやすやルナー」2：魔法陣上で詠唱。",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        170,
+        680,
+        330,
+        840
+      ],
+      "trimmed_size": {
+        "width": 154,
+        "height": 144
+      },
+      "file": "sprites/skill_animation_sleep_luna/skill_sleep_luna_02.png",
+      "md5_short": "6ab8b605ec"
+    },
+    {
+      "id": 34,
+      "name": "skill_sleep_luna_03",
+      "category": "skill_animation_sleep_luna",
+      "description_ja": "スキル「すやすやルナー」3：月光を斜めに放つ。",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        320,
+        680,
+        480,
+        840
+      ],
+      "trimmed_size": {
+        "width": 160,
+        "height": 136
+      },
+      "file": "sprites/skill_animation_sleep_luna/skill_sleep_luna_03.png",
+      "md5_short": "c9aabb81f7"
+    },
+    {
+      "id": 35,
+      "name": "skill_sleep_luna_04",
+      "category": "skill_animation_sleep_luna",
+      "description_ja": "スキル「すやすやルナー」4：枕を召喚する。",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        470,
+        680,
+        650,
+        840
+      ],
+      "trimmed_size": {
+        "width": 176,
+        "height": 135
+      },
+      "file": "sprites/skill_animation_sleep_luna/skill_sleep_luna_04.png",
+      "md5_short": "61e6dc276d"
+    },
+    {
+      "id": 36,
+      "name": "skill_sleep_luna_05",
+      "category": "skill_animation_sleep_luna",
+      "description_ja": "スキル「すやすやルナー」5：月とコインの祝福。",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        650,
+        690,
+        810,
+        840
+      ],
+      "trimmed_size": {
+        "width": 160,
+        "height": 136
+      },
+      "file": "sprites/skill_animation_sleep_luna/skill_sleep_luna_05.png",
+      "md5_short": "570ee96655"
+    },
+    {
+      "id": 37,
+      "name": "skill_sleep_luna_06",
+      "category": "skill_animation_sleep_luna",
+      "description_ja": "スキル「すやすやルナー」6：巨大な月まくらで眠らせる締め。",
+      "tags": [
+        "character",
+        "animation",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        805,
+        675,
+        1005,
+        840
+      ],
+      "trimmed_size": {
+        "width": 194,
+        "height": 153
+      },
+      "file": "sprites/skill_animation_sleep_luna/skill_sleep_luna_06.png",
+      "md5_short": "633ce49a5d"
+    },
+    {
+      "id": 38,
+      "name": "status_damage",
+      "category": "status_pose",
+      "description_ja": "状態：ダメージ。被弾・痛み・小さなノックバック。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        15,
+        885,
+        140,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 114,
+        "height": 123
+      },
+      "file": "sprites/status_pose/status_damage.png",
+      "md5_short": "6bb5b8a579"
+    },
+    {
+      "id": 39,
+      "name": "status_down",
+      "category": "status_pose",
+      "description_ja": "状態：戦闘不能/倒れ。HP0や気絶時。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        145,
+        925,
+        305,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 144,
+        "height": 81
+      },
+      "file": "sprites/status_pose/status_down.png",
+      "md5_short": "db1731ea44"
+    },
+    {
+      "id": 40,
+      "name": "status_victory",
+      "category": "status_pose",
+      "description_ja": "状態：勝利ポーズ。リザルト・戦闘終了演出。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        315,
+        880,
+        455,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 128,
+        "height": 137
+      },
+      "file": "sprites/status_pose/status_victory.png",
+      "md5_short": "13f8060e80"
+    },
+    {
+      "id": 41,
+      "name": "status_chant",
+      "category": "status_pose",
+      "description_ja": "状態：詠唱ポーズ。スキル前・バフ発動中。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        455,
+        880,
+        615,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 150,
+        "height": 143
+      },
+      "file": "sprites/status_pose/status_chant.png",
+      "md5_short": "afa1a2ca37"
+    },
+    {
+      "id": 42,
+      "name": "status_surprise",
+      "category": "status_pose",
+      "description_ja": "状態：驚き。イベントリアクション・罠発動時。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        620,
+        885,
+        725,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 97,
+        "height": 126
+      },
+      "file": "sprites/status_pose/status_surprise.png",
+      "md5_short": "bde7544fed"
+    },
+    {
+      "id": 43,
+      "name": "status_shy",
+      "category": "status_pose",
+      "description_ja": "状態：照れ。親密度イベント・会話演出。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        750,
+        885,
+        850,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 88,
+        "height": 124
+      },
+      "file": "sprites/status_pose/status_shy.png",
+      "md5_short": "6bb39c0262"
+    },
+    {
+      "id": 44,
+      "name": "status_sleep",
+      "category": "status_pose",
+      "description_ja": "状態：おやすみ。睡眠・休憩・戦闘不能の別表現。",
+      "tags": [
+        "character",
+        "status"
+      ],
+      "source_box_xyxy": [
+        860,
+        880,
+        1010,
+        1025
+      ],
+      "trimmed_size": {
+        "width": 140,
+        "height": 130
+      },
+      "file": "sprites/status_pose/status_sleep.png",
+      "md5_short": "e6903a0e65"
+    },
+    {
+      "id": 45,
+      "name": "atk_fx_small_orb",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：小型の月光弾。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        15,
+        1075,
+        65,
+        1130
+      ],
+      "trimmed_size": {
+        "width": 42,
+        "height": 36
+      },
+      "file": "sprites/attack_effect/atk_fx_small_orb.png",
+      "md5_short": "7362ae9a0c"
+    },
+    {
+      "id": 46,
+      "name": "atk_fx_spark",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：小さな星スパーク。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        65,
+        1075,
+        100,
+        1130
+      ],
+      "trimmed_size": {
+        "width": 23,
+        "height": 22
+      },
+      "file": "sprites/attack_effect/atk_fx_spark.png",
+      "md5_short": "ab2a15f434"
+    },
+    {
+      "id": 47,
+      "name": "atk_fx_lunar_orb",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：月を包む紫の魔力弾。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        95,
+        1060,
+        165,
+        1140
+      ],
+      "trimmed_size": {
+        "width": 70,
+        "height": 66
+      },
+      "file": "sprites/attack_effect/atk_fx_lunar_orb.png",
+      "md5_short": "4eef18a9ea"
+    },
+    {
+      "id": 48,
+      "name": "atk_fx_dark_lunar_orb",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：濃い紫の月魔力弾。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        170,
+        1060,
+        250,
+        1140
+      ],
+      "trimmed_size": {
+        "width": 79,
+        "height": 73
+      },
+      "file": "sprites/attack_effect/atk_fx_dark_lunar_orb.png",
+      "md5_short": "262e881819"
+    },
+    {
+      "id": 49,
+      "name": "atk_fx_crescent_cut_01",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：三日月斬撃1。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        260,
+        1055,
+        350,
+        1140
+      ],
+      "trimmed_size": {
+        "width": 76,
+        "height": 69
+      },
+      "file": "sprites/attack_effect/atk_fx_crescent_cut_01.png",
+      "md5_short": "d59853d51a"
+    },
+    {
+      "id": 50,
+      "name": "atk_fx_crescent_cut_02",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：三日月斬撃2。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        350,
+        1050,
+        455,
+        1140
+      ],
+      "trimmed_size": {
+        "width": 101,
+        "height": 76
+      },
+      "file": "sprites/attack_effect/atk_fx_crescent_cut_02.png",
+      "md5_short": "0bb1a4cd62"
+    },
+    {
+      "id": 51,
+      "name": "atk_fx_double_crescent",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：二重の三日月斬撃。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        475,
+        1045,
+        570,
+        1155
+      ],
+      "trimmed_size": {
+        "width": 91,
+        "height": 101
+      },
+      "file": "sprites/attack_effect/atk_fx_double_crescent.png",
+      "md5_short": "c9f7fb3786"
+    },
+    {
+      "id": 52,
+      "name": "atk_fx_moon_disc",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：月の円盤/範囲攻撃。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        575,
+        1035,
+        705,
+        1155
+      ],
+      "trimmed_size": {
+        "width": 121,
+        "height": 117
+      },
+      "file": "sprites/attack_effect/atk_fx_moon_disc.png",
+      "md5_short": "e583bb2bbf"
+    },
+    {
+      "id": 53,
+      "name": "atk_fx_star_burst",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：星の破裂。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        705,
+        1045,
+        795,
+        1140
+      ],
+      "trimmed_size": {
+        "width": 76,
+        "height": 84
+      },
+      "file": "sprites/attack_effect/atk_fx_star_burst.png",
+      "md5_short": "1745730487"
+    },
+    {
+      "id": 54,
+      "name": "atk_fx_purple_comet",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：紫の流星弾。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        800,
+        1040,
+        900,
+        1140
+      ],
+      "trimmed_size": {
+        "width": 88,
+        "height": 89
+      },
+      "file": "sprites/attack_effect/atk_fx_purple_comet.png",
+      "md5_short": "0f945354b4"
+    },
+    {
+      "id": 55,
+      "name": "atk_fx_gold_comet",
+      "category": "attack_effect",
+      "description_ja": "攻撃エフェクト：金色の流星弾。",
+      "tags": [
+        "effect",
+        "attack"
+      ],
+      "source_box_xyxy": [
+        900,
+        1040,
+        1000,
+        1135
+      ],
+      "trimmed_size": {
+        "width": 82,
+        "height": 83
+      },
+      "file": "sprites/attack_effect/atk_fx_gold_comet.png",
+      "md5_short": "7a1cbc0939"
+    },
+    {
+      "id": 56,
+      "name": "skill_fx_sleep_moon_circle",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：眠りの月円。睡眠付与の初期表示。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        10,
+        1180,
+        100,
+        1268
+      ],
+      "trimmed_size": {
+        "width": 77,
+        "height": 75
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_sleep_moon_circle.png",
+      "md5_short": "4701d1f321"
+    },
+    {
+      "id": 57,
+      "name": "skill_fx_sleep_zzz_small",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：Zzz小。睡眠状態の頭上表示。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        105,
+        1180,
+        170,
+        1260
+      ],
+      "trimmed_size": {
+        "width": 55,
+        "height": 63
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_sleep_zzz_small.png",
+      "md5_short": "42d76cc6f5"
+    },
+    {
+      "id": 58,
+      "name": "skill_fx_sleep_zzz_orb",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：Zzzと月光オーブ。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        175,
+        1180,
+        240,
+        1265
+      ],
+      "trimmed_size": {
+        "width": 47,
+        "height": 64
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_sleep_zzz_orb.png",
+      "md5_short": "c322aedbdc"
+    },
+    {
+      "id": 59,
+      "name": "skill_fx_sleep_orb",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：睡眠オーブ。単体睡眠付与。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        245,
+        1180,
+        325,
+        1268
+      ],
+      "trimmed_size": {
+        "width": 73,
+        "height": 74
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_sleep_orb.png",
+      "md5_short": "b092ceca68"
+    },
+    {
+      "id": 60,
+      "name": "skill_fx_pillow_magic",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：枕召喚。休憩/睡眠スキル演出。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        325,
+        1180,
+        405,
+        1268
+      ],
+      "trimmed_size": {
+        "width": 73,
+        "height": 74
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_pillow_magic.png",
+      "md5_short": "4659ddc729"
+    },
+    {
+      "id": 61,
+      "name": "skill_fx_dream_cloud",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：夢雲。眠気・休憩の範囲表現。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        400,
+        1175,
+        485,
+        1270
+      ],
+      "trimmed_size": {
+        "width": 85,
+        "height": 79
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_dream_cloud.png",
+      "md5_short": "b8e76f1e2e"
+    },
+    {
+      "id": 62,
+      "name": "skill_fx_dream_bubbles",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：夢泡。ふわふわ睡眠粒子。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        480,
+        1175,
+        580,
+        1270
+      ],
+      "trimmed_size": {
+        "width": 98,
+        "height": 87
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_dream_bubbles.png",
+      "md5_short": "e5401e396c"
+    },
+    {
+      "id": 63,
+      "name": "skill_fx_star_orb",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：星入りオーブ。魔法弾/バフ。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        585,
+        1168,
+        675,
+        1272
+      ],
+      "trimmed_size": {
+        "width": 90,
+        "height": 100
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_star_orb.png",
+      "md5_short": "9d38d9aa41"
+    },
+    {
+      "id": 64,
+      "name": "skill_fx_magic_circle_large",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：大型魔法陣。範囲発動地点。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        675,
+        1155,
+        815,
+        1282
+      ],
+      "trimmed_size": {
+        "width": 134,
+        "height": 123
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_magic_circle_large.png",
+      "md5_short": "78b330a389"
+    },
+    {
+      "id": 65,
+      "name": "skill_fx_sleep_luna_finish",
+      "category": "skill_effect_sleep_luna",
+      "description_ja": "スキルエフェクト：月まくらフィニッシュ。眠らせ演出の完成形。",
+      "tags": [
+        "effect",
+        "skill",
+        "sleep"
+      ],
+      "source_box_xyxy": [
+        820,
+        1155,
+        1008,
+        1290
+      ],
+      "trimmed_size": {
+        "width": 177,
+        "height": 129
+      },
+      "file": "sprites/skill_effect_sleep_luna/skill_fx_sleep_luna_finish.png",
+      "md5_short": "e82c5a2054"
+    },
+    {
+      "id": 66,
+      "name": "generic_light_sparkle_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：光のきらめき1。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        5,
+        1335,
+        45,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 31,
+        "height": 53
+      },
+      "file": "sprites/generic_effect/generic_light_sparkle_01.png",
+      "md5_short": "b21f746dcd"
+    },
+    {
+      "id": 67,
+      "name": "generic_light_sparkle_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：光のきらめき2。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        45,
+        1335,
+        82,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 37,
+        "height": 38
+      },
+      "file": "sprites/generic_effect/generic_light_sparkle_02.png",
+      "md5_short": "aa7f210084"
+    },
+    {
+      "id": 68,
+      "name": "generic_light_sparkle_03",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：光のきらめき3。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        80,
+        1335,
+        125,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 45,
+        "height": 41
+      },
+      "file": "sprites/generic_effect/generic_light_sparkle_03.png",
+      "md5_short": "6608ea0d4e"
+    },
+    {
+      "id": 69,
+      "name": "generic_light_sparkle_04",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：光のきらめき4。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        125,
+        1335,
+        165,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 40,
+        "height": 27
+      },
+      "file": "sprites/generic_effect/generic_light_sparkle_04.png",
+      "md5_short": "691408d0f6"
+    },
+    {
+      "id": 70,
+      "name": "generic_light_sparkle_05",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：光のきらめき5。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        165,
+        1335,
+        205,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 40,
+        "height": 46
+      },
+      "file": "sprites/generic_effect/generic_light_sparkle_05.png",
+      "md5_short": "2781f58f2b"
+    },
+    {
+      "id": 71,
+      "name": "generic_light_sparkle_06",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：光のきらめき6。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        205,
+        1335,
+        245,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 40,
+        "height": 54
+      },
+      "file": "sprites/generic_effect/generic_light_sparkle_06.png",
+      "md5_short": "b5e82b0020"
+    },
+    {
+      "id": 72,
+      "name": "generic_impact_spark_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：衝撃スパーク1。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        260,
+        1330,
+        305,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 45,
+        "height": 60
+      },
+      "file": "sprites/generic_effect/generic_impact_spark_01.png",
+      "md5_short": "a45dcc3ef3"
+    },
+    {
+      "id": 73,
+      "name": "generic_impact_spark_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：衝撃スパーク2。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        305,
+        1330,
+        355,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 50,
+        "height": 42
+      },
+      "file": "sprites/generic_effect/generic_impact_spark_02.png",
+      "md5_short": "def0d9dcf5"
+    },
+    {
+      "id": 74,
+      "name": "generic_impact_burst",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：衝撃爆発。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        365,
+        1330,
+        430,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 65,
+        "height": 53
+      },
+      "file": "sprites/generic_effect/generic_impact_burst.png",
+      "md5_short": "0abc9dc301"
+    },
+    {
+      "id": 75,
+      "name": "generic_crescent_bullet_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：三日月弾1。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        490,
+        1330,
+        548,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 58,
+        "height": 50
+      },
+      "file": "sprites/generic_effect/generic_crescent_bullet_01.png",
+      "md5_short": "c271d703fe"
+    },
+    {
+      "id": 76,
+      "name": "generic_crescent_bullet_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：三日月弾2。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        545,
+        1330,
+        600,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 55,
+        "height": 44
+      },
+      "file": "sprites/generic_effect/generic_crescent_bullet_02.png",
+      "md5_short": "5fa05daaab"
+    },
+    {
+      "id": 77,
+      "name": "generic_arrow_bullet",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：直線弾道/矢弾。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        605,
+        1330,
+        653,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 32,
+        "height": 45
+      },
+      "file": "sprites/generic_effect/generic_arrow_bullet.png",
+      "md5_short": "9ad53821fa"
+    },
+    {
+      "id": 78,
+      "name": "generic_magic_particle_set_01",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：魔法陣粒子セット1。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        705,
+        1330,
+        745,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 40,
+        "height": 57
+      },
+      "file": "sprites/generic_effect/generic_magic_particle_set_01.png",
+      "md5_short": "6b4e3eeea7"
+    },
+    {
+      "id": 79,
+      "name": "generic_magic_particle_set_02",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：魔法陣粒子セット2。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        748,
+        1330,
+        800,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 50,
+        "height": 57
+      },
+      "file": "sprites/generic_effect/generic_magic_particle_set_02.png",
+      "md5_short": "844b09f244"
+    },
+    {
+      "id": 80,
+      "name": "generic_magic_particle_set_03",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：魔法粒子3。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        810,
+        1330,
+        860,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 50,
+        "height": 46
+      },
+      "file": "sprites/generic_effect/generic_magic_particle_set_03.png",
+      "md5_short": "6cb4b34657"
+    },
+    {
+      "id": 81,
+      "name": "generic_magic_particle_set_04",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：魔法粒子4。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        865,
+        1330,
+        915,
+        1390
+      ],
+      "trimmed_size": {
+        "width": 49,
+        "height": 45
+      },
+      "file": "sprites/generic_effect/generic_magic_particle_set_04.png",
+      "md5_short": "d2c95daeb4"
+    },
+    {
+      "id": 82,
+      "name": "generic_magic_orb_large",
+      "category": "generic_effect",
+      "description_ja": "汎用エフェクト：大型の紫オーブ。",
+      "tags": [
+        "effect",
+        "generic"
+      ],
+      "source_box_xyxy": [
+        925,
+        1328,
+        1010,
+        1395
+      ],
+      "trimmed_size": {
+        "width": 60,
+        "height": 59
+      },
+      "file": "sprites/generic_effect/generic_magic_orb_large.png",
+      "md5_short": "9111623584"
+    },
+    {
+      "id": 83,
+      "name": "consumable_potion_blue",
+      "category": "consumable_item",
+      "description_ja": "アイテム：青いポーション。MP/魔力回復に。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        15,
+        1450,
+        50,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 28,
+        "height": 57
+      },
+      "file": "sprites/consumable_item/consumable_potion_blue.png",
+      "md5_short": "3166f497be"
+    },
+    {
+      "id": 84,
+      "name": "consumable_potion_red",
+      "category": "consumable_item",
+      "description_ja": "アイテム：赤いポーション。HP回復に。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        50,
+        1450,
+        85,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 27,
+        "height": 57
+      },
+      "file": "sprites/consumable_item/consumable_potion_red.png",
+      "md5_short": "21913e0b14"
+    },
+    {
+      "id": 85,
+      "name": "consumable_potion_purple",
+      "category": "consumable_item",
+      "description_ja": "アイテム：紫ポーション。状態異常・魔力系に。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        85,
+        1450,
+        120,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 35,
+        "height": 56
+      },
+      "file": "sprites/consumable_item/consumable_potion_purple.png",
+      "md5_short": "9ba93d0321"
+    },
+    {
+      "id": 86,
+      "name": "consumable_potion_green",
+      "category": "consumable_item",
+      "description_ja": "アイテム：緑ポーション。解毒/自然属性回復に。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        120,
+        1450,
+        155,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 35,
+        "height": 56
+      },
+      "file": "sprites/consumable_item/consumable_potion_green.png",
+      "md5_short": "02c47f6420"
+    },
+    {
+      "id": 87,
+      "name": "consumable_potion_yellow",
+      "category": "consumable_item",
+      "description_ja": "アイテム：黄色ポーション。スピード/幸運系バフに。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        155,
+        1450,
+        190,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 35,
+        "height": 57
+      },
+      "file": "sprites/consumable_item/consumable_potion_yellow.png",
+      "md5_short": "27f925d39e"
+    },
+    {
+      "id": 88,
+      "name": "consumable_fruit_potion",
+      "category": "consumable_item",
+      "description_ja": "アイテム：実入りポーション。複合回復アイテム。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        190,
+        1450,
+        230,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 40,
+        "height": 57
+      },
+      "file": "sprites/consumable_item/consumable_fruit_potion.png",
+      "md5_short": "0447a5cbc6"
+    },
+    {
+      "id": 89,
+      "name": "consumable_tall_blue_bottle",
+      "category": "consumable_item",
+      "description_ja": "アイテム：背の高い青ボトル。レア回復薬。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        235,
+        1448,
+        275,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 39,
+        "height": 56
+      },
+      "file": "sprites/consumable_item/consumable_tall_blue_bottle.png",
+      "md5_short": "f37eb21579"
+    },
+    {
+      "id": 90,
+      "name": "item_coin_bag",
+      "category": "consumable_item",
+      "description_ja": "アイテム：金のコイン袋。通貨・ドロップ報酬用。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        275,
+        1455,
+        318,
+        1512
+      ],
+      "trimmed_size": {
+        "width": 37,
+        "height": 56
+      },
+      "file": "sprites/consumable_item/item_coin_bag.png",
+      "md5_short": "6789a9e172"
+    },
+    {
+      "id": 91,
+      "name": "item_gold_pouch",
+      "category": "consumable_item",
+      "description_ja": "アイテム：緑袋つき金貨袋。上位報酬・ショップ通貨。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        318,
+        1455,
+        365,
+        1512
+      ],
+      "trimmed_size": {
+        "width": 44,
+        "height": 56
+      },
+      "file": "sprites/consumable_item/item_gold_pouch.png",
+      "md5_short": "637ad05222"
+    },
+    {
+      "id": 92,
+      "name": "item_black_chest",
+      "category": "consumable_item",
+      "description_ja": "アイテム：黒い宝箱。レアドロップ・報酬箱。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        365,
+        1450,
+        415,
+        1515
+      ],
+      "trimmed_size": {
+        "width": 47,
+        "height": 57
+      },
+      "file": "sprites/consumable_item/item_black_chest.png",
+      "md5_short": "0489af7379"
+    },
+    {
+      "id": 93,
+      "name": "item_small_staff_a",
+      "category": "consumable_item",
+      "description_ja": "アイテム：小型ハンマー/ステッキA。装備・素材。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        420,
+        1450,
+        448,
+        1495
+      ],
+      "trimmed_size": {
+        "width": 28,
+        "height": 41
+      },
+      "file": "sprites/consumable_item/item_small_staff_a.png",
+      "md5_short": "2c1059b678"
+    },
+    {
+      "id": 94,
+      "name": "item_small_staff_b",
+      "category": "consumable_item",
+      "description_ja": "アイテム：小型キー/ステッキB。装備・素材。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        425,
+        1492,
+        458,
+        1520
+      ],
+      "trimmed_size": {
+        "width": 33,
+        "height": 27
+      },
+      "file": "sprites/consumable_item/item_small_staff_b.png",
+      "md5_short": "70a5fb370a"
+    },
+    {
+      "id": 95,
+      "name": "item_gold_keys",
+      "category": "consumable_item",
+      "description_ja": "アイテム：鍵つき宝箱セット。宝箱解錠・報酬UI向け。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        455,
+        1450,
+        495,
+        1515
+      ],
+      "trimmed_size": {
+        "width": 37,
+        "height": 61
+      },
+      "file": "sprites/consumable_item/item_gold_keys.png",
+      "md5_short": "6ab4ea6734"
+    },
+    {
+      "id": 96,
+      "name": "item_treasure_chest_closed",
+      "category": "consumable_item",
+      "description_ja": "アイテム：閉じた金の宝箱。報酬箱。",
+      "tags": [
+        "item",
+        "inventory"
+      ],
+      "source_box_xyxy": [
+        498,
+        1450,
+        543,
+        1515
+      ],
+      "trimmed_size": {
+        "width": 38,
+        "height": 61
+      },
+      "file": "sprites/consumable_item/item_treasure_chest_closed.png",
+      "md5_short": "176185760e"
+    },
+    {
+      "id": 97,
+      "name": "ui_status_sleep",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：睡眠。Zzz状態異常アイコン。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        570,
+        1465,
+        615,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 42,
+        "height": 42
+      },
+      "file": "sprites/ui_status_icon/ui_status_sleep.png",
+      "md5_short": "78f70585e3"
+    },
+    {
+      "id": 98,
+      "name": "ui_status_moon",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：月属性/夜バフ。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        620,
+        1465,
+        663,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 35,
+        "height": 40
+      },
+      "file": "sprites/ui_status_icon/ui_status_moon.png",
+      "md5_short": "491e1d8ce7"
+    },
+    {
+      "id": 99,
+      "name": "ui_status_up",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：能力上昇。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        670,
+        1465,
+        706,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 32,
+        "height": 37
+      },
+      "file": "sprites/ui_status_icon/ui_status_up.png",
+      "md5_short": "4a6da6eac8"
+    },
+    {
+      "id": 100,
+      "name": "ui_status_down",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：能力低下。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        710,
+        1465,
+        746,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 29,
+        "height": 37
+      },
+      "file": "sprites/ui_status_icon/ui_status_down.png",
+      "md5_short": "8bd9bcc89d"
+    },
+    {
+      "id": 101,
+      "name": "ui_status_sword",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：攻撃力。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        755,
+        1465,
+        786,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 28,
+        "height": 43
+      },
+      "file": "sprites/ui_status_icon/ui_status_sword.png",
+      "md5_short": "1ce023d46a"
+    },
+    {
+      "id": 102,
+      "name": "ui_status_shield",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：防御力。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        790,
+        1465,
+        832,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 35,
+        "height": 40
+      },
+      "file": "sprites/ui_status_icon/ui_status_shield.png",
+      "md5_short": "f0d9346d03"
+    },
+    {
+      "id": 103,
+      "name": "ui_status_sparkle",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：輝き/魔力。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        835,
+        1465,
+        872,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 33,
+        "height": 39
+      },
+      "file": "sprites/ui_status_icon/ui_status_sparkle.png",
+      "md5_short": "b9de8d5d6c"
+    },
+    {
+      "id": 104,
+      "name": "ui_status_heart",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：HP/好感度。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        875,
+        1465,
+        920,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 38,
+        "height": 35
+      },
+      "file": "sprites/ui_status_icon/ui_status_heart.png",
+      "md5_short": "bf77131722"
+    },
+    {
+      "id": 105,
+      "name": "ui_status_heal_cross",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：回復。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        925,
+        1465,
+        963,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 33,
+        "height": 35
+      },
+      "file": "sprites/ui_status_icon/ui_status_heal_cross.png",
+      "md5_short": "c7da020057"
+    },
+    {
+      "id": 106,
+      "name": "ui_status_gem",
+      "category": "ui_status_icon",
+      "description_ja": "UI/ステータス：宝石/レアリティ。",
+      "tags": [
+        "ui",
+        "icon",
+        "status"
+      ],
+      "source_box_xyxy": [
+        968,
+        1465,
+        1000,
+        1510
+      ],
+      "trimmed_size": {
+        "width": 25,
+        "height": 37
+      },
+      "file": "sprites/ui_status_icon/ui_status_gem.png",
+      "md5_short": "50b279014d"
+    }
+  ],
+  "animations": {
+    "idle_loop": {
+      "frames": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04"
+      ],
+      "fps": 6,
+      "loop": true,
+      "frame_size": {
+        "width": 130,
+        "height": 125
+      },
+      "strip_file": "animations/idle_loop.png"
+    },
+    "walk_loop_5_visible": {
+      "frames": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05"
+      ],
+      "fps": 10,
+      "loop": true,
+      "frame_size": {
+        "width": 122,
+        "height": 125
+      },
+      "strip_file": "animations/walk_loop_5_visible.png"
+    },
+    "walk_loop_6_with_first_copy": {
+      "frames": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05",
+        "walk_01_loopcopy"
+      ],
+      "fps": 10,
+      "loop": true,
+      "frame_size": {
+        "width": 122,
+        "height": 125
+      },
+      "strip_file": "animations/walk_loop_6_with_first_copy.png"
+    },
+    "attack_cast": {
+      "frames": [
+        "attack_cast_01",
+        "attack_cast_02",
+        "attack_cast_03",
+        "attack_cast_04"
+      ],
+      "fps": 8,
+      "loop": false,
+      "frame_size": {
+        "width": 152,
+        "height": 133
+      },
+      "strip_file": "animations/attack_cast.png"
+    },
+    "attack_projectile": {
+      "frames": [
+        "attack_projectile_01",
+        "attack_projectile_02",
+        "attack_projectile_03"
+      ],
+      "fps": 12,
+      "loop": false,
+      "frame_size": {
+        "width": 125,
+        "height": 116
+      },
+      "strip_file": "animations/attack_projectile.png"
+    },
+    "skill_sleep_luna": {
+      "frames": [
+        "skill_sleep_luna_01",
+        "skill_sleep_luna_02",
+        "skill_sleep_luna_03",
+        "skill_sleep_luna_04",
+        "skill_sleep_luna_05",
+        "skill_sleep_luna_06"
+      ],
+      "fps": 8,
+      "loop": false,
+      "frame_size": {
+        "width": 194,
+        "height": 153
+      },
+      "strip_file": "animations/skill_sleep_luna.png"
+    },
+    "status_reactions": {
+      "frames": [
+        "status_damage",
+        "status_down",
+        "status_victory",
+        "status_chant",
+        "status_surprise",
+        "status_shy",
+        "status_sleep"
+      ],
+      "fps": 4,
+      "loop": false,
+      "frame_size": {
+        "width": 150,
+        "height": 143
+      },
+      "strip_file": "animations/status_reactions.png"
+    },
+    "attack_fx_sequence": {
+      "frames": [
+        "atk_fx_small_orb",
+        "atk_fx_spark",
+        "atk_fx_lunar_orb",
+        "atk_fx_dark_lunar_orb",
+        "atk_fx_crescent_cut_01",
+        "atk_fx_crescent_cut_02",
+        "atk_fx_double_crescent",
+        "atk_fx_moon_disc",
+        "atk_fx_star_burst",
+        "atk_fx_purple_comet",
+        "atk_fx_gold_comet"
+      ],
+      "fps": 14,
+      "loop": false,
+      "frame_size": {
+        "width": 121,
+        "height": 117
+      },
+      "strip_file": "animations/attack_fx_sequence.png"
+    },
+    "skill_fx_sleep_sequence": {
+      "frames": [
+        "skill_fx_sleep_moon_circle",
+        "skill_fx_sleep_zzz_small",
+        "skill_fx_sleep_zzz_orb",
+        "skill_fx_sleep_orb",
+        "skill_fx_pillow_magic",
+        "skill_fx_dream_cloud",
+        "skill_fx_dream_bubbles",
+        "skill_fx_star_orb",
+        "skill_fx_magic_circle_large",
+        "skill_fx_sleep_luna_finish"
+      ],
+      "fps": 10,
+      "loop": false,
+      "frame_size": {
+        "width": 177,
+        "height": 129
+      },
+      "strip_file": "animations/skill_fx_sleep_sequence.png"
+    }
+  }
+}
