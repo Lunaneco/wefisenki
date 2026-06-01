@@ -1,0 +1,972 @@
+{
+  "version": 1,
+  "schema": "wefi_sengoku_skills_v1",
+  "updated": "2026-05-31",
+  "skills": [
+    {
+      "id": "high_blood_pressure",
+      "name": "high blood pressure",
+      "owner": "hehehehehe",
+      "kind": "active",
+      "element": "pressure_light",
+      "target": "enemy_area_self",
+      "energyCost": 45,
+      "cooldownSec": 28,
+      "description": "周囲の敵に光属性範囲ダメージを与え、圧力を付与する。自身は攻撃力が上がるが、短時間HPを消耗する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 320,
+          "area": "nearby_enemies"
+        },
+        {
+          "type": "buff",
+          "stat": "attack",
+          "amount": 0.22,
+          "durationSec": 12,
+          "target": "self"
+        },
+        {
+          "type": "self_dot",
+          "stat": "hp",
+          "amount": -0.015,
+          "durationSec": 8
+        },
+        {
+          "type": "status",
+          "statusId": "pressure",
+          "chance": 0.85,
+          "durationSec": 8
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/hehehehehe/sprites/weapons_signature_items/pressure_gauge.png",
+        "characterFrames": [
+          "assets/characters/hehehehehe/sprites/skill_animation_high_blood_pressure/skill_hbp_01_angry_idle.png",
+          "assets/characters/hehehehehe/sprites/skill_animation_high_blood_pressure/skill_hbp_02_aura_rise.png",
+          "assets/characters/hehehehehe/sprites/skill_animation_high_blood_pressure/skill_hbp_03_aura_strong.png",
+          "assets/characters/hehehehehe/sprites/skill_animation_high_blood_pressure/skill_hbp_04_roar.png",
+          "assets/characters/hehehehehe/sprites/skill_animation_high_blood_pressure/skill_hbp_05_pressure_burst.png",
+          "assets/characters/hehehehehe/sprites/skill_animation_high_blood_pressure/skill_hbp_06_stone_afterglow.png"
+        ],
+        "effectFrames": [
+          "assets/characters/hehehehehe/sprites/skill_effects_high_blood_pressure/red_pressure_vortex.png",
+          "assets/characters/hehehehehe/sprites/skill_effects_high_blood_pressure/red_energy_column.png",
+          "assets/characters/hehehehehe/sprites/skill_effects_high_blood_pressure/blood_pressure_impact.png"
+        ]
+      }
+    },
+    {
+      "id": "bokaaaaaaan",
+      "name": "BoKaaaaaaan!!",
+      "owner": "shinji_wolf",
+      "kind": "active",
+      "element": "impact",
+      "target": "enemy_front_arc",
+      "energyCost": 50,
+      "cooldownSec": 24,
+      "description": "巨大ハンマーで前方範囲を叩き、敵をノックバックさせる。一定確率で気絶を付与する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 390,
+          "area": "front_arc"
+        },
+        {
+          "type": "knockback",
+          "distance": 2.2,
+          "target": "hit_enemies"
+        },
+        {
+          "type": "status",
+          "statusId": "stun",
+          "chance": 0.55,
+          "durationSec": 3
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_42.png",
+        "characterFrames": [
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_28.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_27.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_23.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_24.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_22.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_25.png"
+        ],
+        "effectFrames": [
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_52.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_63.png",
+          "assets/characters/shinji_wolf/shinji_wolf_slices/shinji_wolf_144.png"
+        ]
+      }
+    },
+    {
+      "id": "stacking_accumulation",
+      "name": "積み上げ",
+      "owner": "okuribito_chan",
+      "kind": "passive",
+      "element": "vesting",
+      "target": "self",
+      "description": "戦闘時間の経過に応じて攻撃力とスキル効果が少しずつ上昇する。",
+      "effects": [
+        {
+          "type": "scaling_buff",
+          "stat": "attack",
+          "amountPerSec": 0.005,
+          "maxAmount": 0.35
+        },
+        {
+          "type": "scaling_buff",
+          "stat": "skill_power",
+          "amountPerSec": 0.004,
+          "maxAmount": 0.25
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_56.png",
+        "effectFrames": [
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_79.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_82.png"
+        ]
+      }
+    },
+    {
+      "id": "thank_you_dividend",
+      "name": "ありがとう配当",
+      "owner": "okuribito_chan",
+      "kind": "passive",
+      "element": "wfi",
+      "target": "ally_team",
+      "description": "味方を回復・救援した時、少量のWFIを追加獲得する。",
+      "effects": [
+        {
+          "type": "resource_gain_on_assist",
+          "resource": "wfi",
+          "amount": 15
+        },
+        {
+          "type": "buff",
+          "stat": "support_bonus",
+          "amount": 0.1,
+          "durationSec": 8
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_50.png",
+        "effectFrames": [
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_83.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_82.png"
+        ]
+      }
+    },
+    {
+      "id": "halving_countdown",
+      "name": "半減期",
+      "owner": "okuribito_chan",
+      "kind": "passive",
+      "element": "vesting",
+      "target": "self",
+      "description": "Wave後半ほどスキル威力と拘束時間が上がる。",
+      "effects": [
+        {
+          "type": "late_wave_bonus",
+          "stat": "skill_power",
+          "amount": 0.3
+        },
+        {
+          "type": "late_wave_bonus",
+          "stat": "status_duration",
+          "amount": 0.2
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_60.png",
+        "characterFrames": [
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_22.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_24.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_23.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_20.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_21.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_19.png"
+        ],
+        "effectFrames": [
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_80.png"
+        ]
+      }
+    },
+    {
+      "id": "five_year_lock",
+      "name": "5年ロック",
+      "owner": "okuribito_chan",
+      "kind": "active",
+      "element": "vesting",
+      "target": "enemy_line",
+      "energyCost": 42,
+      "cooldownSec": 26,
+      "description": "鎖とロックWFIで敵列を拘束し、移動不能を付与する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 210,
+          "area": "enemy_line"
+        },
+        {
+          "type": "status",
+          "statusId": "lock",
+          "chance": 0.9,
+          "durationSec": 5
+        },
+        {
+          "type": "debuff",
+          "stat": "speed",
+          "amount": -0.35,
+          "durationSec": 8
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_53.png",
+        "characterFrames": [
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_28.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_33.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_32.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_27.png"
+        ],
+        "effectFrames": [
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_74.png",
+          "assets/characters/okuribito_chan/okuribito_chan_slices/okuribito_chan_slices/okuribito_chan_84.png"
+        ]
+      }
+    },
+    {
+      "id": "self_censored_splash",
+      "name": "自主規制",
+      "owner": "sakamu_tengu",
+      "kind": "active",
+      "element": "poison",
+      "target": "enemy_front_line",
+      "energyCost": 38,
+      "cooldownSec": 20,
+      "description": "紫の飛沫弾を連射し、毒・混乱・防御低下を付与する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 230,
+          "area": "front_line"
+        },
+        {
+          "type": "status",
+          "statusId": "poison",
+          "chance": 0.7,
+          "durationSec": 10
+        },
+        {
+          "type": "status",
+          "statusId": "confusion",
+          "chance": 0.42,
+          "durationSec": 4
+        },
+        {
+          "type": "debuff",
+          "stat": "defense",
+          "amount": -0.18,
+          "durationSec": 10
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_57.png",
+        "characterFrames": [
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_35.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_36.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_37.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_32.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_33.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_38.png"
+        ],
+        "effectFrames": [
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_66.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_68.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_65.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_72.png",
+          "assets/characters/sakamu_tengu/sakamu_tengu_slices/sakamu_tengu_slices/sakamu_tengu_69.png"
+        ]
+      }
+    },
+    {
+      "id": "fud_burst_beam",
+      "name": "滅びのバーストFUDビーム",
+      "owner": "line",
+      "kind": "active",
+      "element": "fud_dark",
+      "target": "enemy_all",
+      "energyCost": 48,
+      "cooldownSec": 30,
+      "description": "敵全体に精神ダメージを与え、士気と攻撃速度を落とす。低士気の敵は逃走することがある。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 260,
+          "area": "all_enemies"
+        },
+        {
+          "type": "debuff",
+          "stat": "morale",
+          "amount": -0.35,
+          "durationSec": 12
+        },
+        {
+          "type": "debuff",
+          "stat": "attack_speed",
+          "amount": -0.22,
+          "durationSec": 12
+        },
+        {
+          "type": "status",
+          "statusId": "flee",
+          "chance": 0.18,
+          "condition": "low_morale"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/line/sprites/item/item_fud_badge.png",
+        "characterFrames": [
+          "assets/characters/line/sprites/skill_animation/skill_fud_beam_01.png",
+          "assets/characters/line/sprites/skill_animation/skill_fud_beam_02.png",
+          "assets/characters/line/sprites/skill_animation/skill_fud_beam_03.png",
+          "assets/characters/line/sprites/skill_animation/skill_fud_beam_04.png",
+          "assets/characters/line/sprites/skill_animation/skill_fud_beam_05.png",
+          "assets/characters/line/sprites/skill_animation/skill_fud_beam_06.png"
+        ],
+        "effectFrames": [
+          "assets/characters/line/sprites/skill_effect/skill_fx_fud_beam_01.png",
+          "assets/characters/line/sprites/skill_effect/skill_fx_fud_beam_02.png",
+          "assets/characters/line/sprites/skill_effect/skill_fx_w_burst_01.png"
+        ]
+      }
+    },
+    {
+      "id": "lucky_cookie_harulucky",
+      "name": "ラッキークッキーハルラッキーw",
+      "owner": "harulucky",
+      "kind": "active",
+      "element": "luck",
+      "target": "ally_team_enemy_line",
+      "energyCost": 40,
+      "cooldownSec": 26,
+      "description": "味方全体に幸運を付与し、クリティカル率と追加報酬抽選を上げる。敵には虹色ショットでダメージを与える。",
+      "effects": [
+        {
+          "type": "buff",
+          "stat": "critical_rate",
+          "amount": 0.18,
+          "durationSec": 14,
+          "target": "all_allies"
+        },
+        {
+          "type": "buff",
+          "stat": "reward_bonus",
+          "amount": 0.08,
+          "durationSec": 14,
+          "target": "team"
+        },
+        {
+          "type": "damage",
+          "power": 220,
+          "area": "enemy_line"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_56.png",
+        "characterFrames": [
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_28.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_35.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_30.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_37.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_32.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_34.png"
+        ],
+        "effectFrames": [
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_78.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_79.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_84.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_72.png",
+          "assets/characters/harulucky/harulucky_slices/harulucky_slices/harulucky_75.png"
+        ]
+      }
+    },
+    {
+      "id": "sleepy_lunar",
+      "name": "すやすやルナー",
+      "owner": "nyanruna",
+      "kind": "active",
+      "element": "lunar_sleep",
+      "target": "enemy_all_ally_team",
+      "energyCost": 46,
+      "cooldownSec": 32,
+      "description": "敵全体に睡眠を付与し、味方全体を回復する。一部状態異常を解除する。",
+      "effects": [
+        {
+          "type": "status",
+          "statusId": "sleep",
+          "chance": 0.62,
+          "durationSec": 5,
+          "target": "all_enemies"
+        },
+        {
+          "type": "heal",
+          "power": 250,
+          "target": "all_allies"
+        },
+        {
+          "type": "cleanse",
+          "count": 1,
+          "target": "all_allies"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_24.png",
+        "characterFrames": [
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_86.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_85.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_87.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_88.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_84.png"
+        ],
+        "effectFrames": [
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_197.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_198.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_172.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_202.png",
+          "assets/characters/nyanruna/nyanruna_slices/nyanruna_slices/nyanruna_177.png"
+        ]
+      }
+    },
+    {
+      "id": "financial_creation",
+      "name": "金融創造",
+      "owner": "kamado",
+      "kind": "active",
+      "element": "wfi_finance",
+      "target": "enemy_area_ally_team",
+      "energyCost": 38,
+      "cooldownSec": 24,
+      "description": "WFIを連続で投げつけて敵を削り、味方側には小さなWFI生成とEnergy効率上昇を残す。本人は決め顔だが、だいたい味方にいじられる。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 250,
+          "area": "target_area"
+        },
+        {
+          "type": "resource_gain",
+          "resource": "wfi",
+          "amount": 45
+        },
+        {
+          "type": "buff",
+          "stat": "energy_efficiency",
+          "amount": 0.12,
+          "durationSec": 12,
+          "target": "all_allies"
+        },
+        {
+          "type": "shield",
+          "power": 120,
+          "durationSec": 8,
+          "target": "all_allies"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/kamado/sprites/items/wefi/item_w_coin_large.png",
+        "characterFrames": [
+          "assets/characters/kamado/sprites/character/skill/skill_ready_01.png",
+          "assets/characters/kamado/sprites/character/skill/skill_focus_02.png",
+          "assets/characters/kamado/sprites/character/skill/skill_coin_aura_03.png",
+          "assets/characters/kamado/sprites/character/skill/skill_coin_aura_04.png",
+          "assets/characters/kamado/sprites/character/skill/skill_coin_blessing_05.png"
+        ],
+        "effectFrames": [
+          "assets/characters/kamado/sprites/effects/skill/effect_summon_circle_column.png",
+          "assets/characters/kamado/sprites/effects/skill/effect_coin_fountain.png",
+          "assets/characters/kamado/sprites/effects/skill/effect_green_light_pillar.png"
+        ]
+      }
+    },
+    {
+      "id": "happy_rabbit_link",
+      "name": "ハッピーラビットリンク",
+      "owner": "usamaru",
+      "kind": "active",
+      "element": "rabbit_wcoin",
+      "target": "all_allies",
+      "energyCost": 34,
+      "cooldownSec": 20,
+      "description": "デュオの連携で味方全員のHPとスキルゲージを回復する。",
+      "effects": [
+        {
+          "type": "heal",
+          "power": 300,
+          "target": "all_allies"
+        },
+        {
+          "type": "gauge_gain",
+          "amount": 35,
+          "target": "all_allies"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_120.png",
+        "characterFrames": [
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_56.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_53.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_52.png"
+        ],
+        "effectFrames": [
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_143.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_144.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_151.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_141.png"
+        ]
+      }
+    },
+    {
+      "id": "wcoin_shower",
+      "name": "Wコインシャワー",
+      "owner": "usamaru",
+      "kind": "active",
+      "element": "wcoin_green",
+      "target": "enemy_area_ally_team",
+      "energyCost": 42,
+      "cooldownSec": 27,
+      "description": "Wコインを降らせて敵に範囲ダメージを与え、味方に少量のWFIを還元する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 260,
+          "area": "target_area"
+        },
+        {
+          "type": "resource_gain",
+          "resource": "wfi",
+          "amount": 35
+        },
+        {
+          "type": "status",
+          "statusId": "slow",
+          "chance": 0.45,
+          "durationSec": 6
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_121.png",
+        "characterFrames": [
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_42.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_34.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_37.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_38.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_36.png"
+        ],
+        "effectFrames": [
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_153.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_132.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_130.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_133.png"
+        ]
+      }
+    },
+    {
+      "id": "rabbit_smash",
+      "name": "ラビットスマッシュ",
+      "owner": "usamaru",
+      "kind": "active",
+      "element": "impact",
+      "target": "enemy_front_arc",
+      "energyCost": 46,
+      "cooldownSec": 25,
+      "description": "にんじんハンマーで前方を叩き、範囲ダメージとノックバックを与える。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 330,
+          "area": "front_arc"
+        },
+        {
+          "type": "knockback",
+          "distance": 1.8,
+          "target": "hit_enemies"
+        },
+        {
+          "type": "status",
+          "statusId": "stun",
+          "chance": 0.35,
+          "durationSec": 2
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_125.png",
+        "characterFrames": [
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_93.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_98.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_96.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_127.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_128.png"
+        ],
+        "effectFrames": [
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_149.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_147.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_140.png",
+          "assets/characters/usamaru/usamaru_slices/usamaru_slices/usamaru_128.png"
+        ]
+      }
+    },
+    {
+      "id": "cat_spirit_snipe",
+      "name": "猫霊スナイプ",
+      "owner": "nyannmichan",
+      "kind": "active",
+      "element": "cat_spirit",
+      "target": "enemy_line",
+      "energyCost": 42,
+      "cooldownSec": 24,
+      "description": "ライフルで敵列を撃ち抜き、猫霊アシストで追撃する。味方の一番弱った1人も小回復する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 285,
+          "area": "enemy_line"
+        },
+        {
+          "type": "status",
+          "statusId": "slow",
+          "chance": 0.58,
+          "durationSec": 5
+        },
+        {
+          "type": "heal",
+          "power": 180,
+          "target": "lowest_hp_ally"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_60.png",
+        "characterFrames": [
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_36.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_37.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_34.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_33.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_35.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_32.png"
+        ],
+        "effectFrames": [
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_77.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_76.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_73.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_80.png",
+          "assets/characters/nyannmichan/nyanmichan_slices/nyanmichan_slices/nyanmichan_71.png"
+        ]
+      }
+    },
+    {
+      "id": "profit_elixir",
+      "name": "爆益のエリクサー",
+      "owner": "eppa",
+      "kind": "active",
+      "element": "profit_alchemy",
+      "target": "enemy_area_ally_team",
+      "energyCost": 40,
+      "cooldownSec": 25,
+      "description": "爆益エリクサーを撒いて敵に範囲ダメージを与え、味方を回復しながらWFIを少し増やす。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 245,
+          "area": "target_area"
+        },
+        {
+          "type": "heal",
+          "power": 210,
+          "target": "all_allies"
+        },
+        {
+          "type": "resource_gain",
+          "resource": "wfi",
+          "amount": 32
+        },
+        {
+          "type": "buff",
+          "stat": "energy_efficiency",
+          "amount": 0.1,
+          "durationSec": 8,
+          "target": "all_allies"
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_111.png",
+        "characterFrames": [
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_49.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_53.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_50.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_54.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_51.png"
+        ],
+        "effectFrames": [
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_120.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_121.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_123.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_125.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_127.png"
+        ]
+      }
+    },
+    {
+      "id": "million_bouquet",
+      "name": "ミリオン・ブーケ",
+      "owner": "eppa",
+      "kind": "active",
+      "element": "bouquet_gold",
+      "target": "enemy_line",
+      "energyCost": 44,
+      "cooldownSec": 27,
+      "description": "花束と金貨の嵐で敵列にダメージを与え、味方全体のクリティカル率を上げる。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 285,
+          "area": "enemy_line"
+        },
+        {
+          "type": "buff",
+          "stat": "critical_rate",
+          "amount": 0.16,
+          "durationSec": 12,
+          "target": "all_allies"
+        },
+        {
+          "type": "status",
+          "statusId": "slow",
+          "chance": 0.42,
+          "durationSec": 5
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_105.png",
+        "characterFrames": [
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_72.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_73.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_74.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_75.png"
+        ],
+        "effectFrames": [
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_146.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_148.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_150.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_152.png",
+          "assets/characters/eppa/eppasheet_slices/eppasheet_slices/eppasheet_163.png"
+        ]
+      }
+    },
+    {
+      "id": "overtime_shadow",
+      "name": "ブラック残業召喚",
+      "owner": "sue",
+      "kind": "active",
+      "element": "shadow_overtime",
+      "target": "enemy_area_ally_team",
+      "energyCost": 42,
+      "cooldownSec": 26,
+      "description": "闇残業オーラと黒い分身で敵陣を包み、範囲ダメージと鈍化を与える。味方には少量のEnergyを戻す。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 265,
+          "area": "target_area"
+        },
+        {
+          "type": "status",
+          "statusId": "slow",
+          "chance": 0.65,
+          "durationSec": 7
+        },
+        {
+          "type": "debuff",
+          "stat": "attack_speed",
+          "amount": -0.2,
+          "durationSec": 8
+        },
+        {
+          "type": "resource_gain",
+          "resource": "energy",
+          "amount": 45
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_89.png",
+        "characterFrames": [
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_29.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_30.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_27.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_25.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_26.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_33.png"
+        ],
+        "effectFrames": [
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_68.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_69.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_72.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_70.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_71.png"
+        ]
+      }
+    },
+    {
+      "id": "resignation_barrage",
+      "name": "辞表乱舞",
+      "owner": "sue",
+      "kind": "active",
+      "element": "resignation_paper",
+      "target": "enemy_all",
+      "energyCost": 48,
+      "cooldownSec": 30,
+      "description": "辞表と社畜バッグをばら撒き、敵全体にダメージと混乱を付与する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 245,
+          "area": "all_enemies"
+        },
+        {
+          "type": "status",
+          "statusId": "confusion",
+          "chance": 0.5,
+          "durationSec": 5
+        },
+        {
+          "type": "status",
+          "statusId": "slow",
+          "chance": 0.42,
+          "durationSec": 6
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_93.png",
+        "characterFrames": [
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_25.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_26.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_72.png"
+        ],
+        "effectFrames": [
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_72.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_70.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_71.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_60.png",
+          "assets/characters/sue/suesheet_slices/suesheet_slices/suesheet_24.png"
+        ]
+      }
+    },
+    {
+      "id": "princess_illusion_physical",
+      "name": "プリンセスイリュージョン(物理)",
+      "owner": "ten",
+      "kind": "active",
+      "element": "illusion_physical",
+      "target": "enemy_area",
+      "energyCost": 44,
+      "cooldownSec": 26,
+      "description": "幻影術師の名を借りた物理攻撃。分身で敵を惑わせながら杖で叩き込み、範囲ダメージと混乱を与える。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 330,
+          "area": "target_area"
+        },
+        {
+          "type": "status",
+          "statusId": "confusion",
+          "chance": 0.58,
+          "durationSec": 5
+        },
+        {
+          "type": "debuff",
+          "stat": "defense",
+          "amount": -0.18,
+          "durationSec": 8
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_49.png",
+        "characterFrames": [
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_28.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_30.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_31.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_33.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_35.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_38.png"
+        ],
+        "effectFrames": [
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_44.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_45.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_48.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_49.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_68.png",
+          "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_78.png"
+        ]
+      }
+    },
+    {
+      "id": "infinity_gold_rush",
+      "name": "インフィニティゴールドラッシュ",
+      "owner": "bakuniki",
+      "kind": "active",
+      "element": "wealth",
+      "target": "enemy_all_ally_team",
+      "energyCost": 45,
+      "cooldownSec": 28,
+      "description": "鼻から大量の金貨を射出し、敵全体にダメージを与える。同時に味方全員の攻撃力とクリティカル率を一定時間上昇させ、少量のWFIを獲得する。",
+      "effects": [
+        {
+          "type": "damage",
+          "power": 250,
+          "area": "all_enemies"
+        },
+        {
+          "type": "buff",
+          "stat": "attack",
+          "amount": 0.15,
+          "durationSec": 12,
+          "target": "all_allies"
+        },
+        {
+          "type": "buff",
+          "stat": "critical_rate",
+          "amount": 0.1,
+          "durationSec": 12,
+          "target": "all_allies"
+        },
+        {
+          "type": "resource_gain",
+          "resource": "wfi",
+          "amount": 40
+        }
+      ],
+      "assets": {
+        "icon": "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_55.png",
+        "characterFrames": [
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_28.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_29.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_30.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_31.png"
+        ],
+        "effectFrames": [
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_52.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_53.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_54.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_1.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_2.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_3.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_4.png",
+          "assets/characters/bakuniki/bakunikisheet_slices/bakunikisheet_slices/bakunikisheet_5.png"
+        ]
+      }
+    }
+  ]
+}
