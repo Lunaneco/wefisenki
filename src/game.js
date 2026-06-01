@@ -1251,6 +1251,9 @@
     sidePanel.addEventListener("click", handleActionClick);
     if (mapHotspots) mapHotspots.addEventListener("click", handleActionClick);
     if (battleOverlayControls) battleOverlayControls.addEventListener("click", handleActionClick);
+
+    const mapCloseBtn = document.querySelector(".map-close-button");
+    if (mapCloseBtn) mapCloseBtn.addEventListener("click", handleActionClick);
   }
 
   function setView(view) {
