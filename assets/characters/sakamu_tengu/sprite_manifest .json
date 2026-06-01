@@ -1,0 +1,3107 @@
+{
+  "pack": {
+    "id": "censored_tengu_engineer",
+    "name": "自主規制天狗 / システムエンジニア天狗",
+    "source_image": "sakamu_tengu.png",
+    "source_size": {
+      "w": 1024,
+      "h": 1535
+    },
+    "sprite_count": 113,
+    "animation_count": 10,
+    "notes": "Black background removed with border-connected flood fill. Internal black outlines are preserved. Rectangles are measured on the original spritesheet, with lower effect/UI rows re-cut to avoid label bleed and neighboring sprite overlap. Face icons were re-cut on fixed 100x100 canvases from y=840 to remove top/bottom misalignment and neighboring sprite bleed."
+  },
+  "categories": {
+    "base_pose": 4,
+    "idle": 4,
+    "walk": 6,
+    "attack": 5,
+    "skill": 6,
+    "state": 3,
+    "face_icon": 8,
+    "item": 10,
+    "attack_effect": 4,
+    "skill_effect": 6,
+    "generic_effect": 27,
+    "ui_status_icon": 16,
+    "other_effect": 14
+  },
+  "sprites": [
+    {
+      "id": "base_back",
+      "name": "base_back",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：背面。マップ上で奥方向へ進む時の表示。",
+      "role": "character",
+      "source_rect": {
+        "x": 465,
+        "y": 45,
+        "w": 83,
+        "h": 154
+      },
+      "crop_rect_requested": {
+        "x": 465,
+        "y": 45,
+        "w": 100,
+        "h": 155
+      },
+      "size": {
+        "w": 83,
+        "h": 154
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/base_pose/base_back.png"
+    },
+    {
+      "id": "base_front",
+      "name": "base_front",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：正面。フィールド/バトルの基準立ち絵。",
+      "role": "character",
+      "source_rect": {
+        "x": 146,
+        "y": 50,
+        "w": 99,
+        "h": 149
+      },
+      "crop_rect_requested": {
+        "x": 145,
+        "y": 50,
+        "w": 100,
+        "h": 150
+      },
+      "size": {
+        "w": 99,
+        "h": 149
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/base_pose/base_front.png"
+    },
+    {
+      "id": "base_left",
+      "name": "base_left",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：左向き。左移動や会話向きの表示に使用。",
+      "role": "character",
+      "source_rect": {
+        "x": 255,
+        "y": 50,
+        "w": 90,
+        "h": 148
+      },
+      "crop_rect_requested": {
+        "x": 255,
+        "y": 50,
+        "w": 90,
+        "h": 150
+      },
+      "size": {
+        "w": 90,
+        "h": 148
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/base_pose/base_left.png"
+    },
+    {
+      "id": "base_right",
+      "name": "base_right",
+      "category": "base_pose",
+      "description": "基本立ちポーズ：右向き。右移動やサイドビュー戦闘に使用。",
+      "role": "character",
+      "source_rect": {
+        "x": 360,
+        "y": 50,
+        "w": 95,
+        "h": 149
+      },
+      "crop_rect_requested": {
+        "x": 360,
+        "y": 50,
+        "w": 95,
+        "h": 150
+      },
+      "size": {
+        "w": 95,
+        "h": 149
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/base_pose/base_right.png"
+    },
+    {
+      "id": "idle_01",
+      "name": "idle_01",
+      "category": "idle",
+      "description": "待機アニメーション 1/4。天狗SEがゆらっと構える待機フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 588,
+        "y": 50,
+        "w": 90,
+        "h": 149
+      },
+      "crop_rect_requested": {
+        "x": 588,
+        "y": 50,
+        "w": 92,
+        "h": 150
+      },
+      "size": {
+        "w": 90,
+        "h": 149
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/idle/idle_01.png",
+      "frame_index": 1,
+      "animation": "idle_4"
+    },
+    {
+      "id": "idle_02",
+      "name": "idle_02",
+      "category": "idle",
+      "description": "待機アニメーション 2/4。天狗SEがゆらっと構える待機フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 700,
+        "y": 50,
+        "w": 83,
+        "h": 148
+      },
+      "crop_rect_requested": {
+        "x": 700,
+        "y": 50,
+        "w": 95,
+        "h": 150
+      },
+      "size": {
+        "w": 83,
+        "h": 148
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/idle/idle_02.png",
+      "frame_index": 2,
+      "animation": "idle_4"
+    },
+    {
+      "id": "idle_03",
+      "name": "idle_03",
+      "category": "idle",
+      "description": "待機アニメーション 3/4。天狗SEがゆらっと構える待機フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 818,
+        "y": 50,
+        "w": 71,
+        "h": 149
+      },
+      "crop_rect_requested": {
+        "x": 818,
+        "y": 50,
+        "w": 92,
+        "h": 150
+      },
+      "size": {
+        "w": 71,
+        "h": 149
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/idle/idle_03.png",
+      "frame_index": 3,
+      "animation": "idle_4"
+    },
+    {
+      "id": "idle_04",
+      "name": "idle_04",
+      "category": "idle",
+      "description": "待機アニメーション 4/4。天狗SEがゆらっと構える待機フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 930,
+        "y": 50,
+        "w": 80,
+        "h": 149
+      },
+      "crop_rect_requested": {
+        "x": 930,
+        "y": 50,
+        "w": 94,
+        "h": 150
+      },
+      "size": {
+        "w": 80,
+        "h": 149
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/idle/idle_04.png",
+      "frame_index": 4,
+      "animation": "idle_4"
+    },
+    {
+      "id": "walk_01",
+      "name": "walk_01",
+      "category": "walk",
+      "description": "歩行アニメーション 1/6。羽を揺らしながら進む横移動フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 29,
+        "y": 260,
+        "w": 96,
+        "h": 130
+      },
+      "crop_rect_requested": {
+        "x": 25,
+        "y": 260,
+        "w": 100,
+        "h": 130
+      },
+      "size": {
+        "w": 96,
+        "h": 130
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/walk/walk_01.png",
+      "frame_index": 1,
+      "animation": "walk_6"
+    },
+    {
+      "id": "walk_02",
+      "name": "walk_02",
+      "category": "walk",
+      "description": "歩行アニメーション 2/6。羽を揺らしながら進む横移動フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 145,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "crop_rect_requested": {
+        "x": 145,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "size": {
+        "w": 95,
+        "h": 130
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/walk/walk_02.png",
+      "frame_index": 2,
+      "animation": "walk_6"
+    },
+    {
+      "id": "walk_03",
+      "name": "walk_03",
+      "category": "walk",
+      "description": "歩行アニメーション 3/6。羽を揺らしながら進む横移動フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 263,
+        "y": 260,
+        "w": 92,
+        "h": 130
+      },
+      "crop_rect_requested": {
+        "x": 260,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "size": {
+        "w": 92,
+        "h": 130
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/walk/walk_03.png",
+      "frame_index": 3,
+      "animation": "walk_6"
+    },
+    {
+      "id": "walk_04",
+      "name": "walk_04",
+      "category": "walk",
+      "description": "歩行アニメーション 4/6。羽を揺らしながら進む横移動フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 378,
+        "y": 260,
+        "w": 88,
+        "h": 130
+      },
+      "crop_rect_requested": {
+        "x": 378,
+        "y": 260,
+        "w": 92,
+        "h": 130
+      },
+      "size": {
+        "w": 88,
+        "h": 130
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/walk/walk_04.png",
+      "frame_index": 4,
+      "animation": "walk_6"
+    },
+    {
+      "id": "walk_05",
+      "name": "walk_05",
+      "category": "walk",
+      "description": "歩行アニメーション 5/6。羽を揺らしながら進む横移動フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 495,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "crop_rect_requested": {
+        "x": 495,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "size": {
+        "w": 95,
+        "h": 130
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/walk/walk_05.png",
+      "frame_index": 5,
+      "animation": "walk_6"
+    },
+    {
+      "id": "walk_06",
+      "name": "walk_06",
+      "category": "walk",
+      "description": "歩行アニメーション 6/6。羽を揺らしながら進む横移動フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 610,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "crop_rect_requested": {
+        "x": 610,
+        "y": 260,
+        "w": 95,
+        "h": 130
+      },
+      "size": {
+        "w": 95,
+        "h": 130
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/walk/walk_06.png",
+      "frame_index": 6,
+      "animation": "walk_6"
+    },
+    {
+      "id": "attack_spit_01",
+      "name": "attack_spit_01",
+      "category": "attack",
+      "description": "攻撃アニメーション 1/5。飛沫を飛ばす通常攻撃フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 35,
+        "y": 440,
+        "w": 72,
+        "h": 143
+      },
+      "crop_rect_requested": {
+        "x": 35,
+        "y": 440,
+        "w": 95,
+        "h": 145
+      },
+      "size": {
+        "w": 72,
+        "h": 143
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/attack/attack_spit_01.png",
+      "frame_index": 1,
+      "animation": "attack_spit_5"
+    },
+    {
+      "id": "attack_spit_02",
+      "name": "attack_spit_02",
+      "category": "attack",
+      "description": "攻撃アニメーション 2/5。飛沫を飛ばす通常攻撃フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 175,
+        "y": 440,
+        "w": 99,
+        "h": 145
+      },
+      "crop_rect_requested": {
+        "x": 175,
+        "y": 440,
+        "w": 105,
+        "h": 145
+      },
+      "size": {
+        "w": 99,
+        "h": 145
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/attack/attack_spit_02.png",
+      "frame_index": 2,
+      "animation": "attack_spit_5"
+    },
+    {
+      "id": "attack_spit_03",
+      "name": "attack_spit_03",
+      "category": "attack",
+      "description": "攻撃アニメーション 3/5。飛沫を飛ばす通常攻撃フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 315,
+        "y": 435,
+        "w": 160,
+        "h": 150
+      },
+      "crop_rect_requested": {
+        "x": 315,
+        "y": 435,
+        "w": 160,
+        "h": 150
+      },
+      "size": {
+        "w": 160,
+        "h": 150
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/attack/attack_spit_03.png",
+      "frame_index": 3,
+      "animation": "attack_spit_5"
+    },
+    {
+      "id": "attack_spit_04",
+      "name": "attack_spit_04",
+      "category": "attack",
+      "description": "攻撃アニメーション 4/5。飛沫を飛ばす通常攻撃フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 470,
+        "y": 452,
+        "w": 165,
+        "h": 133
+      },
+      "crop_rect_requested": {
+        "x": 470,
+        "y": 435,
+        "w": 165,
+        "h": 150
+      },
+      "size": {
+        "w": 165,
+        "h": 133
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/attack/attack_spit_04.png",
+      "frame_index": 4,
+      "animation": "attack_spit_5"
+    },
+    {
+      "id": "attack_spit_05",
+      "name": "attack_spit_05",
+      "category": "attack",
+      "description": "攻撃アニメーション 5/5。飛沫を飛ばす通常攻撃フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 665,
+        "y": 451,
+        "w": 193,
+        "h": 133
+      },
+      "crop_rect_requested": {
+        "x": 665,
+        "y": 430,
+        "w": 235,
+        "h": 155
+      },
+      "size": {
+        "w": 193,
+        "h": 133
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/attack/attack_spit_05.png",
+      "frame_index": 5,
+      "animation": "attack_spit_5"
+    },
+    {
+      "id": "skill_self_censor_01",
+      "name": "skill_self_censor_01",
+      "category": "skill",
+      "description": "スキル発動アニメーション 1/6。自主規制オーラ/紫ゲートを伴う必殺フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 35,
+        "y": 637,
+        "w": 76,
+        "h": 134
+      },
+      "crop_rect_requested": {
+        "x": 35,
+        "y": 635,
+        "w": 100,
+        "h": 150
+      },
+      "size": {
+        "w": 76,
+        "h": 134
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/skill/skill_self_censor_01.png",
+      "frame_index": 1,
+      "animation": "skill_self_censor_6"
+    },
+    {
+      "id": "skill_self_censor_02",
+      "name": "skill_self_censor_02",
+      "category": "skill",
+      "description": "スキル発動アニメーション 2/6。自主規制オーラ/紫ゲートを伴う必殺フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 165,
+        "y": 625,
+        "w": 145,
+        "h": 145
+      },
+      "crop_rect_requested": {
+        "x": 165,
+        "y": 625,
+        "w": 145,
+        "h": 160
+      },
+      "size": {
+        "w": 145,
+        "h": 145
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/skill/skill_self_censor_02.png",
+      "frame_index": 2,
+      "animation": "skill_self_censor_6"
+    },
+    {
+      "id": "skill_self_censor_03",
+      "name": "skill_self_censor_03",
+      "category": "skill",
+      "description": "スキル発動アニメーション 3/6。自主規制オーラ/紫ゲートを伴う必殺フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 300,
+        "y": 625,
+        "w": 180,
+        "h": 146
+      },
+      "crop_rect_requested": {
+        "x": 300,
+        "y": 625,
+        "w": 180,
+        "h": 160
+      },
+      "size": {
+        "w": 180,
+        "h": 146
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/skill/skill_self_censor_03.png",
+      "frame_index": 3,
+      "animation": "skill_self_censor_6"
+    },
+    {
+      "id": "skill_self_censor_04",
+      "name": "skill_self_censor_04",
+      "category": "skill",
+      "description": "スキル発動アニメーション 4/6。自主規制オーラ/紫ゲートを伴う必殺フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 485,
+        "y": 611,
+        "w": 137,
+        "h": 158
+      },
+      "crop_rect_requested": {
+        "x": 485,
+        "y": 605,
+        "w": 145,
+        "h": 180
+      },
+      "size": {
+        "w": 137,
+        "h": 158
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/skill/skill_self_censor_04.png",
+      "frame_index": 4,
+      "animation": "skill_self_censor_6"
+    },
+    {
+      "id": "skill_self_censor_05",
+      "name": "skill_self_censor_05",
+      "category": "skill",
+      "description": "スキル発動アニメーション 5/6。自主規制オーラ/紫ゲートを伴う必殺フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 650,
+        "y": 602,
+        "w": 200,
+        "h": 168
+      },
+      "crop_rect_requested": {
+        "x": 650,
+        "y": 595,
+        "w": 200,
+        "h": 190
+      },
+      "size": {
+        "w": 200,
+        "h": 168
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/skill/skill_self_censor_05.png",
+      "frame_index": 5,
+      "animation": "skill_self_censor_6"
+    },
+    {
+      "id": "skill_self_censor_06",
+      "name": "skill_self_censor_06",
+      "category": "skill",
+      "description": "スキル発動アニメーション 6/6。自主規制オーラ/紫ゲートを伴う必殺フレーム。",
+      "role": "animation_frame",
+      "source_rect": {
+        "x": 905,
+        "y": 641,
+        "w": 33,
+        "h": 129
+      },
+      "crop_rect_requested": {
+        "x": 905,
+        "y": 610,
+        "w": 119,
+        "h": 175
+      },
+      "size": {
+        "w": 33,
+        "h": 129
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/skill/skill_self_censor_06.png",
+      "frame_index": 6,
+      "animation": "skill_self_censor_6"
+    },
+    {
+      "id": "damage_pose",
+      "name": "damage_pose",
+      "category": "state",
+      "description": "ダメージ。紫の星エフェクト付きの被弾リアクション。",
+      "role": "state",
+      "source_rect": {
+        "x": 680,
+        "y": 270,
+        "w": 127,
+        "h": 125
+      },
+      "crop_rect_requested": {
+        "x": 680,
+        "y": 270,
+        "w": 130,
+        "h": 125
+      },
+      "size": {
+        "w": 127,
+        "h": 125
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/state/damage_pose.png"
+    },
+    {
+      "id": "defeated_pose",
+      "name": "defeated_pose",
+      "category": "state",
+      "description": "やられ/戦闘不能。天狗道具を落として倒れ込むポーズ。",
+      "role": "state",
+      "source_rect": {
+        "x": 835,
+        "y": 260,
+        "w": 133,
+        "h": 135
+      },
+      "crop_rect_requested": {
+        "x": 835,
+        "y": 260,
+        "w": 140,
+        "h": 135
+      },
+      "size": {
+        "w": 133,
+        "h": 135
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/state/defeated_pose.png"
+    },
+    {
+      "id": "victory_pose",
+      "name": "victory_pose",
+      "category": "state",
+      "description": "勝利ポーズ。星を掲げて勝利演出やリザルト画面に使用。",
+      "role": "state",
+      "source_rect": {
+        "x": 30,
+        "y": 805,
+        "w": 113,
+        "h": 150
+      },
+      "crop_rect_requested": {
+        "x": 30,
+        "y": 805,
+        "w": 130,
+        "h": 155
+      },
+      "size": {
+        "w": 113,
+        "h": 150
+      },
+      "pivot": "bottom_center",
+      "file": "sprites/state/victory_pose.png"
+    },
+    {
+      "id": "face_angry",
+      "name": "face_angry",
+      "category": "face_icon",
+      "description": "表情アイコン：怒り。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 300,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 300,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_angry.png"
+    },
+    {
+      "id": "face_confused",
+      "name": "face_confused",
+      "category": "face_icon",
+      "description": "表情アイコン：困惑。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 692,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 692,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_confused.png"
+    },
+    {
+      "id": "face_grin",
+      "name": "face_grin",
+      "category": "face_icon",
+      "description": "表情アイコン：ニヤリ。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 595,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 595,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_grin.png"
+    },
+    {
+      "id": "face_normal",
+      "name": "face_normal",
+      "category": "face_icon",
+      "description": "表情アイコン：通常。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 202,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 202,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_normal.png"
+    },
+    {
+      "id": "face_sad",
+      "name": "face_sad",
+      "category": "face_icon",
+      "description": "表情アイコン：悲しみ。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 790,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 790,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_sad.png"
+    },
+    {
+      "id": "face_shout",
+      "name": "face_shout",
+      "category": "face_icon",
+      "description": "表情アイコン：叫び。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 398,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 398,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_shout.png"
+    },
+    {
+      "id": "face_surprised",
+      "name": "face_surprised",
+      "category": "face_icon",
+      "description": "表情アイコン：驚き。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 497,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 497,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_surprised.png"
+    },
+    {
+      "id": "face_sweat",
+      "name": "face_sweat",
+      "category": "face_icon",
+      "description": "表情アイコン：汗。顔アイコン行を精密再切り出し済み。",
+      "role": "ui_portrait",
+      "source_rect": {
+        "x": 888,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "crop_rect_requested": {
+        "x": 888,
+        "y": 840,
+        "w": 100,
+        "h": 100
+      },
+      "size": {
+        "w": 100,
+        "h": 100
+      },
+      "pivot": "center",
+      "file": "sprites/face_icon/face_sweat.png"
+    },
+    {
+      "id": "item_censored_orb",
+      "name": "item_censored_orb",
+      "category": "item",
+      "description": "CENSOREDオーブ。自主規制系スキルの触媒。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 800,
+        "y": 1022,
+        "w": 74,
+        "h": 82
+      },
+      "crop_rect_requested": {
+        "x": 800,
+        "y": 1020,
+        "w": 100,
+        "h": 90
+      },
+      "size": {
+        "w": 74,
+        "h": 82
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_censored_orb.png"
+    },
+    {
+      "id": "item_code_monitor",
+      "name": "item_code_monitor",
+      "category": "item",
+      "description": "コード画面。開発スキルや解析イベント用の端末。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 128,
+        "y": 1027,
+        "w": 86,
+        "h": 77
+      },
+      "crop_rect_requested": {
+        "x": 120,
+        "y": 1025,
+        "w": 102,
+        "h": 80
+      },
+      "size": {
+        "w": 86,
+        "h": 77
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_code_monitor.png"
+    },
+    {
+      "id": "item_employee_id",
+      "name": "item_employee_id",
+      "category": "item",
+      "description": "社員証。身分証・入場キー系アイテム。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 235,
+        "y": 1023,
+        "w": 77,
+        "h": 77
+      },
+      "crop_rect_requested": {
+        "x": 235,
+        "y": 1020,
+        "w": 80,
+        "h": 88
+      },
+      "size": {
+        "w": 77,
+        "h": 77
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_employee_id.png"
+    },
+    {
+      "id": "item_keyboard",
+      "name": "item_keyboard",
+      "category": "item",
+      "description": "キーボード。入力/ハッキング/装備素材。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 321,
+        "y": 1036,
+        "w": 97,
+        "h": 54
+      },
+      "crop_rect_requested": {
+        "x": 320,
+        "y": 1028,
+        "w": 105,
+        "h": 72
+      },
+      "size": {
+        "w": 97,
+        "h": 54
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_keyboard.png"
+    },
+    {
+      "id": "item_laptop_pc",
+      "name": "item_laptop_pc",
+      "category": "item",
+      "description": "ノートPC。システムエンジニア系の装備/イベントアイテム。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 11,
+        "y": 1026,
+        "w": 96,
+        "h": 79
+      },
+      "crop_rect_requested": {
+        "x": 8,
+        "y": 1025,
+        "w": 100,
+        "h": 80
+      },
+      "size": {
+        "w": 96,
+        "h": 79
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_laptop_pc.png"
+    },
+    {
+      "id": "item_mouse",
+      "name": "item_mouse",
+      "category": "item",
+      "description": "マウス。小物アイテムまたはクラフト素材。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 440,
+        "y": 1036,
+        "w": 41,
+        "h": 52
+      },
+      "crop_rect_requested": {
+        "x": 440,
+        "y": 1028,
+        "w": 62,
+        "h": 72
+      },
+      "size": {
+        "w": 41,
+        "h": 52
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_mouse.png"
+    },
+    {
+      "id": "item_network_cable",
+      "name": "item_network_cable",
+      "category": "item",
+      "description": "回線ケーブル。修理・接続アイテム。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 690,
+        "y": 1027,
+        "w": 110,
+        "h": 77
+      },
+      "crop_rect_requested": {
+        "x": 690,
+        "y": 1025,
+        "w": 110,
+        "h": 83
+      },
+      "size": {
+        "w": 110,
+        "h": 77
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_network_cable.png"
+    },
+    {
+      "id": "item_server",
+      "name": "item_server",
+      "category": "item",
+      "description": "サーバー。拠点設備/防衛オブジェクト。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 600,
+        "y": 1021,
+        "w": 60,
+        "h": 84
+      },
+      "crop_rect_requested": {
+        "x": 600,
+        "y": 1020,
+        "w": 82,
+        "h": 88
+      },
+      "size": {
+        "w": 60,
+        "h": 84
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_server.png"
+    },
+    {
+      "id": "item_tengu_fan",
+      "name": "item_tengu_fan",
+      "category": "item",
+      "description": "天狗の団扇。風属性/天狗道具のシグネチャー武器。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 915,
+        "y": 1021,
+        "w": 78,
+        "h": 82
+      },
+      "crop_rect_requested": {
+        "x": 915,
+        "y": 1020,
+        "w": 105,
+        "h": 90
+      },
+      "size": {
+        "w": 78,
+        "h": 82
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_tengu_fan.png"
+    },
+    {
+      "id": "item_usb_memory",
+      "name": "item_usb_memory",
+      "category": "item",
+      "description": "USBメモリ。データ回収ミッション用。",
+      "role": "inventory_item",
+      "source_rect": {
+        "x": 525,
+        "y": 1030,
+        "w": 67,
+        "h": 68
+      },
+      "crop_rect_requested": {
+        "x": 525,
+        "y": 1025,
+        "w": 67,
+        "h": 75
+      },
+      "size": {
+        "w": 67,
+        "h": 68
+      },
+      "pivot": "center",
+      "file": "sprites/item/item_usb_memory.png"
+    },
+    {
+      "id": "attack_fx_spit_burst_01",
+      "name": "attack_fx_spit_burst_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト：紫の大きな飛沫爆ぜ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 248,
+        "y": 1155,
+        "w": 104,
+        "h": 83
+      },
+      "crop_rect_requested": {
+        "x": 248,
+        "y": 1155,
+        "w": 104,
+        "h": 83
+      },
+      "size": {
+        "w": 104,
+        "h": 83
+      },
+      "pivot": "center",
+      "file": "sprites/attack_effect/attack_fx_spit_burst_01.png"
+    },
+    {
+      "id": "attack_fx_spit_scatter_01",
+      "name": "attack_fx_spit_scatter_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト：紫飛沫の小さな拡散。",
+      "role": "effect",
+      "source_rect": {
+        "x": 21,
+        "y": 1172,
+        "w": 99,
+        "h": 53
+      },
+      "crop_rect_requested": {
+        "x": 18,
+        "y": 1165,
+        "w": 102,
+        "h": 60
+      },
+      "size": {
+        "w": 99,
+        "h": 53
+      },
+      "pivot": "center",
+      "file": "sprites/attack_effect/attack_fx_spit_scatter_01.png"
+    },
+    {
+      "id": "attack_fx_spit_scatter_02",
+      "name": "attack_fx_spit_scatter_02",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト：紫飛沫の中拡散。",
+      "role": "effect",
+      "source_rect": {
+        "x": 128,
+        "y": 1161,
+        "w": 107,
+        "h": 67
+      },
+      "crop_rect_requested": {
+        "x": 125,
+        "y": 1160,
+        "w": 110,
+        "h": 68
+      },
+      "size": {
+        "w": 107,
+        "h": 67
+      },
+      "pivot": "center",
+      "file": "sprites/attack_effect/attack_fx_spit_scatter_02.png"
+    },
+    {
+      "id": "attack_fx_spit_starburst_01",
+      "name": "attack_fx_spit_starburst_01",
+      "category": "attack_effect",
+      "description": "通常攻撃エフェクト：紫の着弾スパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 360,
+        "y": 1155,
+        "w": 95,
+        "h": 83
+      },
+      "crop_rect_requested": {
+        "x": 360,
+        "y": 1155,
+        "w": 95,
+        "h": 83
+      },
+      "size": {
+        "w": 95,
+        "h": 83
+      },
+      "pivot": "center",
+      "file": "sprites/attack_effect/attack_fx_spit_starburst_01.png"
+    },
+    {
+      "id": "skill_fx_censor_swirl",
+      "name": "skill_fx_censor_swirl",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：自主規制の紫渦。",
+      "role": "effect",
+      "source_rect": {
+        "x": 415,
+        "y": 1160,
+        "w": 105,
+        "h": 80
+      },
+      "crop_rect_requested": {
+        "x": 415,
+        "y": 1160,
+        "w": 105,
+        "h": 82
+      },
+      "size": {
+        "w": 105,
+        "h": 80
+      },
+      "pivot": "center",
+      "file": "sprites/skill_effect/skill_fx_censor_swirl.png"
+    },
+    {
+      "id": "skill_fx_censored_splash",
+      "name": "skill_fx_censored_splash",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：CENSORED付きの巨大紫スプラッシュ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 845,
+        "y": 1122,
+        "w": 170,
+        "h": 126
+      },
+      "crop_rect_requested": {
+        "x": 845,
+        "y": 1120,
+        "w": 179,
+        "h": 130
+      },
+      "size": {
+        "w": 170,
+        "h": 126
+      },
+      "pivot": "center",
+      "file": "sprites/skill_effect/skill_fx_censored_splash.png"
+    },
+    {
+      "id": "skill_fx_dark_orb_burst",
+      "name": "skill_fx_dark_orb_burst",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：黒紫オーブの爆ぜ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 618,
+        "y": 1150,
+        "w": 107,
+        "h": 91
+      },
+      "crop_rect_requested": {
+        "x": 618,
+        "y": 1150,
+        "w": 107,
+        "h": 95
+      },
+      "size": {
+        "w": 107,
+        "h": 91
+      },
+      "pivot": "center",
+      "file": "sprites/skill_effect/skill_fx_dark_orb_burst.png"
+    },
+    {
+      "id": "skill_fx_magic_crosshair",
+      "name": "skill_fx_magic_crosshair",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：魔法照準陣。",
+      "role": "effect",
+      "source_rect": {
+        "x": 785,
+        "y": 1160,
+        "w": 55,
+        "h": 82
+      },
+      "crop_rect_requested": {
+        "x": 785,
+        "y": 1160,
+        "w": 55,
+        "h": 82
+      },
+      "size": {
+        "w": 55,
+        "h": 82
+      },
+      "pivot": "center",
+      "file": "sprites/skill_effect/skill_fx_magic_crosshair.png"
+    },
+    {
+      "id": "skill_fx_purple_flash",
+      "name": "skill_fx_purple_flash",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：中心フラッシュ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 532,
+        "y": 1160,
+        "w": 83,
+        "h": 80
+      },
+      "crop_rect_requested": {
+        "x": 532,
+        "y": 1160,
+        "w": 83,
+        "h": 82
+      },
+      "size": {
+        "w": 83,
+        "h": 80
+      },
+      "pivot": "center",
+      "file": "sprites/skill_effect/skill_fx_purple_flash.png"
+    },
+    {
+      "id": "skill_fx_purple_pillar",
+      "name": "skill_fx_purple_pillar",
+      "category": "skill_effect",
+      "description": "スキルエフェクト：縦に噴き上がる紫柱。",
+      "role": "effect",
+      "source_rect": {
+        "x": 715,
+        "y": 1147,
+        "w": 90,
+        "h": 92
+      },
+      "crop_rect_requested": {
+        "x": 715,
+        "y": 1125,
+        "w": 90,
+        "h": 123
+      },
+      "size": {
+        "w": 90,
+        "h": 92
+      },
+      "pivot": "center",
+      "file": "sprites/skill_effect/skill_fx_purple_pillar.png"
+    },
+    {
+      "id": "generic_gold_twinkle",
+      "name": "generic_gold_twinkle",
+      "category": "generic_effect",
+      "description": "汎用：金色のきらめき群。",
+      "role": "effect",
+      "source_rect": {
+        "x": 842,
+        "y": 1289,
+        "w": 48,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 842,
+        "y": 1280,
+        "w": 48,
+        "h": 48
+      },
+      "size": {
+        "w": 48,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_gold_twinkle.png"
+    },
+    {
+      "id": "generic_gray_cloud",
+      "name": "generic_gray_cloud",
+      "category": "generic_effect",
+      "description": "煙/飛沫：灰色の雲。",
+      "role": "effect",
+      "source_rect": {
+        "x": 470,
+        "y": 1349,
+        "w": 55,
+        "h": 35
+      },
+      "crop_rect_requested": {
+        "x": 470,
+        "y": 1340,
+        "w": 55,
+        "h": 52
+      },
+      "size": {
+        "w": 55,
+        "h": 35
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_gray_cloud.png"
+    },
+    {
+      "id": "generic_hit_burst_01",
+      "name": "generic_hit_burst_01",
+      "category": "generic_effect",
+      "description": "汎用：八方向スパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 490,
+        "y": 1288,
+        "w": 50,
+        "h": 44
+      },
+      "crop_rect_requested": {
+        "x": 490,
+        "y": 1280,
+        "w": 50,
+        "h": 52
+      },
+      "size": {
+        "w": 50,
+        "h": 44
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_burst_01.png"
+    },
+    {
+      "id": "generic_hit_burst_02",
+      "name": "generic_hit_burst_02",
+      "category": "generic_effect",
+      "description": "汎用：強い爆発スパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 540,
+        "y": 1287,
+        "w": 55,
+        "h": 45
+      },
+      "crop_rect_requested": {
+        "x": 540,
+        "y": 1278,
+        "w": 55,
+        "h": 54
+      },
+      "size": {
+        "w": 55,
+        "h": 45
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_burst_02.png"
+    },
+    {
+      "id": "generic_hit_burst_03",
+      "name": "generic_hit_burst_03",
+      "category": "generic_effect",
+      "description": "汎用：強インパクト。",
+      "role": "effect",
+      "source_rect": {
+        "x": 621,
+        "y": 1287,
+        "w": 49,
+        "h": 45
+      },
+      "crop_rect_requested": {
+        "x": 615,
+        "y": 1278,
+        "w": 55,
+        "h": 54
+      },
+      "size": {
+        "w": 49,
+        "h": 45
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_burst_03.png"
+    },
+    {
+      "id": "generic_hit_line",
+      "name": "generic_hit_line",
+      "category": "generic_effect",
+      "description": "汎用：水平衝撃線。",
+      "role": "effect",
+      "source_rect": {
+        "x": 395,
+        "y": 1290,
+        "w": 70,
+        "h": 35
+      },
+      "crop_rect_requested": {
+        "x": 395,
+        "y": 1290,
+        "w": 70,
+        "h": 35
+      },
+      "size": {
+        "w": 70,
+        "h": 35
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_line.png"
+    },
+    {
+      "id": "generic_hit_spark_01",
+      "name": "generic_hit_spark_01",
+      "category": "generic_effect",
+      "description": "汎用：小さな金色ヒットスパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 167,
+        "y": 1285,
+        "w": 33,
+        "h": 43
+      },
+      "crop_rect_requested": {
+        "x": 160,
+        "y": 1285,
+        "w": 40,
+        "h": 43
+      },
+      "size": {
+        "w": 33,
+        "h": 43
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_spark_01.png"
+    },
+    {
+      "id": "generic_hit_spark_02",
+      "name": "generic_hit_spark_02",
+      "category": "generic_effect",
+      "description": "汎用：金色ヒットスパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 205,
+        "y": 1290,
+        "w": 40,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 205,
+        "y": 1285,
+        "w": 40,
+        "h": 43
+      },
+      "size": {
+        "w": 40,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_spark_02.png"
+    },
+    {
+      "id": "generic_hit_spark_03",
+      "name": "generic_hit_spark_03",
+      "category": "generic_effect",
+      "description": "汎用：大きめの金色スパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 255,
+        "y": 1289,
+        "w": 40,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 255,
+        "y": 1283,
+        "w": 40,
+        "h": 45
+      },
+      "size": {
+        "w": 40,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_spark_03.png"
+    },
+    {
+      "id": "generic_hit_spark_green",
+      "name": "generic_hit_spark_green",
+      "category": "generic_effect",
+      "description": "汎用：緑混じりのインパクト。",
+      "role": "effect",
+      "source_rect": {
+        "x": 310,
+        "y": 1287,
+        "w": 50,
+        "h": 43
+      },
+      "crop_rect_requested": {
+        "x": 310,
+        "y": 1280,
+        "w": 50,
+        "h": 50
+      },
+      "size": {
+        "w": 50,
+        "h": 43
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_hit_spark_green.png"
+    },
+    {
+      "id": "generic_purple_drop",
+      "name": "generic_purple_drop",
+      "category": "generic_effect",
+      "description": "汎用：紫の滴/弾。",
+      "role": "effect",
+      "source_rect": {
+        "x": 747,
+        "y": 1285,
+        "w": 33,
+        "h": 47
+      },
+      "crop_rect_requested": {
+        "x": 735,
+        "y": 1285,
+        "w": 45,
+        "h": 47
+      },
+      "size": {
+        "w": 33,
+        "h": 47
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_drop.png"
+    },
+    {
+      "id": "generic_purple_particles_01",
+      "name": "generic_purple_particles_01",
+      "category": "generic_effect",
+      "description": "煙/飛沫：紫粒子。",
+      "role": "effect",
+      "source_rect": {
+        "x": 548,
+        "y": 1346,
+        "w": 54,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 548,
+        "y": 1342,
+        "w": 54,
+        "h": 50
+      },
+      "size": {
+        "w": 54,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_particles_01.png"
+    },
+    {
+      "id": "generic_purple_particles_02",
+      "name": "generic_purple_particles_02",
+      "category": "generic_effect",
+      "description": "煙/飛沫：紫星粒子。",
+      "role": "effect",
+      "source_rect": {
+        "x": 629,
+        "y": 1346,
+        "w": 46,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 620,
+        "y": 1340,
+        "w": 55,
+        "h": 52
+      },
+      "size": {
+        "w": 46,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_particles_02.png"
+    },
+    {
+      "id": "generic_purple_particles_03",
+      "name": "generic_purple_particles_03",
+      "category": "generic_effect",
+      "description": "煙/飛沫：横に広がる紫粒子。",
+      "role": "effect",
+      "source_rect": {
+        "x": 690,
+        "y": 1347,
+        "w": 46,
+        "h": 40
+      },
+      "crop_rect_requested": {
+        "x": 690,
+        "y": 1340,
+        "w": 52,
+        "h": 52
+      },
+      "size": {
+        "w": 46,
+        "h": 40
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_particles_03.png"
+    },
+    {
+      "id": "generic_purple_slash",
+      "name": "generic_purple_slash",
+      "category": "generic_effect",
+      "description": "汎用：紫の斬撃軌跡。",
+      "role": "effect",
+      "source_rect": {
+        "x": 665,
+        "y": 1286,
+        "w": 59,
+        "h": 46
+      },
+      "crop_rect_requested": {
+        "x": 665,
+        "y": 1280,
+        "w": 65,
+        "h": 52
+      },
+      "size": {
+        "w": 59,
+        "h": 46
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_slash.png"
+    },
+    {
+      "id": "generic_purple_slash_small",
+      "name": "generic_purple_slash_small",
+      "category": "generic_effect",
+      "description": "煙/飛沫：小さな紫斬り。",
+      "role": "effect",
+      "source_rect": {
+        "x": 760,
+        "y": 1347,
+        "w": 50,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 760,
+        "y": 1340,
+        "w": 50,
+        "h": 58
+      },
+      "size": {
+        "w": 50,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_slash_small.png"
+    },
+    {
+      "id": "generic_purple_sparkle_small",
+      "name": "generic_purple_sparkle_small",
+      "category": "generic_effect",
+      "description": "煙/飛沫：紫小スパーク。",
+      "role": "effect",
+      "source_rect": {
+        "x": 820,
+        "y": 1351,
+        "w": 50,
+        "h": 30
+      },
+      "crop_rect_requested": {
+        "x": 820,
+        "y": 1340,
+        "w": 50,
+        "h": 58
+      },
+      "size": {
+        "w": 50,
+        "h": 30
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_sparkle_small.png"
+    },
+    {
+      "id": "generic_purple_wisp",
+      "name": "generic_purple_wisp",
+      "category": "generic_effect",
+      "description": "汎用：紫の飛沫ウィスプ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 807,
+        "y": 1288,
+        "w": 23,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 790,
+        "y": 1282,
+        "w": 40,
+        "h": 50
+      },
+      "size": {
+        "w": 23,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_purple_wisp.png"
+    },
+    {
+      "id": "generic_small_twinkles",
+      "name": "generic_small_twinkles",
+      "category": "generic_effect",
+      "description": "煙/飛沫：小さな星粒。",
+      "role": "effect",
+      "source_rect": {
+        "x": 428,
+        "y": 1345,
+        "w": 27,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 410,
+        "y": 1338,
+        "w": 45,
+        "h": 60
+      },
+      "size": {
+        "w": 27,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_small_twinkles.png"
+    },
+    {
+      "id": "generic_smoke_01",
+      "name": "generic_smoke_01",
+      "category": "generic_effect",
+      "description": "煙/飛沫：小さな煙。",
+      "role": "effect",
+      "source_rect": {
+        "x": 145,
+        "y": 1346,
+        "w": 32,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 145,
+        "y": 1340,
+        "w": 40,
+        "h": 55
+      },
+      "size": {
+        "w": 32,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_smoke_01.png"
+    },
+    {
+      "id": "generic_smoke_02",
+      "name": "generic_smoke_02",
+      "category": "generic_effect",
+      "description": "煙/飛沫：中煙。",
+      "role": "effect",
+      "source_rect": {
+        "x": 191,
+        "y": 1347,
+        "w": 38,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 190,
+        "y": 1340,
+        "w": 45,
+        "h": 55
+      },
+      "size": {
+        "w": 38,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_smoke_02.png"
+    },
+    {
+      "id": "generic_smoke_03",
+      "name": "generic_smoke_03",
+      "category": "generic_effect",
+      "description": "煙/飛沫：細い煙。",
+      "role": "effect",
+      "source_rect": {
+        "x": 250,
+        "y": 1347,
+        "w": 28,
+        "h": 37
+      },
+      "crop_rect_requested": {
+        "x": 250,
+        "y": 1340,
+        "w": 40,
+        "h": 55
+      },
+      "size": {
+        "w": 28,
+        "h": 37
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_smoke_03.png"
+    },
+    {
+      "id": "generic_smoke_bright_01",
+      "name": "generic_smoke_bright_01",
+      "category": "generic_effect",
+      "description": "汎用：白煙パフ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 905,
+        "y": 1282,
+        "w": 53,
+        "h": 53
+      },
+      "crop_rect_requested": {
+        "x": 905,
+        "y": 1270,
+        "w": 53,
+        "h": 65
+      },
+      "size": {
+        "w": 53,
+        "h": 53
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_smoke_bright_01.png"
+    },
+    {
+      "id": "generic_smoke_bright_02",
+      "name": "generic_smoke_bright_02",
+      "category": "generic_effect",
+      "description": "汎用：濃い白煙パフ。",
+      "role": "effect",
+      "source_rect": {
+        "x": 960,
+        "y": 1281,
+        "w": 38,
+        "h": 53
+      },
+      "crop_rect_requested": {
+        "x": 960,
+        "y": 1270,
+        "w": 64,
+        "h": 65
+      },
+      "size": {
+        "w": 38,
+        "h": 53
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_smoke_bright_02.png"
+    },
+    {
+      "id": "generic_smoke_cloud",
+      "name": "generic_smoke_cloud",
+      "category": "generic_effect",
+      "description": "煙/飛沫：大きな煙雲。",
+      "role": "effect",
+      "source_rect": {
+        "x": 300,
+        "y": 1345,
+        "w": 53,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 300,
+        "y": 1340,
+        "w": 65,
+        "h": 58
+      },
+      "size": {
+        "w": 53,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_smoke_cloud.png"
+    },
+    {
+      "id": "generic_tiny_purple_stars_01",
+      "name": "generic_tiny_purple_stars_01",
+      "category": "generic_effect",
+      "description": "煙/飛沫：極小紫星。",
+      "role": "effect",
+      "source_rect": {
+        "x": 894,
+        "y": 1357,
+        "w": 25,
+        "h": 20
+      },
+      "crop_rect_requested": {
+        "x": 890,
+        "y": 1340,
+        "w": 45,
+        "h": 52
+      },
+      "size": {
+        "w": 25,
+        "h": 20
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_tiny_purple_stars_01.png"
+    },
+    {
+      "id": "generic_tiny_purple_stars_02",
+      "name": "generic_tiny_purple_stars_02",
+      "category": "generic_effect",
+      "description": "煙/飛沫：極小紫星2。",
+      "role": "effect",
+      "source_rect": {
+        "x": 972,
+        "y": 1353,
+        "w": 27,
+        "h": 25
+      },
+      "crop_rect_requested": {
+        "x": 955,
+        "y": 1340,
+        "w": 53,
+        "h": 52
+      },
+      "size": {
+        "w": 27,
+        "h": 25
+      },
+      "pivot": "center",
+      "file": "sprites/generic_effect/generic_tiny_purple_stars_02.png"
+    },
+    {
+      "id": "ui_boot",
+      "name": "ui_boot",
+      "category": "ui_status_icon",
+      "description": "UI/状態：移動/速度。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 578,
+        "y": 1401,
+        "w": 38,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 575,
+        "y": 1398,
+        "w": 45,
+        "h": 47
+      },
+      "size": {
+        "w": 38,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_boot.png"
+    },
+    {
+      "id": "ui_buff_up_blue",
+      "name": "ui_buff_up_blue",
+      "category": "ui_status_icon",
+      "description": "UI/状態：青の上昇矢印。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 421,
+        "y": 1401,
+        "w": 31,
+        "h": 36
+      },
+      "crop_rect_requested": {
+        "x": 420,
+        "y": 1398,
+        "w": 35,
+        "h": 47
+      },
+      "size": {
+        "w": 31,
+        "h": 36
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_buff_up_blue.png"
+    },
+    {
+      "id": "ui_buff_up_dark",
+      "name": "ui_buff_up_dark",
+      "category": "ui_status_icon",
+      "description": "UI/状態：暗色の上昇矢印。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 372,
+        "y": 1403,
+        "w": 29,
+        "h": 34
+      },
+      "crop_rect_requested": {
+        "x": 368,
+        "y": 1398,
+        "w": 37,
+        "h": 47
+      },
+      "size": {
+        "w": 29,
+        "h": 34
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_buff_up_dark.png"
+    },
+    {
+      "id": "ui_debuff_down_red",
+      "name": "ui_debuff_down_red",
+      "category": "ui_status_icon",
+      "description": "UI/状態：赤の下降矢印。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 474,
+        "y": 1402,
+        "w": 29,
+        "h": 36
+      },
+      "crop_rect_requested": {
+        "x": 472,
+        "y": 1398,
+        "w": 38,
+        "h": 47
+      },
+      "size": {
+        "w": 29,
+        "h": 36
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_debuff_down_red.png"
+    },
+    {
+      "id": "ui_exclamation_red",
+      "name": "ui_exclamation_red",
+      "category": "ui_status_icon",
+      "description": "UI/状態：赤い警告。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 330,
+        "y": 1401,
+        "w": 16,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 328,
+        "y": 1398,
+        "w": 22,
+        "h": 47
+      },
+      "size": {
+        "w": 16,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_exclamation_red.png"
+    },
+    {
+      "id": "ui_exclamation_red_02",
+      "name": "ui_exclamation_red_02",
+      "category": "ui_status_icon",
+      "description": "UI/状態：強警告。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 931,
+        "y": 1400,
+        "w": 17,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 928,
+        "y": 1398,
+        "w": 27,
+        "h": 47
+      },
+      "size": {
+        "w": 17,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_exclamation_red_02.png"
+    },
+    {
+      "id": "ui_poison_green",
+      "name": "ui_poison_green",
+      "category": "ui_status_icon",
+      "description": "UI/状態：毒。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 820,
+        "y": 1403,
+        "w": 55,
+        "h": 34
+      },
+      "crop_rect_requested": {
+        "x": 820,
+        "y": 1398,
+        "w": 55,
+        "h": 47
+      },
+      "size": {
+        "w": 55,
+        "h": 34
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_poison_green.png"
+    },
+    {
+      "id": "ui_question_yellow",
+      "name": "ui_question_yellow",
+      "category": "ui_status_icon",
+      "description": "UI/状態：疑問。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 971,
+        "y": 1401,
+        "w": 26,
+        "h": 37
+      },
+      "crop_rect_requested": {
+        "x": 965,
+        "y": 1398,
+        "w": 35,
+        "h": 47
+      },
+      "size": {
+        "w": 26,
+        "h": 37
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_question_yellow.png"
+    },
+    {
+      "id": "ui_shield_blue",
+      "name": "ui_shield_blue",
+      "category": "ui_status_icon",
+      "description": "UI/状態：青の防御アイコン。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 273,
+        "y": 1401,
+        "w": 34,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 270,
+        "y": 1398,
+        "w": 40,
+        "h": 47
+      },
+      "size": {
+        "w": 34,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_shield_blue.png"
+    },
+    {
+      "id": "ui_shield_green",
+      "name": "ui_shield_green",
+      "category": "ui_status_icon",
+      "description": "UI/状態：緑の防御アイコン。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 219,
+        "y": 1401,
+        "w": 33,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 218,
+        "y": 1398,
+        "w": 37,
+        "h": 47
+      },
+      "size": {
+        "w": 33,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_shield_green.png"
+    },
+    {
+      "id": "ui_skull_purple",
+      "name": "ui_skull_purple",
+      "category": "ui_status_icon",
+      "description": "UI/状態：呪い/闇。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 759,
+        "y": 1403,
+        "w": 31,
+        "h": 37
+      },
+      "crop_rect_requested": {
+        "x": 742,
+        "y": 1398,
+        "w": 48,
+        "h": 47
+      },
+      "size": {
+        "w": 31,
+        "h": 37
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_skull_purple.png"
+    },
+    {
+      "id": "ui_skull_white",
+      "name": "ui_skull_white",
+      "category": "ui_status_icon",
+      "description": "UI/状態：戦闘不能/死。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 698,
+        "y": 1403,
+        "w": 34,
+        "h": 36
+      },
+      "crop_rect_requested": {
+        "x": 695,
+        "y": 1398,
+        "w": 40,
+        "h": 47
+      },
+      "size": {
+        "w": 34,
+        "h": 36
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_skull_white.png"
+    },
+    {
+      "id": "ui_sleep_zzz",
+      "name": "ui_sleep_zzz",
+      "category": "ui_status_icon",
+      "description": "UI/状態：睡眠。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 882,
+        "y": 1403,
+        "w": 26,
+        "h": 33
+      },
+      "crop_rect_requested": {
+        "x": 882,
+        "y": 1398,
+        "w": 38,
+        "h": 47
+      },
+      "size": {
+        "w": 26,
+        "h": 33
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_sleep_zzz.png"
+    },
+    {
+      "id": "ui_sparkle_blue",
+      "name": "ui_sparkle_blue",
+      "category": "ui_status_icon",
+      "description": "UI/状態：青いきらめき。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 161,
+        "y": 1403,
+        "w": 42,
+        "h": 37
+      },
+      "crop_rect_requested": {
+        "x": 155,
+        "y": 1398,
+        "w": 50,
+        "h": 47
+      },
+      "size": {
+        "w": 42,
+        "h": 37
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_sparkle_blue.png"
+    },
+    {
+      "id": "ui_target",
+      "name": "ui_target",
+      "category": "ui_status_icon",
+      "description": "UI/状態：ターゲット。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 645,
+        "y": 1402,
+        "w": 29,
+        "h": 36
+      },
+      "crop_rect_requested": {
+        "x": 645,
+        "y": 1398,
+        "w": 45,
+        "h": 47
+      },
+      "size": {
+        "w": 29,
+        "h": 36
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_target.png"
+    },
+    {
+      "id": "ui_weapon_sword",
+      "name": "ui_weapon_sword",
+      "category": "ui_status_icon",
+      "description": "UI/状態：武器/攻撃。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 524,
+        "y": 1400,
+        "w": 34,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 522,
+        "y": 1398,
+        "w": 43,
+        "h": 47
+      },
+      "size": {
+        "w": 34,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/ui_status_icon/ui_weapon_sword.png"
+    },
+    {
+      "id": "other_blue_diamond",
+      "name": "other_blue_diamond",
+      "category": "other_effect",
+      "description": "その他：青い宝石。レア素材。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 423,
+        "y": 1462,
+        "w": 39,
+        "h": 42
+      },
+      "crop_rect_requested": {
+        "x": 420,
+        "y": 1458,
+        "w": 48,
+        "h": 54
+      },
+      "size": {
+        "w": 39,
+        "h": 42
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_blue_diamond.png"
+    },
+    {
+      "id": "other_coin",
+      "name": "other_coin",
+      "category": "other_effect",
+      "description": "その他：コイン。通貨/報酬。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 368,
+        "y": 1468,
+        "w": 31,
+        "h": 37
+      },
+      "crop_rect_requested": {
+        "x": 365,
+        "y": 1458,
+        "w": 40,
+        "h": 54
+      },
+      "size": {
+        "w": 31,
+        "h": 37
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_coin.png"
+    },
+    {
+      "id": "other_coin_bag",
+      "name": "other_coin_bag",
+      "category": "other_effect",
+      "description": "その他：報酬袋。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 884,
+        "y": 1459,
+        "w": 47,
+        "h": 50
+      },
+      "crop_rect_requested": {
+        "x": 880,
+        "y": 1458,
+        "w": 55,
+        "h": 54
+      },
+      "size": {
+        "w": 47,
+        "h": 50
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_coin_bag.png"
+    },
+    {
+      "id": "other_gold_sparkles",
+      "name": "other_gold_sparkles",
+      "category": "other_effect",
+      "description": "その他：金色のきらめき。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 951,
+        "y": 1468,
+        "w": 45,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 950,
+        "y": 1468,
+        "w": 50,
+        "h": 44
+      },
+      "size": {
+        "w": 45,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_gold_sparkles.png"
+    },
+    {
+      "id": "other_heart",
+      "name": "other_heart",
+      "category": "other_effect",
+      "description": "その他：ハート。好感度/回復。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 243,
+        "y": 1468,
+        "w": 38,
+        "h": 36
+      },
+      "crop_rect_requested": {
+        "x": 240,
+        "y": 1458,
+        "w": 45,
+        "h": 54
+      },
+      "size": {
+        "w": 38,
+        "h": 36
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_heart.png"
+    },
+    {
+      "id": "other_hourglass",
+      "name": "other_hourglass",
+      "category": "other_effect",
+      "description": "その他：砂時計。ターン/時間。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 684,
+        "y": 1459,
+        "w": 40,
+        "h": 49
+      },
+      "crop_rect_requested": {
+        "x": 680,
+        "y": 1458,
+        "w": 48,
+        "h": 54
+      },
+      "size": {
+        "w": 40,
+        "h": 49
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_hourglass.png"
+    },
+    {
+      "id": "other_music_note",
+      "name": "other_music_note",
+      "category": "other_effect",
+      "description": "その他：音符。バフ/演出。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 306,
+        "y": 1465,
+        "w": 34,
+        "h": 38
+      },
+      "crop_rect_requested": {
+        "x": 304,
+        "y": 1458,
+        "w": 41,
+        "h": 54
+      },
+      "size": {
+        "w": 34,
+        "h": 38
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_music_note.png"
+    },
+    {
+      "id": "other_potion_blue",
+      "name": "other_potion_blue",
+      "category": "other_effect",
+      "description": "その他：青ポーション。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 554,
+        "y": 1459,
+        "w": 36,
+        "h": 49
+      },
+      "crop_rect_requested": {
+        "x": 550,
+        "y": 1458,
+        "w": 42,
+        "h": 54
+      },
+      "size": {
+        "w": 36,
+        "h": 49
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_potion_blue.png"
+    },
+    {
+      "id": "other_potion_green",
+      "name": "other_potion_green",
+      "category": "other_effect",
+      "description": "その他：緑ポーション。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 488,
+        "y": 1459,
+        "w": 36,
+        "h": 49
+      },
+      "crop_rect_requested": {
+        "x": 485,
+        "y": 1458,
+        "w": 43,
+        "h": 54
+      },
+      "size": {
+        "w": 36,
+        "h": 49
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_potion_green.png"
+    },
+    {
+      "id": "other_potion_red",
+      "name": "other_potion_red",
+      "category": "other_effect",
+      "description": "その他：赤ポーション。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 617,
+        "y": 1459,
+        "w": 37,
+        "h": 49
+      },
+      "crop_rect_requested": {
+        "x": 615,
+        "y": 1458,
+        "w": 42,
+        "h": 54
+      },
+      "size": {
+        "w": 37,
+        "h": 49
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_potion_red.png"
+    },
+    {
+      "id": "other_purple_star",
+      "name": "other_purple_star",
+      "category": "other_effect",
+      "description": "その他：紫の星。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 113,
+        "y": 1463,
+        "w": 39,
+        "h": 45
+      },
+      "crop_rect_requested": {
+        "x": 112,
+        "y": 1458,
+        "w": 43,
+        "h": 54
+      },
+      "size": {
+        "w": 39,
+        "h": 45
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_purple_star.png"
+    },
+    {
+      "id": "other_scroll",
+      "name": "other_scroll",
+      "category": "other_effect",
+      "description": "その他：巻物。クエスト/スキル書。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 746,
+        "y": 1461,
+        "w": 43,
+        "h": 46
+      },
+      "crop_rect_requested": {
+        "x": 744,
+        "y": 1458,
+        "w": 48,
+        "h": 54
+      },
+      "size": {
+        "w": 43,
+        "h": 46
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_scroll.png"
+    },
+    {
+      "id": "other_speech_bubble",
+      "name": "other_speech_bubble",
+      "category": "other_effect",
+      "description": "その他：吹き出し。会話UI。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 173,
+        "y": 1465,
+        "w": 41,
+        "h": 39
+      },
+      "crop_rect_requested": {
+        "x": 170,
+        "y": 1458,
+        "w": 48,
+        "h": 54
+      },
+      "size": {
+        "w": 41,
+        "h": 39
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_speech_bubble.png"
+    },
+    {
+      "id": "other_treasure_chest",
+      "name": "other_treasure_chest",
+      "category": "other_effect",
+      "description": "その他：宝箱。",
+      "role": "ui_icon",
+      "source_rect": {
+        "x": 805,
+        "y": 1459,
+        "w": 57,
+        "h": 50
+      },
+      "crop_rect_requested": {
+        "x": 802,
+        "y": 1458,
+        "w": 64,
+        "h": 54
+      },
+      "size": {
+        "w": 57,
+        "h": 50
+      },
+      "pivot": "center",
+      "file": "sprites/other_effect/other_treasure_chest.png"
+    }
+  ],
+  "animations": [
+    {
+      "id": "idle_4",
+      "frames": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04"
+      ],
+      "fps": 6,
+      "loop": true,
+      "cell": {
+        "w": 96,
+        "h": 155
+      },
+      "strip_file": "animations/idle_4.png",
+      "alignment": "bottom"
+    },
+    {
+      "id": "walk_6",
+      "frames": [
+        "walk_01",
+        "walk_02",
+        "walk_03",
+        "walk_04",
+        "walk_05",
+        "walk_06"
+      ],
+      "fps": 10,
+      "loop": true,
+      "cell": {
+        "w": 102,
+        "h": 136
+      },
+      "strip_file": "animations/walk_6.png",
+      "alignment": "bottom"
+    },
+    {
+      "id": "attack_spit_5",
+      "frames": [
+        "attack_spit_01",
+        "attack_spit_02",
+        "attack_spit_03",
+        "attack_spit_04",
+        "attack_spit_05"
+      ],
+      "fps": 12,
+      "loop": false,
+      "cell": {
+        "w": 199,
+        "h": 156
+      },
+      "strip_file": "animations/attack_spit_5.png",
+      "alignment": "bottom"
+    },
+    {
+      "id": "skill_self_censor_6",
+      "frames": [
+        "skill_self_censor_01",
+        "skill_self_censor_02",
+        "skill_self_censor_03",
+        "skill_self_censor_04",
+        "skill_self_censor_05",
+        "skill_self_censor_06"
+      ],
+      "fps": 9,
+      "loop": false,
+      "cell": {
+        "w": 206,
+        "h": 174
+      },
+      "strip_file": "animations/skill_self_censor_6.png",
+      "alignment": "bottom"
+    },
+    {
+      "id": "face_icons_8",
+      "frames": [
+        "face_normal",
+        "face_angry",
+        "face_shout",
+        "face_surprised",
+        "face_grin",
+        "face_confused",
+        "face_sad",
+        "face_sweat"
+      ],
+      "fps": 0,
+      "loop": false,
+      "cell": {
+        "w": 100,
+        "h": 100
+      },
+      "strip_file": "animations/face_icons_8.png",
+      "alignment": "center_fixed"
+    },
+    {
+      "id": "attack_fx_spit_4",
+      "frames": [
+        "attack_fx_spit_scatter_01",
+        "attack_fx_spit_scatter_02",
+        "attack_fx_spit_burst_01",
+        "attack_fx_spit_starburst_01"
+      ],
+      "fps": 14,
+      "loop": false,
+      "cell": {
+        "w": 113,
+        "h": 89
+      },
+      "strip_file": "animations/attack_fx_spit_4.png",
+      "alignment": "center"
+    },
+    {
+      "id": "skill_fx_self_censor_6",
+      "frames": [
+        "skill_fx_censor_swirl",
+        "skill_fx_purple_flash",
+        "skill_fx_dark_orb_burst",
+        "skill_fx_purple_pillar",
+        "skill_fx_magic_crosshair",
+        "skill_fx_censored_splash"
+      ],
+      "fps": 10,
+      "loop": false,
+      "cell": {
+        "w": 176,
+        "h": 132
+      },
+      "strip_file": "animations/skill_fx_self_censor_6.png",
+      "alignment": "center"
+    },
+    {
+      "id": "generic_hit_impact_9",
+      "frames": [
+        "generic_hit_spark_01",
+        "generic_hit_spark_02",
+        "generic_hit_spark_03",
+        "generic_hit_spark_green",
+        "generic_hit_line",
+        "generic_hit_burst_01",
+        "generic_hit_burst_02",
+        "generic_hit_burst_03",
+        "generic_purple_slash"
+      ],
+      "fps": 15,
+      "loop": false,
+      "cell": {
+        "w": 76,
+        "h": 52
+      },
+      "strip_file": "animations/generic_hit_impact_9.png",
+      "alignment": "center"
+    },
+    {
+      "id": "smoke_and_particles_13",
+      "frames": [
+        "generic_smoke_01",
+        "generic_smoke_02",
+        "generic_smoke_03",
+        "generic_smoke_cloud",
+        "generic_small_twinkles",
+        "generic_gray_cloud",
+        "generic_purple_particles_01",
+        "generic_purple_particles_02",
+        "generic_purple_particles_03",
+        "generic_purple_slash_small",
+        "generic_purple_sparkle_small",
+        "generic_tiny_purple_stars_01",
+        "generic_tiny_purple_stars_02"
+      ],
+      "fps": 10,
+      "loop": false,
+      "cell": {
+        "w": 61,
+        "h": 46
+      },
+      "strip_file": "animations/smoke_and_particles_13.png",
+      "alignment": "center"
+    },
+    {
+      "id": "ui_status_icons_16",
+      "frames": [
+        "ui_sparkle_blue",
+        "ui_shield_green",
+        "ui_shield_blue",
+        "ui_exclamation_red",
+        "ui_buff_up_dark",
+        "ui_buff_up_blue",
+        "ui_debuff_down_red",
+        "ui_weapon_sword",
+        "ui_boot",
+        "ui_target",
+        "ui_skull_white",
+        "ui_skull_purple",
+        "ui_poison_green",
+        "ui_sleep_zzz",
+        "ui_exclamation_red_02",
+        "ui_question_yellow"
+      ],
+      "fps": 0,
+      "loop": false,
+      "cell": {
+        "w": 61,
+        "h": 45
+      },
+      "strip_file": "animations/ui_status_icons_16.png",
+      "alignment": "center"
+    }
+  ]
+}
