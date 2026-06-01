@@ -1156,6 +1156,7 @@
       rememberBaseRuntimeData();
       state.unlockedAllyIds = new Set();
       state.selectedAllyId = "";
+      state.mapDetailActive = false;
 
       loadSave();
 
@@ -1263,6 +1264,9 @@
     if (view === "map" && state.battle?.result) {
       state.battle = null;
     }
+    if (view === "map") {
+      state.mapDetailActive = true;
+    }
     if (view === "battle" && !state.battle) {
       state.view = "battle";
     } else {
@@ -1325,13 +1329,17 @@
 
     if (action === "start-battle") {
       startBattle(selectedStage());
+      state.mapDetailActive = false;
     } else if (action === "start-kakusei-event") {
       startBattle(KAKUSEI_STAGE);
+      state.mapDetailActive = false;
     } else if (action === "select-stage") {
       state.selectedStageId = Number(button.dataset.stageId);
+      state.mapDetailActive = false;
       renderDom(true);
     } else if (action === "next-stage") {
       state.selectedStageId = clamp(state.selectedStageId + 1, 1, STAGES.length);
+      state.mapDetailActive = false;
       renderDom(true);
     } else if (action === "use-skill") {
       useSkill(button.dataset.skillId, button.dataset.allyId);
@@ -1367,6 +1375,9 @@
       renderDom(true);
     } else if (action === "close-roster-detail") {
       state.selectedAllyId = "";
+      renderDom(true);
+    } else if (action === "close-map-detail") {
+      state.mapDetailActive = false;
       renderDom(true);
     } else if (action === "reset") {
       if (window.confirm("本当にデータを初期化して最初から始めますか？")) {
@@ -1499,6 +1510,7 @@
       const secretStage = secretStageAtCanvasPoint(x, y);
       if (secretStage) {
         startBattle(secretStage);
+        state.mapDetailActive = false;
         renderDom(true);
         return;
       }
@@ -1515,6 +1527,7 @@
       }
       if (closest && closestDist < 34) {
         state.selectedStageId = closest.id;
+        state.mapDetailActive = false;
         renderDom(true);
       }
     }
@@ -4866,6 +4879,11 @@
     document.body.classList.toggle(
       "roster-detail-active",
       state.view === "roster" && !!state.selectedAllyId && !state.showJoinCardAlly
+    );
+
+    document.body.classList.toggle(
+      "map-detail-active",
+      state.view === "map" && !!state.mapDetailActive
     );
 
     // 加入オーバーレイ表示中
