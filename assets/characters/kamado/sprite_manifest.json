@@ -1,0 +1,2576 @@
+{
+  "pack_name": "w_coin_boy_sprites_pack",
+  "source_image": "kamadojobana.png",
+  "source_size": {
+    "width": 1024,
+    "height": 1536
+  },
+  "notes_ja": "元画像は透明背景のピクセルアートスプライトシート。座標は左上原点、x0,y0,x1,y1は半開区間です。個別PNGはすべて透明背景で保存しています。",
+  "sprites": [
+    {
+      "name": "stand_front",
+      "category": "character/standing",
+      "file": "sprites/character/standing/stand_front.png",
+      "description_ja": "正面立ち。Wコインを左手に持つ基本待機ポーズ。ゲーム内ユニットの通常表示向け。",
+      "tags": [
+        "character",
+        "standing",
+        "front"
+      ],
+      "source_bbox": {
+        "x0": 14,
+        "y0": 27,
+        "x1": 140,
+        "y1": 198
+      },
+      "size": {
+        "width": 126,
+        "height": 171
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "stand_left",
+      "category": "character/standing",
+      "file": "sprites/character/standing/stand_left.png",
+      "description_ja": "左向き立ち。サイドビュー移動やNPC会話の横向き用。",
+      "tags": [
+        "character",
+        "standing",
+        "left"
+      ],
+      "source_bbox": {
+        "x0": 158,
+        "y0": 26,
+        "x1": 266,
+        "y1": 198
+      },
+      "size": {
+        "width": 108,
+        "height": 172
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "stand_right",
+      "category": "character/standing",
+      "file": "sprites/character/standing/stand_right.png",
+      "description_ja": "右向き立ち。サイドビュー移動や攻撃前の向き合わせ用。",
+      "tags": [
+        "character",
+        "standing",
+        "right"
+      ],
+      "source_bbox": {
+        "x0": 290,
+        "y0": 27,
+        "x1": 397,
+        "y1": 198
+      },
+      "size": {
+        "width": 107,
+        "height": 171
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "stand_back_01",
+      "category": "character/standing",
+      "file": "sprites/character/standing/stand_back_01.png",
+      "description_ja": "背面立ち。マップ上で上方向へ歩く時の基準ポーズ。",
+      "tags": [
+        "character",
+        "standing",
+        "back"
+      ],
+      "source_bbox": {
+        "x0": 432,
+        "y0": 30,
+        "x1": 538,
+        "y1": 198
+      },
+      "size": {
+        "width": 106,
+        "height": 168
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "stand_back_02",
+      "category": "character/standing",
+      "file": "sprites/character/standing/stand_back_02.png",
+      "description_ja": "背面立ちの別フレーム。背中のフードと髪の揺れ差分として利用可能。",
+      "tags": [
+        "character",
+        "standing",
+        "back",
+        "alt"
+      ],
+      "source_bbox": {
+        "x0": 564,
+        "y0": 30,
+        "x1": 668,
+        "y1": 198
+      },
+      "size": {
+        "width": 104,
+        "height": 168
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "portrait_normal",
+      "category": "ui/portrait",
+      "file": "sprites/ui/portrait/portrait_normal.png",
+      "description_ja": "通常表情の顔アイコン。会話ウィンドウ、ステータス画面、編成画面向け。",
+      "tags": [
+        "portrait",
+        "face",
+        "ui"
+      ],
+      "source_bbox": {
+        "x0": 701,
+        "y0": 19,
+        "x1": 850,
+        "y1": 168
+      },
+      "size": {
+        "width": 149,
+        "height": 149
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "portrait_smile",
+      "category": "ui/portrait",
+      "file": "sprites/ui/portrait/portrait_smile.png",
+      "description_ja": "笑顔の顔アイコン。勝利演出、回復、親密度アップなど明るい場面向け。",
+      "tags": [
+        "portrait",
+        "face",
+        "ui",
+        "smile"
+      ],
+      "source_bbox": {
+        "x0": 850,
+        "y0": 19,
+        "x1": 997,
+        "y1": 168
+      },
+      "size": {
+        "width": 147,
+        "height": 149
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "idle_01",
+      "category": "character/idle",
+      "file": "sprites/character/idle/idle_01.png",
+      "description_ja": "待機/呼吸フレーム1。コインを見せる自然な立ち姿。",
+      "tags": [
+        "character",
+        "idle"
+      ],
+      "source_bbox": {
+        "x0": 16,
+        "y0": 202,
+        "x1": 146,
+        "y1": 357
+      },
+      "size": {
+        "width": 130,
+        "height": 155
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "idle_02",
+      "category": "character/idle",
+      "file": "sprites/character/idle/idle_02.png",
+      "description_ja": "待機/呼吸フレーム2。肩と腕が少し下がるループ用。",
+      "tags": [
+        "character",
+        "idle"
+      ],
+      "source_bbox": {
+        "x0": 156,
+        "y0": 201,
+        "x1": 259,
+        "y1": 356
+      },
+      "size": {
+        "width": 103,
+        "height": 155
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "idle_03",
+      "category": "character/idle",
+      "file": "sprites/character/idle/idle_03.png",
+      "description_ja": "待機/まばたきフレーム。軽い表情変化を入れたい時に使用。",
+      "tags": [
+        "character",
+        "idle"
+      ],
+      "source_bbox": {
+        "x0": 259,
+        "y0": 201,
+        "x1": 369,
+        "y1": 357
+      },
+      "size": {
+        "width": 110,
+        "height": 156
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "idle_04",
+      "category": "character/idle",
+      "file": "sprites/character/idle/idle_04.png",
+      "description_ja": "待機/集中フレーム。コインに意識を向ける演出。",
+      "tags": [
+        "character",
+        "idle"
+      ],
+      "source_bbox": {
+        "x0": 381,
+        "y0": 201,
+        "x1": 496,
+        "y1": 356
+      },
+      "size": {
+        "width": 115,
+        "height": 155
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "idle_05",
+      "category": "character/idle",
+      "file": "sprites/character/idle/idle_05.png",
+      "description_ja": "待機/ためフレーム。攻撃やスキル前の小さな予備動作。",
+      "tags": [
+        "character",
+        "idle"
+      ],
+      "source_bbox": {
+        "x0": 497,
+        "y0": 201,
+        "x1": 619,
+        "y1": 356
+      },
+      "size": {
+        "width": 122,
+        "height": 155
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "item_w_coin_large",
+      "category": "items/wefi",
+      "file": "sprites/items/wefi/item_w_coin_large.png",
+      "description_ja": "大きなWコイン。通貨アイコン、報酬、弾丸の拡大表示に使える。",
+      "tags": [
+        "item",
+        "coin",
+        "wefi"
+      ],
+      "source_bbox": {
+        "x0": 690,
+        "y0": 203,
+        "x1": 790,
+        "y1": 309
+      },
+      "size": {
+        "width": 100,
+        "height": 106
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "item_w_coin_stack",
+      "category": "items/wefi",
+      "file": "sprites/items/wefi/item_w_coin_stack.png",
+      "description_ja": "積み重なったWコイン。ショップ、報酬、ドロップ演出向け。",
+      "tags": [
+        "item",
+        "coin",
+        "stack",
+        "wefi"
+      ],
+      "source_bbox": {
+        "x0": 795,
+        "y0": 175,
+        "x1": 915,
+        "y1": 324
+      },
+      "size": {
+        "width": 120,
+        "height": 149
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "item_market_terminal",
+      "category": "items/device",
+      "file": "sprites/items/device/item_market_terminal.png",
+      "description_ja": "チャート表示端末。WeFi/相場/スキル発動デバイスとして使える小物。",
+      "tags": [
+        "item",
+        "device",
+        "market",
+        "terminal"
+      ],
+      "source_bbox": {
+        "x0": 900,
+        "y0": 175,
+        "x1": 1014,
+        "y1": 324
+      },
+      "size": {
+        "width": 114,
+        "height": 149
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "run_01",
+      "category": "character/run",
+      "file": "sprites/character/run/run_01.png",
+      "description_ja": "走行アニメーション1フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 33,
+        "y0": 352,
+        "x1": 155,
+        "y1": 513
+      },
+      "size": {
+        "width": 122,
+        "height": 161
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "run_02",
+      "category": "character/run",
+      "file": "sprites/character/run/run_02.png",
+      "description_ja": "走行アニメーション2フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 163,
+        "y0": 353,
+        "x1": 286,
+        "y1": 510
+      },
+      "size": {
+        "width": 123,
+        "height": 157
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "run_03",
+      "category": "character/run",
+      "file": "sprites/character/run/run_03.png",
+      "description_ja": "走行アニメーション3フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 297,
+        "y0": 352,
+        "x1": 417,
+        "y1": 511
+      },
+      "size": {
+        "width": 120,
+        "height": 159
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "run_04",
+      "category": "character/run",
+      "file": "sprites/character/run/run_04.png",
+      "description_ja": "走行アニメーション4フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 429,
+        "y0": 353,
+        "x1": 550,
+        "y1": 511
+      },
+      "size": {
+        "width": 121,
+        "height": 158
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "run_05",
+      "category": "character/run",
+      "file": "sprites/character/run/run_05.png",
+      "description_ja": "走行アニメーション5フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 566,
+        "y0": 353,
+        "x1": 682,
+        "y1": 509
+      },
+      "size": {
+        "width": 116,
+        "height": 156
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "run_06",
+      "category": "character/run",
+      "file": "sprites/character/run/run_06.png",
+      "description_ja": "走行アニメーション6フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 693,
+        "y0": 352,
+        "x1": 812,
+        "y1": 509
+      },
+      "size": {
+        "width": 119,
+        "height": 157
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "run_07",
+      "category": "character/run",
+      "file": "sprites/character/run/run_07.png",
+      "description_ja": "走行アニメーション7フレーム目。コインを持ったまま前進するループ用。",
+      "tags": [
+        "character",
+        "run",
+        "walk"
+      ],
+      "source_bbox": {
+        "x0": 826,
+        "y0": 352,
+        "x1": 948,
+        "y1": 510
+      },
+      "size": {
+        "width": 122,
+        "height": 158
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "attack_ready_01",
+      "category": "character/attack",
+      "file": "sprites/character/attack/attack_ready_01.png",
+      "description_ja": "通常攻撃の準備。走り込みからコイン投げに移る開始ポーズ。",
+      "tags": [
+        "character",
+        "attack"
+      ],
+      "source_bbox": {
+        "x0": 22,
+        "y0": 517,
+        "x1": 148,
+        "y1": 670
+      },
+      "size": {
+        "width": 126,
+        "height": 153
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "attack_aim_02",
+      "category": "character/attack",
+      "file": "sprites/character/attack/attack_aim_02.png",
+      "description_ja": "通常攻撃の照準。腕を伸ばしてWコインを撃ち出す直前。",
+      "tags": [
+        "character",
+        "attack",
+        "aim"
+      ],
+      "source_bbox": {
+        "x0": 145,
+        "y0": 516,
+        "x1": 255,
+        "y1": 670
+      },
+      "size": {
+        "width": 110,
+        "height": 154
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "attack_fire_03",
+      "category": "character/attack",
+      "file": "sprites/character/attack/attack_fire_03.png",
+      "description_ja": "通常攻撃の発射。キャラと近距離コイン弾をまとめたフレーム。",
+      "tags": [
+        "character",
+        "attack",
+        "coin"
+      ],
+      "source_bbox": {
+        "x0": 250,
+        "y0": 516,
+        "x1": 421,
+        "y1": 670
+      },
+      "size": {
+        "width": 171,
+        "height": 154
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "attack_follow_04",
+      "category": "character/attack",
+      "file": "sprites/character/attack/attack_follow_04.png",
+      "description_ja": "通常攻撃の追撃姿勢。発射後の腕振り抜き。",
+      "tags": [
+        "character",
+        "attack"
+      ],
+      "source_bbox": {
+        "x0": 386,
+        "y0": 518,
+        "x1": 522,
+        "y1": 670
+      },
+      "size": {
+        "width": 136,
+        "height": 152
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "effect_coin_barrage_wide",
+      "category": "effects/coin_attack",
+      "file": "sprites/effects/coin_attack/effect_coin_barrage_wide.png",
+      "description_ja": "大量のWコインを水平に飛ばす弾幕エフェクト。通常攻撃の中距離ヒットに。",
+      "tags": [
+        "effect",
+        "coin",
+        "projectile",
+        "attack"
+      ],
+      "source_bbox": {
+        "x0": 500,
+        "y0": 500,
+        "x1": 710,
+        "y1": 655
+      },
+      "size": {
+        "width": 210,
+        "height": 155
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_coin_barrage_thin",
+      "category": "effects/coin_attack",
+      "file": "sprites/effects/coin_attack/effect_coin_barrage_thin.png",
+      "description_ja": "細めのWコイン弾幕。遠距離へ伸びる追撃エフェクト。",
+      "tags": [
+        "effect",
+        "coin",
+        "projectile",
+        "attack"
+      ],
+      "source_bbox": {
+        "x0": 705,
+        "y0": 510,
+        "x1": 850,
+        "y1": 650
+      },
+      "size": {
+        "width": 145,
+        "height": 140
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_coin_single_small",
+      "category": "effects/coin_attack",
+      "file": "sprites/effects/coin_attack/effect_coin_single_small.png",
+      "description_ja": "小さな単発Wコイン弾。弾丸やドロップの軽量素材。",
+      "tags": [
+        "effect",
+        "coin",
+        "projectile"
+      ],
+      "source_bbox": {
+        "x0": 815,
+        "y0": 555,
+        "x1": 870,
+        "y1": 610
+      },
+      "size": {
+        "width": 55,
+        "height": 55
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "attack_end_peace",
+      "category": "character/attack",
+      "file": "sprites/character/attack/attack_end_peace.png",
+      "description_ja": "攻撃後の決めポーズ。小さなピースサイン付きでコンボ終了や勝利直前に。",
+      "tags": [
+        "character",
+        "attack",
+        "end"
+      ],
+      "source_bbox": {
+        "x0": 842,
+        "y0": 516,
+        "x1": 966,
+        "y1": 670
+      },
+      "size": {
+        "width": 124,
+        "height": 154
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "skill_ready_01",
+      "category": "character/skill",
+      "file": "sprites/character/skill/skill_ready_01.png",
+      "description_ja": "スキル発動の初期姿勢。足元に淡い緑のエネルギー。",
+      "tags": [
+        "character",
+        "skill"
+      ],
+      "source_bbox": {
+        "x0": 8,
+        "y0": 690,
+        "x1": 140,
+        "y1": 858
+      },
+      "size": {
+        "width": 132,
+        "height": 168
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "skill_focus_02",
+      "category": "character/skill",
+      "file": "sprites/character/skill/skill_focus_02.png",
+      "description_ja": "スキル集中。落ち着いた表情でWコインを構える。",
+      "tags": [
+        "character",
+        "skill",
+        "focus"
+      ],
+      "source_bbox": {
+        "x0": 148,
+        "y0": 697,
+        "x1": 267,
+        "y1": 858
+      },
+      "size": {
+        "width": 119,
+        "height": 161
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "skill_coin_aura_03",
+      "category": "character/skill",
+      "file": "sprites/character/skill/skill_coin_aura_03.png",
+      "description_ja": "Wコインが周囲に浮かぶオーラ演出。バフ/回復スキル向け。",
+      "tags": [
+        "character",
+        "skill",
+        "coin",
+        "aura"
+      ],
+      "source_bbox": {
+        "x0": 295,
+        "y0": 681,
+        "x1": 454,
+        "y1": 870
+      },
+      "size": {
+        "width": 159,
+        "height": 189
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "skill_coin_aura_04",
+      "category": "character/skill",
+      "file": "sprites/character/skill/skill_coin_aura_04.png",
+      "description_ja": "金融創造の強化フレーム。笑顔でWFIを創っている感が強い。",
+      "tags": [
+        "character",
+        "skill",
+        "coin",
+        "aura"
+      ],
+      "source_bbox": {
+        "x0": 450,
+        "y0": 685,
+        "x1": 620,
+        "y1": 870
+      },
+      "size": {
+        "width": 170,
+        "height": 185
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "effect_summon_circle_column",
+      "category": "effects/skill",
+      "file": "sprites/effects/skill/effect_summon_circle_column.png",
+      "description_ja": "緑の魔法陣と光柱。召喚・回復・全体バフの中心エフェクト。",
+      "tags": [
+        "effect",
+        "skill",
+        "circle",
+        "summon"
+      ],
+      "source_bbox": {
+        "x0": 630,
+        "y0": 675,
+        "x1": 842,
+        "y1": 885
+      },
+      "size": {
+        "width": 212,
+        "height": 210
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "skill_coin_blessing_05",
+      "category": "character/skill",
+      "file": "sprites/character/skill/skill_coin_blessing_05.png",
+      "description_ja": "Wコインが大量に舞う祝福ポーズ。奥義終了・味方回復演出に最適。",
+      "tags": [
+        "character",
+        "skill",
+        "coin",
+        "blessing"
+      ],
+      "source_bbox": {
+        "x0": 807,
+        "y0": 662,
+        "x1": 1014,
+        "y1": 884
+      },
+      "size": {
+        "width": 207,
+        "height": 222
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "status_happy_sparkle",
+      "category": "character/status",
+      "file": "sprites/character/status/status_happy_sparkle.png",
+      "description_ja": "キラキラ喜び/照れポーズ。好感度・報酬獲得・コミカル演出向け。",
+      "tags": [
+        "character",
+        "status",
+        "happy",
+        "sparkle"
+      ],
+      "source_bbox": {
+        "x0": 35,
+        "y0": 870,
+        "x1": 215,
+        "y1": 1028
+      },
+      "size": {
+        "width": 180,
+        "height": 158
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "status_knocked_down",
+      "category": "character/status",
+      "file": "sprites/character/status/status_knocked_down.png",
+      "description_ja": "倒れ/戦闘不能ポーズ。KO、ダウン、スタン長め演出向け。",
+      "tags": [
+        "character",
+        "status",
+        "ko",
+        "down"
+      ],
+      "source_bbox": {
+        "x0": 258,
+        "y0": 890,
+        "x1": 444,
+        "y1": 1014
+      },
+      "size": {
+        "width": 186,
+        "height": 124
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "victory_pose",
+      "category": "character/status",
+      "file": "sprites/character/status/victory_pose.png",
+      "description_ja": "勝利ポーズ。笑顔でピース、勝利リザルトやスキル成功時に。",
+      "tags": [
+        "character",
+        "status",
+        "victory"
+      ],
+      "source_bbox": {
+        "x0": 485,
+        "y0": 864,
+        "x1": 615,
+        "y1": 1028
+      },
+      "size": {
+        "width": 130,
+        "height": 164
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1.0
+      }
+    },
+    {
+      "name": "effect_coin_projectile_heavy",
+      "category": "effects/projectile",
+      "file": "sprites/effects/projectile/effect_coin_projectile_heavy.png",
+      "description_ja": "太い緑のWコイン突進弾。高速単発ショット用。",
+      "tags": [
+        "effect",
+        "projectile",
+        "coin"
+      ],
+      "source_bbox": {
+        "x0": 20,
+        "y0": 1047,
+        "x1": 150,
+        "y1": 1130
+      },
+      "size": {
+        "width": 130,
+        "height": 83
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_coin_projectile_fast_01",
+      "category": "effects/projectile",
+      "file": "sprites/effects/projectile/effect_coin_projectile_fast_01.png",
+      "description_ja": "斜め軌道のWコイン弾。連射1段目。",
+      "tags": [
+        "effect",
+        "projectile",
+        "coin"
+      ],
+      "source_bbox": {
+        "x0": 154,
+        "y0": 1042,
+        "x1": 262,
+        "y1": 1130
+      },
+      "size": {
+        "width": 108,
+        "height": 88
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_coin_projectile_fast_02",
+      "category": "effects/projectile",
+      "file": "sprites/effects/projectile/effect_coin_projectile_fast_02.png",
+      "description_ja": "斜め軌道のWコイン弾。連射2段目、より長い尾を持つ。",
+      "tags": [
+        "effect",
+        "projectile",
+        "coin"
+      ],
+      "source_bbox": {
+        "x0": 260,
+        "y0": 1042,
+        "x1": 395,
+        "y1": 1138
+      },
+      "size": {
+        "width": 135,
+        "height": 96
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_hit_star_01",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_green_hit_star_01.png",
+      "description_ja": "緑の小爆発/ヒットスパーク。コイン弾着弾に。",
+      "tags": [
+        "effect",
+        "impact",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 407,
+        "y0": 1037,
+        "x1": 508,
+        "y1": 1130
+      },
+      "size": {
+        "width": 101,
+        "height": 93
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_hit_star_02",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_green_hit_star_02.png",
+      "description_ja": "緑の大爆発/ヒットスパーク。クリティカルや強攻撃の着弾に。",
+      "tags": [
+        "effect",
+        "impact",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 520,
+        "y0": 1032,
+        "x1": 642,
+        "y1": 1138
+      },
+      "size": {
+        "width": 122,
+        "height": 106
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_splash_star",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_green_splash_star.png",
+      "description_ja": "緑の破裂スパーク。範囲攻撃の中心に置くと映える。",
+      "tags": [
+        "effect",
+        "impact",
+        "green",
+        "splash"
+      ],
+      "source_bbox": {
+        "x0": 670,
+        "y0": 1037,
+        "x1": 785,
+        "y1": 1140
+      },
+      "size": {
+        "width": 115,
+        "height": 103
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_orange_hit_small",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_orange_hit_small.png",
+      "description_ja": "オレンジの小ヒット。物理攻撃や軽い衝突用。",
+      "tags": [
+        "effect",
+        "impact",
+        "orange"
+      ],
+      "source_bbox": {
+        "x0": 790,
+        "y0": 1054,
+        "x1": 854,
+        "y1": 1130
+      },
+      "size": {
+        "width": 64,
+        "height": 76
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_orange_hit_large",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_orange_hit_large.png",
+      "description_ja": "オレンジの大ヒット。強打、爆発、フィニッシュ用。",
+      "tags": [
+        "effect",
+        "impact",
+        "orange"
+      ],
+      "source_bbox": {
+        "x0": 870,
+        "y0": 1045,
+        "x1": 940,
+        "y1": 1148
+      },
+      "size": {
+        "width": 70,
+        "height": 103
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_small_stone",
+      "category": "effects/debris",
+      "file": "sprites/effects/debris/effect_small_stone.png",
+      "description_ja": "小石/礫。着弾後の物理破片や地面ダメージ用。",
+      "tags": [
+        "effect",
+        "debris",
+        "stone"
+      ],
+      "source_bbox": {
+        "x0": 950,
+        "y0": 1048,
+        "x1": 1002,
+        "y1": 1148
+      },
+      "size": {
+        "width": 52,
+        "height": 100
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_magic_circle_green",
+      "category": "effects/skill",
+      "file": "sprites/effects/skill/effect_magic_circle_green.png",
+      "description_ja": "大型緑魔法陣。発動範囲、回復床、召喚ポイントに。",
+      "tags": [
+        "effect",
+        "skill",
+        "circle"
+      ],
+      "source_bbox": {
+        "x0": 15,
+        "y0": 1145,
+        "x1": 248,
+        "y1": 1340
+      },
+      "size": {
+        "width": 233,
+        "height": 195
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_coin_ring_swirl",
+      "category": "effects/skill",
+      "file": "sprites/effects/skill/effect_coin_ring_swirl.png",
+      "description_ja": "Wコインの円環スワール。バリア、吸収、資産増加バフ向け。",
+      "tags": [
+        "effect",
+        "skill",
+        "ring",
+        "coin"
+      ],
+      "source_bbox": {
+        "x0": 275,
+        "y0": 1138,
+        "x1": 525,
+        "y1": 1335
+      },
+      "size": {
+        "width": 250,
+        "height": 197
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_coin_fountain",
+      "category": "effects/skill",
+      "file": "sprites/effects/skill/effect_coin_fountain.png",
+      "description_ja": "Wコイン噴水。報酬獲得・回復・全体支援の派手な演出。",
+      "tags": [
+        "effect",
+        "skill",
+        "coin",
+        "fountain"
+      ],
+      "source_bbox": {
+        "x0": 525,
+        "y0": 1138,
+        "x1": 765,
+        "y1": 1335
+      },
+      "size": {
+        "width": 240,
+        "height": 197
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_light_pillar",
+      "category": "effects/skill",
+      "file": "sprites/effects/skill/effect_green_light_pillar.png",
+      "description_ja": "緑の光柱。召喚、ワープ、奥義フィニッシュ向け。",
+      "tags": [
+        "effect",
+        "skill",
+        "pillar"
+      ],
+      "source_bbox": {
+        "x0": 800,
+        "y0": 1138,
+        "x1": 1006,
+        "y1": 1340
+      },
+      "size": {
+        "width": 206,
+        "height": 202
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_sparkle_group",
+      "category": "effects/generic",
+      "file": "sprites/effects/generic/effect_green_sparkle_group.png",
+      "description_ja": "緑のキラキラ群。回復やバフの軽量装飾。",
+      "tags": [
+        "effect",
+        "sparkle",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 20,
+        "y0": 1338,
+        "x1": 100,
+        "y1": 1418
+      },
+      "size": {
+        "width": 80,
+        "height": 80
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_sparkle_single",
+      "category": "effects/generic",
+      "file": "sprites/effects/generic/effect_green_sparkle_single.png",
+      "description_ja": "緑の小さな星。UI通知やバフ付与のワンポイント。",
+      "tags": [
+        "effect",
+        "sparkle",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 105,
+        "y0": 1348,
+        "x1": 180,
+        "y1": 1405
+      },
+      "size": {
+        "width": 75,
+        "height": 57
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_cross_spark",
+      "category": "effects/generic",
+      "file": "sprites/effects/generic/effect_green_cross_spark.png",
+      "description_ja": "緑の十字スパーク。命中、アイテム取得、強化成功に。",
+      "tags": [
+        "effect",
+        "sparkle",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 180,
+        "y0": 1348,
+        "x1": 230,
+        "y1": 1415
+      },
+      "size": {
+        "width": 50,
+        "height": 67
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_crescent_small",
+      "category": "effects/slash",
+      "file": "sprites/effects/slash/effect_green_crescent_small.png",
+      "description_ja": "小さな緑の三日月斬撃。風/コイン属性の近接攻撃向け。",
+      "tags": [
+        "effect",
+        "slash",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 232,
+        "y0": 1348,
+        "x1": 292,
+        "y1": 1415
+      },
+      "size": {
+        "width": 60,
+        "height": 67
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_crescent_large",
+      "category": "effects/slash",
+      "file": "sprites/effects/slash/effect_green_crescent_large.png",
+      "description_ja": "大きな緑の円弧斬撃。スキル斬撃や範囲攻撃に。",
+      "tags": [
+        "effect",
+        "slash",
+        "green"
+      ],
+      "source_bbox": {
+        "x0": 295,
+        "y0": 1338,
+        "x1": 430,
+        "y1": 1432
+      },
+      "size": {
+        "width": 135,
+        "height": 94
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_green_wind_slash",
+      "category": "effects/slash",
+      "file": "sprites/effects/slash/effect_green_wind_slash.png",
+      "description_ja": "緑の突風斬撃。横方向に流す攻撃エフェクト。",
+      "tags": [
+        "effect",
+        "slash",
+        "green",
+        "wind"
+      ],
+      "source_bbox": {
+        "x0": 430,
+        "y0": 1348,
+        "x1": 518,
+        "y1": 1425
+      },
+      "size": {
+        "width": 88,
+        "height": 77
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_orange_explosion_01",
+      "category": "effects/explosion",
+      "file": "sprites/effects/explosion/effect_orange_explosion_01.png",
+      "description_ja": "オレンジ爆発1。地面衝撃やダメージ表現に。",
+      "tags": [
+        "effect",
+        "explosion",
+        "orange"
+      ],
+      "source_bbox": {
+        "x0": 520,
+        "y0": 1338,
+        "x1": 612,
+        "y1": 1430
+      },
+      "size": {
+        "width": 92,
+        "height": 92
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_orange_explosion_02",
+      "category": "effects/explosion",
+      "file": "sprites/effects/explosion/effect_orange_explosion_02.png",
+      "description_ja": "オレンジ爆発2。爆発の強調差分。",
+      "tags": [
+        "effect",
+        "explosion",
+        "orange"
+      ],
+      "source_bbox": {
+        "x0": 614,
+        "y0": 1338,
+        "x1": 710,
+        "y1": 1430
+      },
+      "size": {
+        "width": 96,
+        "height": 92
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_debris_stones",
+      "category": "effects/debris",
+      "file": "sprites/effects/debris/effect_debris_stones.png",
+      "description_ja": "飛び散る石・瓦礫。衝撃、地割れ、ノックバック用。",
+      "tags": [
+        "effect",
+        "debris",
+        "stones"
+      ],
+      "source_bbox": {
+        "x0": 705,
+        "y0": 1338,
+        "x1": 864,
+        "y1": 1430
+      },
+      "size": {
+        "width": 159,
+        "height": 92
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_smoke_cloud",
+      "category": "effects/smoke",
+      "file": "sprites/effects/smoke/effect_smoke_cloud.png",
+      "description_ja": "土煙/煙。着地、消滅、ダッシュ後の残像に。",
+      "tags": [
+        "effect",
+        "smoke"
+      ],
+      "source_bbox": {
+        "x0": 875,
+        "y0": 1348,
+        "x1": 992,
+        "y1": 1430
+      },
+      "size": {
+        "width": 117,
+        "height": 82
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "ui_heal_plus",
+      "category": "ui/status",
+      "file": "sprites/ui/status/ui_heal_plus.png",
+      "description_ja": "回復プラスアイコン。HP回復や味方支援のUIに。",
+      "tags": [
+        "ui",
+        "heal",
+        "plus"
+      ],
+      "source_bbox": {
+        "x0": 24,
+        "y0": 1432,
+        "x1": 104,
+        "y1": 1516
+      },
+      "size": {
+        "width": 80,
+        "height": 84
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "ui_shield_green",
+      "category": "ui/status",
+      "file": "sprites/ui/status/ui_shield_green.png",
+      "description_ja": "緑の盾アイコン。防御アップ、シールド付与に。",
+      "tags": [
+        "ui",
+        "shield",
+        "buff"
+      ],
+      "source_bbox": {
+        "x0": 116,
+        "y0": 1432,
+        "x1": 180,
+        "y1": 1510
+      },
+      "size": {
+        "width": 64,
+        "height": 78
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "ui_speed_up_arrows",
+      "category": "ui/status",
+      "file": "sprites/ui/status/ui_speed_up_arrows.png",
+      "description_ja": "上向き矢印バフ。速度上昇、能力アップ表示に。",
+      "tags": [
+        "ui",
+        "buff",
+        "speed"
+      ],
+      "source_bbox": {
+        "x0": 188,
+        "y0": 1428,
+        "x1": 246,
+        "y1": 1516
+      },
+      "size": {
+        "width": 58,
+        "height": 88
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "item_laptop_small",
+      "category": "items/device",
+      "file": "sprites/items/device/item_laptop_small.png",
+      "description_ja": "小型チャート端末。インベントリ用の縮小アイコン。",
+      "tags": [
+        "item",
+        "device",
+        "laptop"
+      ],
+      "source_bbox": {
+        "x0": 250,
+        "y0": 1430,
+        "x1": 350,
+        "y1": 1524
+      },
+      "size": {
+        "width": 100,
+        "height": 94
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_gold_rocks",
+      "category": "effects/debris",
+      "file": "sprites/effects/debris/effect_gold_rocks.png",
+      "description_ja": "金色の石/コイン破片。報酬ドロップや地面からの湧き出しに。",
+      "tags": [
+        "effect",
+        "debris",
+        "gold"
+      ],
+      "source_bbox": {
+        "x0": 362,
+        "y0": 1444,
+        "x1": 438,
+        "y1": 1510
+      },
+      "size": {
+        "width": 76,
+        "height": 66
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_purple_orb_burst",
+      "category": "effects/dark",
+      "file": "sprites/effects/dark/effect_purple_orb_burst.png",
+      "description_ja": "紫のオーブ破裂。敵スキル、デバフ、闇属性ヒット用。",
+      "tags": [
+        "effect",
+        "dark",
+        "purple"
+      ],
+      "source_bbox": {
+        "x0": 450,
+        "y0": 1440,
+        "x1": 530,
+        "y1": 1512
+      },
+      "size": {
+        "width": 80,
+        "height": 72
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_purple_dark_orb",
+      "category": "effects/dark",
+      "file": "sprites/effects/dark/effect_purple_dark_orb.png",
+      "description_ja": "紫の闇オーブ。呪い/状態異常の中心エフェクト。",
+      "tags": [
+        "effect",
+        "dark",
+        "purple"
+      ],
+      "source_bbox": {
+        "x0": 534,
+        "y0": 1442,
+        "x1": 616,
+        "y1": 1516
+      },
+      "size": {
+        "width": 82,
+        "height": 74
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_purple_splash",
+      "category": "effects/dark",
+      "file": "sprites/effects/dark/effect_purple_splash.png",
+      "description_ja": "紫のスプラッシュ。デバフ着弾や毒/闇属性爆発に。",
+      "tags": [
+        "effect",
+        "dark",
+        "purple",
+        "splash"
+      ],
+      "source_bbox": {
+        "x0": 624,
+        "y0": 1436,
+        "x1": 714,
+        "y1": 1520
+      },
+      "size": {
+        "width": 90,
+        "height": 84
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_orange_star_cross_01",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_orange_star_cross_01.png",
+      "description_ja": "オレンジ十字スパーク1。連続ヒットの軽量フレーム。",
+      "tags": [
+        "effect",
+        "impact",
+        "orange"
+      ],
+      "source_bbox": {
+        "x0": 714,
+        "y0": 1442,
+        "x1": 792,
+        "y1": 1518
+      },
+      "size": {
+        "width": 78,
+        "height": 76
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_orange_star_cross_02",
+      "category": "effects/impact",
+      "file": "sprites/effects/impact/effect_orange_star_cross_02.png",
+      "description_ja": "オレンジ十字スパーク2。強めの斬撃・火花に。",
+      "tags": [
+        "effect",
+        "impact",
+        "orange"
+      ],
+      "source_bbox": {
+        "x0": 786,
+        "y0": 1438,
+        "x1": 862,
+        "y1": 1518
+      },
+      "size": {
+        "width": 76,
+        "height": 80
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_red_slash_bars_01",
+      "category": "effects/slash",
+      "file": "sprites/effects/slash/effect_red_slash_bars_01.png",
+      "description_ja": "赤い縦斬撃バー1。ダメージ表示や敵攻撃用。",
+      "tags": [
+        "effect",
+        "slash",
+        "red"
+      ],
+      "source_bbox": {
+        "x0": 878,
+        "y0": 1438,
+        "x1": 912,
+        "y1": 1522
+      },
+      "size": {
+        "width": 34,
+        "height": 84
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "name": "effect_red_slash_bars_02",
+      "category": "effects/slash",
+      "file": "sprites/effects/slash/effect_red_slash_bars_02.png",
+      "description_ja": "赤い縦斬撃バー2。複数ヒットの追撃用。",
+      "tags": [
+        "effect",
+        "slash",
+        "red"
+      ],
+      "source_bbox": {
+        "x0": 924,
+        "y0": 1436,
+        "x1": 972,
+        "y1": 1522
+      },
+      "size": {
+        "width": 48,
+        "height": 86
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ],
+  "animations": {
+    "idle": {
+      "file": "strips/idle.png",
+      "frames": [
+        "idle_01",
+        "idle_02",
+        "idle_03",
+        "idle_04",
+        "idle_05"
+      ],
+      "frame_count": 5,
+      "frame_width": 130,
+      "frame_height": 156,
+      "fps": 6,
+      "repeat": -1,
+      "description_ja": "待機/呼吸ループ",
+      "frame_offsets": [
+        {
+          "name": "idle_01",
+          "x": 0,
+          "y": 1,
+          "source_size": {
+            "width": 130,
+            "height": 155
+          }
+        },
+        {
+          "name": "idle_02",
+          "x": 13,
+          "y": 1,
+          "source_size": {
+            "width": 103,
+            "height": 155
+          }
+        },
+        {
+          "name": "idle_03",
+          "x": 10,
+          "y": 0,
+          "source_size": {
+            "width": 110,
+            "height": 156
+          }
+        },
+        {
+          "name": "idle_04",
+          "x": 7,
+          "y": 1,
+          "source_size": {
+            "width": 115,
+            "height": 155
+          }
+        },
+        {
+          "name": "idle_05",
+          "x": 4,
+          "y": 1,
+          "source_size": {
+            "width": 122,
+            "height": 155
+          }
+        }
+      ]
+    },
+    "run": {
+      "file": "strips/run.png",
+      "frames": [
+        "run_01",
+        "run_02",
+        "run_03",
+        "run_04",
+        "run_05",
+        "run_06",
+        "run_07"
+      ],
+      "frame_count": 7,
+      "frame_width": 123,
+      "frame_height": 161,
+      "fps": 10,
+      "repeat": -1,
+      "description_ja": "走行ループ",
+      "frame_offsets": [
+        {
+          "name": "run_01",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 122,
+            "height": 161
+          }
+        },
+        {
+          "name": "run_02",
+          "x": 0,
+          "y": 4,
+          "source_size": {
+            "width": 123,
+            "height": 157
+          }
+        },
+        {
+          "name": "run_03",
+          "x": 1,
+          "y": 2,
+          "source_size": {
+            "width": 120,
+            "height": 159
+          }
+        },
+        {
+          "name": "run_04",
+          "x": 1,
+          "y": 3,
+          "source_size": {
+            "width": 121,
+            "height": 158
+          }
+        },
+        {
+          "name": "run_05",
+          "x": 3,
+          "y": 5,
+          "source_size": {
+            "width": 116,
+            "height": 156
+          }
+        },
+        {
+          "name": "run_06",
+          "x": 2,
+          "y": 4,
+          "source_size": {
+            "width": 119,
+            "height": 157
+          }
+        },
+        {
+          "name": "run_07",
+          "x": 0,
+          "y": 3,
+          "source_size": {
+            "width": 122,
+            "height": 158
+          }
+        }
+      ]
+    },
+    "attack_coin_throw": {
+      "file": "strips/attack_coin_throw.png",
+      "frames": [
+        "attack_ready_01",
+        "attack_aim_02",
+        "attack_fire_03",
+        "attack_follow_04",
+        "attack_end_peace"
+      ],
+      "frame_count": 5,
+      "frame_width": 171,
+      "frame_height": 154,
+      "fps": 12,
+      "repeat": 0,
+      "description_ja": "Wコイン投げ通常攻撃",
+      "frame_offsets": [
+        {
+          "name": "attack_ready_01",
+          "x": 22,
+          "y": 1,
+          "source_size": {
+            "width": 126,
+            "height": 153
+          }
+        },
+        {
+          "name": "attack_aim_02",
+          "x": 30,
+          "y": 0,
+          "source_size": {
+            "width": 110,
+            "height": 154
+          }
+        },
+        {
+          "name": "attack_fire_03",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 171,
+            "height": 154
+          }
+        },
+        {
+          "name": "attack_follow_04",
+          "x": 17,
+          "y": 2,
+          "source_size": {
+            "width": 136,
+            "height": 152
+          }
+        },
+        {
+          "name": "attack_end_peace",
+          "x": 23,
+          "y": 0,
+          "source_size": {
+            "width": 124,
+            "height": 154
+          }
+        }
+      ]
+    },
+    "w_coin_aura": {
+      "file": "strips/w_coin_aura.png",
+      "frames": [
+        "skill_ready_01",
+        "skill_focus_02",
+        "skill_coin_aura_03",
+        "skill_coin_aura_04",
+        "skill_coin_blessing_05"
+      ],
+      "frame_count": 5,
+      "frame_width": 207,
+      "frame_height": 222,
+      "fps": 8,
+      "repeat": 0,
+      "description_ja": "スキル「金融創造」用のWFI生成/オーラ演出",
+      "frame_offsets": [
+        {
+          "name": "skill_ready_01",
+          "x": 37,
+          "y": 54,
+          "source_size": {
+            "width": 132,
+            "height": 168
+          }
+        },
+        {
+          "name": "skill_focus_02",
+          "x": 44,
+          "y": 61,
+          "source_size": {
+            "width": 119,
+            "height": 161
+          }
+        },
+        {
+          "name": "skill_coin_aura_03",
+          "x": 24,
+          "y": 33,
+          "source_size": {
+            "width": 159,
+            "height": 189
+          }
+        },
+        {
+          "name": "skill_coin_aura_04",
+          "x": 18,
+          "y": 37,
+          "source_size": {
+            "width": 170,
+            "height": 185
+          }
+        },
+        {
+          "name": "skill_coin_blessing_05",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 207,
+            "height": 222
+          }
+        }
+      ]
+    },
+    "skill_effect": {
+      "file": "strips/skill_effect.png",
+      "frames": [
+        "effect_summon_circle_column"
+      ],
+      "frame_count": 1,
+      "frame_width": 212,
+      "frame_height": 210,
+      "fps": 8,
+      "repeat": 0,
+      "description_ja": "大型スキル光柱",
+      "frame_offsets": [
+        {
+          "name": "effect_summon_circle_column",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 212,
+            "height": 210
+          }
+        }
+      ]
+    },
+    "coin_projectile": {
+      "file": "strips/coin_projectile.png",
+      "frames": [
+        "effect_coin_projectile_fast_01",
+        "effect_coin_projectile_fast_02",
+        "effect_coin_projectile_heavy"
+      ],
+      "frame_count": 3,
+      "frame_width": 135,
+      "frame_height": 96,
+      "fps": 12,
+      "repeat": 0,
+      "description_ja": "Wコイン弾エフェクト",
+      "frame_offsets": [
+        {
+          "name": "effect_coin_projectile_fast_01",
+          "x": 13,
+          "y": 8,
+          "source_size": {
+            "width": 108,
+            "height": 88
+          }
+        },
+        {
+          "name": "effect_coin_projectile_fast_02",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 135,
+            "height": 96
+          }
+        },
+        {
+          "name": "effect_coin_projectile_heavy",
+          "x": 2,
+          "y": 13,
+          "source_size": {
+            "width": 130,
+            "height": 83
+          }
+        }
+      ]
+    },
+    "green_hit": {
+      "file": "strips/green_hit.png",
+      "frames": [
+        "effect_green_hit_star_01",
+        "effect_green_hit_star_02",
+        "effect_green_splash_star"
+      ],
+      "frame_count": 3,
+      "frame_width": 122,
+      "frame_height": 106,
+      "fps": 14,
+      "repeat": 0,
+      "description_ja": "緑ヒットスパーク",
+      "frame_offsets": [
+        {
+          "name": "effect_green_hit_star_01",
+          "x": 10,
+          "y": 13,
+          "source_size": {
+            "width": 101,
+            "height": 93
+          }
+        },
+        {
+          "name": "effect_green_hit_star_02",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 122,
+            "height": 106
+          }
+        },
+        {
+          "name": "effect_green_splash_star",
+          "x": 3,
+          "y": 3,
+          "source_size": {
+            "width": 115,
+            "height": 103
+          }
+        }
+      ]
+    },
+    "orange_hit": {
+      "file": "strips/orange_hit.png",
+      "frames": [
+        "effect_orange_hit_small",
+        "effect_orange_hit_large"
+      ],
+      "frame_count": 2,
+      "frame_width": 70,
+      "frame_height": 103,
+      "fps": 14,
+      "repeat": 0,
+      "description_ja": "オレンジヒットスパーク",
+      "frame_offsets": [
+        {
+          "name": "effect_orange_hit_small",
+          "x": 3,
+          "y": 27,
+          "source_size": {
+            "width": 64,
+            "height": 76
+          }
+        },
+        {
+          "name": "effect_orange_hit_large",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 70,
+            "height": 103
+          }
+        }
+      ]
+    },
+    "skill_floor_effect": {
+      "file": "strips/skill_floor_effect.png",
+      "frames": [
+        "effect_magic_circle_green",
+        "effect_coin_ring_swirl",
+        "effect_coin_fountain",
+        "effect_green_light_pillar"
+      ],
+      "frame_count": 4,
+      "frame_width": 250,
+      "frame_height": 202,
+      "fps": 8,
+      "repeat": 0,
+      "description_ja": "床系スキルエフェクト",
+      "frame_offsets": [
+        {
+          "name": "effect_magic_circle_green",
+          "x": 8,
+          "y": 7,
+          "source_size": {
+            "width": 233,
+            "height": 195
+          }
+        },
+        {
+          "name": "effect_coin_ring_swirl",
+          "x": 0,
+          "y": 5,
+          "source_size": {
+            "width": 250,
+            "height": 197
+          }
+        },
+        {
+          "name": "effect_coin_fountain",
+          "x": 5,
+          "y": 5,
+          "source_size": {
+            "width": 240,
+            "height": 197
+          }
+        },
+        {
+          "name": "effect_green_light_pillar",
+          "x": 22,
+          "y": 0,
+          "source_size": {
+            "width": 206,
+            "height": 202
+          }
+        }
+      ]
+    },
+    "orange_explosion": {
+      "file": "strips/orange_explosion.png",
+      "frames": [
+        "effect_orange_explosion_01",
+        "effect_orange_explosion_02"
+      ],
+      "frame_count": 2,
+      "frame_width": 96,
+      "frame_height": 92,
+      "fps": 12,
+      "repeat": 0,
+      "description_ja": "オレンジ爆発",
+      "frame_offsets": [
+        {
+          "name": "effect_orange_explosion_01",
+          "x": 2,
+          "y": 0,
+          "source_size": {
+            "width": 92,
+            "height": 92
+          }
+        },
+        {
+          "name": "effect_orange_explosion_02",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 96,
+            "height": 92
+          }
+        }
+      ]
+    },
+    "purple_dark": {
+      "file": "strips/purple_dark.png",
+      "frames": [
+        "effect_purple_orb_burst",
+        "effect_purple_dark_orb",
+        "effect_purple_splash"
+      ],
+      "frame_count": 3,
+      "frame_width": 90,
+      "frame_height": 84,
+      "fps": 10,
+      "repeat": 0,
+      "description_ja": "紫/闇属性エフェクト",
+      "frame_offsets": [
+        {
+          "name": "effect_purple_orb_burst",
+          "x": 5,
+          "y": 12,
+          "source_size": {
+            "width": 80,
+            "height": 72
+          }
+        },
+        {
+          "name": "effect_purple_dark_orb",
+          "x": 4,
+          "y": 10,
+          "source_size": {
+            "width": 82,
+            "height": 74
+          }
+        },
+        {
+          "name": "effect_purple_splash",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 90,
+            "height": 84
+          }
+        }
+      ]
+    },
+    "orange_cross": {
+      "file": "strips/orange_cross.png",
+      "frames": [
+        "effect_orange_star_cross_01",
+        "effect_orange_star_cross_02"
+      ],
+      "frame_count": 2,
+      "frame_width": 78,
+      "frame_height": 80,
+      "fps": 12,
+      "repeat": 0,
+      "description_ja": "オレンジ十字ヒット",
+      "frame_offsets": [
+        {
+          "name": "effect_orange_star_cross_01",
+          "x": 0,
+          "y": 4,
+          "source_size": {
+            "width": 78,
+            "height": 76
+          }
+        },
+        {
+          "name": "effect_orange_star_cross_02",
+          "x": 1,
+          "y": 0,
+          "source_size": {
+            "width": 76,
+            "height": 80
+          }
+        }
+      ]
+    },
+    "red_slashes": {
+      "file": "strips/red_slashes.png",
+      "frames": [
+        "effect_red_slash_bars_01",
+        "effect_red_slash_bars_02"
+      ],
+      "frame_count": 2,
+      "frame_width": 48,
+      "frame_height": 86,
+      "fps": 12,
+      "repeat": 0,
+      "description_ja": "赤い縦斬撃",
+      "frame_offsets": [
+        {
+          "name": "effect_red_slash_bars_01",
+          "x": 7,
+          "y": 2,
+          "source_size": {
+            "width": 34,
+            "height": 84
+          }
+        },
+        {
+          "name": "effect_red_slash_bars_02",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 48,
+            "height": 86
+          }
+        }
+      ]
+    },
+    "stand_directions": {
+      "file": "strips/stand_directions.png",
+      "frames": [
+        "stand_front",
+        "stand_left",
+        "stand_right",
+        "stand_back_01",
+        "stand_back_02"
+      ],
+      "frame_count": 5,
+      "frame_width": 126,
+      "frame_height": 172,
+      "fps": 1,
+      "repeat": 0,
+      "description_ja": "立ち絵方向差分",
+      "frame_offsets": [
+        {
+          "name": "stand_front",
+          "x": 0,
+          "y": 1,
+          "source_size": {
+            "width": 126,
+            "height": 171
+          }
+        },
+        {
+          "name": "stand_left",
+          "x": 9,
+          "y": 0,
+          "source_size": {
+            "width": 108,
+            "height": 172
+          }
+        },
+        {
+          "name": "stand_right",
+          "x": 9,
+          "y": 1,
+          "source_size": {
+            "width": 107,
+            "height": 171
+          }
+        },
+        {
+          "name": "stand_back_01",
+          "x": 10,
+          "y": 4,
+          "source_size": {
+            "width": 106,
+            "height": 168
+          }
+        },
+        {
+          "name": "stand_back_02",
+          "x": 11,
+          "y": 4,
+          "source_size": {
+            "width": 104,
+            "height": 168
+          }
+        }
+      ]
+    },
+    "portraits": {
+      "file": "strips/portraits.png",
+      "frames": [
+        "portrait_normal",
+        "portrait_smile"
+      ],
+      "frame_count": 2,
+      "frame_width": 149,
+      "frame_height": 149,
+      "fps": 1,
+      "repeat": 0,
+      "description_ja": "顔アイコン差分",
+      "frame_offsets": [
+        {
+          "name": "portrait_normal",
+          "x": 0,
+          "y": 0,
+          "source_size": {
+            "width": 149,
+            "height": 149
+          }
+        },
+        {
+          "name": "portrait_smile",
+          "x": 1,
+          "y": 0,
+          "source_size": {
+            "width": 147,
+            "height": 149
+          }
+        }
+      ]
+    }
+  }
+}
