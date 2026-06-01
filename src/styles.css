@@ -17,6 +17,9 @@
 
 * {
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 html,
@@ -949,12 +952,12 @@ body.is-battle-view .tab-button[data-view="map"]::before {
   }
 
   .play-surface {
-    width: min(100%, 540px, max(250px, calc((100dvh - 280px) * 0.75)));
+    width: min(100%, 540px, max(250px, calc((100dvh - 350px) * 0.75)));
     margin: 0 auto;
   }
 
   body.is-battle-view .play-surface {
-    width: min(100%, 540px, max(270px, calc((100dvh - 170px) * 0.75)));
+    width: min(100%, 540px, max(270px, calc((100dvh - 240px) * 0.75)));
   }
 
   .side-panel {
@@ -1172,4 +1175,33 @@ body.is-battle-view .tab-button[data-view="map"]::before {
   .stage-list {
     grid-template-columns: 1fr;
   }
+}
+
+/* キャラクター詳細モーダル */
+body.roster-detail-active .side-panel {
+  position: fixed;
+  inset: 10px;
+  z-index: 1000;
+  width: calc(100% - 20px) !important;
+  max-width: 440px;
+  height: calc(100dvh - 20px) !important;
+  max-height: 580px;
+  margin: auto;
+  background: rgba(8, 12, 22, 0.98);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  box-shadow: 0 0 35px rgba(0, 242, 255, 0.45);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 14px;
+}
+
+body.roster-detail-active::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(4, 6, 10, 0.85);
+  backdrop-filter: blur(2px);
 }

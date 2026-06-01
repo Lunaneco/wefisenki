@@ -1142,6 +1142,9 @@
 
   async function boot() {
     try {
+      document.addEventListener("contextmenu", (e) => e.preventDefault());
+      document.addEventListener("selectstart", (e) => e.preventDefault());
+
       const [alliesData, skillsData] = await Promise.all([
         loadJson("data/allies.json"),
         loadJson("data/skills.json")
@@ -1361,6 +1364,9 @@
       renderDom(true);
     } else if (action === "save") {
       saveGame();
+      renderDom(true);
+    } else if (action === "close-roster-detail") {
+      state.selectedAllyId = "";
       renderDom(true);
     } else if (action === "reset") {
       if (window.confirm("本当にデータを初期化して最初から始めますか？")) {
@@ -4857,6 +4863,11 @@
   function renderDom(force) {
     if (!state.ready) return;
 
+    document.body.classList.toggle(
+      "roster-detail-active",
+      state.view === "roster" && !!state.selectedAllyId && !state.showJoinCardAlly
+    );
+
     // 加入オーバーレイ表示中
     if (state.showJoinCardAlly) {
       renderResourceBar();
@@ -5216,6 +5227,14 @@
 
   function renderRosterPanel() {
     const ally = selectedAlly();
+    if (!ally) {
+      sidePanel.innerHTML = `
+        <div class="panel-placeholder" style="padding: 24px; text-align: center; color: #8ec5fc;">
+          <p>戦士を選択すると詳細が表示されます。</p>
+        </div>
+      `;
+      return;
+    }
     const level = allyLevel(ally.id);
     const canLevelUp = level < ALLY_MAX_LEVEL;
     const nextLevel = level + 1;
@@ -5236,12 +5255,18 @@
     const rangeLabel = { melee: "近接", ranged: "遠距離", magic: "魔法" }[rangeType] || rangeType;
     const mult = 1 + (level - 1) * 0.12;
     sidePanel.innerHTML = `
+      <div class="panel-close-bar" style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+        <button class="action-button" data-action="close-roster-detail" style="min-height: 28px; font-size: 11px; padding: 2px 8px; border: 1px solid var(--red); background: rgba(244,63,94,0.1); color: var(--ink);">閉じる ✕</button>
+      </div>
       <div class="panel-title">
         <div>
           <h2>${escapeHtml(ally.name)}</h2>
           <p>${escapeHtml(ally.job || "")} / ${escapeHtml(ally.roleLabel)}</p>
         </div>
         <span class="badge">Lv.${level} / No.${ally.order}</span>
+      </div>
+      <div class="detail-avatar" style="text-align: center; margin: 10px 0;">
+        <img src="${ally.assets.defaultSprite}" style="height: 140px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,242,255,0.3));" alt="">
       </div>
       <div class="stat-grid">
         <div class="stat"><span>HP</span><strong>${formatNum(ally.hp)} / ${formatNum(ally.maxHp)}</strong></div>
