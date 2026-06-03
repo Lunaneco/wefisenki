@@ -14,7 +14,7 @@
   const CW = canvas.width;
   const CH = canvas.height;
   const STORAGE_KEY = "wefi-sengoku-save-v1";
-  const DATA_VERSION = "20260531-stageplanet31";
+  const DATA_VERSION = "20260531-stageplanet32";
   const STAGE_MAP_SOURCE = { w: 941, h: 1672 };
   const STAGE_ENEMY_SLOT_COUNT = 5;
   const STAGE_NORMAL_ENEMY_COUNT = 4;
@@ -1158,8 +1158,7 @@
 
   async function boot() {
     try {
-      document.addEventListener("contextmenu", (e) => e.preventDefault());
-      document.addEventListener("selectstart", (e) => e.preventDefault());
+      installMobileInteractionGuards();
 
       const [alliesData, skillsData] = await Promise.all([
         loadJson("data/allies.json"),
@@ -1245,6 +1244,52 @@
     } catch (error) {
       sidePanel.innerHTML = `<div class="panel-title"><div><h2>読み込み失敗</h2><p>${escapeHtml(error.message)}</p></div></div>`;
     }
+  }
+
+  function installMobileInteractionGuards() {
+    const preventGesture = (event) => event.preventDefault();
+    let lastTouchEndAt = 0;
+
+    const appTarget = (event) => {
+      const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+      if (!target || !target.closest(".app-shell")) return null;
+      if (target.closest("input, textarea, select, [contenteditable='true']")) return null;
+      return target;
+    };
+
+    const clearSelection = () => {
+      const selection = window.getSelection?.();
+      if (selection && selection.rangeCount) selection.removeAllRanges();
+    };
+
+    document.addEventListener("contextmenu", (event) => {
+      if (!appTarget(event)) return;
+      event.preventDefault();
+      clearSelection();
+    });
+    document.addEventListener("selectstart", (event) => {
+      if (!appTarget(event)) return;
+      event.preventDefault();
+      clearSelection();
+    });
+
+    ["gesturestart", "gesturechange", "gestureend"].forEach((type) => {
+      document.addEventListener(type, preventGesture, { passive: false });
+    });
+
+    document.addEventListener("touchstart", (event) => {
+      if (!appTarget(event)) return;
+      clearSelection();
+      if (event.touches && event.touches.length > 1) event.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener("touchend", (event) => {
+      if (!appTarget(event)) return;
+      const now = Date.now();
+      if (now - lastTouchEndAt < 360) event.preventDefault();
+      lastTouchEndAt = now;
+      clearSelection();
+    }, { passive: false });
   }
 
   function bindEvents() {

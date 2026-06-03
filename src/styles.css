@@ -18,7 +18,9 @@
 * {
   box-sizing: border-box;
   -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
   -webkit-user-select: none;
+  -webkit-user-drag: none;
   user-select: none;
 }
 
@@ -26,6 +28,9 @@ html,
 body {
   min-height: 100%;
   margin: 0;
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -926,10 +931,16 @@ body.is-battle-view .app-shell {
   body {
     height: 100%;
     overflow: hidden;
-    touch-action: manipulation;
+    touch-action: none;
     -webkit-user-select: none;
     user-select: none;
     -webkit-touch-callout: none;
+  }
+
+  .app-shell,
+  .play-surface,
+  .command-area {
+    touch-action: none;
   }
 
   .app-shell {
