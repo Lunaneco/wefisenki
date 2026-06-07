@@ -1,0 +1,1559 @@
+{
+  "meta": {
+    "image": "tsukinecosheet.png",
+    "size": {
+      "w": 1122,
+      "h": 1402
+    }
+  },
+  "frames": {
+    "tsukinecosheet_3": {
+      "frame": {
+        "x": 19,
+        "y": 43,
+        "w": 125,
+        "h": 147
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 147
+      }
+    },
+    "tsukinecosheet_4": {
+      "frame": {
+        "x": 157,
+        "y": 41,
+        "w": 112,
+        "h": 149
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 112,
+        "h": 149
+      },
+      "sourceSize": {
+        "w": 112,
+        "h": 149
+      }
+    },
+    "tsukinecosheet_5": {
+      "frame": {
+        "x": 278,
+        "y": 42,
+        "w": 127,
+        "h": 148
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 127,
+        "h": 148
+      },
+      "sourceSize": {
+        "w": 127,
+        "h": 148
+      }
+    },
+    "tsukinecosheet_6": {
+      "frame": {
+        "x": 418,
+        "y": 44,
+        "w": 126,
+        "h": 146
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 126,
+        "h": 146
+      },
+      "sourceSize": {
+        "w": 126,
+        "h": 146
+      }
+    },
+    "tsukinecosheet_7": {
+      "frame": {
+        "x": 571,
+        "y": 40,
+        "w": 101,
+        "h": 101
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 101
+      }
+    },
+    "tsukinecosheet_8": {
+      "frame": {
+        "x": 682,
+        "y": 40,
+        "w": 103,
+        "h": 99
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 99
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 99
+      }
+    },
+    "tsukinecosheet_9": {
+      "frame": {
+        "x": 787,
+        "y": 39,
+        "w": 105,
+        "h": 100
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 100
+      }
+    },
+    "tsukinecosheet_10": {
+      "frame": {
+        "x": 894,
+        "y": 39,
+        "w": 105,
+        "h": 101
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 101
+      }
+    },
+    "tsukinecosheet_11": {
+      "frame": {
+        "x": 1005,
+        "y": 37,
+        "w": 107,
+        "h": 103
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 103
+      }
+    },
+    "tsukinecosheet_12": {
+      "frame": {
+        "x": 936,
+        "y": 161,
+        "w": 166,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 166,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 166,
+        "h": 128
+      }
+    },
+    "tsukinecosheet_13": {
+      "frame": {
+        "x": 575,
+        "y": 171,
+        "w": 106,
+        "h": 101
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 106,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 106,
+        "h": 101
+      }
+    },
+    "tsukinecosheet_14": {
+      "frame": {
+        "x": 693,
+        "y": 170,
+        "w": 109,
+        "h": 102
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 102
+      }
+    },
+    "tsukinecosheet_15": {
+      "frame": {
+        "x": 814,
+        "y": 171,
+        "w": 106,
+        "h": 100
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 106,
+        "h": 100
+      },
+      "sourceSize": {
+        "w": 106,
+        "h": 100
+      }
+    },
+    "tsukinecosheet_17": {
+      "frame": {
+        "x": 29,
+        "y": 243,
+        "w": 106,
+        "h": 131
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 106,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 106,
+        "h": 131
+      }
+    },
+    "tsukinecosheet_18": {
+      "frame": {
+        "x": 154,
+        "y": 245,
+        "w": 103,
+        "h": 129
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 129
+      }
+    },
+    "tsukinecosheet_19": {
+      "frame": {
+        "x": 274,
+        "y": 245,
+        "w": 99,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 99,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 99,
+        "h": 128
+      }
+    },
+    "tsukinecosheet_20": {
+      "frame": {
+        "x": 390,
+        "y": 245,
+        "w": 138,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 138,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 138,
+        "h": 128
+      }
+    },
+    "tsukinecosheet_24": {
+      "frame": {
+        "x": 864,
+        "y": 323,
+        "w": 72,
+        "h": 89
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 72,
+        "h": 89
+      },
+      "sourceSize": {
+        "w": 72,
+        "h": 89
+      }
+    },
+    "tsukinecosheet_25": {
+      "frame": {
+        "x": 939,
+        "y": 323,
+        "w": 69,
+        "h": 89
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 89
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 89
+      }
+    },
+    "tsukinecosheet_26": {
+      "frame": {
+        "x": 1026,
+        "y": 332,
+        "w": 73,
+        "h": 80
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 80
+      }
+    },
+    "tsukinecosheet_27": {
+      "frame": {
+        "x": 644,
+        "y": 347,
+        "w": 217,
+        "h": 43
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 217,
+        "h": 43
+      },
+      "sourceSize": {
+        "w": 217,
+        "h": 43
+      }
+    },
+    "tsukinecosheet_28": {
+      "frame": {
+        "x": 574,
+        "y": 356,
+        "w": 62,
+        "h": 52
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 62,
+        "h": 52
+      },
+      "sourceSize": {
+        "w": 62,
+        "h": 52
+      }
+    },
+    "tsukinecosheet_30": {
+      "frame": {
+        "x": 821,
+        "y": 383,
+        "w": 32,
+        "h": 30
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 30
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 30
+      }
+    },
+    "tsukinecosheet_31": {
+      "frame": {
+        "x": 11,
+        "y": 414,
+        "w": 113,
+        "h": 119
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 113,
+        "h": 119
+      }
+    },
+    "tsukinecosheet_32": {
+      "frame": {
+        "x": 125,
+        "y": 414,
+        "w": 89,
+        "h": 118
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 118
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 118
+      }
+    },
+    "tsukinecosheet_33": {
+      "frame": {
+        "x": 214,
+        "y": 413,
+        "w": 75,
+        "h": 120
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 120
+      }
+    },
+    "tsukinecosheet_34": {
+      "frame": {
+        "x": 291,
+        "y": 413,
+        "w": 86,
+        "h": 120
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 86,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 86,
+        "h": 120
+      }
+    },
+    "tsukinecosheet_35": {
+      "frame": {
+        "x": 378,
+        "y": 414,
+        "w": 94,
+        "h": 119
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 94,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 94,
+        "h": 119
+      }
+    },
+    "tsukinecosheet_36": {
+      "frame": {
+        "x": 471,
+        "y": 415,
+        "w": 84,
+        "h": 117
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 84,
+        "h": 117
+      }
+    },
+    "tsukinecosheet_37": {
+      "frame": {
+        "x": 570,
+        "y": 444,
+        "w": 117,
+        "h": 101
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 101
+      }
+    },
+    "tsukinecosheet_38": {
+      "frame": {
+        "x": 699,
+        "y": 443,
+        "w": 109,
+        "h": 102
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 102
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 102
+      }
+    },
+    "tsukinecosheet_39": {
+      "frame": {
+        "x": 819,
+        "y": 448,
+        "w": 103,
+        "h": 101
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 101
+      }
+    },
+    "tsukinecosheet_40": {
+      "frame": {
+        "x": 946,
+        "y": 452,
+        "w": 160,
+        "h": 93
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 160,
+        "h": 93
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 93
+      }
+    },
+    "tsukinecosheet_42": {
+      "frame": {
+        "x": 428,
+        "y": 564,
+        "w": 125,
+        "h": 131
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 131
+      }
+    },
+    "tsukinecosheet_43": {
+      "frame": {
+        "x": 13,
+        "y": 573,
+        "w": 110,
+        "h": 120
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 110,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 110,
+        "h": 120
+      }
+    },
+    "tsukinecosheet_44": {
+      "frame": {
+        "x": 116,
+        "y": 575,
+        "w": 96,
+        "h": 118
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 96,
+        "h": 118
+      },
+      "sourceSize": {
+        "w": 96,
+        "h": 118
+      }
+    },
+    "tsukinecosheet_45": {
+      "frame": {
+        "x": 211,
+        "y": 576,
+        "w": 109,
+        "h": 118
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 118
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 118
+      }
+    },
+    "tsukinecosheet_46": {
+      "frame": {
+        "x": 311,
+        "y": 572,
+        "w": 114,
+        "h": 123
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 114,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 114,
+        "h": 123
+      }
+    },
+    "tsukinecosheet_48": {
+      "frame": {
+        "x": 742,
+        "y": 601,
+        "w": 108,
+        "h": 91
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 108,
+        "h": 91
+      },
+      "sourceSize": {
+        "w": 108,
+        "h": 91
+      }
+    },
+    "tsukinecosheet_50": {
+      "frame": {
+        "x": 874,
+        "y": 607,
+        "w": 89,
+        "h": 88
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 88
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 88
+      }
+    },
+    "tsukinecosheet_51": {
+      "frame": {
+        "x": 969,
+        "y": 606,
+        "w": 146,
+        "h": 85
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 146,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 146,
+        "h": 85
+      }
+    },
+    "tsukinecosheet_52": {
+      "frame": {
+        "x": 566,
+        "y": 593,
+        "w": 179,
+        "h": 95
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 179,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 179,
+        "h": 95
+      }
+    },
+    "tsukinecosheet_53": {
+      "frame": {
+        "x": 567,
+        "y": 701,
+        "w": 125,
+        "h": 56
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 56
+      }
+    },
+    "tsukinecosheet_55": {
+      "frame": {
+        "x": 785,
+        "y": 707,
+        "w": 97,
+        "h": 69
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 69
+      }
+    },
+    "tsukinecosheet_56": {
+      "frame": {
+        "x": 715,
+        "y": 713,
+        "w": 57,
+        "h": 53
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 53
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 53
+      }
+    },
+    "tsukinecosheet_57": {
+      "frame": {
+        "x": 905,
+        "y": 709,
+        "w": 84,
+        "h": 59
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 84,
+        "h": 59
+      }
+    },
+    "tsukinecosheet_58": {
+      "frame": {
+        "x": 1004,
+        "y": 713,
+        "w": 102,
+        "h": 49
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 102,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 102,
+        "h": 49
+      }
+    },
+    "tsukinecosheet_59": {
+      "frame": {
+        "x": 415,
+        "y": 724,
+        "w": 137,
+        "h": 152
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 137,
+        "h": 152
+      },
+      "sourceSize": {
+        "w": 137,
+        "h": 152
+      }
+    },
+    "tsukinecosheet_60": {
+      "frame": {
+        "x": 204,
+        "y": 736,
+        "w": 100,
+        "h": 128
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 128
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 128
+      }
+    },
+    "tsukinecosheet_61": {
+      "frame": {
+        "x": 11,
+        "y": 745,
+        "w": 85,
+        "h": 117
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 117
+      }
+    },
+    "tsukinecosheet_62": {
+      "frame": {
+        "x": 99,
+        "y": 744,
+        "w": 103,
+        "h": 122
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 122
+      }
+    },
+    "tsukinecosheet_63": {
+      "frame": {
+        "x": 579,
+        "y": 788,
+        "w": 178,
+        "h": 60
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 60
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 60
+      }
+    },
+    "tsukinecosheet_64": {
+      "frame": {
+        "x": 774,
+        "y": 787,
+        "w": 175,
+        "h": 55
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 175,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 175,
+        "h": 55
+      }
+    },
+    "tsukinecosheet_65": {
+      "frame": {
+        "x": 1039,
+        "y": 791,
+        "w": 65,
+        "h": 54
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 54
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 54
+      }
+    },
+    "tsukinecosheet_66": {
+      "frame": {
+        "x": 926,
+        "y": 796,
+        "w": 110,
+        "h": 56
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 110,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 110,
+        "h": 56
+      }
+    },
+    "tsukinecosheet_67": {
+      "frame": {
+        "x": 676,
+        "y": 856,
+        "w": 52,
+        "h": 53
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 52,
+        "h": 53
+      },
+      "sourceSize": {
+        "w": 52,
+        "h": 53
+      }
+    },
+    "tsukinecosheet_68": {
+      "frame": {
+        "x": 757,
+        "y": 853,
+        "w": 53,
+        "h": 56
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 53,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 53,
+        "h": 56
+      }
+    },
+    "tsukinecosheet_69": {
+      "frame": {
+        "x": 842,
+        "y": 854,
+        "w": 54,
+        "h": 55
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 54,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 54,
+        "h": 55
+      }
+    },
+    "tsukinecosheet_70": {
+      "frame": {
+        "x": 1022,
+        "y": 859,
+        "w": 44,
+        "h": 51
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 44,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 44,
+        "h": 51
+      }
+    },
+    "tsukinecosheet_71": {
+      "frame": {
+        "x": 933,
+        "y": 864,
+        "w": 51,
+        "h": 36
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 51,
+        "h": 36
+      },
+      "sourceSize": {
+        "w": 51,
+        "h": 36
+      }
+    },
+    "tsukinecosheet_75": {
+      "frame": {
+        "x": 825,
+        "y": 936,
+        "w": 279,
+        "h": 153
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 279,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 279,
+        "h": 153
+      }
+    },
+    "tsukinecosheet_76": {
+      "frame": {
+        "x": 9,
+        "y": 945,
+        "w": 136,
+        "h": 129
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 136,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 136,
+        "h": 129
+      }
+    },
+    "tsukinecosheet_78": {
+      "frame": {
+        "x": 451,
+        "y": 942,
+        "w": 148,
+        "h": 147
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 148,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 148,
+        "h": 147
+      }
+    },
+    "tsukinecosheet_79": {
+      "frame": {
+        "x": 601,
+        "y": 951,
+        "w": 216,
+        "h": 136
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 216,
+        "h": 136
+      },
+      "sourceSize": {
+        "w": 216,
+        "h": 136
+      }
+    },
+    "tsukinecosheet_82": {
+      "frame": {
+        "x": 164,
+        "y": 976,
+        "w": 122,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 122,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 122,
+        "h": 78
+      }
+    },
+    "tsukinecosheet_83": {
+      "frame": {
+        "x": 285,
+        "y": 949,
+        "w": 154,
+        "h": 105
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 154,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 154,
+        "h": 105
+      }
+    },
+    "tsukinecosheet_84": {
+      "frame": {
+        "x": 6,
+        "y": 1101,
+        "w": 160,
+        "h": 25
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 160,
+        "h": 25
+      },
+      "sourceSize": {
+        "w": 160,
+        "h": 25
+      }
+    },
+    "tsukinecosheet_85": {
+      "frame": {
+        "x": 1003,
+        "y": 1111,
+        "w": 94,
+        "h": 141
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 94,
+        "h": 141
+      },
+      "sourceSize": {
+        "w": 94,
+        "h": 141
+      }
+    },
+    "tsukinecosheet_86": {
+      "frame": {
+        "x": 162,
+        "y": 1127,
+        "w": 125,
+        "h": 123
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 123
+      }
+    },
+    "tsukinecosheet_87": {
+      "frame": {
+        "x": 523,
+        "y": 1129,
+        "w": 133,
+        "h": 120
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 133,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 133,
+        "h": 120
+      }
+    },
+    "tsukinecosheet_88": {
+      "frame": {
+        "x": 681,
+        "y": 1130,
+        "w": 125,
+        "h": 120
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 120
+      }
+    },
+    "tsukinecosheet_90": {
+      "frame": {
+        "x": 293,
+        "y": 1139,
+        "w": 82,
+        "h": 110
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 82,
+        "h": 110
+      },
+      "sourceSize": {
+        "w": 82,
+        "h": 110
+      }
+    },
+    "tsukinecosheet_91": {
+      "frame": {
+        "x": 402,
+        "y": 1139,
+        "w": 100,
+        "h": 107
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 100,
+        "h": 107
+      },
+      "sourceSize": {
+        "w": 100,
+        "h": 107
+      }
+    },
+    "tsukinecosheet_92": {
+      "frame": {
+        "x": 848,
+        "y": 1152,
+        "w": 122,
+        "h": 98
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 122,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 122,
+        "h": 98
+      }
+    },
+    "tsukinecosheet_93": {
+      "frame": {
+        "x": 90,
+        "y": 1172,
+        "w": 24,
+        "h": 30
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 30
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 30
+      }
+    },
+    "tsukinecosheet_94": {
+      "frame": {
+        "x": 34,
+        "y": 1198,
+        "w": 28,
+        "h": 39
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 28,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 28,
+        "h": 39
+      }
+    },
+    "tsukinecosheet_95": {
+      "frame": {
+        "x": 968,
+        "y": 1269,
+        "w": 78,
+        "h": 94
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 94
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 94
+      }
+    },
+    "tsukinecosheet_96": {
+      "frame": {
+        "x": 170,
+        "y": 1281,
+        "w": 95,
+        "h": 80
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 80
+      }
+    },
+    "tsukinecosheet_97": {
+      "frame": {
+        "x": 308,
+        "y": 1284,
+        "w": 69,
+        "h": 79
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 79
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 79
+      }
+    },
+    "tsukinecosheet_98": {
+      "frame": {
+        "x": 421,
+        "y": 1286,
+        "w": 71,
+        "h": 77
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 77
+      }
+    },
+    "tsukinecosheet_99": {
+      "frame": {
+        "x": 518,
+        "y": 1287,
+        "w": 86,
+        "h": 80
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 86,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 86,
+        "h": 80
+      }
+    },
+    "tsukinecosheet_100": {
+      "frame": {
+        "x": 636,
+        "y": 1283,
+        "w": 64,
+        "h": 80
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 80
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 80
+      }
+    },
+    "tsukinecosheet_101": {
+      "frame": {
+        "x": 754,
+        "y": 1289,
+        "w": 79,
+        "h": 74
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 74
+      }
+    },
+    "tsukinecosheet_102": {
+      "frame": {
+        "x": 60,
+        "y": 1300,
+        "w": 33,
+        "h": 39
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 33,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 33,
+        "h": 39
+      }
+    },
+    "tsukinecosheet_103": {
+      "frame": {
+        "x": 32,
+        "y": 1312,
+        "w": 25,
+        "h": 37
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 25,
+        "h": 37
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 37
+      }
+    },
+    "tsukinecosheet_104": {
+      "frame": {
+        "x": 839,
+        "y": 1312,
+        "w": 78,
+        "h": 69
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 69
+      }
+    }
+  }
+}
