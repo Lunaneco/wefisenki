@@ -1,0 +1,1451 @@
+{
+  "meta": {
+    "image": "masarusansheet.png",
+    "size": {
+      "w": 1122,
+      "h": 1402
+    }
+  },
+  "frames": {
+    "masarusansheet_3": {
+      "frame": {
+        "x": 31,
+        "y": 39,
+        "w": 92,
+        "h": 141
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 92,
+        "h": 141
+      },
+      "sourceSize": {
+        "w": 92,
+        "h": 141
+      }
+    },
+    "masarusansheet_4": {
+      "frame": {
+        "x": 151,
+        "y": 41,
+        "w": 83,
+        "h": 139
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 139
+      }
+    },
+    "masarusansheet_5": {
+      "frame": {
+        "x": 274,
+        "y": 41,
+        "w": 84,
+        "h": 138
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 84,
+        "h": 138
+      },
+      "sourceSize": {
+        "w": 84,
+        "h": 138
+      }
+    },
+    "masarusansheet_6": {
+      "frame": {
+        "x": 395,
+        "y": 43,
+        "w": 91,
+        "h": 133
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 133
+      }
+    },
+    "masarusansheet_7": {
+      "frame": {
+        "x": 531,
+        "y": 46,
+        "w": 90,
+        "h": 131
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 131
+      }
+    },
+    "masarusansheet_8": {
+      "frame": {
+        "x": 662,
+        "y": 43,
+        "w": 92,
+        "h": 134
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 92,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 92,
+        "h": 134
+      }
+    },
+    "masarusansheet_9": {
+      "frame": {
+        "x": 797,
+        "y": 43,
+        "w": 92,
+        "h": 135
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 92,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 92,
+        "h": 135
+      }
+    },
+    "masarusansheet_10": {
+      "frame": {
+        "x": 941,
+        "y": 43,
+        "w": 90,
+        "h": 134
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 90,
+        "h": 134
+      },
+      "sourceSize": {
+        "w": 90,
+        "h": 134
+      }
+    },
+    "masarusansheet_13": {
+      "frame": {
+        "x": 10,
+        "y": 253,
+        "w": 73,
+        "h": 121
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 121
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 121
+      }
+    },
+    "masarusansheet_14": {
+      "frame": {
+        "x": 96,
+        "y": 254,
+        "w": 69,
+        "h": 119
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 119
+      }
+    },
+    "masarusansheet_15": {
+      "frame": {
+        "x": 179,
+        "y": 253,
+        "w": 70,
+        "h": 121
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 70,
+        "h": 121
+      },
+      "sourceSize": {
+        "w": 70,
+        "h": 121
+      }
+    },
+    "masarusansheet_16": {
+      "frame": {
+        "x": 261,
+        "y": 253,
+        "w": 73,
+        "h": 120
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 120
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 120
+      }
+    },
+    "masarusansheet_17": {
+      "frame": {
+        "x": 345,
+        "y": 252,
+        "w": 69,
+        "h": 122
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 122
+      }
+    },
+    "masarusansheet_18": {
+      "frame": {
+        "x": 427,
+        "y": 252,
+        "w": 69,
+        "h": 122
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 122
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 122
+      }
+    },
+    "masarusansheet_19": {
+      "frame": {
+        "x": 518,
+        "y": 264,
+        "w": 74,
+        "h": 108
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 74,
+        "h": 108
+      },
+      "sourceSize": {
+        "w": 74,
+        "h": 108
+      }
+    },
+    "masarusansheet_21": {
+      "frame": {
+        "x": 605,
+        "y": 265,
+        "w": 134,
+        "h": 109
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 134,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 134,
+        "h": 109
+      }
+    },
+    "masarusansheet_22": {
+      "frame": {
+        "x": 802,
+        "y": 265,
+        "w": 137,
+        "h": 109
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 137,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 137,
+        "h": 109
+      }
+    },
+    "masarusansheet_23": {
+      "frame": {
+        "x": 941,
+        "y": 262,
+        "w": 171,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 115
+      }
+    },
+    "masarusansheet_26": {
+      "frame": {
+        "x": 859,
+        "y": 411,
+        "w": 249,
+        "h": 185
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 249,
+        "h": 185
+      },
+      "sourceSize": {
+        "w": 249,
+        "h": 185
+      }
+    },
+    "masarusansheet_27": {
+      "frame": {
+        "x": 127,
+        "y": 447,
+        "w": 108,
+        "h": 145
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 108,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 108,
+        "h": 145
+      }
+    },
+    "masarusansheet_28": {
+      "frame": {
+        "x": 393,
+        "y": 443,
+        "w": 131,
+        "h": 150
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 150
+      }
+    },
+    "masarusansheet_29": {
+      "frame": {
+        "x": 672,
+        "y": 443,
+        "w": 163,
+        "h": 150
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 163,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 163,
+        "h": 150
+      }
+    },
+    "masarusansheet_30": {
+      "frame": {
+        "x": 11,
+        "y": 454,
+        "w": 103,
+        "h": 131
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 131
+      }
+    },
+    "masarusansheet_31": {
+      "frame": {
+        "x": 255,
+        "y": 450,
+        "w": 123,
+        "h": 142
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 142
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 142
+      }
+    },
+    "masarusansheet_32": {
+      "frame": {
+        "x": 535,
+        "y": 452,
+        "w": 130,
+        "h": 141
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 130,
+        "h": 141
+      },
+      "sourceSize": {
+        "w": 130,
+        "h": 141
+      }
+    },
+    "masarusansheet_39": {
+      "frame": {
+        "x": 469,
+        "y": 650,
+        "w": 133,
+        "h": 150
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 133,
+        "h": 150
+      },
+      "sourceSize": {
+        "w": 133,
+        "h": 150
+      }
+    },
+    "masarusansheet_40": {
+      "frame": {
+        "x": 679,
+        "y": 649,
+        "w": 78,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 78
+      }
+    },
+    "masarusansheet_41": {
+      "frame": {
+        "x": 782,
+        "y": 649,
+        "w": 79,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 78
+      }
+    },
+    "masarusansheet_42": {
+      "frame": {
+        "x": 885,
+        "y": 649,
+        "w": 80,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 80,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 80,
+        "h": 78
+      }
+    },
+    "masarusansheet_43": {
+      "frame": {
+        "x": 988,
+        "y": 649,
+        "w": 79,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 78
+      }
+    },
+    "masarusansheet_44": {
+      "frame": {
+        "x": 30,
+        "y": 659,
+        "w": 137,
+        "h": 132
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 137,
+        "h": 132
+      },
+      "sourceSize": {
+        "w": 137,
+        "h": 132
+      }
+    },
+    "masarusansheet_45": {
+      "frame": {
+        "x": 221,
+        "y": 696,
+        "w": 189,
+        "h": 96
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 189,
+        "h": 96
+      },
+      "sourceSize": {
+        "w": 189,
+        "h": 96
+      }
+    },
+    "masarusansheet_46": {
+      "frame": {
+        "x": 679,
+        "y": 745,
+        "w": 78,
+        "h": 77
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 77
+      }
+    },
+    "masarusansheet_47": {
+      "frame": {
+        "x": 782,
+        "y": 746,
+        "w": 78,
+        "h": 76
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 76
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 76
+      }
+    },
+    "masarusansheet_48": {
+      "frame": {
+        "x": 989,
+        "y": 745,
+        "w": 78,
+        "h": 77
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 78,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 78,
+        "h": 77
+      }
+    },
+    "masarusansheet_49": {
+      "frame": {
+        "x": 885,
+        "y": 745,
+        "w": 79,
+        "h": 77
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 77
+      }
+    },
+    "masarusansheet_52": {
+      "frame": {
+        "x": 307,
+        "y": 872,
+        "w": 55,
+        "h": 87
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 55,
+        "h": 87
+      },
+      "sourceSize": {
+        "w": 55,
+        "h": 87
+      }
+    },
+    "masarusansheet_53": {
+      "frame": {
+        "x": 23,
+        "y": 879,
+        "w": 62,
+        "h": 85
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 62,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 62,
+        "h": 85
+      }
+    },
+    "masarusansheet_54": {
+      "frame": {
+        "x": 395,
+        "y": 876,
+        "w": 60,
+        "h": 83
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 83
+      }
+    },
+    "masarusansheet_55": {
+      "frame": {
+        "x": 113,
+        "y": 885,
+        "w": 53,
+        "h": 73
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 53,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 53,
+        "h": 73
+      }
+    },
+    "masarusansheet_56": {
+      "frame": {
+        "x": 202,
+        "y": 882,
+        "w": 77,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 78
+      }
+    },
+    "masarusansheet_57": {
+      "frame": {
+        "x": 472,
+        "y": 881,
+        "w": 65,
+        "h": 77
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 77
+      }
+    },
+    "masarusansheet_58": {
+      "frame": {
+        "x": 561,
+        "y": 882,
+        "w": 68,
+        "h": 78
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 68,
+        "h": 78
+      },
+      "sourceSize": {
+        "w": 68,
+        "h": 78
+      }
+    },
+    "masarusansheet_59": {
+      "frame": {
+        "x": 663,
+        "y": 889,
+        "w": 91,
+        "h": 74
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 74
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 74
+      }
+    },
+    "masarusansheet_60": {
+      "frame": {
+        "x": 1006,
+        "y": 864,
+        "w": 102,
+        "h": 101
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 102,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 102,
+        "h": 101
+      }
+    },
+    "masarusansheet_61": {
+      "frame": {
+        "x": 868,
+        "y": 897,
+        "w": 62,
+        "h": 67
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 62,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 62,
+        "h": 67
+      }
+    },
+    "masarusansheet_62": {
+      "frame": {
+        "x": 936,
+        "y": 895,
+        "w": 61,
+        "h": 67
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 67
+      }
+    },
+    "masarusansheet_63": {
+      "frame": {
+        "x": 766,
+        "y": 918,
+        "w": 82,
+        "h": 33
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 82,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 82,
+        "h": 33
+      }
+    },
+    "masarusansheet_65": {
+      "frame": {
+        "x": 525,
+        "y": 1014,
+        "w": 153,
+        "h": 118
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 153,
+        "h": 118
+      },
+      "sourceSize": {
+        "w": 153,
+        "h": 118
+      }
+    },
+    "masarusansheet_66": {
+      "frame": {
+        "x": 840,
+        "y": 1014,
+        "w": 174,
+        "h": 119
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 119
+      }
+    },
+    "masarusansheet_67": {
+      "frame": {
+        "x": 195,
+        "y": 1024,
+        "w": 141,
+        "h": 109
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 141,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 141,
+        "h": 109
+      }
+    },
+    "masarusansheet_68": {
+      "frame": {
+        "x": 12,
+        "y": 1036,
+        "w": 174,
+        "h": 98
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 174,
+        "h": 98
+      },
+      "sourceSize": {
+        "w": 174,
+        "h": 98
+      }
+    },
+    "masarusansheet_69": {
+      "frame": {
+        "x": 700,
+        "y": 1035,
+        "w": 119,
+        "h": 97
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 97
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 97
+      }
+    },
+    "masarusansheet_70": {
+      "frame": {
+        "x": 353,
+        "y": 1018,
+        "w": 153,
+        "h": 115
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 153,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 153,
+        "h": 115
+      }
+    },
+    "masarusansheet_72": {
+      "frame": {
+        "x": 863,
+        "y": 1198,
+        "w": 57,
+        "h": 68
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 68
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 68
+      }
+    },
+    "masarusansheet_73": {
+      "frame": {
+        "x": 193,
+        "y": 1205,
+        "w": 85,
+        "h": 61
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 61
+      }
+    },
+    "masarusansheet_74": {
+      "frame": {
+        "x": 1038,
+        "y": 1201,
+        "w": 65,
+        "h": 65
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 65
+      }
+    },
+    "masarusansheet_75": {
+      "frame": {
+        "x": 107,
+        "y": 1210,
+        "w": 58,
+        "h": 56
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 58,
+        "h": 56
+      },
+      "sourceSize": {
+        "w": 58,
+        "h": 56
+      }
+    },
+    "masarusansheet_76": {
+      "frame": {
+        "x": 396,
+        "y": 1206,
+        "w": 21,
+        "h": 21
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 21,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 21,
+        "h": 21
+      }
+    },
+    "masarusansheet_77": {
+      "frame": {
+        "x": 579,
+        "y": 1209,
+        "w": 54,
+        "h": 57
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 54,
+        "h": 57
+      },
+      "sourceSize": {
+        "w": 54,
+        "h": 57
+      }
+    },
+    "masarusansheet_78": {
+      "frame": {
+        "x": 677,
+        "y": 1208,
+        "w": 55,
+        "h": 58
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 55,
+        "h": 58
+      },
+      "sourceSize": {
+        "w": 55,
+        "h": 58
+      }
+    },
+    "masarusansheet_79": {
+      "frame": {
+        "x": 25,
+        "y": 1219,
+        "w": 43,
+        "h": 43
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 43
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 43
+      }
+    },
+    "masarusansheet_80": {
+      "frame": {
+        "x": 376,
+        "y": 1215,
+        "w": 63,
+        "h": 51
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 63,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 63,
+        "h": 51
+      }
+    },
+    "masarusansheet_81": {
+      "frame": {
+        "x": 486,
+        "y": 1214,
+        "w": 43,
+        "h": 50
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 50
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 50
+      }
+    },
+    "masarusansheet_82": {
+      "frame": {
+        "x": 764,
+        "y": 1211,
+        "w": 57,
+        "h": 54
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 54
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 54
+      }
+    },
+    "masarusansheet_83": {
+      "frame": {
+        "x": 955,
+        "y": 1216,
+        "w": 52,
+        "h": 46
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 52,
+        "h": 46
+      },
+      "sourceSize": {
+        "w": 52,
+        "h": 46
+      }
+    },
+    "masarusansheet_84": {
+      "frame": {
+        "x": 308,
+        "y": 1223,
+        "w": 33,
+        "h": 32
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 33,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 33,
+        "h": 32
+      }
+    },
+    "masarusansheet_85": {
+      "frame": {
+        "x": 196,
+        "y": 1295,
+        "w": 71,
+        "h": 73
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 73
+      }
+    },
+    "masarusansheet_86": {
+      "frame": {
+        "x": 572,
+        "y": 1295,
+        "w": 61,
+        "h": 72
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 72
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 72
+      }
+    },
+    "masarusansheet_87": {
+      "frame": {
+        "x": 15,
+        "y": 1303,
+        "w": 67,
+        "h": 63
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 63
+      }
+    },
+    "masarusansheet_88": {
+      "frame": {
+        "x": 670,
+        "y": 1303,
+        "w": 66,
+        "h": 65
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 66,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 66,
+        "h": 65
+      }
+    },
+    "masarusansheet_89": {
+      "frame": {
+        "x": 865,
+        "y": 1302,
+        "w": 60,
+        "h": 63
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 63
+      }
+    },
+    "masarusansheet_90": {
+      "frame": {
+        "x": 112,
+        "y": 1307,
+        "w": 61,
+        "h": 59
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 59
+      }
+    },
+    "masarusansheet_91": {
+      "frame": {
+        "x": 957,
+        "y": 1303,
+        "w": 52,
+        "h": 63
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 52,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 52,
+        "h": 63
+      }
+    },
+    "masarusansheet_92": {
+      "frame": {
+        "x": 759,
+        "y": 1308,
+        "w": 71,
+        "h": 59
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 59
+      }
+    },
+    "masarusansheet_93": {
+      "frame": {
+        "x": 1037,
+        "y": 1308,
+        "w": 69,
+        "h": 59
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 59
+      }
+    },
+    "masarusansheet_94": {
+      "frame": {
+        "x": 474,
+        "y": 1313,
+        "w": 26,
+        "h": 39
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 26,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 26,
+        "h": 39
+      }
+    },
+    "masarusansheet_95": {
+      "frame": {
+        "x": 478,
+        "y": 1315,
+        "w": 60,
+        "h": 51
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 60,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 60,
+        "h": 51
+      }
+    },
+    "masarusansheet_96": {
+      "frame": {
+        "x": 379,
+        "y": 1321,
+        "w": 67,
+        "h": 45
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 45
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 45
+      }
+    },
+    "masarusansheet_97": {
+      "frame": {
+        "x": 296,
+        "y": 1333,
+        "w": 57,
+        "h": 35
+      },
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 35
+      }
+    }
+  }
+}
