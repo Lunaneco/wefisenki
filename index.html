@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>WeFi戦記 - 異界物流覇道録</title>
-    <link rel="stylesheet" href="src/styles.css?v=20260531-stageplanet32">
+    <link rel="stylesheet" href="src/styles.css?v=20260608-tsukineko-ignorecc1">
   </head>
   <body>
     <main class="app-shell">
@@ -43,9 +43,25 @@
         <div class="quick-actions" id="quick-actions"></div>
         <div class="roster-rail" id="roster-rail" aria-label="ally roster"></div>
       </section>
+      <div class="title-screen" id="title-screen" hidden aria-label="title screen">
+        <img class="title-screen-art" src="title.png" alt="WeFi戦記">
+        <div class="title-menu" aria-label="title menu">
+          <button class="title-menu-button" data-action="title-start">
+            <span>Start</span>
+          </button>
+          <button class="title-menu-button" data-action="title-continue">
+            <span>Continue</span>
+          </button>
+        </div>
+      </div>
+      <div class="clear-result-overlay" id="clear-result-overlay" hidden aria-label="clear result"></div>
+      <div class="boot-screen" id="boot-screen" aria-label="boot screen">
+        <button class="boot-tap-button" type="button">Tap</button>
+        <p class="boot-status" id="boot-status"></p>
+      </div>
     </main>
 
-    <script src="src/browser-data.js?v=20260524-manualbattle32"></script>
-    <script src="src/game.js?v=20260531-stageplanet32" defer></script>
+    <script src="src/browser-data.js?v=20260531-shinji-trust2"></script>
+    <script src="src/game.js?v=20260608-tsukineko-ignorecc1" defer></script>
   </body>
 </html>
