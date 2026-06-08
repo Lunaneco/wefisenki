@@ -10,11 +10,61 @@
   const chapterLabel = document.getElementById("chapter-label");
   const mapHotspots = document.getElementById("map-hotspots");
   const battleOverlayControls = document.getElementById("battle-overlay-controls");
+  const clearResultOverlay = document.getElementById("clear-result-overlay");
+  const titleScreen = document.getElementById("title-screen");
+  const bootScreen = document.getElementById("boot-screen");
+  const bootStatus = document.getElementById("boot-status");
 
   const CW = canvas.width;
   const CH = canvas.height;
   const STORAGE_KEY = "wefi-sengoku-save-v1";
-  const DATA_VERSION = "20260531-stageplanet32";
+  const SAVE_SLOT_COUNT = 3;
+  const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
+  const DATA_VERSION = "20260608-tsukineko-ignorecc1";
+  const BGM_ROOT = "wefi戦記BGM";
+  const BGM_VOLUME = 0.42;
+  const BGM_DUCK_VOLUME = 0.04;
+  const VOICE_VOLUME = 1.0;
+  const BGM_TRACKS = {
+    title: `${BGM_ROOT}/OP.mp3`,
+    sankenzin: `${BGM_ROOT}/sankenzin.mp3`,
+    eppa: `${BGM_ROOT}/eppa.mp3`,
+    harulucky: `${BGM_ROOT}/harulucky.mp3`,
+    kamado: `${BGM_ROOT}/kamado.mp3`,
+    nyanmi: `${BGM_ROOT}/nyanmi.mp3`,
+    nyanruna: `${BGM_ROOT}/nyanruna.mp3`,
+    okuribito: `${BGM_ROOT}/okuribito.mp3`,
+    pacchi: `${BGM_ROOT}/pacchi.mp3`,
+    ten: `${BGM_ROOT}/ten.mp3`,
+    usamaru: `${BGM_ROOT}/usamaru.mp3`,
+    hehehehehe: `${BGM_ROOT}/hehehehehe.mp3`,
+    darkrive: `${BGM_ROOT}/darkrive.mp3`,
+    tsukineco: `${BGM_ROOT}/tsukineco.mp3`
+  };
+  const VOICE_TRACKS = {
+    laugh: `${BGM_ROOT}/hehehehehehehe.mp3`,
+    orya: `${BGM_ROOT}/heheheheheorya.mp3`,
+    wooo: `${BGM_ROOT}/hehehehehewooo.mp3`
+  };
+  const HEHE_SKILL_VOICE_KEYS = {
+    normal: ["laugh", "orya"],
+    awakened: ["laugh", "wooo"]
+  };
+  const BGM_BY_ALLY_ID = {
+    bakuniki: "sankenzin",
+    masarusan: "sankenzin",
+    bonsaisan: "sankenzin",
+    eppa: "eppa",
+    harulucky: "harulucky",
+    kamado: "kamado",
+    nyannmichan: "nyanmi",
+    nyanruna: "nyanruna",
+    okuribito_chan: "okuribito",
+    shinji_wolf: "pacchi",
+    ten: "ten",
+    usamaru: "usamaru",
+    hehehehehe: "hehehehehe"
+  };
   const STAGE_MAP_SOURCE = { w: 941, h: 1672 };
   const STAGE_ENEMY_SLOT_COUNT = 5;
   const STAGE_NORMAL_ENEMY_COUNT = 4;
@@ -24,16 +74,33 @@
   const SECRET_TEN_STAGE_ID = "secret-ten";
   const SECRET_BAKUNIKI_ALLY_ID = "bakuniki";
   const SECRET_BAKUNIKI_STAGE_ID = "secret-bakuniki";
+  const SECRET_MASARUSAN_ALLY_ID = "masarusan";
+  const SECRET_BONSAISAN_ALLY_ID = "bonsaisan";
+  const SECRET_TWO_SAGES_STAGE_ID = "secret-two-sages";
   const FINAL_BOSS_STAGE_ID = "final-darkrive22";
+  const TRUE_FINAL_BOSS_STAGE_ID = "final-dark-tsukineko";
   const CLEAR_RESULT_IMAGE = "assets/clear.png";
+  const TRUE_CLEAR_RESULT_IMAGE = "assets/sinclear.png";
+  const LINE_MENU_SPRITE = "assets/characters/line/line_slices/line_slices/line_5.png";
+  const TEN_ROSTER_PORTRAIT = "assets/characters/ten/tensheet_slices/tensheet_slices/tensheet_1.png";
   const SECRET_STAGE_TAP_RADIUS = 32;
-  const SECRET_UNLOCK_ALLY_IDS = new Set([SECRET_LINE_ALLY_ID, SECRET_TEN_ALLY_ID, SECRET_BAKUNIKI_ALLY_ID]);
+  const POSTGAME_SAGE_START_LEVEL = 9;
+  const POSTGAME_SAGE_ALLY_IDS = new Set([SECRET_MASARUSAN_ALLY_ID, SECRET_BONSAISAN_ALLY_ID]);
+  const SECRET_UNLOCK_ALLY_IDS = new Set([
+    SECRET_LINE_ALLY_ID,
+    SECRET_TEN_ALLY_ID,
+    SECRET_BAKUNIKI_ALLY_ID,
+    SECRET_MASARUSAN_ALLY_ID,
+    SECRET_BONSAISAN_ALLY_ID
+  ]);
   const LINE_STAGE_INTRO = "お前ら頭WeFiなんじゃねえの！？";
   const LINE_STAGE_CLEAR = "Wefiの全てを否定しているわけではない、一般論としての意見を言っているだけだ。そしてENERGYは俺のパワーになるかもしれないから、ついて行ってやるよ";
   const TEN_STAGE_INTRO = "私の呪術に踊るが良い！！！！！";
   const TEN_STAGE_CLEAR = "俺の財宝か？探せ。この世の全てを置いてきた。俺か？ならついていってやる。";
   const BAKUNIKI_STAGE_INTRO = "ふぉふぉふぉ、よくぞここまで来ましたね、私に勝てたら、力を貸して差し上げましょう";
   const BAKUNIKI_STAGE_CLEAR = "約束通り、あなた達と共に参りましょう。ぼんさいさん、マサルさん、しばらくそちらをよろしくお願いします";
+  const TWO_SAGES_STAGE_INTRO = "とうとう、あなたたちも私たちの力に並んできましたね、その力、試させてもらいますよ";
+  const TWO_SAGES_STAGE_CLEAR = "その力、しかと見届けさせていただきました。よろしいでしょう、私たちも共に参りましょう";
   const DARKRIVE_STAGE_INTRO = "お前らの地球を俺によこせ！！地球のWefiの全てを俺の手中に抑えて、私が全惑星を支配してくれる！！";
   const DARKRIVE_STAGE_CLEAR = [
     { speaker: "ダークリーヴ２２", text: "ぐはああああ、ここまでに強いとは・・・これがWefiの力だということか" },
@@ -41,6 +108,18 @@
     { speaker: "ダークリーヴ２２", text: "くそぉーーー、勝最初から、かてるはずがなかったのか・・・" },
     { speaker: "ナレーション", text: "ダークリーヴ２２消滅" },
     { speaker: "Wefi戦士", text: "みんな終わったな、地球に帰ろう！！" }
+  ];
+  const TSUKINEKO_STAGE_INTRO = [
+    { speaker: "ダークツキネコ", text: "世界の全てが闇に包まれた今、俺が全てを終わらせる。" },
+    { speaker: "ダークツキネコ", text: "混沌にせしめし、貴様らの魂の全て、俺の右腕に宿る、漆黒の炎で喰らい尽くしてくれようぞ" }
+  ];
+  const TSUKINEKO_STAGE_CLEAR = [
+    { speaker: "Wefi戦士", text: "俺たちは何も縛るつもりも、壊すつもりもない、ただ、豊かな地球で手を取り合って暮らしたいだけなんだ" },
+    { speaker: "へへへへへ", text: "子ども食堂で子ども達を笑顔にするたい" },
+    { speaker: "ダークツキネコ", text: "…クックック、闇にのまれていたのは俺自身だったということか…" },
+    { speaker: "ダークツキネコ", text: "そういうことなら、Wefiも、悪くないのかも、し、れ、な・・・" },
+    { speaker: "ナレーション", text: "ダークツキネコ消滅" },
+    { speaker: "Wefi戦士", text: "今度こそ全てが終わった…帰ろう、地球に" }
   ];
 
   // === オープニング会話定義 ===
@@ -75,11 +154,14 @@
   const SAGE_RESTART_DIALOGUE = "やれやれ、時間を戻して頑張り直してもらいますか、ステーキングで貯めた時間Wefiよ、あの時に時間を戻しなさい。";
 
   // WFI消費でレベルアップするキャラID
-  const WFI_LEVEL_ALLY_IDS = new Set(["hehehehehe", "kamado", "harulucky", "shinji_wolf", "sakamu_tengu", "okuribito_chan", "usamaru", "sue", "eppa", "bakuniki", "ten"]);
+  const WFI_LEVEL_ALLY_IDS = new Set(["hehehehehe", "kamado", "harulucky", "shinji_wolf", "sakamu_tengu", "okuribito_chan", "usamaru", "sue", "eppa", "bakuniki", "ten", SECRET_MASARUSAN_ALLY_ID, SECRET_BONSAISAN_ALLY_ID]);
   // Energy消費でレベルアップするキャラID
   const ENERGY_LEVEL_ALLY_IDS = new Set(["nyannmichan", "nyanruna", "line"]);
   // キャラクター最大レベル
-  const ALLY_MAX_LEVEL = 9;
+  const BASE_ALLY_MAX_LEVEL = 9;
+  const NEW_GAME_PLUS_ALLY_MAX_LEVEL = 20;
+  const NEW_GAME_PLUS_ENEMY_POWER_MULT = 5;
+  const NEW_GAME_PLUS_WFI_REWARD_MULT = 10;
 
   // 三すくみ属性タイプ
   const RANGE_MELEE = "melee";
@@ -121,6 +203,17 @@
     shinji_wolf: { nativeFacing: -1, boxW: 64, boxH: 82, attackPreserveAspect: true, attackAnchorXRatio: 0.62 },
     okuribito_chan: { nativeFacing: -1, boxW: 62, boxH: 84 },
     sakamu_tengu: { nativeFacing: -1, boxW: 60, boxH: 82 },
+    line: {
+      nativeFacing: 1,
+      boxW: 66,
+      boxH: 90,
+      preserveAspect: true,
+      anchorXRatio: 0.5,
+      attackPreserveAspect: true,
+      attackAnchorXRatio: 0.42,
+      skillPreserveAspect: true,
+      skillAnchorXRatio: 0.32
+    },
     harulucky: { nativeFacing: 1, boxW: 62, boxH: 82 },
     nyanruna: { nativeFacing: -1, boxW: 64, boxH: 84 },
     kamado: { nativeFacing: -1, boxW: 66, boxH: 90 },
@@ -159,6 +252,24 @@
       attackAnchorXRatio: 0.34,
       skillPreserveAspect: true,
       skillAnchorXRatio: 0.38
+    },
+    masarusan: {
+      nativeFacing: 1,
+      boxW: 62,
+      boxH: 86,
+      attackPreserveAspect: true,
+      attackAnchorXRatio: 0.48,
+      skillPreserveAspect: true,
+      skillAnchorXRatio: 0.5
+    },
+    bonsaisan: {
+      nativeFacing: 1,
+      boxW: 64,
+      boxH: 90,
+      attackPreserveAspect: true,
+      attackAnchorXRatio: 0.5,
+      skillPreserveAspect: true,
+      skillAnchorXRatio: 0.5
     }
   };
 
@@ -241,6 +352,27 @@
     introDialogue: BAKUNIKI_STAGE_INTRO,
     clearDialogue: BAKUNIKI_STAGE_CLEAR
   };
+  const SECRET_TWO_SAGES_STAGE = {
+    id: SECRET_TWO_SAGES_STAGE_ID,
+    name: "二賢人の試練",
+    region: "HIDDEN TWO SAGES",
+    rank: 9,
+    difficulty: "2周目隠しボス",
+    power: 98000,
+    reward: { wfi: 26000, energy: 1200, food: 72 },
+    x: SECRET_BAKUNIKI_STAGE.x,
+    y: SECRET_BAKUNIKI_STAGE.y,
+    mapAsset: "assets/maps/secretstagebakuniki.png",
+    enemyAsset: null,
+    secret: true,
+    bossAllyIds: [SECRET_MASARUSAN_ALLY_ID, SECRET_BONSAISAN_ALLY_ID],
+    unlockAllyIds: [SECRET_MASARUSAN_ALLY_ID, SECRET_BONSAISAN_ALLY_ID],
+    unlockCondition: "ng-plus-two-sages",
+    revealWhenAvailable: true,
+    dialogueSpeaker: "２賢人",
+    introDialogue: TWO_SAGES_STAGE_INTRO,
+    clearDialogue: TWO_SAGES_STAGE_CLEAR
+  };
   const FINAL_BOSS_STAGE = {
     id: FINAL_BOSS_STAGE_ID,
     name: "ダークリーヴ２２",
@@ -261,7 +393,31 @@
     introDialogue: DARKRIVE_STAGE_INTRO,
     clearDialogue: DARKRIVE_STAGE_CLEAR
   };
-  const SECRET_STAGES = [SECRET_LINE_STAGE, SECRET_TEN_STAGE, SECRET_BAKUNIKI_STAGE, FINAL_BOSS_STAGE];
+  const TRUE_FINAL_BOSS_STAGE = {
+    id: TRUE_FINAL_BOSS_STAGE_ID,
+    name: "ダークツキネコ",
+    region: "SHIN LAST BOSS",
+    rank: 10,
+    difficulty: "2周目真ラスボス",
+    power: 128000,
+    reward: { wfi: 52000, energy: 2200, food: 120 },
+    x: FINAL_BOSS_STAGE.x,
+    y: FINAL_BOSS_STAGE.y,
+    mapAsset: FINAL_BOSS_STAGE.mapAsset,
+    enemyAsset: null,
+    enemyFrames: tsukinekoBossFramePaths(),
+    secret: true,
+    finalBoss: true,
+    trueFinalBoss: true,
+    finalBossName: "ダークツキネコ",
+    unlockCondition: "ng-plus-all-stages-cleared",
+    revealWhenAvailable: true,
+    clearImage: TRUE_CLEAR_RESULT_IMAGE,
+    dialogueSpeaker: "ダークツキネコ",
+    introDialogue: TSUKINEKO_STAGE_INTRO,
+    clearDialogue: TSUKINEKO_STAGE_CLEAR
+  };
+  const SECRET_STAGES = [SECRET_LINE_STAGE, SECRET_TEN_STAGE, SECRET_BAKUNIKI_STAGE, SECRET_TWO_SAGES_STAGE, TRUE_FINAL_BOSS_STAGE, FINAL_BOSS_STAGE];
   const STAGE_ENEMY_FRAMES = {
     1: [
       { x: 32, y: 258, w: 191, h: 158 },
@@ -405,7 +561,12 @@
     showJoinCardAlly: null,
     pendingRestartOnClose: false,
     joinAllySelectPhase: false,
-    heheheheheAwakened: false
+    heheheheheAwakened: false,
+    newGamePlusActive: false,
+    newGamePlusStartSnapshot: null,
+    titleActive: true,
+    saveSlotPanelActive: false,
+    hasSave: false
   };
   const runtimeBaseAllies = new Map();
   const runtimeBaseSkills = new Map();
@@ -419,6 +580,22 @@
     lastY: 0
   };
   const battleKeys = new Set();
+  const audioState = {
+    unlocked: false,
+    currentBgmKey: "",
+    currentBgm: null,
+    elements: new Map()
+  };
+  const voiceState = {
+    current: null,
+    lastKey: "",
+    lastError: "",
+    lastStartedAt: 0,
+    elements: new Map()
+  };
+  let bootStarted = false;
+  window.wfiAudioState = audioState;
+  window.wfiVoiceState = voiceState;
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
@@ -442,6 +619,168 @@
 
   function heheheheAwakenedSlice(id) {
     return `assets/characters/hehehehehe覚醒/hehehehehesheet_slices/hehehehehesheet_slices/hehehehehesheet_${id}.png`;
+  }
+
+  function lineSlice(name) {
+    return `assets/characters/line/line_slices/line_slices/${name}.png`;
+  }
+
+  function masarusanSlice(id) {
+    return `assets/characters/masarusan/masarusansheet_slices/masarusansheet_slices/masarusansheet_${id}.png`;
+  }
+
+  function bonsaisanSlice(id) {
+    return `assets/characters/bonsaisan/bonsaisansheet_slices/bonsaisansheet_slices/bonsaisansheet_${id}.png`;
+  }
+
+  function tsukinekoSlice(id) {
+    return `assets/enemies/shinlastboss/tsukinecosheet_slices/tsukinecosheet_slices/tsukinecosheet_${id}.png`;
+  }
+
+  function tsukinekoBossFramePaths() {
+    return {
+      idle: [7, 8, 9, 10, 11].map(tsukinekoSlice),
+      walk: [13, 14, 15, 17, 18, 19].map(tsukinekoSlice),
+      attack: [24, 25, 26, 27, 28].map(tsukinekoSlice),
+      skill: [30, 31, 32, 33, 34, 35].map(tsukinekoSlice),
+      damage: [75, 76].map(tsukinekoSlice),
+      down: [78, 79].map(tsukinekoSlice),
+      victory: [82, 83, 84].map(tsukinekoSlice),
+      effects: [50, 51, 52, 53, 55, 56, 57, 58, 59, 90, 91, 92, 93, 94, 95, 96, 97, 98].map(tsukinekoSlice)
+    };
+  }
+
+  function twoSageSkillDefinitions() {
+    return [
+      {
+        id: "masaru_forest_oracle",
+        name: "森羅の参謀術",
+        owner: SECRET_MASARUSAN_ALLY_ID,
+        kind: "active",
+        element: "nature",
+        target: "enemy_area_ally_team",
+        energyCost: 70,
+        cooldownSec: 24,
+        description: "森の術式で敵集団を削り、味方全体の技ゲージを少し押し上げる。",
+        effects: [
+          { type: "damage", power: 460, area: "enemy_area" },
+          { type: "status", statusId: "slow", chance: 0.85, durationSec: 5 },
+          { type: "gauge_gain", amount: 18, target: "ally_team" }
+        ],
+        assets: {
+          icon: masarusanSlice(40),
+          characterFrames: [28, 29, 30, 31, 32, 39].map(masarusanSlice),
+          effectFrames: [54, 55, 56, 57, 58, 59].map(masarusanSlice)
+        }
+      },
+      {
+        id: "bonsai_root_barrier",
+        name: "盆栽結界",
+        owner: SECRET_BONSAISAN_ALLY_ID,
+        kind: "active",
+        element: "nature",
+        target: "enemy_all_ally_team",
+        energyCost: 78,
+        cooldownSec: 28,
+        description: "大地の根で敵全体を縛り、味方全員へ盾と回復を与える。",
+        effects: [
+          { type: "damage", power: 390, area: "all_enemies" },
+          { type: "status", statusId: "lock", chance: 0.75, durationSec: 4 },
+          { type: "heal", power: 420, target: "ally_team" },
+          { type: "shield", power: 520, target: "ally_team" }
+        ],
+        assets: {
+          icon: bonsaisanSlice(40),
+          characterFrames: [27, 28, 29, 30, 35, 36].map(bonsaisanSlice),
+          effectFrames: [54, 55, 56, 57, 58, 59].map(bonsaisanSlice)
+        }
+      }
+    ];
+  }
+
+  function twoSageAllyDefinitions() {
+    return [
+      {
+        id: SECRET_MASARUSAN_ALLY_ID,
+        order: 15,
+        name: "まさるさん",
+        role: "nature_tactician",
+        roleLabel: "自然術・範囲妨害・技支援",
+        job: "Wefi三賢人",
+        element: "nature",
+        attackType: "magic",
+        quote: "力とは、使い所を見極めてこそ意味があります。",
+        personality: "森羅の流れを読み、戦場全体の速度と間合いを支配する二周目の賢人。敵を鈍らせながら味方の技の回転を支える。",
+        attackDescription: "葉と蔓の術式で敵を穿つ遠距離魔法攻撃。",
+        tags: ["wefi_sage", "nature", "support", "magic"],
+        stats: { hp: 7800, attack: 620, defense: 330, speed: 126, energyCost: 80 },
+        primarySkillId: "masaru_forest_oracle",
+        skillIds: ["masaru_forest_oracle"],
+        assets: {
+          root: "assets/characters/masarusan",
+          source: "assets/characters/masarusan/masarusansheet.png",
+          defaultSprite: masarusanSlice(3),
+          portrait: masarusanSlice(40),
+          directions: {
+            front: masarusanSlice(3),
+            left: masarusanSlice(4),
+            right: masarusanSlice(5),
+            back: masarusanSlice(6)
+          },
+          faces: [40, 41, 42, 43, 44, 45].map(masarusanSlice),
+          animations: {
+            idle: { fps: 6, loop: true, frames: [7, 8, 9, 10].map(masarusanSlice) },
+            walk: { fps: 10, loop: true, frames: [13, 14, 15, 16, 17, 18].map(masarusanSlice) },
+            attack: { fps: 12, loop: false, frames: [19, 21, 22, 23, 26, 27].map(masarusanSlice) },
+            skill: { fps: 10, loop: false, frames: [28, 29, 30, 31, 32, 39].map(masarusanSlice) },
+            damage: { fps: 1, loop: false, frames: [31].map(masarusanSlice) },
+            down: { fps: 1, loop: false, frames: [32].map(masarusanSlice) },
+            victory: { fps: 1, loop: false, frames: [39].map(masarusanSlice) }
+          },
+          effects: [52, 53, 54, 55, 56, 57, 58, 59].map(masarusanSlice)
+        }
+      },
+      {
+        id: SECRET_BONSAISAN_ALLY_ID,
+        order: 16,
+        name: "ぼんさいさん",
+        role: "root_guardian",
+        roleLabel: "結界・回復・全体拘束",
+        job: "Wefi三賢人",
+        element: "nature",
+        attackType: "magic",
+        quote: "根を張りなさい。勝機は、焦らず育てるものです。",
+        personality: "大地と根の魔法で部隊を守る二周目の賢人。敵全体を縛り、味方に回復と盾を与えて長期戦を支える。",
+        attackDescription: "根と樹木の魔力で敵を絡め取る遠距離魔法攻撃。",
+        tags: ["wefi_sage", "nature", "barrier", "heal"],
+        stats: { hp: 8600, attack: 540, defense: 410, speed: 104, energyCost: 85 },
+        primarySkillId: "bonsai_root_barrier",
+        skillIds: ["bonsai_root_barrier"],
+        assets: {
+          root: "assets/characters/bonsaisan",
+          source: "assets/characters/bonsaisan/bonsaisansheet.png",
+          defaultSprite: bonsaisanSlice(3),
+          portrait: bonsaisanSlice(40),
+          directions: {
+            front: bonsaisanSlice(3),
+            left: bonsaisanSlice(4),
+            right: bonsaisanSlice(5),
+            back: bonsaisanSlice(6)
+          },
+          faces: [40, 41, 42, 43, 44, 45].map(bonsaisanSlice),
+          animations: {
+            idle: { fps: 6, loop: true, frames: [7, 8, 9, 10].map(bonsaisanSlice) },
+            walk: { fps: 10, loop: true, frames: [13, 14, 15, 16, 17, 18].map(bonsaisanSlice) },
+            attack: { fps: 12, loop: false, frames: [19, 21, 22, 24, 25, 26].map(bonsaisanSlice) },
+            skill: { fps: 10, loop: false, frames: [27, 28, 29, 30, 35, 36].map(bonsaisanSlice) },
+            damage: { fps: 1, loop: false, frames: [37].map(bonsaisanSlice) },
+            down: { fps: 1, loop: false, frames: [38].map(bonsaisanSlice) },
+            victory: { fps: 1, loop: false, frames: [39].map(bonsaisanSlice) }
+          },
+          effects: [52, 53, 54, 55, 56, 57, 58, 59].map(bonsaisanSlice)
+        }
+      }
+    ];
   }
 
   function stageById(id) {
@@ -476,7 +815,7 @@
   }
 
   function secretStageForUnlockAlly(allyId) {
-    return SECRET_STAGES.find((stage) => stage.unlockAllyId === allyId) || null;
+    return SECRET_STAGES.find((stage) => stage.unlockAllyId === allyId || (stage.unlockAllyIds || []).includes(allyId)) || null;
   }
 
   function canRestoreUnlockedAlly(allyId, clearedStageIds) {
@@ -484,12 +823,24 @@
     return !secretStage || clearedStageIds.has(secretStage.id);
   }
 
+  function allOtherAlliesUnlockedForTwoSages() {
+    return state.allies.every((ally) => POSTGAME_SAGE_ALLY_IDS.has(ally.id) || isAllyUnlocked(ally.id));
+  }
+
   function isSecretStageAvailable(stage) {
+    if (stage.unlockAllyId && isAllyUnlocked(stage.unlockAllyId)) return false;
+    if (stage.unlockAllyIds?.length && stage.unlockAllyIds.every((allyId) => isAllyUnlocked(allyId))) return false;
     if (stage.unlockCondition === "all-allies") {
-      return state.allies.every((ally) => ally.id === stage.unlockAllyId || isAllyUnlocked(ally.id));
+      return state.allies.every((ally) => ally.id === stage.unlockAllyId || POSTGAME_SAGE_ALLY_IDS.has(ally.id) || isAllyUnlocked(ally.id));
     }
     if (stage.unlockCondition === "all-stages-cleared") {
-      return allNormalStagesCleared();
+      return !isNewGamePlusActive() && allNormalStagesCleared();
+    }
+    if (stage.unlockCondition === "ng-plus-two-sages") {
+      return isNewGamePlusActive() && allOtherAlliesUnlockedForTwoSages();
+    }
+    if (stage.unlockCondition === "ng-plus-all-stages-cleared") {
+      return isNewGamePlusActive() && allNormalStagesCleared();
     }
     return true;
   }
@@ -521,6 +872,39 @@
     return STAGES.every((stage) => isStageCleared(stage));
   }
 
+  function isNewGamePlusActive() {
+    return !!state.newGamePlusActive;
+  }
+
+  function currentAllyMaxLevel() {
+    return isNewGamePlusActive() ? NEW_GAME_PLUS_ALLY_MAX_LEVEL : BASE_ALLY_MAX_LEVEL;
+  }
+
+  function enemyPowerMultiplier() {
+    return isNewGamePlusActive() ? NEW_GAME_PLUS_ENEMY_POWER_MULT : 1;
+  }
+
+  function wfiRewardMultiplier() {
+    return isNewGamePlusActive() ? NEW_GAME_PLUS_WFI_REWARD_MULT : 1;
+  }
+
+  function effectiveStagePower(stage) {
+    return Math.round((stage?.power || 0) * enemyPowerMultiplier());
+  }
+
+  function stageReward(stage) {
+    const reward = stage?.reward || { wfi: 0, energy: 0, food: 0 };
+    return {
+      wfi: Math.round((reward.wfi || 0) * wfiRewardMultiplier()),
+      energy: reward.energy || 0,
+      food: reward.food || 0
+    };
+  }
+
+  function enemyWfiReward(enemy) {
+    return Math.round((enemy.elite ? 25 : 6) * wfiRewardMultiplier());
+  }
+
   function addLog(message) {
     state.log.unshift({ message, time: Date.now() });
     state.log = state.log.slice(0, 12);
@@ -542,21 +926,46 @@
     Object.assign(target, cloneData(snapshot));
   }
 
+  function resetRuntimeAllyState(ally, options = {}) {
+    applyLevelToAlly(ally);
+    ally.hp = options.fullHp ? ally.maxHp : Math.min(ally.hp, ally.maxHp);
+    ally.shield = 0;
+    ally.skillGauge = 0;
+    ally.attackTimer = 0;
+    ally.attackQueuedUntil = 0;
+    ally.cooldowns = {};
+    ally.buffs = {};
+    ally.battleX = 0;
+    ally.battleY = 0;
+    ally.facing = 1;
+    ally.visualDirection = "front";
+    ally.activeEffectPath = null;
+    ally.activeEffectKind = null;
+    ally.anim = "idle";
+    ally.animUntil = 0;
+    ally.moving = false;
+  }
+
+  function restoreAllRuntimeBase(options = {}) {
+    state.heheheheheAwakened = false;
+    state.allies.forEach((ally) => {
+      const baseAlly = runtimeBaseAllies.get(ally.id);
+      if (baseAlly) restoreRuntimeObject(ally, baseAlly);
+      resetRuntimeAllyState(ally, options);
+    });
+    state.skills.forEach((skill) => {
+      const baseSkill = runtimeBaseSkills.get(skill.id);
+      if (baseSkill) restoreRuntimeObject(skill, baseSkill);
+    });
+  }
+
   function restoreHeheheheNormal(options = {}) {
     state.heheheheheAwakened = false;
     const ally = allyById("hehehehehe");
     const baseAlly = runtimeBaseAllies.get("hehehehehe");
     if (ally && baseAlly) {
       restoreRuntimeObject(ally, baseAlly);
-      applyLevelToAlly(ally);
-      ally.hp = options.fullHp ? ally.maxHp : Math.min(ally.hp, ally.maxHp);
-      ally.shield = 0;
-      ally.skillGauge = 0;
-      ally.attackQueuedUntil = 0;
-      ally.cooldowns = {};
-      ally.buffs = {};
-      ally.anim = "idle";
-      ally.animUntil = 0;
+      resetRuntimeAllyState(ally, options);
     }
 
     const skill = skillById("high_blood_pressure");
@@ -617,6 +1026,181 @@
     return state.images.get(src) || null;
   }
 
+  function menuSpriteForAlly(ally) {
+    if (ally?.id === SECRET_LINE_ALLY_ID) return LINE_MENU_SPRITE;
+    return ally?.assets?.defaultSprite || "";
+  }
+
+  function rosterPortraitForAlly(ally) {
+    if (ally?.id === SECRET_TEN_ALLY_ID) return TEN_ROSTER_PORTRAIT;
+    return ally?.assets?.portrait || ally?.assets?.defaultSprite || "";
+  }
+
+  function audioSrc(src) {
+    if (window.location.protocol === "file:" || src.includes("?") || /^(data:|blob:)/.test(src)) return src;
+    return `${src}?v=${DATA_VERSION}`;
+  }
+
+  function ensureAudioElements() {
+    Object.entries(BGM_TRACKS).forEach(([key, src]) => {
+      if (audioState.elements.has(key)) return;
+      const audio = new Audio(audioSrc(src));
+      audio.preload = "auto";
+      audio.volume = BGM_VOLUME;
+      audioState.elements.set(key, audio);
+    });
+  }
+
+  function ensureVoiceElements() {
+    Object.entries(VOICE_TRACKS).forEach(([key, src]) => {
+      if (voiceState.elements.has(key)) return;
+      const audio = new Audio(audioSrc(src));
+      audio.preload = "auto";
+      audio.volume = VOICE_VOLUME;
+      audio.loop = false;
+      voiceState.elements.set(key, audio);
+    });
+  }
+
+  function primeVoiceElements() {
+    voiceState.elements.forEach((audio) => {
+      audio.load();
+      audio.muted = false;
+      audio.volume = VOICE_VOLUME;
+    });
+  }
+
+  function unlockAudioFromGesture() {
+    ensureAudioElements();
+    ensureVoiceElements();
+    audioState.unlocked = true;
+    audioState.elements.forEach((audio) => {
+      audio.load();
+    });
+    primeVoiceElements();
+  }
+
+  function stopBgm() {
+    if (audioState.currentBgm) {
+      audioState.currentBgm.pause();
+      audioState.currentBgm = null;
+    }
+    audioState.currentBgmKey = "";
+  }
+
+  function playBgm(key) {
+    if (!audioState.unlocked) return;
+    ensureAudioElements();
+    if (!key) {
+      stopBgm();
+      return;
+    }
+    if (audioState.currentBgmKey === key && audioState.currentBgm) {
+      if (audioState.currentBgm.paused) audioState.currentBgm.play().catch(() => {});
+      return;
+    }
+    stopBgm();
+    const audio = audioState.elements.get(key);
+    if (!audio) return;
+    audio.loop = true;
+    audio.muted = false;
+    audio.volume = BGM_VOLUME;
+    try {
+      audio.currentTime = 0;
+    } catch {
+      // Some browsers disallow seeking before metadata is ready.
+    }
+    audioState.currentBgmKey = key;
+    audioState.currentBgm = audio;
+    audio.play().catch(() => {});
+  }
+
+  function playVoice(key) {
+    if (!audioState.unlocked) {
+      audioState.unlocked = true;
+      ensureVoiceElements();
+    }
+    const src = VOICE_TRACKS[key];
+    if (!src) {
+      voiceState.lastError = `missing voice: ${key}`;
+      return;
+    }
+    if (voiceState.current) {
+      voiceState.current.pause();
+      try {
+        voiceState.current.currentTime = 0;
+      } catch {
+        // Ignore seek failures while resetting a previous voice.
+      }
+    }
+    const audio = new Audio(audioSrc(src));
+    audio.loop = false;
+    audio.muted = false;
+    audio.volume = VOICE_VOLUME;
+    audio.preload = "auto";
+    try {
+      audio.currentTime = 0;
+    } catch {
+      // Some browsers disallow seeking before metadata is ready.
+    }
+    voiceState.current = audio;
+    voiceState.lastKey = key;
+    voiceState.lastError = "";
+    voiceState.lastStartedAt = Date.now();
+    if (audioState.currentBgm) audioState.currentBgm.volume = BGM_DUCK_VOLUME;
+    const restoreBgm = () => {
+      if (voiceState.current === audio) voiceState.current = null;
+      if (audioState.currentBgm) audioState.currentBgm.volume = BGM_VOLUME;
+    };
+    audio.onended = restoreBgm;
+    audio.onerror = () => {
+      voiceState.lastError = "voice audio load error";
+      restoreBgm();
+    };
+    audio.play().catch((error) => {
+      voiceState.lastError = error?.message || String(error || "voice play blocked");
+      restoreBgm();
+    });
+  }
+
+  function randomItem(items) {
+    return items[Math.floor(Math.random() * items.length)];
+  }
+
+  function playHeheheSkillVoice(ally) {
+    if (ally?.id !== "hehehehehe") return;
+    const keys = state.heheheheheAwakened
+      ? HEHE_SKILL_VOICE_KEYS.awakened
+      : HEHE_SKILL_VOICE_KEYS.normal;
+    playVoice(randomItem(keys));
+  }
+
+  function desiredBattleBgmKey() {
+    const battle = state.battle;
+    if (!battle) return null;
+    const stage = battle.stage;
+    if (stage?.id === FINAL_BOSS_STAGE_ID) return "darkrive";
+    if (stage?.id === TRUE_FINAL_BOSS_STAGE_ID) return "tsukineco";
+    if (battle.dialogue?.sageRestart || battle.dialogue?.speaker === "三賢人") return "sankenzin";
+    const bossBgmKey = [stage?.secretBossAllyId, ...(stage?.bossAllyIds || [])]
+      .map((id) => BGM_BY_ALLY_ID[id])
+      .find(Boolean);
+    if (bossBgmKey) return bossBgmKey;
+    const ally = activeBattleAlly();
+    return BGM_BY_ALLY_ID[ally?.id] || null;
+  }
+
+  function desiredBgmKey() {
+    if (state.titleActive) return "title";
+    if (!state.openingDone) return "sankenzin";
+    if (state.view === "battle" && state.battle) return desiredBattleBgmKey();
+    return null;
+  }
+
+  function syncBgm() {
+    playBgm(desiredBgmKey());
+  }
+
   function collectPaths(value, out = new Set()) {
     if (Array.isArray(value)) {
       value.forEach((item) => collectPaths(item, out));
@@ -653,7 +1237,86 @@
     }
   }
 
-  function saveGame() {
+  function captureNewGamePlusStartSnapshot() {
+    return {
+      unlockedStageId: 1,
+      selectedStageId: 1,
+      selectedAllyId: state.selectedAllyId,
+      unlockedAllyIds: Array.from(state.unlockedAllyIds),
+      resources: cloneData(state.resources),
+      clearedStages: [],
+      charLevels: cloneData(state.charLevels),
+      heheheheheAwakened: state.heheheheheAwakened
+    };
+  }
+
+  function healAndResetAlliesForLap() {
+    const keepAwakened = state.heheheheheAwakened;
+    restoreHeheheheNormal({ fullHp: true });
+    state.heheheheheAwakened = keepAwakened;
+    if (state.heheheheheAwakened) applyHeheheheKakusei();
+    applyAllLevels();
+    state.allies.forEach((ally) => {
+      ally.hp = ally.maxHp;
+      ally.shield = 0;
+      ally.skillGauge = 0;
+      ally.attackTimer = 0;
+      ally.attackQueuedUntil = 0;
+      ally.cooldowns = {};
+      ally.buffs = {};
+      ally.anim = "idle";
+      ally.animUntil = 0;
+    });
+  }
+
+  function restoreNewGamePlusStartState() {
+    state.newGamePlusActive = true;
+    state.battle = null;
+    state.view = "map";
+    state.unlockedStageId = 1;
+    state.selectedStageId = 1;
+    state.clearedStages = new Set();
+    state.openingDone = true;
+    state.charSelectDone = true;
+    state.timeRewindPhase = false;
+    state.pendingRestartStage = null;
+    state.pendingRestartOnClose = false;
+    state.joinAllySelectPhase = false;
+    state.showJoinCardAlly = null;
+    healAndResetAlliesForLap();
+    ensureSelectedAllyUnlocked();
+    state.newGamePlusStartSnapshot = captureNewGamePlusStartSnapshot();
+    addLog("全滅しました。資源・レベル・仲間を引き継ぎ、2周目のステージ進行だけ最初へ戻りました。");
+    saveGame();
+    setView("map");
+    renderDom(true);
+  }
+
+  function resetNewGamePlusProgressAfterTrueFinal() {
+    state.newGamePlusActive = true;
+    state.battle = null;
+    state.view = "map";
+    state.unlockedStageId = 1;
+    state.selectedStageId = 1;
+    state.clearedStages = new Set();
+    state.openingDone = true;
+    state.charSelectDone = true;
+    state.timeRewindPhase = false;
+    state.pendingRestartStage = null;
+    state.pendingRestartOnClose = false;
+    state.joinAllySelectPhase = false;
+    state.showJoinCardAlly = null;
+    ensurePostgameSageLevels();
+    healAndResetAlliesForLap();
+    ensureSelectedAllyUnlocked();
+    state.newGamePlusStartSnapshot = captureNewGamePlusStartSnapshot();
+    addLog("真ラスボスを撃破。資源・レベル・仲間・へへへへへの状態を維持し、2周目のステージ進行を最初へ戻しました。");
+    saveGame();
+    setView("map");
+    renderDom(true);
+  }
+
+  function createSavePayload(saveType = "auto", slot = null) {
     ensureSelectedAllyUnlocked();
     const charStatus = {};
     state.allies.forEach((ally) => {
@@ -662,7 +1325,10 @@
         skillGauge: ally.skillGauge || 0
       };
     });
-    const payload = {
+    return {
+      savedAt: Date.now(),
+      saveType,
+      slot,
       unlockedStageId: state.unlockedStageId,
       selectedStageId: state.selectedStageId,
       selectedAllyId: state.selectedAllyId,
@@ -674,47 +1340,137 @@
       openingDone: state.openingDone,
       charSelectDone: state.charSelectDone,
       heheheheheAwakened: state.heheheheheAwakened,
+      newGamePlusActive: state.newGamePlusActive,
+      newGamePlusStartSnapshot: state.newGamePlusStartSnapshot,
       charStatus: charStatus
     };
+  }
+
+  function saveGame() {
+    const payload = createSavePayload("auto");
     const saved = storageSet(STORAGE_KEY, JSON.stringify(payload));
+    state.hasSave = saved || hasStartedProgress();
     addLog(saved ? "進行状況を保存しました。" : "この起動方法では保存が使えません。");
+  }
+
+  function readSaveEntry(key) {
+    const raw = storageGet(key);
+    if (!raw) return null;
+    try {
+      const payload = JSON.parse(raw);
+      return payload && typeof payload === "object" ? payload : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveManualSlot(slot) {
+    const slotNumber = clamp(Math.floor(Number(slot) || 0), 1, SAVE_SLOT_COUNT);
+    const payload = createSavePayload("manual", slotNumber);
+    const saved = storageSet(SAVE_SLOT_KEYS[slotNumber - 1], JSON.stringify(payload));
+    state.hasSave = state.hasSave || hasStartedProgress();
+    addLog(saved ? `スロット${slotNumber}に保存しました。` : "この起動方法では保存が使えません。");
+    return saved;
+  }
+
+  function applySavePayload(payload) {
+    state.hasSave = true;
+    state.newGamePlusActive = !!payload.newGamePlusActive;
+    state.newGamePlusStartSnapshot = payload.newGamePlusStartSnapshot || null;
+    state.unlockedStageId = clamp(Number(payload.unlockedStageId) || 1, 1, STAGES.length);
+    state.selectedStageId = clamp(Number(payload.selectedStageId) || state.unlockedStageId, 1, STAGES.length);
+    state.selectedAllyId = payload.selectedAllyId || state.selectedAllyId;
+    const clearedStageIds = new Set(payload.clearedStages || []);
+    if (Array.isArray(payload.unlockedAllyIds)) {
+      const knownIds = new Set(state.allies.map((ally) => ally.id));
+      state.unlockedAllyIds = new Set(
+        payload.unlockedAllyIds.filter((id) => knownIds.has(id) && (state.newGamePlusActive || canRestoreUnlockedAlly(id, clearedStageIds)))
+      );
+    }
+    state.resources = { ...state.resources, ...(payload.resources || {}) };
+    state.clearedStages = clearedStageIds;
+    if (payload.charLevels && typeof payload.charLevels === "object") {
+      state.charLevels = payload.charLevels;
+    }
+    state.openingDone = !!payload.openingDone;
+    state.charSelectDone = !!payload.charSelectDone;
+    state.heheheheheAwakened = !!payload.heheheheheAwakened && (state.newGamePlusActive || clearedStageIds.has(KAKUSEI_STAGE.id));
+    if (payload.charStatus && typeof payload.charStatus === "object") {
+      state.loadedCharStatus = payload.charStatus;
+    }
+    if (!payload.openingDone && (clearedStageIds.size > 0 || (Array.isArray(payload.unlockedAllyIds) && payload.unlockedAllyIds.length > 0))) {
+      state.openingDone = true;
+      state.charSelectDone = true;
+    }
+    ensureSelectedAllyUnlocked();
+    if (state.newGamePlusActive && !state.newGamePlusStartSnapshot) {
+      state.newGamePlusStartSnapshot = captureNewGamePlusStartSnapshot();
+    }
+    return true;
+  }
+
+  function applyLoadedRuntimeState() {
+    ensurePostgameSageLevels();
+    applyHeheheheKakusei();
+    applyAllLevels();
+    state.allies.forEach((ally) => {
+      const saved = state.loadedCharStatus?.[ally.id];
+      if (saved) {
+        ally.hp = Math.min(Math.max(0, Number(saved.hp) || 0), ally.maxHp);
+        ally.skillGauge = Math.min(Math.max(0, Number(saved.skillGauge) || 0), 100);
+      } else {
+        ally.hp = ally.maxHp;
+        ally.skillGauge = 0;
+      }
+    });
+    delete state.loadedCharStatus;
+    ensureSelectedAllyUnlocked();
+  }
+
+  function finishLoadedSave(message) {
+    applyLoadedRuntimeState();
+    state.titleActive = false;
+    state.saveSlotPanelActive = false;
+    state.mapDetailActive = false;
+    state.battle = null;
+    state.view = "map";
+    battleKeys.clear();
+    addLog(message);
+    document.querySelectorAll(".tab-button").forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.view === state.view);
+    });
+    syncBgm();
+    renderDom(true);
+  }
+
+  function loadSaveEntryFromPanel(key, label) {
+    const payload = readSaveEntry(key);
+    if (!payload) {
+      addLog(`${label}にロードできるデータがありません。`);
+      renderDom(true);
+      return false;
+    }
+    if (key !== STORAGE_KEY) {
+      storageSet(STORAGE_KEY, JSON.stringify({ ...payload, saveType: "auto", slot: null }));
+    }
+    applySavePayload(payload);
+    finishLoadedSave(`${label}をロードしました。`);
+    return true;
   }
 
   function loadSave() {
     const raw = storageGet(STORAGE_KEY);
-    if (!raw) return;
+    if (!raw) {
+      state.hasSave = false;
+      return false;
+    }
     try {
       const payload = JSON.parse(raw);
-      state.unlockedStageId = clamp(Number(payload.unlockedStageId) || 1, 1, STAGES.length);
-      state.selectedStageId = clamp(Number(payload.selectedStageId) || state.unlockedStageId, 1, STAGES.length);
-      state.selectedAllyId = payload.selectedAllyId || state.selectedAllyId;
-      const clearedStageIds = new Set(payload.clearedStages || []);
-      if (Array.isArray(payload.unlockedAllyIds)) {
-        const knownIds = new Set(state.allies.map((ally) => ally.id));
-        state.unlockedAllyIds = new Set(
-          payload.unlockedAllyIds.filter((id) => knownIds.has(id) && canRestoreUnlockedAlly(id, clearedStageIds))
-        );
-      }
-      state.resources = { ...state.resources, ...(payload.resources || {}) };
-      state.clearedStages = clearedStageIds;
-      // キャラレベル・オープニングフラグを復元
-      if (payload.charLevels && typeof payload.charLevels === "object") {
-        state.charLevels = payload.charLevels;
-      }
-      state.openingDone = !!payload.openingDone;
-      state.charSelectDone = !!payload.charSelectDone;
-      state.heheheheheAwakened = !!payload.heheheheheAwakened && clearedStageIds.has(KAKUSEI_STAGE.id);
-      if (payload.charStatus && typeof payload.charStatus === "object") {
-        state.loadedCharStatus = payload.charStatus;
-      }
-      // 既存セーブ（進行実績あり）にはオープニングをスキップ
-      if (!payload.openingDone && (clearedStageIds.size > 0 || (Array.isArray(payload.unlockedAllyIds) && payload.unlockedAllyIds.length > 0))) {
-        state.openingDone = true;
-        state.charSelectDone = true;
-      }
-      ensureSelectedAllyUnlocked();
+      return applySavePayload(payload);
     } catch {
       storageRemove(STORAGE_KEY);
+      state.hasSave = false;
+      return false;
     }
   }
 
@@ -738,15 +1494,62 @@
     state.showJoinCardAlly = null;
     state.pendingRestartOnClose = false;
     state.joinAllySelectPhase = false;
-    restoreHeheheheNormal({ fullHp: true });
-    // 全キャラのHPをリセット
-    state.allies.forEach((ally) => {
-      ally.maxHp = ally.stats.hp;
-      ally.hp = ally.maxHp;
-      ally.skillGauge = 0;
-      ally.attackQueuedUntil = 0;
-    });
+    state.newGamePlusActive = false;
+    state.newGamePlusStartSnapshot = null;
+    state.saveSlotPanelActive = false;
+    state.hasSave = false;
+    restoreAllRuntimeBase({ fullHp: true });
     addLog("進行状況を初期化しました。");
+  }
+
+  function hasStartedProgress() {
+    return !!(
+      state.openingDone ||
+      state.charSelectDone ||
+      state.unlockedAllyIds.size > 0 ||
+      state.clearedStages.size > 0 ||
+      state.resources.wfi > 0 ||
+      state.resources.energy > 0 ||
+      state.resources.food > 0 ||
+      state.newGamePlusActive
+    );
+  }
+
+  function hasAnySaveData() {
+    return !!readSaveEntry(STORAGE_KEY) || SAVE_SLOT_KEYS.some((key) => !!readSaveEntry(key));
+  }
+
+  function titleContinueAvailable() {
+    return state.hasSave || hasStartedProgress() || hasAnySaveData();
+  }
+
+  function startFromTitle() {
+    resetSave();
+    state.titleActive = false;
+    state.hasSave = false;
+    setView("map");
+    syncBgm();
+    renderDom(true);
+  }
+
+  function continueFromTitle() {
+    if (!titleContinueAvailable()) {
+      startFromTitle();
+      return;
+    }
+    state.saveSlotPanelActive = true;
+    renderDom(true);
+  }
+
+  function returnToTitle() {
+    state.titleActive = true;
+    state.hasSave = state.hasSave || hasStartedProgress();
+    state.battle = null;
+    state.mapDetailActive = false;
+    state.saveSlotPanelActive = false;
+    battleKeys.clear();
+    syncBgm();
+    renderDom(true);
   }
 
   function startNewGamePlus() {
@@ -755,6 +1558,7 @@
     } catch (e) {}
     state.battle = null;
     state.view = "map";
+    state.newGamePlusActive = true;
     state.clearedStages = new Set();
     state.unlockedStageId = 1;
     state.selectedStageId = 1;
@@ -765,29 +1569,22 @@
     state.pendingRestartStage = null;
     state.pendingRestartOnClose = false;
     state.showJoinCardAlly = null;
-    restoreHeheheheNormal({ fullHp: true });
-    applyAllLevels();
-    state.allies.forEach((ally) => {
-      ally.hp = ally.maxHp;
-      ally.shield = 0;
-      ally.skillGauge = 0;
-      ally.attackQueuedUntil = 0;
-      ally.cooldowns = {};
-      ally.buffs = {};
-    });
+    healAndResetAlliesForLap();
     ensureSelectedAllyUnlocked();
-    addLog("強くてニューゲーム開始。力を引き継いでステージ1から再出撃できます。");
+    state.newGamePlusStartSnapshot = captureNewGamePlusStartSnapshot();
+    addLog("強くてニューゲーム開始。敵は5倍強化、WFI報酬は10倍、レベル上限は20です。");
     saveGame();
     setView("map");
     renderDom(true);
   }
 
   function buildRuntimeAlly(ally) {
+    const baseAlly = cloneData(ally);
     return {
-      ...ally,
-      skillIds: ally.primarySkillId ? [ally.primarySkillId] : (ally.skillIds ? [ally.skillIds[0]] : []),
-      maxHp: ally.stats.hp,
-      hp: ally.stats.hp,
+      ...baseAlly,
+      skillIds: baseAlly.primarySkillId ? [baseAlly.primarySkillId] : (baseAlly.skillIds ? [baseAlly.skillIds[0]] : []),
+      maxHp: baseAlly.stats.hp,
+      hp: baseAlly.stats.hp,
       shield: 0,
       skillGauge: 0,
       homeX: 0,
@@ -807,20 +1604,34 @@
     };
   }
 
-  // レベル補正倍率を返す（Lv1=1.0、Lv9=3.00）
+  // レベル補正倍率を返す（Lv1=1.0、2周目はLv20まで解放）
   function levelMultiplier(level) {
-    return 1 + (Math.max(1, Math.min(ALLY_MAX_LEVEL, level)) - 1) * 0.25;
+    return 1 + (Math.max(1, Math.min(currentAllyMaxLevel(), level)) - 1) * 0.25;
+  }
+
+  function allyLevelMultiplier(allyOrId) {
+    const id = typeof allyOrId === "string" ? allyOrId : allyOrId?.id;
+    const level = allyLevel(id);
+    const baseLevel = POSTGAME_SAGE_ALLY_IDS.has(id) ? POSTGAME_SAGE_START_LEVEL : 1;
+    return levelMultiplier(Math.max(1, level - baseLevel + 1));
   }
 
   // キャラクターの現在レベルを取得
   function allyLevel(allyId) {
-    return state.charLevels[allyId] || 1;
+    return Math.max(1, Number(state.charLevels[allyId]) || 1);
+  }
+
+  function ensurePostgameSageLevels() {
+    POSTGAME_SAGE_ALLY_IDS.forEach((allyId) => {
+      if (isAllyUnlocked(allyId) && allyLevel(allyId) < POSTGAME_SAGE_START_LEVEL) {
+        state.charLevels[allyId] = POSTGAME_SAGE_START_LEVEL;
+      }
+    });
   }
 
   // レベル補正をキャラに適用する
   function applyLevelToAlly(ally) {
-    const level = allyLevel(ally.id);
-    const mult = levelMultiplier(level);
+    const mult = allyLevelMultiplier(ally);
     ally.maxHp = Math.round(ally.stats.hp * mult);
     if (ally.hp > ally.maxHp) ally.hp = ally.maxHp;
   }
@@ -840,7 +1651,7 @@
     const ally = allyById(allyId);
     if (!ally || !isAllyUnlocked(allyId)) return;
     const currentLevel = allyLevel(allyId);
-    if (currentLevel >= ALLY_MAX_LEVEL) {
+    if (currentLevel >= currentAllyMaxLevel()) {
       addLog(`${ally.name} は最大レベルに達しています。`);
       return;
     }
@@ -933,6 +1744,75 @@
       ally.hp = Math.min(ally.maxHp, ally.hp + healAmount);
     });
     addLog("全員のHPを回復しました。");
+  }
+
+  function applyLineSliceAnimations() {
+    const ally = allyById(SECRET_LINE_ALLY_ID);
+    if (!ally) return;
+
+    const frames = {
+      front: lineSlice("line_2"),
+      left: lineSlice("line_9"),
+      right: lineSlice("line_3"),
+      back: lineSlice("line_4"),
+      idle: ["line_6", "line_5", "line_7", "line_8"].map(lineSlice),
+      walk: ["line_14", "line_15", "line_16", "line_16_copy", "line_17", "line_16_copy2"].map(lineSlice),
+      attack: ["line_18", "line_13", "line_19", "line_19_copy", "line_19_copy2"].map(lineSlice),
+      skill: ["line_23", "line_24", "line_25", "line_20", "line_22", "line_21"].map(lineSlice),
+      damage: [lineSlice("line_33")],
+      down: [lineSlice("line_34")],
+      victory: [lineSlice("line_28")],
+      faces: ["line_29", "line_30", "line_31", "line_32", "line_36"].map(lineSlice),
+      items: ["line_40", "line_41", "line_42", "line_43", "line_44"].map(lineSlice),
+      effects: ["line_52", "line_53", "line_55", "line_56", "line_57", "line_58", "line_59", "line_60", "line_61", "line_62", "line_63", "line_64"].map(lineSlice)
+    };
+
+    ally.assets.root = "assets/characters/line/line_slices";
+    ally.assets.source = "assets/characters/line/line_slices/line_edited.png";
+    ally.assets.contactSheet = "assets/characters/line/line_slices/line_edited.png";
+    ally.assets.manifest = "assets/characters/line/line_slices/sprites.json";
+    ally.assets.defaultSprite = frames.front;
+    ally.assets.directions = {
+      front: frames.front,
+      left: frames.left,
+      right: frames.right,
+      back: frames.back
+    };
+    ally.assets.faces = frames.faces;
+    ally.assets.animations = {
+      idle: { fps: 6, loop: true, frames: frames.idle },
+      walk: { fps: 10, loop: true, frames: frames.walk },
+      attack: { fps: 11, loop: false, frames: frames.attack },
+      skill: { fps: 8, loop: false, frames: frames.skill },
+      damage: { fps: 1, loop: false, frames: frames.damage },
+      down: { fps: 1, loop: false, frames: frames.down },
+      victory: { fps: 1, loop: false, frames: frames.victory }
+    };
+    ally.assets.signatureItems = frames.items;
+    ally.assets.effects = frames.effects;
+
+    const skill = skillById("fud_burst_beam");
+    if (skill?.assets) {
+      skill.assets.characterFrames = frames.skill;
+      skill.assets.effectFrames = frames.effects;
+      skill.assets.icon = frames.items[1] || skill.assets.icon;
+    }
+  }
+
+  function applyHaruluckyReflectSkill() {
+    const skill = skillById("lucky_cookie_harulucky");
+    if (!skill) return;
+    skill.effects = skill.effects || [];
+    if (!skill.effects.some((effect) => effect.type === "reflect")) {
+      skill.effects.push({
+        type: "reflect",
+        durationSec: 2,
+        target: "all_allies"
+      });
+    }
+    if (!/反射/.test(skill.description || "")) {
+      skill.description = `${skill.description || ""} 味方全体が2秒間、敵の攻撃を反射する。`.trim();
+    }
   }
 
   // オープニングを１ステップ進める
@@ -1156,6 +2036,55 @@
     }
   }
 
+  function setBootStatus(message) {
+    if (bootStatus) bootStatus.textContent = message || "";
+  }
+
+  function setBootLoading(loading) {
+    if (!bootScreen) return;
+    bootScreen.classList.toggle("is-loading", loading);
+    const button = bootScreen.querySelector(".boot-tap-button");
+    if (button) {
+      button.disabled = loading;
+      button.textContent = loading ? "Loading" : "Tap";
+    }
+  }
+
+  function hideBootScreen() {
+    if (!bootScreen) return;
+    setBootStatus("");
+    setBootLoading(false);
+    bootScreen.hidden = true;
+  }
+
+  function startBootSequence(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    if (bootStarted) return;
+    bootStarted = true;
+    setBootLoading(true);
+    setBootStatus("データを読み込み中...");
+    unlockAudioFromGesture();
+    syncBgm();
+    boot();
+  }
+
+  function installBootScreen() {
+    if (!bootScreen) {
+      startBootSequence();
+      return;
+    }
+    bootScreen.hidden = false;
+    setBootLoading(false);
+    setBootStatus("");
+    const button = bootScreen.querySelector(".boot-tap-button");
+    const target = button || bootScreen;
+    target.addEventListener("pointerdown", startBootSequence);
+    target.addEventListener("click", startBootSequence);
+  }
+
   async function boot() {
     try {
       installMobileInteractionGuards();
@@ -1165,9 +2094,20 @@
         loadJson("data/skills.json")
       ]);
 
-      state.allies = alliesData.allies.map(buildRuntimeAlly);
-      state.skills = skillsData.skills;
+      const extraAllies = twoSageAllyDefinitions().filter(
+        (ally) => !(alliesData.allies || []).some((item) => item.id === ally.id)
+      );
+      const allAllyDefinitions = [...(alliesData.allies || []), ...extraAllies];
+      const extraSkills = twoSageSkillDefinitions().filter(
+        (skill) => !(skillsData.skills || []).some((item) => item.id === skill.id)
+      );
+      const allSkillDefinitions = [...(skillsData.skills || []), ...extraSkills];
+
+      state.allies = allAllyDefinitions.map(buildRuntimeAlly);
+      state.skills = allSkillDefinitions.map(cloneData);
       state.skillById = new Map(state.skills.map((skill) => [skill.id, skill]));
+      applyLineSliceAnimations();
+      applyHaruluckyReflectSkill();
       rememberBaseRuntimeData();
       state.unlockedAllyIds = new Set();
       state.selectedAllyId = "";
@@ -1177,6 +2117,7 @@
 
 
 
+      ensurePostgameSageLevels();
       applyHeheheheKakusei();
       // セーブデータのレベルを全キャラに適用
       applyAllLevels();
@@ -1185,7 +2126,7 @@
         const saved = state.loadedCharStatus?.[ally.id];
         if (saved) {
           ally.hp = Math.min(Math.max(0, Number(saved.hp) || 0), ally.maxHp);
-          ally.skillGauge = Math.min(Math.max(0, Number(saved.skillGauge) || 0), 1);
+          ally.skillGauge = Math.min(Math.max(0, Number(saved.skillGauge) || 0), 100);
         } else {
           ally.hp = ally.maxHp;
           ally.skillGauge = 0;
@@ -1203,6 +2144,12 @@
         imagePaths.add(stage.mapAsset);
         if (stage.enemyAsset) imagePaths.add(stage.enemyAsset);
       });
+      imagePaths.add(TRUE_CLEAR_RESULT_IMAGE);
+      imagePaths.add(LINE_MENU_SPRITE);
+      imagePaths.add(TEN_ROSTER_PORTRAIT);
+      collectPaths({ secretStages: SECRET_STAGES }, imagePaths);
+      imagePaths.add("title.png");
+      imagePaths.add("titlebotton.png");
       // オープニング立ち絵の画像を事前ロード
       OPENING_DIALOGUES.forEach((d) => { if (d.portrait) imagePaths.add(d.portrait); });
       imagePaths.add("assets/characters/3kenzin.jpg");
@@ -1223,8 +2170,13 @@
         52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 67, 68
       ].forEach((id) => imagePaths.add(heheheheAwakenedSlice(id)));
 
-      collectPaths(alliesData, imagePaths);
-      collectPaths(skillsData, imagePaths);
+      collectPaths({ allies: allAllyDefinitions }, imagePaths);
+      collectPaths({ allies: Array.from(runtimeBaseAllies.values()) }, imagePaths);
+      collectPaths({ allies: state.allies }, imagePaths);
+      collectPaths({ skills: allSkillDefinitions }, imagePaths);
+      collectPaths({ skills: Array.from(runtimeBaseSkills.values()) }, imagePaths);
+      collectPaths({ skills: state.skills }, imagePaths);
+      setBootStatus("画像を読み込み中...");
       await Promise.all(Array.from(imagePaths).map(loadImage));
 
       bindEvents();
@@ -1240,8 +2192,15 @@
 
 
 
+      renderDom(true);
+      renderCanvas();
+      hideBootScreen();
+      syncBgm();
       requestAnimationFrame(loop);
     } catch (error) {
+      bootStarted = false;
+      setBootLoading(false);
+      setBootStatus(`読み込み失敗: ${error.message}`);
       sidePanel.innerHTML = `<div class="panel-title"><div><h2>読み込み失敗</h2><p>${escapeHtml(error.message)}</p></div></div>`;
     }
   }
@@ -1320,10 +2279,19 @@
 
     quickActions.addEventListener("click", handleActionClick);
     sidePanel.addEventListener("click", handleActionClick);
+    document.addEventListener("click", handleSaveSlotCloseEvent, true);
+    document.addEventListener("touchend", handleSaveSlotCloseEvent, { capture: true, passive: false });
     if (mapHotspots) mapHotspots.addEventListener("click", handleActionClick);
     if (battleOverlayControls) {
       battleOverlayControls.addEventListener("pointerdown", handleBattleOverlayPointerDown);
       battleOverlayControls.addEventListener("click", handleActionClick);
+    }
+    if (clearResultOverlay) {
+      clearResultOverlay.addEventListener("click", handleActionClick);
+    }
+    if (titleScreen) {
+      titleScreen.addEventListener("pointerdown", handleTitlePointerDown);
+      titleScreen.addEventListener("click", handleActionClick);
     }
 
     const mapCloseBtn = document.querySelector(".map-close-button");
@@ -1344,6 +2312,7 @@
     if (view === "map") {
       state.mapDetailActive = true;
     }
+    state.saveSlotPanelActive = false;
     if (view === "battle" && !state.battle) {
       state.view = "battle";
     } else {
@@ -1354,6 +2323,7 @@
     document.querySelectorAll(".tab-button").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.view === state.view);
     });
+    syncBgm();
     renderDom(true);
   }
 
@@ -1374,14 +2344,44 @@
     return false;
   }
 
+  function closestActionTarget(event) {
+    const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+    return target?.closest?.("[data-action]") || null;
+  }
+
   function handleBattleOverlayPointerDown(event) {
-    const button = event.target.closest("[data-action]");
+    const button = closestActionTarget(event);
     if (!button || button.disabled) return;
     const action = button.dataset.action || "";
     if (!runBattleOverlayAction(action)) return;
     button.dataset.pointerHandledAt = String(Date.now());
     event.preventDefault();
     event.stopPropagation();
+  }
+
+  function handleTitlePointerDown(event) {
+    const button = closestActionTarget(event);
+    if (!button || button.disabled) return;
+    const action = button.dataset.action || "";
+    if (action !== "title-start" && action !== "title-continue") return;
+    button.dataset.pointerHandledAt = String(Date.now());
+    if (action === "title-start") {
+      startFromTitle();
+    } else {
+      continueFromTitle();
+    }
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  function handleSaveSlotCloseEvent(event) {
+    const button = closestActionTarget(event);
+    if (!button || button.dataset.action !== "close-save-slots") return;
+    state.saveSlotPanelActive = false;
+    event.preventDefault();
+    event.stopPropagation();
+    if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
+    renderDom(true);
   }
 
   function handleActionClick(event) {
@@ -1403,7 +2403,7 @@
       return;
     }
 
-    const button = event.target.closest("[data-action]");
+    const button = closestActionTarget(event);
     const action = button?.dataset.action || "";
     if (button?.dataset.pointerHandledAt) {
       const handledAt = Number(button.dataset.pointerHandledAt) || 0;
@@ -1414,11 +2414,41 @@
       delete button.dataset.pointerHandledAt;
     }
 
+    if (action === "title-start") {
+      startFromTitle();
+      return;
+    }
+    if (action === "title-continue") {
+      continueFromTitle();
+      return;
+    }
+    if (action === "go-title") {
+      returnToTitle();
+      return;
+    }
+    if (action === "load-slot") {
+      const slotNumber = clamp(Math.floor(Number(button.dataset.slot) || 0), 1, SAVE_SLOT_COUNT);
+      loadSaveEntryFromPanel(SAVE_SLOT_KEYS[slotNumber - 1], `スロット${slotNumber}`);
+      return;
+    }
+    if (action === "load-auto-save") {
+      loadSaveEntryFromPanel(STORAGE_KEY, "オートセーブ");
+      return;
+    }
+    if (action === "close-save-slots") {
+      state.saveSlotPanelActive = false;
+      renderDom(true);
+      return;
+    }
+    if (state.titleActive) return;
+
     // 戦闘結果（リザルト）画面が表示されている場合、サイドパネル内のどこをクリックしても進むようにする
     if (state.view === "battle" && state.battle?.result && !state.battle.dialogue) {
       const result = state.battle.result;
       if (result.newGamePlus) {
         startNewGamePlus();
+      } else if (result.newGamePlusReset) {
+        resetNewGamePlusProgressAfterTrueFinal();
       } else if (action === "continue-map") {
         state.battle = null;
         setView("map");
@@ -1479,7 +2509,11 @@
       buyLogistics(button.dataset.item);
       renderDom(true);
     } else if (action === "save") {
-      saveGame();
+      state.saveSlotPanelActive = true;
+      state.mapDetailActive = false;
+      renderDom(true);
+    } else if (action === "save-slot") {
+      saveManualSlot(button.dataset.slot);
       renderDom(true);
     } else if (action === "close-roster-detail") {
       state.selectedAllyId = "";
@@ -1546,6 +2580,7 @@
   }
 
   function handleCanvasClick(event) {
+    if (state.titleActive) return;
     if (battlePointer.moved) {
       battlePointer.moved = false;
       return;
@@ -1592,6 +2627,10 @@
       const result = state.battle.result;
       if (result.newGamePlus) {
         startNewGamePlus();
+        return;
+      }
+      if (result.newGamePlusReset) {
+        resetNewGamePlusProgressAfterTrueFinal();
         return;
       }
       if (result.needsAllySelect) {
@@ -1772,6 +2811,7 @@
     ally.visualDirection = "front";
     setBattleMoveTarget(x, y);
     addLog(`${ally.name} が前線に出ました。`);
+    syncBgm();
     return ally;
   }
 
@@ -1803,6 +2843,7 @@
     setBattleMoveTarget(x, y);
     addParticle(x, y - 58, "CHANGE", "#55afd7", 0.75);
     addLog(`${next.name} に交代。`);
+    syncBgm();
   }
 
   function setBattleMoveTarget(x, y) {
@@ -1838,8 +2879,15 @@
     nudgeBattleMove((dx / mag) * speed * dt, (dy / mag) * speed * dt);
   }
 
+  function bossStageEnemyCount(stage) {
+    if (stage?.finalBoss) return 1;
+    if (stage?.bossAllyIds?.length) return stage.bossAllyIds.length;
+    if (stage?.secretBossAllyId) return 1;
+    return 0;
+  }
+
   function isSingleBossStage(stage) {
-    return !!(stage?.secretBossAllyId || stage?.finalBoss);
+    return bossStageEnemyCount(stage) > 0;
   }
 
   function createBattleDialogue(dialogueInput, defaultSpeaker, options = {}) {
@@ -1865,10 +2913,14 @@
     };
   }
 
-  function createStageBoss(stage) {
-    if (stage.finalBoss) return createFinalBoss(stage);
-    if (stage.secretBossAllyId) return createSecretBoss(stage);
-    return null;
+  function createStageBosses(stage) {
+    if (stage.trueFinalBoss) return [createTrueFinalBoss(stage)];
+    if (stage.finalBoss) return [createFinalBoss(stage)];
+    if (stage.bossAllyIds?.length) {
+      return stage.bossAllyIds.map((allyId, index) => createSecretBoss(stage, index, stage.bossAllyIds.length, allyId));
+    }
+    if (stage.secretBossAllyId) return [createSecretBoss(stage)];
+    return [];
   }
 
   function startBattle(stage, options = {}) {
@@ -1909,8 +2961,9 @@
       lead.homeY = leadY;
     }
 
-    const bossEnemy = createStageBoss(stage);
-    let maxWave = bossEnemy ? 1 : clamp(stage.rank + 2, 3, 5);
+    const bossEnemies = createStageBosses(stage);
+    const hasBossEnemies = bossEnemies.length > 0;
+    let maxWave = hasBossEnemies ? 1 : clamp(stage.rank + 2, 3, 5);
     let waveTarget = currentWaveTarget({ stage, wave: 1 });
     if (stage.id === "hehehe-kakusei") {
       maxWave = 1;
@@ -1926,11 +2979,12 @@
       wave: 1,
       maxWave,
       elapsed: 0,
-      spawnTimer: bossEnemy ? 999 : 0.2,
-      spawned: bossEnemy ? 1 : 0,
+      spawnTimer: hasBossEnemies ? 999 : 0.2,
+      spawned: hasBossEnemies ? bossEnemies.length : 0,
       killed: 0,
       waveTarget: waveTarget,
-      enemies: bossEnemy ? [bossEnemy] : [],
+      enemies: bossEnemies,
+      convertedEnemies: [],
       particles: [],
       projectiles: [],
       baseHp: 12500,
@@ -1947,6 +3001,7 @@
     addLog(`${stage.name} へ出撃しました。`);
     if (introDialogue) addLog(`${introDialogue.speaker}: ${introDialogue.text}`);
     setView("battle");
+    syncBgm();
   }
 
   function advanceBattleDialogue() {
@@ -1971,6 +3026,10 @@
     const releasePause = dialogue.releasePause;
     battle.dialogue = null;
     if (isSageRestart) {
+      if (isNewGamePlusActive()) {
+        restoreNewGamePlusStartState();
+        return;
+      }
       // 時間巻き戻しフェーズへ移行
       state.timeRewindPhase = true;
       state.pendingRestartStage = battle.stage;
@@ -2020,15 +3079,21 @@
         return;
       }
 
-      const reward = battle.stage.reward;
+      const reward = stageReward(battle.stage);
       state.resources.wfi += reward.wfi;
       state.resources.energy = Math.min(15000, state.resources.energy + reward.energy);
       state.resources.food += reward.food;
       state.clearedStages.add(battle.stage.id);
-      let joinedAlly = null;
+      const joinedAllies = [];
       let needsAllySelect = false;
-      if (battle.stage.unlockAllyId) {
-        joinedAlly = unlockAlly(battle.stage.unlockAllyId);
+      if (battle.stage.unlockAllyIds?.length) {
+        battle.stage.unlockAllyIds.forEach((allyId) => {
+          const unlocked = unlockAlly(allyId);
+          if (unlocked) joinedAllies.push(unlocked);
+        });
+      } else if (battle.stage.unlockAllyId) {
+        const unlocked = unlockAlly(battle.stage.unlockAllyId);
+        if (unlocked) joinedAllies.push(unlocked);
       } else if (!battle.stage.secret) {
         // 通常ステージクリア時、まだアンロックされていない隠しキャラ以外の通常キャラを自分で選べるようにする
         const lockedNormalAllies = state.allies.filter(
@@ -2041,30 +3106,36 @@
       if (!battle.stage.secret) {
         state.unlockedStageId = Math.max(state.unlockedStageId, clamp(battle.stage.id + 1, 1, STAGES.length));
       }
+      const finalBossName = battle.stage.finalBossName || battle.stage.name || "ラスボス";
+      const isTrueFinalBoss = !!battle.stage.trueFinalBoss;
       const resultTitle = battle.stage.finalBoss
         ? "クリア"
-        : (needsAllySelect ? "仲間選択" : (joinedAlly ? "仲間加入" : "勝利"));
+        : (needsAllySelect ? "仲間選択" : (joinedAllies.length ? "仲間加入" : "勝利"));
+      const joinedNames = joinedAllies.map((ally) => ally.name).join("・");
       const resultMessage = battle.stage.finalBoss
-        ? `ダークリーヴ２２を撃破。地球は守られました。WFI +${reward.wfi} / Energy +${reward.energy} / 食料 +${reward.food}`
-        : `WFI +${reward.wfi} / Energy +${reward.energy} / 食料 +${reward.food}${joinedAlly ? ` / ${joinedAlly.name} 加入` : (needsAllySelect ? " / 新たな仲間を選択可能になりました！" : "")}`;
+        ? `${finalBossName}を撃破。${isTrueFinalBoss ? "今度こそ全てが終わりました。" : "地球は守られました。"}WFI +${reward.wfi} / Energy +${reward.energy} / 食料 +${reward.food}`
+        : `WFI +${reward.wfi} / Energy +${reward.energy} / 食料 +${reward.food}${joinedNames ? ` / ${joinedNames} 加入` : (needsAllySelect ? " / 新たな仲間を選択可能になりました！" : "")}`;
+      const clearImage = battle.stage.finalBoss ? (battle.stage.clearImage || CLEAR_RESULT_IMAGE) : "";
       battle.result = {
         victory: true,
         title: resultTitle,
         message: resultMessage,
-        joinAlly: joinedAlly ? allyJoinProfile(joinedAlly) : null,
+        joinAlly: joinedAllies[0] ? allyJoinProfile(joinedAllies[0]) : null,
+        joinAllies: joinedAllies.map(allyJoinProfile),
         needsAllySelect: needsAllySelect,
-        newGamePlus: !!battle.stage.finalBoss,
+        newGamePlus: !!battle.stage.finalBoss && !isTrueFinalBoss,
+        newGamePlusReset: isTrueFinalBoss,
         clearScreen: !!battle.stage.finalBoss,
-        clearImage: battle.stage.finalBoss ? CLEAR_RESULT_IMAGE : "",
+        clearImage,
         tapped: false
       };
       if (battle.stage.finalBoss) {
-        loadImage(CLEAR_RESULT_IMAGE).then(() => renderDom(true));
+        loadImage(clearImage).then(() => renderDom(true));
       }
       if (battle.stage.clearDialogue) {
         battle.dialogue = createBattleDialogue(
           battle.stage.clearDialogue,
-          battle.stage.dialogueSpeaker || joinedAlly?.name || "LINE",
+          battle.stage.dialogueSpeaker || joinedAllies[0]?.name || "LINE",
           { finalButtonLabel: battle.stage.finalBoss ? "クリア画面へ" : "閉じる", releasePauseOnFinal: false }
         );
         addLog(`${battle.dialogue.speaker}: ${battle.dialogue.text}`);
@@ -2085,7 +3156,12 @@
 
       // 三賢人の時間巻き戻し演出を起動
       addLog(`${battle.stage.name} で全滅しました。`);
-      battle.result = { victory: false, title: "全滅", message: "三賢人が時間を巻き戻します...", sageRestart: true };
+      battle.result = {
+        victory: false,
+        title: "全滅",
+        message: isNewGamePlusActive() ? "資源・レベル・仲間を残して、2周目のステージ進行を巻き戻します..." : "三賢人が時間を巻き戻します...",
+        sageRestart: true
+      };
       battle.paused = true;
       battle.dialogue = {
         speaker: "三賢人",
@@ -2101,6 +3177,10 @@
     const ally = allyById(allyId);
     if (!ally || isAllyUnlocked(ally.id)) return null;
     state.unlockedAllyIds.add(ally.id);
+    if (POSTGAME_SAGE_ALLY_IDS.has(ally.id) && allyLevel(ally.id) < POSTGAME_SAGE_START_LEVEL) {
+      state.charLevels[ally.id] = POSTGAME_SAGE_START_LEVEL;
+    }
+    applyLevelToAlly(ally);
     ally.hp = ally.maxHp || ally.stats.hp;
     ally.skillGauge = 0;
     state.selectedAllyId = ally.id;
@@ -2126,7 +3206,8 @@
   }
 
   function currentWaveTarget(battle) {
-    if (isSingleBossStage(battle.stage)) return 1;
+    const bossCount = bossStageEnemyCount(battle.stage);
+    if (bossCount) return bossCount;
     const rank = battle.stage.rank;
     const base = 5 + rank * 1.5 + (battle.wave - 1) * 1.5;
     let target = Math.round(base * 1.2 + rank * 0.5 + battle.wave);
@@ -2168,6 +3249,55 @@
 
   function battleBounds() {
     return { minX: 34, maxX: 366, minY: 116, maxY: 468 };
+  }
+
+  function randomBattleValue(min, max) {
+    return min + Math.random() * (max - min);
+  }
+
+  function keepSpawnAwayFromAlly(point, battle, minDist = 82) {
+    const active = activeBattleAlly() || allyById(battle?.activeAllyId);
+    if (!active || !Number.isFinite(active.battleX) || !Number.isFinite(active.battleY)) return point;
+    const bounds = battleBounds();
+    const dx = point.x - active.battleX;
+    const dy = point.y - active.battleY;
+    const dist = Math.hypot(dx, dy);
+    if (dist >= minDist) return point;
+
+    const angle = dist > 0.01 ? Math.atan2(dy, dx) : randomBattleValue(0, Math.PI * 2);
+    return {
+      ...point,
+      x: clamp(active.battleX + Math.cos(angle) * minDist, bounds.minX + 10, bounds.maxX - 10),
+      y: clamp(active.battleY + Math.sin(angle) * minDist, bounds.minY + 16, bounds.maxY - 16)
+    };
+  }
+
+  function newGamePlusSpawnPoint(battle, spawnIndex, elite = false) {
+    const bounds = battleBounds();
+    const pattern = (battle.stage.rank * 3 + battle.wave * 5 + spawnIndex) % 8;
+    let point;
+    if (pattern === 0) {
+      point = { x: bounds.maxX - 8, y: randomBattleValue(bounds.minY + 18, bounds.maxY - 18), angle: 0, side: "right" };
+    } else if (pattern === 1) {
+      point = { x: bounds.minX + 8, y: randomBattleValue(bounds.minY + 18, bounds.maxY - 18), angle: Math.PI, side: "left" };
+    } else if (pattern === 2) {
+      point = { x: randomBattleValue(bounds.minX + 28, bounds.maxX - 28), y: bounds.minY + 12, angle: -Math.PI / 2, side: "top" };
+    } else if (pattern === 3) {
+      point = { x: randomBattleValue(bounds.minX + 28, bounds.maxX - 28), y: bounds.maxY - 10, angle: Math.PI / 2, side: "bottom" };
+    } else if (pattern === 4) {
+      const cornerX = Math.random() < 0.5 ? bounds.minX + 10 : bounds.maxX - 10;
+      const cornerY = Math.random() < 0.5 ? bounds.minY + 14 : bounds.maxY - 14;
+      point = { x: cornerX, y: cornerY, angle: Math.atan2(cornerY - (bounds.minY + bounds.maxY) / 2, cornerX - (bounds.minX + bounds.maxX) / 2), side: "corner" };
+    } else {
+      const angle = randomBattleValue(-Math.PI, Math.PI);
+      point = {
+        x: randomBattleValue(bounds.minX + 54, bounds.maxX - 36),
+        y: randomBattleValue(bounds.minY + 46, bounds.maxY - 34),
+        angle,
+        side: "ambush"
+      };
+    }
+    return keepSpawnAwayFromAlly(point, battle, elite ? 108 : 82);
   }
 
   function allyBattleBounds() {
@@ -2242,6 +3372,16 @@
       });
     }
 
+    (battle.convertedEnemies || []).forEach((unit) => {
+      if (unit.hp <= 0) return;
+      units.push({
+        unit,
+        team: "ally",
+        radius: 22,
+        weight: 0.9
+      });
+    });
+
     battle.enemies.forEach((enemy) => {
       if (enemy.hp <= 0) return;
       units.push({
@@ -2294,6 +3434,76 @@
     }
   }
 
+  function newGamePlusMotionType(seed, elite = false) {
+    const normalTypes = ["zigzag", "surge", "skitter", "phase"];
+    const eliteTypes = ["phase", "surge", "orbit", "zigzag"];
+    const pool = elite ? eliteTypes : normalTypes;
+    return pool[Math.abs(seed) % pool.length];
+  }
+
+  function newGamePlusEnemyLaserRange(enemy, baseRange, isRanged) {
+    if (!isNewGamePlusActive() || enemy.finalBoss || isRanged) return baseRange;
+    return Math.max(baseRange, enemy.elite ? 190 : 164);
+  }
+
+  function newGamePlusEnemyLaserMode(enemy, options = {}) {
+    if (!isNewGamePlusActive() || enemy.finalBoss) return null;
+    if (options.forceLaser) return "homing";
+    const roll = Math.random();
+    if (enemy.elite || enemy.type === "busho") return roll < 0.54 ? "enhanced" : "homing";
+    if (enemy.type === "rifleman") return roll < 0.52 ? "homing" : (roll < 0.82 ? "enhanced" : null);
+    if (enemy.type === "archer") return roll < 0.44 ? "homing" : (roll < 0.62 ? "enhanced" : null);
+    if (roll < 0.3) return "homing";
+    if (roll < 0.42) return "enhanced";
+    return null;
+  }
+
+  function performNewGamePlusEnemyLaser(enemy, target, damage, mode) {
+    const enhanced = mode === "enhanced";
+    const homing = mode === "homing";
+    const color = enhanced ? "#ff3df2" : "#45f7ff";
+    const core = enhanced ? "#fff1ff" : "#f2ffff";
+    const label = enhanced ? "強化レーザー" : "追尾レーザー";
+    const damageMult = enhanced ? 1.42 : 1.08;
+    addParticle(enemy.battleX, enemy.battleY - 58, label, color, 0.72);
+    addEnemyProjectile(enemy, target, Math.round(damage * damageMult), {
+      beam: true,
+      color,
+      core,
+      size: enhanced ? 21 : 15,
+      trail: enhanced ? 12 : 10,
+      arc: 0,
+      durationScale: enhanced ? 0.88 : 1.78,
+      lineWidth: enhanced ? 8.8 : 5.2,
+      hitRadius: enhanced ? 34 : 20,
+      hitColor: color,
+      homing,
+      homingStrength: homing ? 2.65 : 0,
+      enhanced,
+      startOffsetX: enemy.battleX > target.battleX ? -18 : 18,
+      startOffsetY: enhanced ? -54 : -46
+    });
+  }
+
+  function applyEnemyLoopModifiers(enemy, battle, spawnIndex = 0) {
+    if (!isNewGamePlusActive()) return enemy;
+    const power = enemyPowerMultiplier();
+    const speedMult = enemy.finalBoss ? 1.28 : (enemy.elite ? 1.38 : 1.62);
+    enemy.maxHp = Math.round(enemy.maxHp * power);
+    enemy.hp = enemy.maxHp;
+    enemy.attack = Math.round(enemy.attack * power);
+    enemy.speed = Math.round(enemy.speed * speedMult);
+    enemy.attackTimer = Math.max(0.24, (enemy.attackTimer || 1) * 0.68);
+    enemy.loopPowerMult = power;
+    enemy.loopSpeedMult = speedMult;
+    enemy.loopAttackIntervalMult = 0.72;
+    enemy.loopMotion = newGamePlusMotionType((battle.stage.rank * 7 + spawnIndex) | 0, enemy.elite);
+    enemy.motionSeed = Math.random() * Math.PI * 2;
+    enemy.motionPhase = 0;
+    enemy.phaseCooldown = 0.7 + Math.random() * 1.1;
+    return enemy;
+  }
+
   function createEnemy(battle, spawnIndex = battle.spawned) {
     const rank = battle.stage.rank;
     const wave = battle.wave;
@@ -2328,10 +3538,15 @@
     const laneCount = 9;
     const lane = spawnIndex % laneCount;
     const laneStep = (bounds.maxY - bounds.minY) / (laneCount - 1);
-    const y = clamp(bounds.minY + lane * laneStep + (Math.random() - 0.5) * 20, bounds.minY + 12, bounds.maxY - 12);
-    const spawnX = clamp(bounds.maxX - 20 + Math.random() * 24 - (spawnIndex % 3) * 10, bounds.minX + 24, bounds.maxX - 4);
+    const loopSpawn = isNewGamePlusActive() ? newGamePlusSpawnPoint(battle, spawnIndex, elite) : null;
+    const y = loopSpawn
+      ? loopSpawn.y
+      : clamp(bounds.minY + lane * laneStep + (Math.random() - 0.5) * 20, bounds.minY + 12, bounds.maxY - 12);
+    const spawnX = loopSpawn
+      ? loopSpawn.x
+      : clamp(bounds.maxX - 20 + Math.random() * 24 - (spawnIndex % 3) * 10, bounds.minX + 24, bounds.maxX - 4);
     const laneOffset = (lane - Math.floor(laneCount / 2)) * 9 + (Math.random() - 0.5) * 10;
-    return {
+    const enemy = {
       id: `enemy-${Date.now()}-${Math.random()}`,
       type,
       spriteKey: type,
@@ -2343,6 +3558,8 @@
       battleX: spawnX,
       battleY: y,
       laneOffset,
+      approachAngle: loopSpawn ? loopSpawn.angle + (Math.random() - 0.5) * 0.46 : 0,
+      spawnSide: loopSpawn?.side || "right",
       maxHp: elite ? baseHp * 3.7 : baseHp * 1.24,
       hp: elite ? baseHp * 3.7 : baseHp * 1.24,
       attack: baseAttack,
@@ -2351,23 +3568,26 @@
       status: {},
       elite
     };
+    return applyEnemyLoopModifiers(enemy, battle, spawnIndex);
   }
 
-  function createSecretBoss(stage) {
+  function createSecretBoss(stage, bossIndex = 0, bossTotal = 1, bossAllyId = stage.secretBossAllyId) {
     const bounds = battleBounds();
-    const x = clamp(334, bounds.minX + 28, bounds.maxX - 12);
-    const y = clamp(302, bounds.minY + 32, bounds.maxY - 28);
-    const maxHp = 5400 + stage.rank * 620;
-    const bossAlly = allyById(stage.secretBossAllyId);
+    const spreadY = bossTotal > 1 ? (bossIndex - (bossTotal - 1) / 2) * 104 : 0;
+    const spreadX = bossTotal > 1 ? bossIndex * 24 : 0;
+    const x = clamp(322 + spreadX, bounds.minX + 28, bounds.maxX - 12);
+    const y = clamp(302 + spreadY, bounds.minY + 32, bounds.maxY - 28);
+    const maxHp = (5400 + stage.rank * 620) * (bossTotal > 1 ? 0.86 : 1);
+    const bossAlly = allyById(bossAllyId);
     const meleeOnly = bossAlly && !usesProjectileAttack(bossAlly);
-    return {
-      id: `${stage.id}-boss`,
+    const enemy = {
+      id: `${stage.id}-boss-${bossAllyId || bossIndex}`,
       type: meleeOnly ? "ashigaru" : "busho",
       spriteKey: meleeOnly ? "ashigaru" : "busho",
       spriteIndex: STAGE_ENEMY_SLOT_COUNT - 1,
-      allyBossId: stage.secretBossAllyId,
+      allyBossId: bossAllyId,
       meleeOnly,
-      engageSlot: 7,
+      engageSlot: 6 + bossIndex * 2,
       x,
       y,
       battleX: x,
@@ -2381,6 +3601,7 @@
       status: {},
       elite: true
     };
+    return applyEnemyLoopModifiers(enemy, { stage }, 99);
   }
 
   function createFinalBoss(stage) {
@@ -2388,7 +3609,7 @@
     const x = clamp(300, bounds.minX + 40, bounds.maxX - 34);
     const y = clamp(324, bounds.minY + 72, bounds.maxY - 28);
     const maxHp = 36000;
-    return {
+    const enemy = {
       id: `${stage.id}-boss`,
       type: "busho",
       spriteKey: "darkrive22",
@@ -2411,9 +3632,48 @@
       status: {},
       elite: true
     };
+    return applyEnemyLoopModifiers(enemy, { stage }, 199);
+  }
+
+  function createTrueFinalBoss(stage) {
+    const bounds = battleBounds();
+    const x = clamp(318, bounds.minX + 54, bounds.maxX - 26);
+    const y = clamp(326, bounds.minY + 82, bounds.maxY - 26);
+    const maxHp = 52000;
+    const enemy = {
+      id: `${stage.id}-boss`,
+      type: "busho",
+      spriteKey: "dark_tsukineko",
+      spriteIndex: STAGE_ENEMY_SLOT_COUNT - 1,
+      bossFrames: stage.enemyFrames || tsukinekoBossFramePaths(),
+      finalBoss: true,
+      trueFinalBoss: true,
+      finalBossName: "ダークツキネコ",
+      finalBossPhase: 1,
+      drawBox: { w: 128, h: 154 },
+      engageSlot: 7,
+      x,
+      y,
+      battleX: x,
+      battleY: y,
+      laneOffset: 0,
+      maxHp,
+      hp: maxHp,
+      attack: 310,
+      speed: 12,
+      attackTimer: 0.74,
+      warpTimer: 2.4,
+      specialTimer: 3.1,
+      anim: "idle",
+      animUntil: 0,
+      status: {},
+      elite: true
+    };
+    return applyEnemyLoopModifiers(enemy, { stage }, 222);
   }
 
   function finalBossAttackProfile(enemy) {
+    if (enemy.trueFinalBoss) return darkTsukinekoAttackProfile(enemy);
     const ratio = enemy.maxHp ? enemy.hp / enemy.maxHp : 1;
     if (ratio <= 0.25) {
       return {
@@ -2471,19 +3731,246 @@
     };
   }
 
-  function updateFinalBossPhase(enemy) {
+  function darkTsukinekoAttackProfile(enemy) {
+    const ratio = enemy.maxHp ? enemy.hp / enemy.maxHp : 1;
+    if (ratio <= 0.25) {
+      return {
+        phase: 4,
+        label: "終焉の黒炎",
+        color: "#ff3df2",
+        attackMult: 1.28,
+        interval: 0.39,
+        range: 380,
+        speed: 28,
+        shots: 7,
+        pulseDamage: 0,
+        pulseRadius: 0,
+        warpInterval: 0.86,
+        warpDamage: 95,
+        specialInterval: 1.22,
+        specialDamage: 185,
+        specialShots: 10
+      };
+    }
+    if (ratio <= 0.5) {
+      return {
+        phase: 3,
+        label: "魂喰らいの右腕",
+        color: "#b857ff",
+        attackMult: 1.18,
+        interval: 0.5,
+        range: 360,
+        speed: 23,
+        shots: 5,
+        pulseDamage: 0,
+        pulseRadius: 0,
+        warpInterval: 1.12,
+        warpDamage: 70,
+        specialInterval: 1.55,
+        specialDamage: 145,
+        specialShots: 8
+      };
+    }
+    if (ratio <= 0.75) {
+      return {
+        phase: 2,
+        label: "混沌の鎖",
+        color: "#7d5cff",
+        attackMult: 1.08,
+        interval: 0.62,
+        range: 342,
+        speed: 18,
+        shots: 4,
+        pulseDamage: 0,
+        pulseRadius: 0,
+        warpInterval: 1.62,
+        warpDamage: 42,
+        specialInterval: 2.12,
+        specialDamage: 105,
+        specialShots: 6
+      };
+    }
+    return {
+      phase: 1,
+      label: "漆黒の炎",
+      color: "#8d37ff",
+      attackMult: 1,
+      interval: 0.76,
+      range: 326,
+      speed: 13,
+      shots: 2,
+      pulseDamage: 0,
+      pulseRadius: 0,
+      warpInterval: 2.45,
+      warpDamage: 0,
+      specialInterval: 3.35,
+      specialDamage: 0,
+      specialShots: 0
+    };
+  }
+
+  function updateFinalBossPhase(enemy, dt = 0, target = null) {
     const profile = finalBossAttackProfile(enemy);
     if (enemy.finalBossPhase !== profile.phase) {
       enemy.finalBossPhase = profile.phase;
       enemy.attackTimer = Math.min(enemy.attackTimer || profile.interval, 0.28);
-      addLog(`ダークリーヴ２２の攻撃が変化: ${profile.label}`);
+      addLog(`${enemy.finalBossName || "ダークリーヴ２２"}の攻撃が変化: ${profile.label}`);
       addParticle(enemy.battleX, enemy.battleY - 120, profile.label, profile.color, 1.1);
     }
-    enemy.speed = profile.speed;
+    enemy.speed = profile.speed * (enemy.loopSpeedMult || 1);
+    if (enemy.trueFinalBoss) {
+      updateDarkTsukinekoSpecials(enemy, profile, dt, target);
+      updateDarkTsukinekoOrbit(enemy, profile, dt, target);
+    }
     return profile;
   }
 
+  function updateDarkTsukinekoSpecials(enemy, profile, dt, target) {
+    const battle = state.battle;
+    if (!battle || !target) return;
+    enemy.warpTimer = (enemy.warpTimer || profile.warpInterval) - dt;
+    enemy.specialTimer = (enemy.specialTimer || profile.specialInterval) - dt;
+
+    if (enemy.warpTimer <= 0) {
+      performDarkTsukinekoWarp(enemy, profile, target);
+      enemy.warpTimer = Math.max(0.68, profile.warpInterval * (0.82 + Math.random() * 0.22));
+    }
+    if (profile.phase >= 2 && enemy.specialTimer <= 0) {
+      performDarkTsukinekoSpecial(enemy, profile);
+      enemy.specialTimer = Math.max(0.86, profile.specialInterval * (0.78 + Math.random() * 0.24));
+    }
+  }
+
+  function fieldedAlliesForEnemy(enemy) {
+    if (enemy?.trueFinalBoss) {
+      const active = activeBattleAlly();
+      return active && active.hp > 0 ? [active] : [];
+    }
+    return playableAllies().filter((ally) => ally.hp > 0);
+  }
+
+  function updateDarkTsukinekoOrbit(enemy, profile, dt, target) {
+    if (!target || dt <= 0) return;
+    const bounds = battleBounds();
+    if (!Number.isFinite(enemy.orbitDirection)) {
+      enemy.orbitDirection = Math.random() < 0.5 ? -1 : 1;
+    }
+    if (!Number.isFinite(enemy.orbitAngle)) {
+      enemy.orbitAngle = Math.atan2(enemy.battleY - target.battleY, enemy.battleX - target.battleX);
+    }
+    const elapsed = state.battle?.elapsed || 0;
+    enemy.orbitAngle += dt * enemy.orbitDirection * (0.42 + profile.phase * 0.11);
+    const radius = 136 + profile.phase * 18 + Math.sin(elapsed * 1.55) * 22;
+    const desiredX = clamp(target.battleX + Math.cos(enemy.orbitAngle) * radius, bounds.minX + 36, bounds.maxX - 24);
+    const desiredY = clamp(target.battleY + Math.sin(enemy.orbitAngle) * radius * 0.72, bounds.minY + 54, bounds.maxY - 24);
+    moveToward(enemy, desiredX, desiredY, enemy.speed * 0.52, dt);
+    enemy.x = enemy.battleX;
+    enemy.y = enemy.battleY;
+  }
+
+  function performDarkTsukinekoShotPattern(enemy, target, baseDamage, profile) {
+    const bounds = battleBounds();
+    const shots = profile.shots || 1;
+    const spread = profile.phase >= 4 ? 28 : 34;
+    const damage = Math.max(1, Math.round(baseDamage * (profile.phase >= 4 ? 0.38 : 0.44)));
+    for (let index = 0; index < shots; index += 1) {
+      const spreadIndex = index - (shots - 1) / 2;
+      const drift = Math.sin((state.battle?.elapsed || 0) * 2.1 + index) * 16;
+      const endX = clamp(target.battleX + spreadIndex * spread + drift, bounds.minX + 22, bounds.maxX - 22);
+      const endY = clamp(target.battleY - 34 + (index % 2 ? 42 : -18) + Math.cos(index * 1.7) * 12, bounds.minY + 24, bounds.maxY - 26);
+      addParticle(endX, endY - 12, "!", profile.color, 0.36);
+      addEnemyProjectile(enemy, target, damage, {
+        targetOffsetX: endX - target.battleX,
+        targetOffsetY: endY - (target.battleY - 34),
+        delay: 0.12 + index * 0.055,
+        color: profile.color,
+        core: profile.phase >= 3 ? "#fff1ff" : "#e8dcff",
+        size: profile.phase >= 3 ? 14 : 12,
+        trail: profile.phase >= 3 ? 9 : 7,
+        beam: profile.phase >= 3 || index % 3 === 0,
+        arc: 0,
+        durationScale: profile.phase >= 4 ? 1.52 : 1.68,
+        maxDuration: 1.12,
+        hitRadius: profile.phase >= 4 ? 21 : 18,
+        hitColor: profile.color,
+        startOffsetX: enemy.battleX > target.battleX ? -28 : 28,
+        startOffsetY: -76
+      });
+    }
+  }
+
+  function performDarkTsukinekoWarp(enemy, profile, target) {
+    const bounds = battleBounds();
+    addParticle(enemy.battleX, enemy.battleY - 78, "闇転移", profile.color, 0.7);
+    const angle = Math.random() * Math.PI * 2;
+    const radius = 132 + Math.random() * (profile.phase >= 3 ? 96 : 68);
+    const x = clamp(target.battleX + Math.cos(angle) * radius, bounds.minX + 42, bounds.maxX - 24);
+    const y = clamp(target.battleY + Math.sin(angle) * radius, bounds.minY + 52, bounds.maxY - 24);
+    enemy.battleX = x;
+    enemy.battleY = y;
+    enemy.x = x;
+    enemy.y = y;
+    enemy.anim = profile.phase >= 3 ? "skill" : "walk";
+    enemy.animUntil = (state.battle?.elapsed || 0) + 0.45;
+    addParticle(x, y - 86, profile.phase >= 3 ? "黒炎転移" : "WARP", profile.color, 0.82);
+
+    if (profile.warpDamage > 0) {
+      fieldedAlliesForEnemy(enemy).forEach((ally) => {
+        if (ally.hp <= 0) return;
+        const dist = Math.hypot(ally.battleX - x, ally.battleY - y);
+        if (dist > 64 + profile.phase * 8) return;
+        const damage = Math.round(profile.warpDamage * (enemy.loopPowerMult || 1));
+        if (damageAlly(ally, damage, enemy)) {
+          addParticle(ally.battleX, ally.battleY - 56, damage, profile.color, 0.68);
+        }
+      });
+    }
+  }
+
+  function performDarkTsukinekoSpecial(enemy, profile) {
+    const target = targetAlly(enemy);
+    if (!target) return;
+    const bounds = battleBounds();
+    enemy.anim = "skill";
+    enemy.animUntil = (state.battle?.elapsed || 0) + 0.9;
+    addParticle(enemy.battleX, enemy.battleY - 112, profile.label, profile.color, 0.92);
+    const shots = profile.specialShots || 0;
+    const damage = Math.max(1, Math.round(profile.specialDamage * (enemy.loopPowerMult || 1) * 0.24));
+    for (let index = 0; index < shots; index += 1) {
+      const angle = (Math.PI * 2 * index) / Math.max(1, shots) + (state.battle?.elapsed || 0) * 0.7;
+      const radius = 54 + (index % 3) * 32 + profile.phase * 6;
+      const endX = clamp(target.battleX + Math.cos(angle) * radius, bounds.minX + 22, bounds.maxX - 22);
+      const endY = clamp(target.battleY - 34 + Math.sin(angle) * radius, bounds.minY + 24, bounds.maxY - 26);
+      addParticle(endX, endY - 12, "黒炎", profile.color, 0.42);
+      addEnemyProjectile(enemy, target, damage, {
+        targetOffsetX: endX - target.battleX,
+        targetOffsetY: endY - (target.battleY - 34),
+        delay: 0.2 + index * 0.065,
+        color: profile.color,
+        core: "#fff1ff",
+        size: profile.phase >= 4 ? 16 : 14,
+        trail: profile.phase >= 4 ? 11 : 9,
+        beam: index % 2 === 0 || profile.phase >= 4,
+        arc: 0,
+        durationScale: profile.phase >= 4 ? 1.42 : 1.58,
+        maxDuration: 1.12,
+        hitRadius: profile.phase >= 4 ? 22 : 19,
+        hitColor: profile.color,
+        startOffsetX: enemy.battleX > target.battleX ? -34 : 34,
+        startOffsetY: -92
+      });
+    }
+  }
+
   function performFinalBossAttack(enemy, target, baseDamage, profile) {
+    if (enemy.bossFrames) {
+      enemy.anim = profile.phase >= 3 ? "skill" : "attack";
+      enemy.animUntil = (state.battle?.elapsed || 0) + (profile.phase >= 3 ? 0.82 : 0.56);
+    }
+    if (enemy.trueFinalBoss) {
+      performDarkTsukinekoShotPattern(enemy, target, baseDamage, profile);
+      return;
+    }
     const offsets = {
       1: [0],
       2: [-28, 28],
@@ -2513,8 +4000,9 @@
         const dist = Math.hypot(ally.battleX - enemy.battleX, ally.battleY - enemy.battleY);
         if (dist > profile.pulseRadius) return;
         const pulseDamage = Math.round(profile.pulseDamage * (profile.phase >= 4 ? 1.15 : 1));
-        damageAlly(ally, pulseDamage);
-        addParticle(ally.battleX, ally.battleY - 58, pulseDamage, profile.color, 0.72);
+        if (damageAlly(ally, pulseDamage, enemy)) {
+          addParticle(ally.battleX, ally.battleY - 58, pulseDamage, profile.color, 0.72);
+        }
       });
       addParticle(enemy.battleX, enemy.battleY - 84, "DARK PULSE", profile.color, 0.75);
     }
@@ -2543,6 +4031,7 @@
     }
 
     updateAllies(dt);
+    updateTrustedEnemies(dt);
     updateEnemies(dt);
     resolveBattleCrowding();
     updateProjectiles(dt);
@@ -2552,8 +4041,9 @@
     battle.enemies = battle.enemies.filter((enemy) => {
       if (enemy.hp > 0) return true;
       battle.killed += 1;
-      state.resources.wfi += enemy.elite ? 25 : 6;
-      addParticle(enemy.x, enemy.y - 26, enemy.elite ? "+25 WFI" : "+6", "#f4c75e", 1);
+      const gainedWfi = enemyWfiReward(enemy);
+      state.resources.wfi += gainedWfi;
+      addParticle(enemy.x, enemy.y - 26, `+${gainedWfi} WFI`, "#f4c75e", 1);
       return false;
     });
 
@@ -2580,6 +4070,9 @@
     playableAllies().forEach((ally) => {
       Object.keys(ally.cooldowns).forEach((skillId) => {
         ally.cooldowns[skillId] = Math.max(0, ally.cooldowns[skillId] - dt);
+      });
+      Object.keys(ally.buffs || {}).forEach((buffId) => {
+        ally.buffs[buffId] = Math.max(0, ally.buffs[buffId] - dt);
       });
     });
 
@@ -2677,7 +4170,7 @@
 
   function performAllyAttack(ally, target) {
     const battle = state.battle;
-    const mult = levelMultiplier(allyLevel(ally.id));
+    const mult = allyLevelMultiplier(ally);
     let baseDamage = (ally.stats.attack * mult) * 0.62;
     if (ally.buffs.attack > 0) baseDamage *= 1.22;
     if (ally.id === "okuribito_chan") {
@@ -2710,20 +4203,121 @@
     ally.attackTimer = Math.max(0.32, 1.04 - ally.stats.speed / 180);
   }
 
+  function updateTrustedEnemies(dt) {
+    const battle = state.battle;
+    if (!battle || !battle.convertedEnemies?.length) return;
+
+    battle.convertedEnemies.forEach((unit) => {
+      if (unit.hp <= 0) return;
+      unit.battleX = Number.isFinite(unit.battleX) ? unit.battleX : unit.x;
+      unit.battleY = Number.isFinite(unit.battleY) ? unit.battleY : unit.y;
+      unit.x = unit.battleX;
+      unit.y = unit.battleY;
+      unit.attackTimer = Math.max(0, (unit.attackTimer || 0) - dt);
+
+      const target = nearestHostileForTrusted(unit);
+      if (!target) return;
+
+      const range = trustedEnemyAttackRange(unit);
+      const dist = Math.hypot(unit.battleX - target.battleX, unit.battleY - target.battleY);
+      if (dist <= range) {
+        if (unit.attackTimer <= 0) {
+          performTrustedEnemyAttack(unit, target);
+          unit.attackTimer = Math.max(0.42, 1.18 - (unit.speed || 18) / 120);
+        }
+      } else {
+        const desiredX = clamp(target.battleX - range * 0.58, battleBounds().minX + 20, battleBounds().maxX - 14);
+        const desiredY = clamp(target.battleY + (unit.laneOffset || 0) * 0.45, battleBounds().minY + 18, battleBounds().maxY - 18);
+        const moving = moveToward(unit, desiredX, desiredY, unit.speed * 1.08, dt);
+        if (moving) {
+          unit.x = unit.battleX;
+          unit.y = unit.battleY;
+        }
+      }
+    });
+
+    battle.convertedEnemies = battle.convertedEnemies.filter((unit) => unit.hp > 0);
+  }
+
+  function nearestHostileForTrusted(unit) {
+    const battle = state.battle;
+    if (!battle || !battle.enemies.length) return null;
+    return battle.enemies.reduce((best, enemy) => {
+      const dist = Math.hypot(battleUnitX(enemy) - unit.battleX, battleUnitY(enemy) - unit.battleY);
+      const bestDist = Math.hypot(battleUnitX(best) - unit.battleX, battleUnitY(best) - unit.battleY);
+      return dist < bestDist ? enemy : best;
+    }, battle.enemies[0]);
+  }
+
+  function trustedEnemyAttackRange(unit) {
+    if (unit.type === "busho") return 260;
+    if (unit.type === "rifleman") return 230;
+    if (unit.type === "archer") return 190;
+    return 82;
+  }
+
+  function performTrustedEnemyAttack(unit, target) {
+    const damage = Math.max(16, Math.round((unit.attack || 40) * 0.62));
+    target.hp -= damage;
+    addParticle(target.battleX, target.battleY - 28, damage, "#72e9c4", 0.72);
+    addParticle(unit.battleX, unit.battleY - 48, "信用援護", "#72e9c4", 0.58);
+  }
+
+  function enemyLoopMotion(enemy, battle, target, dt, dist, enemyRange) {
+    const neutral = { speedMult: 1, offsetX: 0, offsetY: 0 };
+    if (!isNewGamePlusActive() || !enemy.loopMotion) return neutral;
+
+    enemy.motionPhase = (enemy.motionPhase || 0) + dt * (enemy.motionTempo || 1);
+    const t = enemy.motionPhase + (enemy.motionSeed || 0);
+    const motion = { ...neutral };
+
+    if (enemy.loopMotion === "zigzag") {
+      motion.speedMult = 1.18;
+      motion.offsetY = Math.sin(t * 5.2) * 30;
+    } else if (enemy.loopMotion === "surge") {
+      const surge = Math.sin(t * 4.4) > 0.45;
+      motion.speedMult = surge ? 2.35 : 0.78;
+      motion.offsetY = Math.cos(t * 3.1) * 16;
+    } else if (enemy.loopMotion === "skitter") {
+      motion.speedMult = 1.52 + Math.max(0, Math.sin(t * 7.4)) * 0.58;
+      motion.offsetX = Math.sin(t * 6.6) * 18;
+      motion.offsetY = Math.cos(t * 8.1) * 20;
+    } else if (enemy.loopMotion === "orbit") {
+      motion.speedMult = 1.34;
+      motion.offsetX = Math.sin(t * 3.6) * 30;
+      motion.offsetY = Math.cos(t * 3.2) * 40;
+    } else if (enemy.loopMotion === "phase") {
+      motion.speedMult = 1.22;
+      enemy.phaseCooldown = (enemy.phaseCooldown || 0) - dt;
+      if (target && enemy.phaseCooldown <= 0 && dist > enemyRange * 0.72) {
+        const bounds = battleBounds();
+        enemy.battleX = clamp(enemy.battleX - 20 - Math.random() * 36, bounds.minX + 18, bounds.maxX - 10);
+        enemy.battleY = clamp(enemy.battleY + (Math.random() - 0.5) * 74, bounds.minY + 18, bounds.maxY - 18);
+        enemy.x = enemy.battleX;
+        enemy.y = enemy.battleY;
+        enemy.phaseCooldown = 1.2 + Math.random() * 1.3;
+        addParticle(enemy.battleX, enemy.battleY - 42, "PHASE", "#c084fc", 0.65);
+      }
+    }
+
+    return motion;
+  }
+
   function updateEnemies(dt) {
     const battle = state.battle;
     for (const enemy of battle.enemies) {
       tickStatus(enemy, dt);
-      if (enemy.status.sleep > 0 || enemy.status.stun > 0 || enemy.status.lock > 0) continue;
+      if (!enemy.trueFinalBoss && (enemy.status.sleep > 0 || enemy.status.stun > 0 || enemy.status.lock > 0)) continue;
 
       enemy.battleX = Number.isFinite(enemy.battleX) ? enemy.battleX : enemy.x;
       enemy.battleY = Number.isFinite(enemy.battleY) ? enemy.battleY : enemy.y;
       const target = targetAlly(enemy);
-      const finalBossProfile = enemy.finalBoss ? updateFinalBossPhase(enemy) : null;
+      const finalBossProfile = enemy.finalBoss ? updateFinalBossPhase(enemy, dt, target) : null;
       const isRanged = !enemy.meleeOnly && (enemy.type === "archer" || enemy.type === "rifleman" || enemy.type === "busho");
-      const enemyRange = finalBossProfile
+      const baseEnemyRange = finalBossProfile
         ? finalBossProfile.range
         : (isRanged ? (enemy.type === "busho" ? 320 : enemy.type === "rifleman" ? 280 : 220) : (enemy.elite ? 120 : 100));
+      const enemyRange = finalBossProfile ? baseEnemyRange : newGamePlusEnemyLaserRange(enemy, baseEnemyRange, isRanged);
       const dist = target ? Math.hypot(enemy.battleX - target.battleX, enemy.battleY - target.battleY) : 999;
       if (target && dist <= enemyRange) {
         enemy.attackTimer -= dt;
@@ -2733,35 +4327,51 @@
           const enemyDmg = Math.round(enemy.attack * triMult * (finalBossProfile?.attackMult || 1));
           if (finalBossProfile) {
             performFinalBossAttack(enemy, target, enemyDmg, finalBossProfile);
-          } else if (isRanged) {
-            // 遠距離攻撃の場合は、即座にダメージを与えず弾オブジェクト生成時にダメージ量を渡す
-            addEnemyProjectile(enemy, target, enemyDmg);
           } else {
-            // 近接攻撃の場合は即座にダメージを適用
-            damageAlly(target, enemyDmg);
-            addParticle(target.battleX, target.battleY - 52, enemyDmg, "#ff6b4b", 0.65);
-            target.skillGauge = clamp((target.skillGauge || 0) + 5, 0, 100);
+            const laserMode = newGamePlusEnemyLaserMode(enemy, { forceLaser: !isRanged && dist > baseEnemyRange });
+            if (laserMode) {
+              performNewGamePlusEnemyLaser(enemy, target, enemyDmg, laserMode);
+            } else if (isRanged) {
+              // 遠距離攻撃の場合は、即座にダメージを与えず弾オブジェクト生成時にダメージ量を渡す
+              addEnemyProjectile(enemy, target, enemyDmg);
+            } else {
+              // 近接攻撃の場合は即座にダメージを適用
+              if (damageAlly(target, enemyDmg, enemy)) {
+                addParticle(target.battleX, target.battleY - 52, enemyDmg, "#ff6b4b", 0.65);
+                target.skillGauge = clamp((target.skillGauge || 0) + 5, 0, 100);
+              }
+            }
           }
-          enemy.attackTimer = finalBossProfile ? finalBossProfile.interval : (enemy.elite ? 0.9 : 1.35);
+          const baseInterval = finalBossProfile ? finalBossProfile.interval : (enemy.elite ? 0.9 : 1.35);
+          enemy.attackTimer = Math.max(0.18, baseInterval * (enemy.loopAttackIntervalMult || 1));
         }
       } else {
-        const speed = enemy.speed * (enemy.status.slow > 0 ? 0.45 : 1);
+        const motion = enemyLoopMotion(enemy, battle, target, dt, dist, enemyRange);
+        const speed = enemy.speed * (enemy.status.slow > 0 ? 0.45 : 1) * motion.speedMult;
         if (target) {
           const slot = enemy.engageSlot || 0;
           const slotColumn = Math.floor(slot / 7);
           const slotRow = (slot % 7) - 3;
-          const desiredX = target.battleX + enemyRange * 0.62 + slotColumn * 28 + (slot % 2 ? 8 : -6);
-          const desiredY = clamp(target.battleY + slotRow * 22 + (enemy.laneOffset || 0) * 0.35, battleBounds().minY + 16, battleBounds().maxY - 16);
+          let desiredX = target.battleX + enemyRange * 0.62 + slotColumn * 28 + (slot % 2 ? 8 : -6) + motion.offsetX;
+          let desiredY = target.battleY + slotRow * 22 + (enemy.laneOffset || 0) * 0.35 + motion.offsetY;
+          if (isNewGamePlusActive() && Number.isFinite(enemy.approachAngle)) {
+            const surroundRadius = enemyRange * (enemy.elite ? 0.72 : 0.58) + slotColumn * 26;
+            desiredX = target.battleX + Math.cos(enemy.approachAngle) * surroundRadius + (slot % 2 ? 10 : -10) + motion.offsetX;
+            desiredY = target.battleY + Math.sin(enemy.approachAngle) * surroundRadius + slotRow * 18 + motion.offsetY;
+          }
+          desiredX = clamp(desiredX, battleBounds().minX + 16, battleBounds().maxX - 12);
+          desiredY = clamp(desiredY, battleBounds().minY + 16, battleBounds().maxY - 16);
           moveToward(enemy, desiredX, desiredY, speed, dt);
         } else {
           enemy.battleX -= speed * dt;
+          enemy.battleY += motion.offsetY * dt * 0.6;
         }
         const bounds = battleBounds();
         enemy.battleX = clamp(enemy.battleX, bounds.minX, bounds.maxX);
         enemy.battleY = clamp(enemy.battleY, bounds.minY, bounds.maxY);
         enemy.x = enemy.battleX;
         enemy.y = enemy.battleY;
-        if (enemy.x <= bounds.minX + 0.5) {
+        if (!isNewGamePlusActive() && enemy.x <= bounds.minX + 0.5) {
           battle.baseHp -= enemy.attack * dt * 0.5;
         }
       }
@@ -2777,7 +4387,21 @@
     }
   }
 
-  function damageAlly(ally, amount) {
+  function reflectEnemyAttack(ally, sourceEnemy, amount) {
+    const reflectTime = Number(ally?.buffs?.reflect) || 0;
+    if (reflectTime <= 0) return false;
+    if (!sourceEnemy || sourceEnemy.hp <= 0) return false;
+    const reflected = Math.max(1, Math.round(amount));
+    sourceEnemy.hp -= reflected;
+    addParticle(ally.battleX, ally.battleY - 62, "反射", "#78f7ff", 0.72);
+    addParticle(sourceEnemy.x || sourceEnemy.battleX, (sourceEnemy.y || sourceEnemy.battleY) - 34, reflected, "#78f7ff", 0.78);
+    return true;
+  }
+
+  function damageAlly(ally, amount, sourceEnemy = null) {
+    if (reflectEnemyAttack(ally, sourceEnemy, amount)) {
+      return false;
+    }
     if (ally.shield > 0) {
       const used = Math.min(ally.shield, amount);
       ally.shield -= used;
@@ -2787,6 +4411,7 @@
     if (ally.hp <= 0) {
       addLog(`${ally.name} が戦闘不能。`);
     }
+    return true;
   }
 
   function targetAlly(enemy) {
@@ -2795,6 +4420,10 @@
   }
 
   function enemyProjectileHitCandidates(projectile) {
+    if (projectile.trueFinalBoss) {
+      const active = activeBattleAlly();
+      return active && active.hp > 0 ? [active] : [];
+    }
     if (projectile.finalBoss) {
       return playableAllies().filter((ally) => ally.hp > 0);
     }
@@ -2839,6 +4468,7 @@
     }
 
     ally.skillGauge = 0;
+    playHeheheSkillVoice(ally);
     ally.cooldowns[skill.id] = 0;
     const target = nearestEnemy(ally.battleX, ally.battleY);
     if (target) {
@@ -2872,7 +4502,7 @@
       if (effect.type === "damage") {
         const damageTargets = targets.slice(0, effect.area === "all_enemies" ? targets.length : Math.max(1, Math.min(targets.length, 5)));
         damageTargets.forEach((enemy) => {
-          const mult = levelMultiplier(allyLevel(ally.id));
+          const mult = allyLevelMultiplier(ally);
           // ダメージを2倍に補正
           const damage = effect.power * (1 + (ally.stats.attack * mult) / 1500) * skillMult;
           enemy.hp -= damage;
@@ -2897,6 +4527,11 @@
             addParticle(enemy.x, enemy.y - 46, statusLabel(effect.statusId), statusColor(effect.statusId), 0.9);
           }
         });
+      } else if (effect.type === "trust_convert") {
+        const result = convertEnemiesByTrust(targets, ally, effect, skillMult);
+        if (result.blocked > 0 && result.converted === 0) {
+          addLog("ボス級の敵には信用が通じません。");
+        }
       } else if (effect.type === "debuff") {
         targets.forEach((enemy) => {
           // デバフの付与時間を2倍に補正
@@ -2931,6 +4566,15 @@
           // シールド耐久値を2倍に補正
           const shieldPower = effect.power * skillMult;
           target.shield = Math.max(target.shield, shieldPower);
+        });
+      } else if (effect.type === "reflect") {
+        const reflectTargets = effect.target === "self"
+          ? [ally]
+          : playableAllies().filter((item) => item.hp > 0);
+        reflectTargets.filter(Boolean).forEach((target) => {
+          const duration = effect.durationSec || 2;
+          target.buffs.reflect = Math.max(target.buffs.reflect || 0, duration);
+          addParticle(target.battleX, target.battleY - 62, "反射 2s", "#78f7ff", 0.9);
         });
       } else if (effect.type === "buff") {
         if (effect.stat === "attack" && effect.target === "self") {
@@ -2970,10 +4614,70 @@
     drawSkillImageBurst(skill, ally, targets);
   }
 
+  function canTrustConvertEnemy(enemy) {
+    if (!enemy || enemy.hp <= 0) return false;
+    if (enemy.finalBoss || enemy.trueFinalBoss || enemy.allyBossId || enemy.bossFrames || enemy.asset) return false;
+    return !enemy.elite;
+  }
+
+  function convertEnemiesByTrust(targets, ally, effect, skillMult) {
+    const battle = state.battle;
+    if (!battle) return { converted: 0, blocked: 0 };
+
+    const convertedIds = new Set();
+    let blocked = 0;
+    const duration = (effect.durationSec || 999) * skillMult;
+
+    targets.forEach((enemy) => {
+      if (!enemy || !battle.enemies.includes(enemy)) return;
+      if (!canTrustConvertEnemy(enemy)) {
+        blocked += 1;
+        addParticle(enemy.x, enemy.y - 48, "信用無効", "#9aa3ad", 0.82);
+        return;
+      }
+      if (Math.random() > (effect.chance ?? 1)) {
+        enemy.status.trust = Math.max(enemy.status.trust || 0, duration);
+        addParticle(enemy.x, enemy.y - 48, statusLabel("trust"), statusColor("trust"), 0.82);
+        return;
+      }
+
+      convertedIds.add(enemy.id);
+      battle.convertedEnemies = battle.convertedEnemies || [];
+      battle.convertedEnemies.push(createTrustedEnemyAlly(enemy, ally, duration));
+      addParticle(enemy.x, enemy.y - 52, "信用", statusColor("trust"), 1.0);
+    });
+
+    if (convertedIds.size > 0) {
+      battle.enemies = battle.enemies.filter((enemy) => !convertedIds.has(enemy.id));
+      addLog(`${ally.name} の信用で雑魚敵${convertedIds.size}体が味方になりました。`);
+    }
+
+    return { converted: convertedIds.size, blocked };
+  }
+
+  function createTrustedEnemyAlly(enemy, ally, duration) {
+    const trustedMaxHp = Math.max(80, Math.round(enemy.maxHp * 0.55));
+    return {
+      ...enemy,
+      id: `trusted-${enemy.id}`,
+      originalEnemyId: enemy.id,
+      trustedBy: ally.id,
+      convertedAlly: true,
+      maxHp: trustedMaxHp,
+      hp: clamp(Math.round(enemy.hp), 1, trustedMaxHp),
+      attack: Math.max(22, Math.round(enemy.attack * 0.72)),
+      speed: Math.max(22, Math.round(enemy.speed * 1.08)),
+      attackTimer: 0.22 + Math.random() * 0.34,
+      status: { trust: duration },
+      elite: false
+    };
+  }
+
   function selectSkillTargets(skill, ally) {
     const battle = state.battle;
     if (!battle) return [];
     const enemies = battle.enemies.slice().sort((a, b) => Math.hypot(a.x - ally.battleX, a.y - ally.battleY) - Math.hypot(b.x - ally.battleX, b.y - ally.battleY));
+    if (skill.target === "enemy_nearest") return enemies.slice(0, 1);
     if (skill.target === "enemy_all" || skill.target === "enemy_all_ally_team") return enemies;
     if (skill.target === "enemy_area_ally_team") return enemies.slice(0, 6);
     if (skill.target === "enemy_line") return enemies.filter((enemy) => Math.abs(enemy.y - ally.battleY) < 110).slice(0, 5);
@@ -3002,7 +4706,8 @@
       lock: "ロック",
       pressure: "圧力",
       slow: "鈍化",
-      flee: "逃走"
+      flee: "逃走",
+      trust: "信用"
     }[statusId] || statusId;
   }
 
@@ -3015,7 +4720,8 @@
       lock: "#ff8bd4",
       pressure: "#ff755c",
       slow: "#87d0ff",
-      flee: "#ffb36c"
+      flee: "#ffb36c",
+      trust: "#72e9c4"
     }[statusId] || "#ffffff";
   }
 
@@ -3162,7 +4868,7 @@
     const endX = target.battleX + (options.targetOffsetX || 0);
     const endY = target.battleY - 34 + (options.targetOffsetY || 0);
     const dist = Math.hypot(endX - startX, endY - startY);
-    const duration = clamp(0.32 * clamp(dist / 110, 0.82, 1.28), 0.18, 0.68);
+    const duration = clamp(0.32 * (options.durationScale || 1) * clamp(dist / 110, 0.82, 1.28), 0.18, options.maxDuration || 0.86);
 
     battle.projectiles.push({
       x1: startX,
@@ -3176,13 +4882,21 @@
       core,
       size,
       trail,
-      lineWidth: size * 0.42,
+      lineWidth: options.lineWidth || size * 0.42,
       beam,
-      spin: 0.12,
+      spin: options.spin ?? 0.12,
       imagePath: null,
       kind: "enemy_attack",
       damage,
       finalBoss: !!enemy.finalBoss,
+      trueFinalBoss: !!enemy.trueFinalBoss,
+      sourceEnemyId: enemy.id,
+      targetAllyId: target.id,
+      homing: !!options.homing,
+      homingStrength: options.homingStrength || 0,
+      enhanced: !!options.enhanced,
+      hitRadius: options.hitRadius || 24,
+      hitColor: options.hitColor || "#ff6b4b",
       hasHit: false
     });
   }
@@ -3231,13 +4945,23 @@
 
       // 敵の遠距離攻撃弾であり、まだヒットしていない場合
       if (projectile.kind === "enemy_attack" && !projectile.hasHit && projectile.age >= 0) {
+        if (projectile.homing) {
+          const target = playableAllies().find((ally) => ally.id === projectile.targetAllyId && ally.hp > 0) || activeBattleAlly();
+          if (target && target.hp > 0) {
+            const desiredX = target.battleX;
+            const desiredY = target.battleY - 34;
+            const lock = clamp((projectile.homingStrength || 2.65) * dt, 0, 0.1);
+            projectile.x2 = lerp(projectile.x2, desiredX, lock);
+            projectile.y2 = lerp(projectile.y2, desiredY, lock);
+          }
+        }
         // 弾の現在の進捗割合
         const t = clamp(projectile.age / projectile.duration, 0, 1);
         const p = projectilePoint(projectile, t);
 
         // 通常ステージでは画面上の前線キャラだけを判定し、控えには被弾させない。
         // ラスボス弾だけは全体攻撃演出として従来通り全員判定にする。
-        const hitRadius = 24;
+        const hitRadius = projectile.hitRadius || 24;
         for (const ally of enemyProjectileHitCandidates(projectile)) {
           const allyCenterX = ally.battleX;
           const allyCenterY = ally.battleY - 34; // キャラの腰・胸あたりの高さ
@@ -3245,9 +4969,11 @@
           const dist = Math.hypot(p.x - allyCenterX, p.y - allyCenterY);
           if (dist <= hitRadius) {
             // 当たり判定成功、ダメージとエフェクトを適用
-            damageAlly(ally, projectile.damage);
-            addParticle(ally.battleX, ally.battleY - 52, projectile.damage, "#ff6b4b", 0.65);
-            ally.skillGauge = clamp((ally.skillGauge || 0) + 5, 0, 100);
+            const sourceEnemy = battle.enemies.find((enemy) => enemy.id === projectile.sourceEnemyId) || null;
+            if (damageAlly(ally, projectile.damage, sourceEnemy)) {
+              addParticle(ally.battleX, ally.battleY - 52, projectile.damage, projectile.hitColor || "#ff6b4b", 0.65);
+              ally.skillGauge = clamp((ally.skillGauge || 0) + 5, 0, 100);
+            }
 
             projectile.hasHit = true;
             // ヒットしたら弾の寿命を終了させて即座に消滅させる
@@ -3308,7 +5034,8 @@
     const dt = Math.min(0.05, (time - (state.lastTime || time)) / 1000);
     state.lastTime = time;
 
-    if (state.view === "battle") updateBattle(dt);
+    if (!state.titleActive && state.view === "battle") updateBattle(dt);
+    syncBgm();
     renderCanvas();
 
     if (time - state.domTime > 250) {
@@ -3528,7 +5255,7 @@
       ctx.strokeRect(x - hw, y - hh, w, h);
 
       // キャラスプライト
-      drawSprite(ally.assets.defaultSprite, x, y + hh - 22, w - 6, h - 30, 1);
+      drawSprite(menuSpriteForAlly(ally), x, y + hh - 22, w - 6, h - 30, 1);
 
       // 名前
       ctx.fillStyle = isSelected ? "#ffe2a1" : "#f5edd7";
@@ -3893,12 +5620,15 @@
     const active = activeBattleAlly();
     const entries = [
       ...(active ? [{ kind: "ally", ally: active, index: allies.indexOf(active), y: battleUnitY(active) }] : []),
+      ...(battle.convertedEnemies || []).map((unit) => ({ kind: "trusted", unit, y: battleUnitY(unit) })),
       ...battle.enemies.map((enemy) => ({ kind: "enemy", enemy, y: battleUnitY(enemy) }))
     ];
 
     entries.sort((a, b) => a.y - b.y).forEach((entry) => {
       if (entry.kind === "enemy") {
         drawEnemyUnit(entry.enemy);
+      } else if (entry.kind === "trusted") {
+        drawTrustedEnemyUnit(entry.unit);
       } else {
         drawAllyUnit(entry.ally, entry.index, positions, compact, spriteW, spriteH, nameplateW);
       }
@@ -3963,6 +5693,20 @@
       ctx.beginPath();
       ctx.moveTo(x + lunge * 0.5, y - 34);
       ctx.quadraticCurveTo((x + ally.attackTargetX) / 2, Math.min(y, ally.attackTargetY) - 58, ally.attackTargetX, ally.attackTargetY - 24);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    if (ally.buffs?.reflect > 0) {
+      const aura = 0.55 + Math.sin(elapsed * 9) * 0.18;
+      ctx.save();
+      ctx.globalAlpha = aura;
+      ctx.strokeStyle = "#78f7ff";
+      ctx.lineWidth = 2.4;
+      ctx.shadowColor = "#78f7ff";
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.ellipse(x, y - (compact ? 34 : 40), compact ? 28 : 34, compact ? 36 : 43, 0, 0, Math.PI * 2);
       ctx.stroke();
       ctx.restore();
     }
@@ -4055,6 +5799,9 @@
           frame.includes("bakunikisheet_46") || frame.includes("bakunikisheet_34")) {
         nativeFacing = 1;
       }
+    }
+    if (ally.id === "masarusan" && frame && /masarusansheet_(13|14|15|16|17|18)\.png/.test(frame)) {
+      nativeFacing = -1;
     }
     // 普通のへへへへへの歩行・攻撃・スキルフレームの向き基準を調整
     if (ally.id === "hehehehehe" && !state.heheheheheAwakened && frame) {
@@ -4249,6 +5996,16 @@
     const scale = enemy.elite ? 1.32 : 1.1;
     const box = enemyDrawBox(enemy);
     const spriteHeight = box.h * scale;
+    if (enemy.loopMotion) {
+      ctx.save();
+      const pulse = 0.5 + Math.sin((state.battle?.elapsed || 0) * 6 + (enemy.motionSeed || 0)) * 0.22;
+      ctx.strokeStyle = `rgba(192, 132, 252, ${pulse})`;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.ellipse(enemy.x, enemy.y - spriteHeight * 0.52, 18 * scale, 26 * scale, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
     drawEnemySprite(enemy, scale);
     drawMeter(enemy.x - 20 * scale, enemy.y - spriteHeight - 7 * scale, 40 * scale, 5, enemy.hp / enemy.maxHp, "#d9513b");
 
@@ -4259,6 +6016,32 @@
       ctx.textAlign = "center";
       ctx.fillText(statusLabel(activeStatus), enemy.x, enemy.y - spriteHeight - 13 * scale);
     }
+  }
+
+  function drawTrustedEnemyUnit(unit) {
+    const scale = 1.04;
+    const box = enemyDrawBox(unit);
+    const spriteHeight = box.h * scale;
+
+    ctx.save();
+    const pulse = 0.5 + Math.sin((state.battle?.elapsed || 0) * 6 + (unit.spriteSeed || 0)) * 0.22;
+    ctx.strokeStyle = `rgba(114, 233, 196, ${0.52 + pulse * 0.28})`;
+    ctx.fillStyle = "rgba(114, 233, 196, 0.16)";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(unit.x, unit.y + 7, 22 * scale, 7 * scale, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.stroke();
+    ctx.shadowColor = "rgba(114, 233, 196, 0.5)";
+    ctx.shadowBlur = 10;
+    drawEnemySprite(unit, scale);
+    ctx.restore();
+
+    drawMeter(unit.x - 20 * scale, unit.y - spriteHeight - 7 * scale, 40 * scale, 5, unit.hp / unit.maxHp, "#72e9c4");
+    ctx.fillStyle = statusColor("trust");
+    ctx.font = "700 11px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(statusLabel("trust"), unit.x, unit.y - spriteHeight - 13 * scale);
   }
 
   function isVisibleEnemyPixel(data, index) {
@@ -4431,6 +6214,17 @@
     };
   }
 
+  function frameForBossEnemy(enemy) {
+    const elapsed = state.battle?.elapsed || 0;
+    const animName = elapsed < (enemy.animUntil || 0) ? (enemy.anim || "idle") : "idle";
+    const frames = enemy.bossFrames?.[animName]?.length
+      ? enemy.bossFrames[animName]
+      : (enemy.bossFrames?.idle || []);
+    if (!frames.length) return "";
+    const fps = animName === "skill" ? 9 : animName === "attack" ? 12 : 7;
+    return frames[Math.floor(elapsed * fps) % frames.length] || frames[0];
+  }
+
   function drawEnemySprite(enemy, scale) {
     const bossAlly = enemyBossAlly(enemy);
     if (bossAlly) {
@@ -4438,6 +6232,23 @@
       const elapsed = state.battle?.elapsed || 0;
       const frame = frameForAlly(bossAlly, elapsed) || bossAlly.assets.defaultSprite;
       drawCharacterSprite(frame, enemy.x, enemy.y, box.w * scale, box.h * scale, 1, { flip: true });
+      return;
+    }
+
+    if (enemy.bossFrames) {
+      const frame = frameForBossEnemy(enemy);
+      const box = enemyDrawBox(enemy);
+      ctx.save();
+      if (enemy.trueFinalBoss) {
+        ctx.shadowColor = enemy.finalBossPhase >= 4 ? "rgba(255, 61, 242, 0.78)" : "rgba(130, 72, 255, 0.58)";
+        ctx.shadowBlur = enemy.finalBossPhase >= 3 ? 24 : 14;
+      }
+      drawCharacterSprite(frame, enemy.x, enemy.y, box.w * scale, box.h * scale, 1, {
+        flip: true,
+        preserveAspect: true,
+        anchorXRatio: 0.5
+      });
+      ctx.restore();
       return;
     }
 
@@ -4542,7 +6353,7 @@
       ctx.lineCap = "round";
       ctx.lineJoin = "round";
       ctx.shadowColor = projectile.color;
-      ctx.shadowBlur = projectile.beam ? 16 : 11;
+      ctx.shadowBlur = projectile.enhanced ? 28 : (projectile.homing ? 20 : (projectile.beam ? 16 : 11));
 
       for (let i = trailCount; i >= 1; i -= 1) {
         const t2 = clamp(eased - i * 0.028, 0, 1);
@@ -4561,9 +6372,18 @@
       }
 
       if (projectile.beam) {
-        ctx.globalAlpha = alpha * 0.34;
+        if (projectile.enhanced) {
+          ctx.globalAlpha = alpha * 0.2;
+          ctx.strokeStyle = projectile.color;
+          ctx.lineWidth = projectile.lineWidth + 9;
+          ctx.beginPath();
+          ctx.moveTo(projectile.x1, projectile.y1);
+          ctx.lineTo(head.x, head.y);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = alpha * (projectile.enhanced ? 0.46 : 0.34);
         ctx.strokeStyle = projectile.color;
-        ctx.lineWidth = projectile.lineWidth + 2;
+        ctx.lineWidth = projectile.lineWidth + (projectile.enhanced ? 4 : 2);
         ctx.beginPath();
         ctx.moveTo(projectile.x1, projectile.y1);
         ctx.lineTo(head.x, head.y);
@@ -4574,6 +6394,15 @@
         ctx.beginPath();
         ctx.moveTo(projectile.x1, projectile.y1);
         ctx.lineTo(head.x, head.y);
+        ctx.stroke();
+      }
+
+      if (projectile.homing) {
+        ctx.globalAlpha = alpha * 0.72;
+        ctx.strokeStyle = projectile.core;
+        ctx.lineWidth = 1.6;
+        ctx.beginPath();
+        ctx.arc(head.x, head.y, 10 + Math.sin(t * Math.PI) * 5, 0, Math.PI * 2);
         ctx.stroke();
       }
 
@@ -4688,7 +6517,11 @@
     if (!result.tapped) {
       // 画面が一度もタップされていない場合は画像のみを全画面表示
       if (img) {
-        drawCropCover(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 420, 560);
+        if (result.newGamePlusReset) {
+          drawContain(img, 0, 0, 420, 560, "#020308");
+        } else {
+          drawCropCover(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 420, 560);
+        }
       } else {
         ctx.fillStyle = "rgba(4, 5, 5, 0.88)";
         ctx.fillRect(0, 0, 420, 560);
@@ -4715,7 +6548,11 @@
     ctx.fillStyle = "#101a1d";
     ctx.fillRect(artX, artY, artW, artH);
     if (img) {
-      drawCropCover(img, 0, 0, img.naturalWidth, img.naturalHeight, artX, artY, artW, artH);
+      if (result.newGamePlusReset) {
+        drawContain(img, artX, artY, artW, artH, "#101a1d");
+      } else {
+        drawCropCover(img, 0, 0, img.naturalWidth, img.naturalHeight, artX, artY, artW, artH);
+      }
     } else {
       const gradient = ctx.createLinearGradient(artX, artY, artX + artW, artY + artH);
       gradient.addColorStop(0, "rgba(85, 175, 215, 0.22)");
@@ -4885,6 +6722,20 @@
     ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
   }
 
+  function drawContain(img, x, y, w, h, fillStyle = "") {
+    if (fillStyle) {
+      ctx.fillStyle = fillStyle;
+      ctx.fillRect(x, y, w, h);
+    }
+    const scale = Math.min(w / img.naturalWidth, h / img.naturalHeight);
+    const drawW = img.naturalWidth * scale;
+    const drawH = img.naturalHeight * scale;
+    ctx.save();
+    ctx.imageSmoothingEnabled = true;
+    ctx.drawImage(img, x + (w - drawW) / 2, y + (h - drawH) / 2, drawW, drawH);
+    ctx.restore();
+  }
+
   function drawCropCover(img, sx, sy, sw, sh, x, y, w, h) {
     const scale = Math.max(w / sw, h / sh);
     const sourceW = w / scale;
@@ -5010,15 +6861,35 @@
   function renderDom(force) {
     if (!state.ready) return;
 
+    renderClearResultFullscreen();
+    renderTitleScreen();
+
     document.body.classList.toggle(
       "roster-detail-active",
-      state.view === "roster" && !!state.selectedAllyId && !state.showJoinCardAlly
+      state.view === "roster" && !!state.selectedAllyId && !state.showJoinCardAlly && !state.saveSlotPanelActive
     );
 
     document.body.classList.toggle(
       "map-detail-active",
-      state.view === "map" && !!state.mapDetailActive
+      state.view === "map" && !!state.mapDetailActive && !state.saveSlotPanelActive
     );
+    document.body.classList.toggle("save-slot-active", !!state.saveSlotPanelActive);
+
+    if (state.titleActive) {
+      resourceBar.innerHTML = "";
+      resourceBar.dataset.signature = "";
+      rosterRail.innerHTML = "";
+      quickActions.innerHTML = "";
+      quickActions.dataset.signature = "";
+      sidePanel.innerHTML = "";
+      battleOverlayControls.hidden = true;
+      if (mapHotspots) { mapHotspots.innerHTML = ""; mapHotspots.hidden = true; }
+      document.body.classList.remove("is-battle-view");
+      viewTitle.textContent = "";
+      battleClock.textContent = "";
+      chapterLabel.textContent = "";
+      return;
+    }
 
     // 加入オーバーレイ表示中
     if (state.showJoinCardAlly) {
@@ -5077,16 +6948,20 @@
     renderMapHotspots();
     document.body.classList.toggle("is-battle-view", state.view === "battle" && !!state.battle);
 
-    if (force || state.view === "battle") {
-      if (state.view === "map") renderMapPanel();
-      if (state.view === "battle") renderBattlePanel();
-      if (state.view === "roster") renderRosterPanel();
-      if (state.view === "logistics") renderLogisticsPanel();
+    if (force || state.view === "battle" || state.saveSlotPanelActive) {
+      if (state.saveSlotPanelActive) {
+        renderSaveSlotsPanel();
+      } else {
+        if (state.view === "map") renderMapPanel();
+        if (state.view === "battle") renderBattlePanel();
+        if (state.view === "roster") renderRosterPanel();
+        if (state.view === "logistics") renderLogisticsPanel();
+      }
     }
 
     viewTitle.textContent = titleForView();
     battleClock.textContent = state.view === "battle" && state.battle ? `${Math.floor(state.battle.elapsed)}s` : "";
-    chapterLabel.textContent = `全${STAGES.length}ステージ選択可`;
+    chapterLabel.textContent = `全${STAGES.length}ステージ選択可${isNewGamePlusActive() ? " / 2周目" : ""}`;
   }
 
   function titleForView() {
@@ -5094,6 +6969,68 @@
     if (state.view === "battle") return state.battle ? state.battle.stage.name : "戦闘準備";
     if (state.view === "roster") return "部隊";
     return "兵站";
+  }
+
+  function renderClearResultFullscreen() {
+    if (!clearResultOverlay) return;
+    const result = state.view === "battle" && state.battle ? state.battle.result : null;
+    const shouldShow = !!(result?.clearScreen && result.newGamePlusReset && result.clearImage && !state.battle?.dialogue);
+    document.body.classList.toggle("is-clear-result-view", shouldShow);
+
+    if (!shouldShow) {
+      clearResultOverlay.hidden = true;
+      clearResultOverlay.innerHTML = "";
+      clearResultOverlay.dataset.signature = "";
+      return;
+    }
+
+    const signature = `${result.clearImage}|${result.title}|${result.message}`;
+    if (!clearResultOverlay.hidden && clearResultOverlay.dataset.signature === signature) return;
+
+    clearResultOverlay.dataset.signature = signature;
+    clearResultOverlay.hidden = false;
+    clearResultOverlay.innerHTML = `
+      <img src="${escapeHtml(result.clearImage)}" alt="${escapeHtml(result.title)}">
+    `;
+  }
+
+  function renderTitleScreen() {
+    if (!titleScreen) return;
+    document.body.classList.toggle("is-title-view", state.titleActive);
+    titleScreen.hidden = !state.titleActive;
+    if (!state.titleActive) return;
+
+    const startButton = titleScreen.querySelector("[data-action='title-start']");
+    const continueButton = titleScreen.querySelector("[data-action='title-continue']");
+    if (startButton && !startButton.dataset.directTitleAction) {
+      startButton.dataset.directTitleAction = "1";
+      startButton.addEventListener("click", handleActionClick);
+      startButton.addEventListener("pointerdown", handleTitlePointerDown);
+    }
+    if (continueButton) {
+      if (!continueButton.dataset.directTitleAction) {
+        continueButton.dataset.directTitleAction = "1";
+        continueButton.addEventListener("click", handleActionClick);
+        continueButton.addEventListener("pointerdown", handleTitlePointerDown);
+      }
+      continueButton.disabled = !titleContinueAvailable();
+    }
+
+    const titleMenu = titleScreen.querySelector(".title-menu");
+    let savePanel = titleScreen.querySelector(".title-save-slot-panel");
+    if (!state.saveSlotPanelActive) {
+      if (titleMenu) titleMenu.hidden = false;
+      if (savePanel) savePanel.remove();
+      return;
+    }
+
+    if (titleMenu) titleMenu.hidden = true;
+    if (!savePanel) {
+      savePanel = document.createElement("div");
+      savePanel.className = "title-save-slot-panel";
+      titleScreen.appendChild(savePanel);
+    }
+    savePanel.innerHTML = renderSaveSlotsContent({ allowSave: false, includeLog: false });
   }
 
   function renderResourceBar() {
@@ -5139,7 +7076,7 @@
         <button class="ally-card${selected}${down}${ready}" data-ally-id="${ally.id}">
           <strong>${escapeHtml(ally.name)}</strong>
           <span>Lv.${allyLevel(ally.id)} ${escapeHtml(skillById(ally.primarySkillId)?.name || "")}</span>
-          <img src="${ally.assets.portrait || ally.assets.defaultSprite}" alt="">
+          <img src="${escapeHtml(rosterPortraitForAlly(ally))}" alt="">
           <span class="skill-charge" style="--value:${Math.max(0, Math.min(100, gaugeRatio * 100))}%"><i></i></span>
           <span class="bar" style="--value:${Math.max(0, hpRatio * 100)}%"><i></i></span>
         </button>
@@ -5166,8 +7103,8 @@
       quickActions.innerHTML = `
         <button class="action-button primary" data-action="start-battle" ${cleared ? "disabled" : ""}>${cleared ? "制圧済み" : "出撃"}</button>
         <button class="action-button" data-action="next-stage" ${state.selectedStageId >= STAGES.length ? "disabled" : ""}>次のステージ</button>
-        <button class="action-button" data-action="save">保存</button>
-        <button class="action-button" data-action="reset">最初から(データ初期化)</button>
+        <button class="action-button" data-action="save">セーブ/ロード</button>
+        <button class="action-button" data-action="go-title">タイトルへ</button>
       `;
     } else if (state.view === "battle") {
       quickActions.innerHTML = "";
@@ -5176,15 +7113,112 @@
       const cleared = isStageCleared(stage);
       quickActions.innerHTML = `
         <button class="action-button primary" data-action="start-battle" ${cleared ? "disabled" : ""}>${cleared ? "制圧済み" : "選択中へ出撃"}</button>
-        <button class="action-button" data-action="save">保存</button>
-        <button class="action-button" data-action="reset">最初から(データ初期化)</button>
+        <button class="action-button" data-action="save">セーブ/ロード</button>
+        <button class="action-button" data-action="go-title">タイトルへ</button>
       `;
     } else {
       quickActions.innerHTML = `
-        <button class="action-button" data-action="save">保存</button>
-        <button class="action-button" data-action="reset">最初から(データ初期化)</button>
+        <button class="action-button" data-action="save">セーブ/ロード</button>
+        <button class="action-button" data-action="go-title">タイトルへ</button>
       `;
     }
+  }
+
+  function saveDataTimeLabel(payload) {
+    const savedAt = Number(payload?.savedAt);
+    if (!Number.isFinite(savedAt) || savedAt <= 0) return "日時なし";
+    return new Date(savedAt).toLocaleString("ja-JP", {
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  }
+
+  function saveDataStageLabel(payload) {
+    if (!payload?.openingDone) return "序章";
+    if (!payload?.charSelectDone) return "戦士選択";
+    const candidates = [KAKUSEI_STAGE, ...SECRET_STAGES, ...STAGES].filter(Boolean);
+    const stage = candidates.find((item) => String(item.id) === String(payload.selectedStageId));
+    return stage ? stage.name : "ステージ未選択";
+  }
+
+  function renderSaveSlotBody(payload, emptyText) {
+    if (!payload) {
+      return `
+        <div>
+          <span>${escapeHtml(emptyText)}</span>
+        </div>
+        <small>保存可</small>
+      `;
+    }
+    const resources = payload.resources || {};
+    const clearedCount = Array.isArray(payload.clearedStages) ? payload.clearedStages.length : 0;
+    const allyCount = Array.isArray(payload.unlockedAllyIds) ? payload.unlockedAllyIds.length : 0;
+    const resourceText = `WFI ${formatNum(Number(resources.wfi) || 0)} / Energy ${formatNum(Number(resources.energy) || 0)} / 食料 ${formatNum(Number(resources.food) || 0)}`;
+    const lapText = payload.newGamePlusActive ? "2周目" : "1周目";
+    const awakeText = payload.heheheheheAwakened ? " / へへへ覚醒" : "";
+    return `
+      <div>
+        <span>${escapeHtml(saveDataStageLabel(payload))} / 制圧 ${clearedCount} / 仲間 ${allyCount}</span>
+        <span>${escapeHtml(resourceText)}</span>
+      </div>
+      <small>${escapeHtml(saveDataTimeLabel(payload))}<br><em>${escapeHtml(lapText + awakeText)}</em></small>
+    `;
+  }
+
+  function renderSaveSlotsContent(options = {}) {
+    const allowSave = options.allowSave !== false;
+    const includeLog = options.includeLog !== false;
+    const autoSave = readSaveEntry(STORAGE_KEY);
+    const slotCards = SAVE_SLOT_KEYS.map((key, index) => {
+      const slot = index + 1;
+      const payload = readSaveEntry(key);
+      const actionButtons = [
+        allowSave ? `<button class="save-slot-action save" data-action="save-slot" data-slot="${slot}">セーブ</button>` : "",
+        payload ? `<button class="save-slot-action load" data-action="load-slot" data-slot="${slot}">ロード</button>` : ""
+      ].filter(Boolean).join("");
+      const emptyClass = !payload && !allowSave ? " is-empty" : "";
+      return `
+        <div class="save-slot-card${emptyClass}">
+          <div>
+            <strong>スロット${slot}</strong>
+            ${renderSaveSlotBody(payload, "空きスロット")}
+          </div>
+          <div class="save-slot-actions">
+            ${actionButtons || `<em>空き</em>`}
+          </div>
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <div class="panel-title">
+        <div>
+          <h2>セーブ/ロード</h2>
+          <p>${allowSave ? "保存先、またはロードするデータを選択してください。" : "ロードするデータを選択してください。"}</p>
+        </div>
+        <button class="action-button save-slot-title-close" data-action="close-save-slots">戻る</button>
+      </div>
+      <div class="save-slot-list">
+        <div class="save-slot-card is-auto${autoSave ? "" : " is-empty"}">
+          <div>
+            <strong>オートセーブ</strong>
+            ${renderSaveSlotBody(autoSave, "オートセーブなし")}
+          </div>
+          <div class="save-slot-actions">
+            ${autoSave ? `<button class="save-slot-action load" data-action="load-auto-save">ロード</button>` : `<em>自動</em>`}
+          </div>
+        </div>
+        ${slotCards}
+      </div>
+      <button class="action-button primary save-slot-bottom-close" data-action="close-save-slots">戻る</button>
+      ${includeLog ? renderLog() : ""}
+    `;
+  }
+
+  function renderSaveSlotsPanel() {
+    sidePanel.innerHTML = renderSaveSlotsContent({ allowSave: true, includeLog: true });
   }
 
   // キャラ選択フェーズの決定ボタンをDOMで提供
@@ -5210,7 +7244,7 @@
   function renderBattleOverlayControls() {
     if (!battleOverlayControls) return;
     const battle = state.battle;
-    if (state.view !== "battle" || !battle || battle.dialogue) {
+    if (state.view !== "battle" || !battle || battle.dialogue || battle.result) {
       battleOverlayControls.hidden = true;
       battleOverlayControls.innerHTML = "";
       battleOverlayControls.dataset.signature = "";
@@ -5244,23 +7278,27 @@
 
   function renderMapPanel() {
     const stage = selectedStage();
+    const reward = stageReward(stage);
     sidePanel.innerHTML = `
       <div class="panel-title">
         <div>
           <h2>${stage.id}. ${escapeHtml(stage.name)}</h2>
-          <p>${escapeHtml(stage.region)} / ${escapeHtml(stage.difficulty)}</p>
+          <p>${escapeHtml(stage.region)} / ${escapeHtml(stage.difficulty)}${isNewGamePlusActive() ? " / 2周目" : ""}</p>
         </div>
         <span class="badge">選択可</span>
       </div>
       <div class="stat-grid">
-        <div class="stat"><span>推奨戦力</span><strong>${formatNum(stage.power)}</strong></div>
+        <div class="stat"><span>推奨戦力</span><strong>${formatNum(effectiveStagePower(stage))}</strong></div>
         <div class="stat"><span>攻略状況</span><strong>${isStageCleared(stage) ? "制圧済み" : "未制圧"}</strong></div>
-        <div class="stat"><span>報酬 WFI</span><strong>${formatNum(stage.reward.wfi)}</strong></div>
-        <div class="stat"><span>報酬 Energy</span><strong>${formatNum(stage.reward.energy)}</strong></div>
+        <div class="stat"><span>報酬 WFI</span><strong>${formatNum(reward.wfi)}</strong></div>
+        <div class="stat"><span>報酬 Energy</span><strong>${formatNum(reward.energy)}</strong></div>
       </div>
-      <button class="action-button primary" data-action="start-battle" ${isStageCleared(stage) ? "disabled" : ""}>
-        ${isStageCleared(stage) ? "制圧済み" : "出撃"}
-      </button>
+      <div class="map-panel-actions">
+        <button class="action-button primary" data-action="start-battle" ${isStageCleared(stage) ? "disabled" : ""}>
+          ${isStageCleared(stage) ? "制圧済み" : "出撃"}
+        </button>
+        <button class="action-button" data-action="go-title">タイトルへ</button>
+      </div>
       <div class="section">
         <h3>惑星ステージ</h3>
         <div class="stage-list">
@@ -5325,15 +7363,17 @@
         <div class="skill-grid">${allySkillButtons(ally)}</div>
       </div>
       ${showBattleResult ? `
-        <div class="result-banner ${battle.result.clearScreen ? "is-clear-result" : ""}">
+        <div class="${resultBannerClasses(battle.result)}">
           ${battle.result.clearScreen ? renderClearResultArt(battle.result) : ""}
           <strong>${escapeHtml(battle.result.title)}</strong>
           <p>${escapeHtml(battle.result.message)}</p>
-          ${battle.result.joinAlly ? renderJoinCard(battle.result.joinAlly) : ""}
+          ${battle.result.joinAllies?.length ? battle.result.joinAllies.map(renderJoinCard).join("") : (battle.result.joinAlly ? renderJoinCard(battle.result.joinAlly) : "")}
           ${battle.result.needsAllySelect ? `
             <button class="action-button primary" data-action="go-ally-select">仲間を選ぶ</button>
           ` : battle.result.newGamePlus ? `
             <p style="text-align: center; color: var(--muted); font-size: 12px; margin: 10px 0;">画面をタップして強くてニューゲームを開始</p>
+          ` : battle.result.newGamePlusReset ? `
+            <p style="text-align: center; color: var(--muted); font-size: 12px; margin: 10px 0;">画面をタップして2周目のステージ進行を戻す</p>
           ` : `
             <button class="action-button primary" data-action="continue-map">地図へ</button>
           `}
@@ -5341,6 +7381,14 @@
       ` : ""}
       ${renderLog()}
     `;
+  }
+
+  function resultBannerClasses(result) {
+    return [
+      "result-banner",
+      result.clearScreen ? "is-clear-result" : "",
+      result.newGamePlusReset ? "is-true-clear" : ""
+    ].filter(Boolean).join(" ");
   }
 
   function renderDialogueEvent(dialogue) {
@@ -5355,8 +7403,9 @@
 
   function renderClearResultArt(result) {
     const imageStyle = result.clearImage ? ` style="--clear-image:url('${escapeHtml(result.clearImage)}')"` : "";
+    const classes = ["clear-result-art", result.newGamePlusReset ? "is-true-clear" : ""].filter(Boolean).join(" ");
     return `
-      <div class="clear-result-art"${imageStyle}>
+      <div class="${classes}"${imageStyle}>
         <span>CLEAR</span>
       </div>
     `;
@@ -5388,7 +7437,8 @@
       return;
     }
     const level = allyLevel(ally.id);
-    const canLevelUp = level < ALLY_MAX_LEVEL;
+    const maxLevel = currentAllyMaxLevel();
+    const canLevelUp = level < maxLevel;
     const nextLevel = level + 1;
     const isWfiType = WFI_LEVEL_ALLY_IDS.has(ally.id);
     const isEnergyType = ENERGY_LEVEL_ALLY_IDS.has(ally.id);
@@ -5405,7 +7455,7 @@
     const skillUnlocked = level >= 3;
     const rangeType = allyRangeType(ally);
     const rangeLabel = { melee: "近接", ranged: "遠距離", magic: "魔法" }[rangeType] || rangeType;
-    const mult = 1 + (level - 1) * 0.12;
+    const mult = allyLevelMultiplier(ally);
     sidePanel.innerHTML = `
       <div class="panel-close-bar" style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
         <button class="action-button" data-action="close-roster-detail" style="min-height: 28px; font-size: 11px; padding: 2px 8px; border: 1px solid var(--red); background: rgba(244,63,94,0.1); color: var(--ink);">閉じる ✕</button>
@@ -5418,7 +7468,7 @@
         <span class="badge">Lv.${level} / No.${ally.order}</span>
       </div>
       <div class="detail-avatar" style="text-align: center; margin: 10px 0;">
-        <img src="${ally.assets.defaultSprite}" style="height: 140px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,242,255,0.3));" alt="">
+        <img src="${escapeHtml(menuSpriteForAlly(ally))}" style="height: 140px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0,242,255,0.3));" alt="">
       </div>
       <div class="stat-grid">
         <div class="stat"><span>HP</span><strong>${formatNum(ally.hp)} / ${formatNum(ally.maxHp)}</strong></div>
@@ -5432,7 +7482,7 @@
         <h3>レベルアップ</h3>
         ${canLevelUp
           ? `<button class="action-button primary" data-action="level-up" data-ally-id="${ally.id}">Lv${level} → Lv${nextLevel}（${levelCostText}）</button>`
-          : `<p style="padding:6px 0;color:#ffe2a1">最大レベル（Lv${ALLY_MAX_LEVEL}）達成！</p>`
+          : `<p style="padding:6px 0;color:#ffe2a1">最大レベル（Lv${maxLevel}）達成！</p>`
         }
       </div>
       <div class="section">
@@ -5444,7 +7494,7 @@
         <div class="message-log"><p>${escapeHtml(ally.quote || "")}</p></div>
       </div>
       ${ally.personality ? `<div class="section"><h3>性格・特徴</h3><div class="message-log"><p>${escapeHtml(ally.personality)}</p></div></div>` : ""}
-      ${(ally.id === "hehehehehe" && level === 9 && !state.heheheheheAwakened) ? `
+      ${(ally.id === "hehehehehe" && level >= BASE_ALLY_MAX_LEVEL && !state.heheheheheAwakened) ? `
         <div class="section">
           <h3>イベント</h3>
           <button class="action-button primary" data-action="start-kakusei-event">へへへ覚醒戦闘スタート</button>
@@ -5553,5 +7603,5 @@
       .replaceAll("'", "&#39;");
   }
 
-  boot();
+  installBootScreen();
 })();
