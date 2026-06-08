@@ -1433,18 +1433,18 @@ body.is-battle-view .app-shell {
 
   .battle-overlay-controls {
     right: 9px;
-    bottom: 90px;
-    grid-template-columns: repeat(2, 52px);
-    gap: 6px;
+    bottom: 116px;
+    grid-template-columns: repeat(2, 64px);
+    gap: 12px;
   }
 
   .battle-map-button {
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
   }
 
   .battle-map-button span {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .tab-button,
