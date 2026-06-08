@@ -20,7 +20,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260609-mobile-swipe-attack1";
+  const DATA_VERSION = "20260609-mobile-joystick1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -576,6 +576,11 @@
   const battlePointer = {
     active: false,
     pointerId: null,
+    joystick: false,
+    originX: 0,
+    originY: 0,
+    stickX: 0,
+    stickY: 0,
     moved: false,
     lastX: 0,
     lastY: 0
@@ -2318,7 +2323,10 @@
     } else {
       state.view = view;
     }
-    if (state.view !== "battle") battleKeys.clear();
+    if (state.view !== "battle") {
+      battleKeys.clear();
+      resetBattlePointer();
+    }
 
     document.querySelectorAll(".tab-button").forEach((button) => {
       button.classList.toggle("is-active", button.dataset.view === state.view);
@@ -2692,16 +2700,46 @@
     return null;
   }
 
+  function resetBattlePointer(options = {}) {
+    const wasJoystick = battlePointer.joystick;
+    const hadMoved = battlePointer.moved;
+    battlePointer.active = false;
+    battlePointer.pointerId = null;
+    battlePointer.joystick = false;
+    battlePointer.originX = 0;
+    battlePointer.originY = 0;
+    battlePointer.stickX = 0;
+    battlePointer.stickY = 0;
+    battlePointer.moved = options.preserveMoved ? hadMoved : false;
+    battlePointer.lastX = 0;
+    battlePointer.lastY = 0;
+    if (wasJoystick && options.stopAtAlly !== false) {
+      const ally = activeBattleAlly();
+      if (ally && ally.hp > 0) setBattleMoveTarget(ally.battleX, ally.battleY);
+    }
+  }
+
   function handleBattlePointerDown(event) {
     if (state.view !== "battle" || !state.battle || state.battle.result || state.battle.dialogue) return;
-    if (battlePointer.active && battlePointer.pointerId !== event.pointerId) return;
+    if (battlePointer.active && battlePointer.pointerId !== event.pointerId) {
+      event.preventDefault();
+      return;
+    }
     const point = canvasPoint(event);
+    const useJoystick = event.pointerType === "touch" || event.pointerType === "pen";
     battlePointer.active = true;
     battlePointer.pointerId = event.pointerId;
+    battlePointer.joystick = useJoystick;
+    battlePointer.originX = point.x;
+    battlePointer.originY = point.y;
+    battlePointer.stickX = 0;
+    battlePointer.stickY = 0;
     battlePointer.moved = false;
     battlePointer.lastX = point.x;
     battlePointer.lastY = point.y;
-    setBattleMoveTarget(point.x, point.y);
+    if (!useJoystick) {
+      setBattleMoveTarget(point.x, point.y);
+    }
     canvas.setPointerCapture?.(event.pointerId);
     event.preventDefault();
   }
@@ -2710,9 +2748,15 @@
     if (!battlePointer.active || state.view !== "battle" || !state.battle || state.battle.result || state.battle.dialogue) return;
     if (battlePointer.pointerId !== event.pointerId) return;
     const point = canvasPoint(event);
-    const dx = point.x - battlePointer.lastX;
-    const dy = point.y - battlePointer.lastY;
-    if (Math.hypot(dx, dy) > 1) {
+    const moveDx = point.x - battlePointer.lastX;
+    const moveDy = point.y - battlePointer.lastY;
+    if (battlePointer.joystick) {
+      const stickX = point.x - battlePointer.originX;
+      const stickY = point.y - battlePointer.originY;
+      battlePointer.stickX = stickX;
+      battlePointer.stickY = stickY;
+      if (Math.hypot(stickX, stickY) > 5) battlePointer.moved = true;
+    } else if (Math.hypot(moveDx, moveDy) > 1) {
       setBattleMoveTarget(point.x, point.y);
       battlePointer.moved = true;
     }
@@ -2724,8 +2768,7 @@
   function handleBattlePointerUp(event) {
     if (!battlePointer.active) return;
     if (battlePointer.pointerId !== event.pointerId) return;
-    battlePointer.active = false;
-    battlePointer.pointerId = null;
+    resetBattlePointer({ preserveMoved: true });
     canvas.releasePointerCapture?.(event.pointerId);
   }
 
@@ -2867,6 +2910,30 @@
     const baseX = Number.isFinite(battle.moveTargetX) ? battle.moveTargetX : ally.battleX;
     const baseY = Number.isFinite(battle.moveTargetY) ? battle.moveTargetY : ally.battleY;
     setBattleMoveTarget(baseX + dx, baseY + dy);
+  }
+
+  function updateVirtualJoystickMovement() {
+    if (!battlePointer.active || !battlePointer.joystick) return;
+    const battle = state.battle;
+    if (!battle || battle.result || battle.dialogue) return;
+    const ally = ensureActiveBattleAlly();
+    if (!ally || ally.hp <= 0) return;
+
+    const deadzone = 7;
+    const radius = 48;
+    const dx = battlePointer.stickX;
+    const dy = battlePointer.stickY;
+    const mag = Math.hypot(dx, dy);
+    if (mag <= deadzone) {
+      setBattleMoveTarget(ally.battleX, ally.battleY);
+      return;
+    }
+
+    const strength = clamp((mag - deadzone) / (radius - deadzone), 0.18, 1);
+    const nx = dx / mag;
+    const ny = dy / mag;
+    const lookAhead = 22 + strength * 88;
+    setBattleMoveTarget(ally.battleX + nx * lookAhead, ally.battleY + ny * lookAhead);
   }
 
   function updateKeyboardMovement(dt) {
@@ -4021,6 +4088,7 @@
     battle.elapsed += dt;
     battle.spawnTimer -= dt;
     battle.waveTarget = currentWaveTarget(battle);
+    updateVirtualJoystickMovement();
     updateKeyboardMovement(dt);
 
     if (battle.spawned < battle.waveTarget && battle.spawnTimer <= 0) {
