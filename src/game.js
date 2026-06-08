@@ -20,7 +20,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260608-tsukineko-ignorecc1";
+  const DATA_VERSION = "20260609-mobile-swipe-attack1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -575,6 +575,7 @@
 
   const battlePointer = {
     active: false,
+    pointerId: null,
     moved: false,
     lastX: 0,
     lastY: 0
@@ -2239,7 +2240,6 @@
     document.addEventListener("touchstart", (event) => {
       if (!appTarget(event)) return;
       clearSelection();
-      if (event.touches && event.touches.length > 1) event.preventDefault();
     }, { passive: false });
 
     document.addEventListener("touchend", (event) => {
@@ -2258,10 +2258,10 @@
 
     canvas.addEventListener("click", handleCanvasClick);
     canvas.addEventListener("pointerdown", handleBattlePointerDown);
-    canvas.addEventListener("pointermove", handleBattlePointerMove);
-    canvas.addEventListener("pointerup", handleBattlePointerUp);
-    canvas.addEventListener("pointercancel", handleBattlePointerUp);
     canvas.addEventListener("wheel", handleBattleWheel, { passive: false });
+    document.addEventListener("pointermove", handleBattlePointerMove, { passive: false });
+    document.addEventListener("pointerup", handleBattlePointerUp, { passive: false });
+    document.addEventListener("pointercancel", handleBattlePointerUp, { passive: false });
     document.addEventListener("keydown", handleBattleKeyDown);
     document.addEventListener("keyup", handleBattleKeyUp);
 
@@ -2694,22 +2694,26 @@
 
   function handleBattlePointerDown(event) {
     if (state.view !== "battle" || !state.battle || state.battle.result || state.battle.dialogue) return;
+    if (battlePointer.active && battlePointer.pointerId !== event.pointerId) return;
     const point = canvasPoint(event);
     battlePointer.active = true;
+    battlePointer.pointerId = event.pointerId;
     battlePointer.moved = false;
     battlePointer.lastX = point.x;
     battlePointer.lastY = point.y;
+    setBattleMoveTarget(point.x, point.y);
     canvas.setPointerCapture?.(event.pointerId);
     event.preventDefault();
   }
 
   function handleBattlePointerMove(event) {
     if (!battlePointer.active || state.view !== "battle" || !state.battle || state.battle.result || state.battle.dialogue) return;
+    if (battlePointer.pointerId !== event.pointerId) return;
     const point = canvasPoint(event);
     const dx = point.x - battlePointer.lastX;
     const dy = point.y - battlePointer.lastY;
     if (Math.hypot(dx, dy) > 1) {
-      nudgeBattleMove(dx, dy);
+      setBattleMoveTarget(point.x, point.y);
       battlePointer.moved = true;
     }
     battlePointer.lastX = point.x;
@@ -2719,7 +2723,9 @@
 
   function handleBattlePointerUp(event) {
     if (!battlePointer.active) return;
+    if (battlePointer.pointerId !== event.pointerId) return;
     battlePointer.active = false;
+    battlePointer.pointerId = null;
     canvas.releasePointerCapture?.(event.pointerId);
   }
 
@@ -4128,6 +4134,14 @@
     tryAllyAttack(ally, { manual: true });
   }
 
+  function allyHasMoveIntent(ally) {
+    const battle = state.battle;
+    if (!battle || !ally) return false;
+    const targetX = Number.isFinite(battle.moveTargetX) ? battle.moveTargetX : ally.battleX;
+    const targetY = Number.isFinite(battle.moveTargetY) ? battle.moveTargetY : ally.battleY;
+    return ally.moving || Math.hypot(targetX - ally.battleX, targetY - ally.battleY) > 3;
+  }
+
   function tryAllyAttack(ally, options = {}) {
     const battle = state.battle;
     if (!battle || battle.result || battle.paused || !ally) return false;
@@ -4135,8 +4149,9 @@
       if (options.manual) addLog(`${ally.name} は戦闘不能です。`);
       return false;
     }
+    const hasMoveIntent = allyHasMoveIntent(ally);
     if (ally.attackTimer > 0) {
-      if (options.manual && ally.moving) {
+      if (options.manual && hasMoveIntent) {
         queueMovingAttack(ally);
       } else if (options.manual) {
         addLog("攻撃準備中です。");
@@ -4148,7 +4163,7 @@
     const range = allyAttackRange(ally);
     const dist = target ? Math.hypot(target.x - ally.battleX, target.y - ally.battleY) : 999;
     if (!target || dist > range) {
-      if ((options.manual || options.queued) && ally.moving) {
+      if ((options.manual || options.queued) && hasMoveIntent) {
         queueMovingAttack(ally);
       } else if (options.manual) {
         addLog("敵が射程内にいません。");
@@ -7266,7 +7281,7 @@
     battleOverlayControls.dataset.signature = signature;
     battleOverlayControls.hidden = false;
     battleOverlayControls.innerHTML = `
-      <button class="battle-map-button attack" data-action="manual-attack" ${canAct && attackReady ? "" : "disabled"} aria-label="攻撃">
+      <button class="battle-map-button attack ${attackReady ? "is-ready" : "is-waiting"}" data-action="manual-attack" ${canAct ? "" : "disabled"} aria-label="攻撃">
         <span>攻撃</span>
       </button>
       <button class="battle-map-button skill ${skillReady ? "is-ready" : ""}" data-action="primary-skill" ${canAct && skillReady ? "" : "disabled"} aria-label="スキル">
