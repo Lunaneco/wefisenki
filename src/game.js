@@ -20,11 +20,12 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260609-mobile-joystick1";
+  const DATA_VERSION = "20260609-levelup-sfx1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
   const VOICE_VOLUME = 1.0;
+  const SFX_VOLUME = 0.34;
   const BGM_TRACKS = {
     title: `${BGM_ROOT}/OP.mp3`,
     sankenzin: `${BGM_ROOT}/sankenzin.mp3`,
@@ -599,9 +600,16 @@
     lastStartedAt: 0,
     elements: new Map()
   };
+  const sfxState = {
+    context: null,
+    lastKey: "",
+    lastError: "",
+    lastStartedAt: 0
+  };
   let bootStarted = false;
   window.wfiAudioState = audioState;
   window.wfiVoiceState = voiceState;
+  window.wfiSfxState = sfxState;
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
@@ -1080,6 +1088,10 @@
     ensureAudioElements();
     ensureVoiceElements();
     audioState.unlocked = true;
+    const sfxContext = ensureSfxContext();
+    if (sfxContext?.state === "suspended") {
+      sfxContext.resume().catch(() => {});
+    }
     audioState.elements.forEach((audio) => {
       audio.load();
     });
@@ -1119,6 +1131,60 @@
     audioState.currentBgmKey = key;
     audioState.currentBgm = audio;
     audio.play().catch(() => {});
+  }
+
+  function ensureSfxContext() {
+    const AudioContextCtor = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextCtor) {
+      sfxState.lastError = "Web Audio is not supported";
+      return null;
+    }
+    if (!sfxState.context) {
+      sfxState.context = new AudioContextCtor();
+    }
+    return sfxState.context;
+  }
+
+  function scheduleLevelUpSfx(context) {
+    const startAt = context.currentTime + 0.018;
+    const notes = [
+      { freq: 523.25, start: 0.00, duration: 0.11, gain: 0.72 },
+      { freq: 659.25, start: 0.09, duration: 0.12, gain: 0.82 },
+      { freq: 783.99, start: 0.18, duration: 0.18, gain: 1.00 }
+    ];
+
+    notes.forEach((note) => {
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      const time = startAt + note.start;
+      oscillator.type = "triangle";
+      oscillator.frequency.setValueAtTime(note.freq, time);
+      gain.gain.setValueAtTime(0.0001, time);
+      gain.gain.exponentialRampToValueAtTime(SFX_VOLUME * note.gain, time + 0.018);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + note.duration);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start(time);
+      oscillator.stop(time + note.duration + 0.03);
+    });
+  }
+
+  function playLevelUpSfx() {
+    const context = ensureSfxContext();
+    if (!context) return;
+    const play = () => {
+      sfxState.lastKey = "level-up";
+      sfxState.lastError = "";
+      sfxState.lastStartedAt = Date.now();
+      scheduleLevelUpSfx(context);
+    };
+    if (context.state === "suspended") {
+      context.resume().then(play).catch((error) => {
+        sfxState.lastError = error?.message || String(error || "sfx play blocked");
+      });
+      return;
+    }
+    play();
   }
 
   function playVoice(key) {
@@ -1689,6 +1755,7 @@
     }
     state.charLevels[allyId] = nextLevel;
     applyLevelToAlly(ally);
+    playLevelUpSfx();
     addLog(`${ally.name} が Lv${nextLevel} になりました！`);
     if (nextLevel === 3) addLog(`${ally.name} はスキルが使えるようになりました！`);
   }
