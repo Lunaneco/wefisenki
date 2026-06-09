@@ -20,7 +20,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260609-levelup-sfx1";
+  const DATA_VERSION = "20260609-fit-screens1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -73,6 +73,7 @@
   const SECRET_LINE_STAGE_ID = "secret-line";
   const SECRET_TEN_ALLY_ID = "ten";
   const SECRET_TEN_STAGE_ID = "secret-ten";
+  const PRINCESS_TEN_BASE_HP = 15650;
   const SECRET_BAKUNIKI_ALLY_ID = "bakuniki";
   const SECRET_BAKUNIKI_STAGE_ID = "secret-bakuniki";
   const SECRET_MASARUSAN_ALLY_ID = "masarusan";
@@ -926,6 +927,11 @@
 
   function cloneData(value) {
     return JSON.parse(JSON.stringify(value));
+  }
+
+  function applyAllyBalanceTuning(allies) {
+    const princessTen = allies.find((ally) => ally.id === SECRET_TEN_ALLY_ID);
+    if (princessTen?.stats) princessTen.stats.hp = PRINCESS_TEN_BASE_HP;
   }
 
   function rememberBaseRuntimeData() {
@@ -2176,6 +2182,7 @@
       );
       const allSkillDefinitions = [...(skillsData.skills || []), ...extraSkills];
 
+      applyAllyBalanceTuning(allAllyDefinitions);
       state.allies = allAllyDefinitions.map(buildRuntimeAlly);
       state.skills = allSkillDefinitions.map(cloneData);
       state.skillById = new Map(state.skills.map((skill) => [skill.id, skill]));
@@ -6667,11 +6674,7 @@
     if (!result.tapped) {
       // 画面が一度もタップされていない場合は画像のみを全画面表示
       if (img) {
-        if (result.newGamePlusReset) {
-          drawContain(img, 0, 0, 420, 560, "#020308");
-        } else {
-          drawCropCover(img, 0, 0, img.naturalWidth, img.naturalHeight, 0, 0, 420, 560);
-        }
+        drawContain(img, 0, 0, 420, 560, "#020308");
       } else {
         ctx.fillStyle = "rgba(4, 5, 5, 0.88)";
         ctx.fillRect(0, 0, 420, 560);
@@ -6698,11 +6701,7 @@
     ctx.fillStyle = "#101a1d";
     ctx.fillRect(artX, artY, artW, artH);
     if (img) {
-      if (result.newGamePlusReset) {
-        drawContain(img, artX, artY, artW, artH, "#101a1d");
-      } else {
-        drawCropCover(img, 0, 0, img.naturalWidth, img.naturalHeight, artX, artY, artW, artH);
-      }
+      drawContain(img, artX, artY, artW, artH, "#101a1d");
     } else {
       const gradient = ctx.createLinearGradient(artX, artY, artX + artW, artY + artH);
       gradient.addColorStop(0, "rgba(85, 175, 215, 0.22)");
