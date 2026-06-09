@@ -20,7 +20,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260609-fit-screens1";
+  const DATA_VERSION = "20260610-clear-icons1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -7123,8 +7123,9 @@
   function renderClearResultFullscreen() {
     if (!clearResultOverlay) return;
     const result = state.view === "battle" && state.battle ? state.battle.result : null;
-    const shouldShow = !!(result?.clearScreen && result.newGamePlusReset && result.clearImage && !state.battle?.dialogue);
-    document.body.classList.toggle("is-clear-result-view", shouldShow);
+    const shouldHideBattleUi = !!(result?.clearScreen && result.clearImage && !state.battle?.dialogue);
+    const shouldShow = !!(shouldHideBattleUi && result.newGamePlusReset);
+    document.body.classList.toggle("is-clear-result-view", shouldHideBattleUi);
 
     if (!shouldShow) {
       clearResultOverlay.hidden = true;
