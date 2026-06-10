@@ -308,16 +308,23 @@
   }
 
   function bindEvents() {
-    // タブボタン監視 (DOMが変更される可能性があるため全体を監視または直接イベントを張る)
-    document.querySelectorAll(".tab-button").forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (btn.dataset.view === "chat") {
-          openPanel();
-        } else {
-          closePanel();
-        }
+    // クラス変更を監視して、チャットパネルの開閉を連動させる
+    const chatBtn = document.getElementById("tab-chat-btn");
+    if (chatBtn) {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.type === "attributes" && mutation.attributeName === "class") {
+            const isActive = chatBtn.classList.contains("is-active");
+            if (isActive) {
+              openPanel();
+            } else {
+              closePanel();
+            }
+          }
+        });
       });
-    });
+      observer.observe(chatBtn, { attributes: true, attributeFilter: ["class"] });
+    }
 
     elFirstSubmit.addEventListener("click", submitFirstNick);
     elFirstInput.addEventListener("keydown", (e) => {
