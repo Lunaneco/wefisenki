@@ -1,0 +1,513 @@
+/* ==========================================
+   WeFi戦記 グローバルチャット スタイル
+   ========================================== */
+
+/* フローティングチャットボタン */
+.chat-fab {
+  position: fixed;
+  bottom: 80px;
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c0392b, #8e1010);
+  border: 2px solid rgba(255, 200, 100, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 8px rgba(192, 57, 43, 0.4);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chat-fab:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 未読バッジ */
+.chat-fab-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: #f39c12;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  display: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.chat-fab-badge.is-visible {
+  display: block;
+}
+
+/* チャットパネル本体 */
+.chat-panel {
+  position: fixed;
+  bottom: 144px;
+  right: 12px;
+  width: 300px;
+  max-width: calc(100vw - 24px);
+  height: 380px;
+  max-height: calc(100dvh - 180px);
+  background: linear-gradient(160deg, #1a1008 0%, #120c04 100%);
+  border: 1px solid rgba(255, 200, 100, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 901;
+  transform: scale(0.92) translateY(12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.18s ease;
+  transform-origin: bottom right;
+}
+
+.chat-panel.is-open {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* パネルヘッダー */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 200, 100, 0.18);
+  flex-shrink: 0;
+}
+
+.chat-header-title {
+  flex: 1;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(255, 200, 100, 0.9);
+  letter-spacing: 0.05em;
+}
+
+/* ニックネーム表示・変更ボタン */
+.chat-nick-display {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 2px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chat-nick-display:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* 閉じるボタン */
+.chat-close-btn {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chat-close-btn:active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ==========================================
+   ニックネーム入力画面
+   ========================================== */
+.chat-nick-screen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+  gap: 14px;
+}
+
+.chat-nick-screen.is-hidden {
+  display: none;
+}
+
+.chat-nick-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(255, 200, 100, 0.9);
+  text-align: center;
+}
+
+.chat-nick-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.chat-nick-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 200, 100, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.chat-nick-input:focus {
+  border-color: rgba(255, 200, 100, 0.7);
+}
+
+.chat-nick-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.chat-nick-submit {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #c0392b, #8e1010);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chat-nick-submit:active {
+  opacity: 0.8;
+}
+
+/* ==========================================
+   メッセージエリア
+   ========================================== */
+.chat-messages-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 10px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+.chat-messages-area.is-hidden {
+  display: none;
+}
+
+/* スクロールバー */
+.chat-messages-area::-webkit-scrollbar {
+  width: 3px;
+}
+
+.chat-messages-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-messages-area::-webkit-scrollbar-thumb {
+  background: rgba(255, 200, 100, 0.2);
+  border-radius: 2px;
+}
+
+/* 個別メッセージ */
+.chat-message {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: chatMsgIn 0.2s ease;
+}
+
+@keyframes chatMsgIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 自分のメッセージ */
+.chat-message.is-mine {
+  align-items: flex-end;
+}
+
+.chat-message-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  font-size: 10px;
+}
+
+.chat-message.is-mine .chat-message-meta {
+  flex-direction: row-reverse;
+}
+
+.chat-message-nick {
+  color: rgba(255, 200, 100, 0.7);
+  font-weight: bold;
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chat-message.is-mine .chat-message-nick {
+  color: rgba(100, 200, 255, 0.7);
+}
+
+.chat-message-time {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.chat-message-bubble {
+  max-width: 220px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  word-break: break-all;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.chat-message.is-mine .chat-message-bubble {
+  background: rgba(100, 160, 255, 0.14);
+  border-color: rgba(100, 160, 255, 0.2);
+}
+
+/* システムメッセージ */
+.chat-message.is-system {
+  align-items: center;
+}
+
+.chat-message.is-system .chat-message-bubble {
+  background: transparent;
+  border: none;
+  color: rgba(255, 200, 100, 0.45);
+  font-size: 10px;
+  padding: 2px 0;
+}
+
+/* 空メッセージ */
+.chat-empty-hint {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 11px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   メッセージ入力エリア
+   ========================================== */
+.chat-input-area {
+  display: flex;
+  gap: 6px;
+  padding: 8px 10px;
+  border-top: 1px solid rgba(255, 200, 100, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.chat-input-area.is-hidden {
+  display: none;
+}
+
+.chat-text-input {
+  flex: 1;
+  padding: 8px 10px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.chat-text-input:focus {
+  border-color: rgba(255, 200, 100, 0.5);
+}
+
+.chat-text-input::placeholder {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.chat-send-btn {
+  padding: 0 12px;
+  background: linear-gradient(135deg, #c0392b, #8e1010);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chat-send-btn:active {
+  opacity: 0.8;
+}
+
+.chat-send-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* ==========================================
+   ニックネーム変更モーダル
+   ========================================== */
+.chat-nick-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+.chat-nick-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.chat-nick-modal {
+  width: 280px;
+  background: linear-gradient(160deg, #1a1008, #120c04);
+  border: 1px solid rgba(255, 200, 100, 0.3);
+  border-radius: 14px;
+  padding: 24px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+  transform: scale(0.9);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.chat-nick-modal-overlay.is-open .chat-nick-modal {
+  transform: scale(1);
+}
+
+.chat-nick-modal-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: rgba(255, 200, 100, 0.9);
+  text-align: center;
+}
+
+.chat-nick-modal-input {
+  width: 100%;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 200, 100, 0.3);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  text-align: center;
+  transition: border-color 0.15s;
+}
+
+.chat-nick-modal-input:focus {
+  border-color: rgba(255, 200, 100, 0.7);
+}
+
+.chat-nick-modal-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.chat-nick-modal-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.chat-nick-modal-cancel {
+  flex: 1;
+  padding: 9px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.chat-nick-modal-ok {
+  flex: 1;
+  padding: 9px;
+  background: linear-gradient(135deg, #c0392b, #8e1010);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================
+   接続エラー表示
+   ========================================== */
+.chat-error-bar {
+  padding: 6px 10px;
+  background: rgba(192, 57, 43, 0.3);
+  border-top: 1px solid rgba(192, 57, 43, 0.4);
+  color: rgba(255, 150, 100, 0.9);
+  font-size: 10px;
+  text-align: center;
+  display: none;
+  flex-shrink: 0;
+}
+
+.chat-error-bar.is-visible {
+  display: block;
+}
