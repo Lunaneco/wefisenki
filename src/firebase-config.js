@@ -14,7 +14,7 @@
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyAzQRMBqG6PaoFpVWvI47iIVvQ0qYOAwKA",
   authDomain: "wefisenki.firebaseapp.com",
-  databaseURL: "https://wefisenki-default-rtdb.firebaseio.com",
+  databaseURL: "https://wefisenki-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "wefisenki",
   storageBucket: "wefisenki.firebasestorage.app",
   messagingSenderId: "66122559303",
