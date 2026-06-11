@@ -74,6 +74,13 @@
       </div>
 
       <div class="chat-messages-area is-hidden" id="chat-messages-area">
+        <div class="chat-intro-notice">
+          <div class="chat-intro-notice-title">📢 はじめにお読みください</div>
+          <div class="chat-intro-notice-body">
+            ※誹謗中傷や他の人へのなりすまし絶対NGです（判明した場合は適切な対応させていただきます）、また、個人情報にも最新の注意をよろしくお願いします。<br />
+            楽しくワイワイ利用していただけたら嬉しいです♩
+          </div>
+        </div>
         <div class="chat-empty-hint" id="chat-empty-hint">まだメッセージはありません。</div>
       </div>
 

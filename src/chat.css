@@ -456,3 +456,30 @@
 .chat-error-bar.is-visible {
   display: block;
 }
+
+/* ==========================================
+   お知らせ・注意書き表示
+   ========================================== */
+.chat-intro-notice {
+  background: rgba(216, 161, 60, 0.08);
+  border: 1px solid rgba(216, 161, 60, 0.25);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 14px;
+}
+
+.chat-intro-notice-title {
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(216, 161, 60, 0.95);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chat-intro-notice-body {
+  font-size: 11px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
