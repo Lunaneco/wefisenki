@@ -1275,8 +1275,7 @@
     if (state.titleActive) return "title";
     if (!state.openingDone) return "sankenzin";
     if (state.view === "battle" && state.battle) return desiredBattleBgmKey();
-    if (state.view === "map") return "map";
-    return null;
+    return "map";
   }
 
   function syncBgm() {
@@ -1904,6 +1903,7 @@
       state.openingStep += 1;
     } else {
       state.openingDone = true;
+      syncBgm();
     }
   }
 
