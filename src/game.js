@@ -20,7 +20,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260612-map-victory-bgm1";
+  const DATA_VERSION = "20260612-map-bgm-battle-fallback1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -1268,7 +1268,7 @@
       .find(Boolean);
     if (bossBgmKey) return bossBgmKey;
     const ally = activeBattleAlly();
-    return BGM_BY_ALLY_ID[ally?.id] || null;
+    return BGM_BY_ALLY_ID[ally?.id] || "map";
   }
 
   function desiredBgmKey() {
