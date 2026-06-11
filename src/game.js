@@ -20,7 +20,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260610-clear-icons1";
+  const DATA_VERSION = "20260612-map-victory-bgm1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -28,6 +28,8 @@
   const SFX_VOLUME = 0.34;
   const BGM_TRACKS = {
     title: `${BGM_ROOT}/OP.mp3`,
+    map: `${BGM_ROOT}/mapBGM.mp3`,
+    victory: `${BGM_ROOT}/victory.mp3`,
     sankenzin: `${BGM_ROOT}/sankenzin.mp3`,
     eppa: `${BGM_ROOT}/eppa.mp3`,
     harulucky: `${BGM_ROOT}/harulucky.mp3`,
@@ -1257,6 +1259,7 @@
     const battle = state.battle;
     if (!battle) return null;
     const stage = battle.stage;
+    if (battle.result?.victory && !battle.dialogue) return "victory";
     if (stage?.id === FINAL_BOSS_STAGE_ID) return "darkrive";
     if (stage?.id === TRUE_FINAL_BOSS_STAGE_ID) return "tsukineco";
     if (battle.dialogue?.sageRestart || battle.dialogue?.speaker === "三賢人") return "sankenzin";
@@ -1272,6 +1275,7 @@
     if (state.titleActive) return "title";
     if (!state.openingDone) return "sankenzin";
     if (state.view === "battle" && state.battle) return desiredBattleBgmKey();
+    if (state.view === "map") return "map";
     return null;
   }
 
