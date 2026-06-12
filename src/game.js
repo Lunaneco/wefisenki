@@ -128,10 +128,12 @@
 
   // === オープニング会話定義 ===
   const OPENING_DIALOGUES = [
-    { speaker: "ナレーション", text: "時は２２世紀、地球はwefiに溢れていた。秩序を保っているのが、ぼんさいさん、マサルさん、バクニキさんのWefi3賢人", portrait: null },
-    { speaker: "ナレーション", text: "地球のWefi人は幸せな生活を送っていた。だが、そんな地球にあちこちの惑星人が目をつけていた", portrait: null },
-    { speaker: "ぼんさいさん", text: "いよいよ危ういですね", portrait: null },
-    { speaker: "マサルさん", text: "今こそ、Wefi戦士達に侵略してくる惑星人を諌めに行ってもらいましょうか", portrait: null }
+    { speaker: "ナレーション", text: "時は２２世紀、地球はWeFiで潤っていた。生活のライフラインはWeFiで賄われており、地球の人々の暮らしは何不自由ない暮らしを送ることができた。", portrait: "assets/characters/startevent1.jpg" },
+    { speaker: "ナレーション", text: "ところが、そんな地球に目をつけた惑星人が次々と地球を侵略しようと襲撃してきた。", portrait: "assets/characters/startevent2.jpg" },
+    { speaker: "ナレーション", text: "地球の中枢で指示をしているのが、ぼんさいさん、マサルさん、バクニキさんのWeFi3賢人", portrait: "assets/characters/startevent3.jpg" },
+    { speaker: "ぼんさいさん", text: "いよいよ危ういですね", portrait: "assets/characters/startevent3.jpg" },
+    { speaker: "マサルさん", text: "今こそ、Wefi戦士達に侵略してくる惑星人を諌めに行ってもらいましょうか", portrait: "assets/characters/startevent3.jpg" },
+    { speaker: "ナレーション", text: "そうして集められたWeFi戦士と、その仲間たち。地球を守るための戦いが今、幕を開ける", portrait: "assets/characters/startevent4.jpg" }
   ];
 
   // === へへへ覚醒試練ステージ定義 ===
@@ -1106,9 +1108,40 @@
     primeVoiceElements();
   }
 
+  const fadeTimers = new Map();
+
+  function fadeVolume(audio, targetVolume, duration, callback) {
+    if (fadeTimers.has(audio)) {
+      clearInterval(fadeTimers.get(audio));
+      fadeTimers.delete(audio);
+    }
+    const startVolume = audio.volume;
+    const volumeDiff = targetVolume - startVolume;
+    if (volumeDiff === 0 || duration <= 0) {
+      audio.volume = targetVolume;
+      if (callback) callback();
+      return;
+    }
+    const startTime = Date.now();
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      audio.volume = startVolume + volumeDiff * progress;
+      if (progress >= 1) {
+        clearInterval(interval);
+        fadeTimers.delete(audio);
+        if (callback) callback();
+      }
+    }, 30);
+    fadeTimers.set(audio, interval);
+  }
+
   function stopBgm() {
-    if (audioState.currentBgm) {
-      audioState.currentBgm.pause();
+    const prevBgm = audioState.currentBgm;
+    if (prevBgm) {
+      fadeVolume(prevBgm, 0, 800, () => {
+        prevBgm.pause();
+      });
       audioState.currentBgm = null;
     }
     audioState.currentBgmKey = "";
@@ -1122,15 +1155,28 @@
       return;
     }
     if (audioState.currentBgmKey === key && audioState.currentBgm) {
-      if (audioState.currentBgm.paused) audioState.currentBgm.play().catch(() => {});
+      const audio = audioState.currentBgm;
+      if (audio.paused) {
+        audio.play().catch(() => {});
+        fadeVolume(audio, BGM_VOLUME, 800);
+      }
       return;
     }
-    stopBgm();
+    const prevBgm = audioState.currentBgm;
+    if (prevBgm) {
+      fadeVolume(prevBgm, 0, 800, () => {
+        prevBgm.pause();
+      });
+    }
     const audio = audioState.elements.get(key);
-    if (!audio) return;
+    if (!audio) {
+      audioState.currentBgm = null;
+      audioState.currentBgmKey = "";
+      return;
+    }
     audio.loop = true;
     audio.muted = false;
-    audio.volume = BGM_VOLUME;
+    audio.volume = 0;
     try {
       audio.currentTime = 0;
     } catch {
@@ -1138,7 +1184,9 @@
     }
     audioState.currentBgmKey = key;
     audioState.currentBgm = audio;
-    audio.play().catch(() => {});
+    audio.play().then(() => {
+      fadeVolume(audio, BGM_VOLUME, 800);
+    }).catch(() => {});
   }
 
   function ensureSfxContext() {
@@ -5254,7 +5302,13 @@
     const imageBottom = boxY - 10;
     const imageAreaH = Math.max(1, imageBottom - imageTop);
     const imageAreaW = CW - 36;
-    const bg = image("assets/characters/3kenzin.jpg");
+
+    const step = Math.min(state.openingStep, OPENING_DIALOGUES.length - 1);
+    const dialogue = OPENING_DIALOGUES[step];
+    if (!dialogue) return;
+
+    const portraitPath = dialogue.portrait || "assets/characters/3kenzin.jpg";
+    const bg = image(portraitPath);
 
     ctx.fillStyle = "#030508";
     ctx.fillRect(0, 0, CW, CH);
@@ -5277,10 +5331,6 @@
         ctx.fillRect(sx, sy, 1, 1);
       }
     }
-
-    const step = Math.min(state.openingStep, OPENING_DIALOGUES.length - 1);
-    const dialogue = OPENING_DIALOGUES[step];
-    if (!dialogue) return;
 
     // タイトル
     ctx.fillStyle = "rgba(8, 12, 20, 0.82)";
