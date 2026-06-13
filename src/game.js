@@ -22,7 +22,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260614-line-sakamusi-bgm1";
+  const DATA_VERSION = "20260614-wefi-case1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -104,32 +104,32 @@
     SECRET_BONSAISAN_ALLY_ID
   ]);
   const LINE_STAGE_INTRO = "お前ら頭WeFiなんじゃねえの！？";
-  const LINE_STAGE_CLEAR = "Wefiの全てを否定しているわけではない、一般論としての意見を言っているだけだ。そしてENERGYは俺のパワーになるかもしれないから、ついて行ってやるよ";
+  const LINE_STAGE_CLEAR = "WeFiの全てを否定しているわけではない、一般論としての意見を言っているだけだ。そしてENERGYは俺のパワーになるかもしれないから、ついて行ってやるよ";
   const TEN_STAGE_INTRO = "私の呪術に踊るが良い！！！！！";
   const TEN_STAGE_CLEAR = "俺の財宝か？探せ。この世の全てを置いてきた。俺か？ならついていってやる。";
   const BAKUNIKI_STAGE_INTRO = "ふぉふぉふぉ、よくぞここまで来ましたね、私に勝てたら、力を貸して差し上げましょう";
   const BAKUNIKI_STAGE_CLEAR = "約束通り、あなた達と共に参りましょう。ぼんさいさん、マサルさん、しばらくそちらをよろしくお願いします";
   const TWO_SAGES_STAGE_INTRO = "とうとう、あなたたちも私たちの力に並んできましたね、その力、試させてもらいますよ";
   const TWO_SAGES_STAGE_CLEAR = "その力、しかと見届けさせていただきました。よろしいでしょう、私たちも共に参りましょう";
-  const DARKRIVE_STAGE_INTRO = "お前らの地球を俺によこせ！！地球のWefiの全てを俺の手中に抑えて、私が全惑星を支配してくれる！！";
+  const DARKRIVE_STAGE_INTRO = "お前らの地球を俺によこせ！！地球のWeFiの全てを俺の手中に抑えて、私が全惑星を支配してくれる！！";
   const DARKRIVE_STAGE_CLEAR = [
-    { speaker: "ダークリーヴ２２", text: "ぐはああああ、ここまでに強いとは・・・これがWefiの力だということか" },
-    { speaker: "Wefi戦士", text: "違う！！！これは地球という惑星で育ったことで育まれた力だ！！" },
+    { speaker: "ダークリーヴ２２", text: "ぐはああああ、ここまでに強いとは・・・これがWeFiの力だということか" },
+    { speaker: "WeFi戦士", text: "違う！！！これは地球という惑星で育ったことで育まれた力だ！！" },
     { speaker: "ダークリーヴ２２", text: "くそぉーーー、勝最初から、かてるはずがなかったのか・・・" },
     { speaker: "ナレーション", text: "ダークリーヴ２２消滅" },
-    { speaker: "Wefi戦士", text: "みんな終わったな、地球に帰ろう！！" }
+    { speaker: "WeFi戦士", text: "みんな終わったな、地球に帰ろう！！" }
   ];
   const TSUKINEKO_STAGE_INTRO = [
     { speaker: "ダークツキネコ", text: "世界の全てが闇に包まれた今、俺が全てを終わらせる。" },
     { speaker: "ダークツキネコ", text: "混沌にせしめし、貴様らの魂の全て、俺の右腕に宿る、漆黒の炎で喰らい尽くしてくれようぞ" }
   ];
   const TSUKINEKO_STAGE_CLEAR = [
-    { speaker: "Wefi戦士", text: "俺たちは何も縛るつもりも、壊すつもりもない、ただ、豊かな地球で手を取り合って暮らしたいだけなんだ" },
+    { speaker: "WeFi戦士", text: "俺たちは何も縛るつもりも、壊すつもりもない、ただ、豊かな地球で手を取り合って暮らしたいだけなんだ" },
     { speaker: "へへへへへ", text: "子ども食堂で子ども達を笑顔にするたい" },
     { speaker: "ダークツキネコ", text: "…クックック、闇にのまれていたのは俺自身だったということか…" },
-    { speaker: "ダークツキネコ", text: "そういうことなら、Wefiも、悪くないのかも、し、れ、な・・・" },
+    { speaker: "ダークツキネコ", text: "そういうことなら、WeFiも、悪くないのかも、し、れ、な・・・" },
     { speaker: "ナレーション", text: "ダークツキネコ消滅" },
-    { speaker: "Wefi戦士", text: "今度こそ全てが終わった…帰ろう、地球に" }
+    { speaker: "WeFi戦士", text: "今度こそ全てが終わった…帰ろう、地球に" }
   ];
 
   // === オープニング会話定義 ===
@@ -138,7 +138,7 @@
     { speaker: "ナレーション", text: "ところが、そんな地球に目をつけた惑星人が次々と地球を侵略しようと襲撃してきた。", portrait: "assets/characters/startevent2.jpg" },
     { speaker: "ナレーション", text: "地球の中枢で指示をしているのが、ぼんさいさん、マサルさん、バクニキさんのWeFi3賢人", portrait: "assets/characters/startevent3.jpg" },
     { speaker: "ぼんさいさん", text: "いよいよ危ういですね", portrait: "assets/characters/startevent3.jpg" },
-    { speaker: "マサルさん", text: "今こそ、Wefi戦士達に侵略してくる惑星人を諌めに行ってもらいましょうか", portrait: "assets/characters/startevent3.jpg" },
+    { speaker: "マサルさん", text: "今こそ、WeFi戦士達に侵略してくる惑星人を諌めに行ってもらいましょうか", portrait: "assets/characters/startevent3.jpg" },
     { speaker: "ナレーション", text: "そうして集められたWeFi戦士と、その仲間たち。地球を守るための戦いが今、幕を開ける", portrait: "assets/characters/startevent4.jpg" }
   ];
 
@@ -163,7 +163,7 @@
   };
 
   // 三賢人の時間巻き戻しセリフ
-  const SAGE_RESTART_DIALOGUE = "やれやれ、時間を戻して頑張り直してもらいますか、ステーキングで貯めた時間Wefiよ、あの時に時間を戻しなさい。";
+  const SAGE_RESTART_DIALOGUE = "やれやれ、時間を戻して頑張り直してもらいますか、ステーキングで貯めた時間WeFiよ、あの時に時間を戻しなさい。";
 
   // WFI消費でレベルアップするキャラID
   const WFI_LEVEL_ALLY_IDS = new Set(["hehehehehe", "kamado", "harulucky", "shinji_wolf", "sakamu_tengu", "okuribito_chan", "usamaru", "sue", "eppa", "bakuniki", "ten", SECRET_MASARUSAN_ALLY_ID, SECRET_BONSAISAN_ALLY_ID]);
@@ -732,7 +732,7 @@
         name: "まさるさん",
         role: "nature_tactician",
         roleLabel: "自然術・範囲妨害・技支援",
-        job: "Wefi三賢人",
+        job: "WeFi三賢人",
         element: "nature",
         attackType: "magic",
         quote: "力とは、使い所を見極めてこそ意味があります。",
@@ -772,7 +772,7 @@
         name: "ぼんさいさん",
         role: "root_guardian",
         roleLabel: "結界・回復・全体拘束",
-        job: "Wefi三賢人",
+        job: "WeFi三賢人",
         element: "nature",
         attackType: "magic",
         quote: "根を張りなさい。勝機は、焦らず育てるものです。",
@@ -3984,7 +3984,7 @@
     if (ratio <= 0.75) {
       return {
         phase: 2,
-        label: "Wefi DRAIN",
+        label: "WeFi DRAIN",
         color: "#b568ff",
         attackMult: 1.08,
         interval: 0.76,
@@ -5520,8 +5520,8 @@
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     const title = state.joinAllySelectPhase
-      ? "仲間に迎えるWefi戦士を選べ"
-      : (state.timeRewindPhase ? "再出撃するWefi戦士を選べ" : "Wefi戦士を選べ");
+      ? "仲間に迎えるWeFi戦士を選べ"
+      : (state.timeRewindPhase ? "再出撃するWeFi戦士を選べ" : "WeFi戦士を選べ");
     ctx.fillText(title, CW / 2, 30);
     ctx.fillStyle = "#79d7ff";
     ctx.font = "13px sans-serif";
@@ -7187,7 +7187,7 @@
         <div class="panel-title">
           <div>
             <h2>新メンバー加入！</h2>
-            <p>Wefi戦士が部隊に合流しました</p>
+            <p>WeFi戦士が部隊に合流しました</p>
           </div>
           <span class="badge">合流</span>
         </div>
