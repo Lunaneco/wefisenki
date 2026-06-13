@@ -12,6 +12,8 @@
   const battleOverlayControls = document.getElementById("battle-overlay-controls");
   const clearResultOverlay = document.getElementById("clear-result-overlay");
   const titleScreen = document.getElementById("title-screen");
+  const startOpScreen = document.getElementById("start-op-screen");
+  const startOpVideo = document.getElementById("start-op-video");
   const bootScreen = document.getElementById("boot-screen");
   const bootStatus = document.getElementById("boot-status");
 
@@ -20,7 +22,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260612-map-bgm-battle-fallback1";
+  const DATA_VERSION = "20260614-line-sakamusi-bgm1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -38,6 +40,8 @@
     nyanruna: `${BGM_ROOT}/nyanruna.mp3`,
     okuribito: `${BGM_ROOT}/okuribito.mp3`,
     pacchi: `${BGM_ROOT}/pacchi.mp3`,
+    line: `${BGM_ROOT}/line.mp3`,
+    sakamusi: `${BGM_ROOT}/sakamusi.mp3`,
     ten: `${BGM_ROOT}/ten.mp3`,
     usamaru: `${BGM_ROOT}/usamaru.mp3`,
     hehehehehe: `${BGM_ROOT}/hehehehehe.mp3`,
@@ -64,6 +68,8 @@
     nyanruna: "nyanruna",
     okuribito_chan: "okuribito",
     shinji_wolf: "pacchi",
+    line: "line",
+    sakamu_tengu: "sakamusi",
     ten: "ten",
     usamaru: "usamaru",
     hehehehehe: "hehehehehe"
@@ -571,6 +577,7 @@
     newGamePlusActive: false,
     newGamePlusStartSnapshot: null,
     titleActive: true,
+    startOpActive: false,
     saveSlotPanelActive: false,
     hasSave: false
   };
@@ -1136,14 +1143,24 @@
     fadeTimers.set(audio, interval);
   }
 
-  function stopBgm() {
+  function stopBgm(options = {}) {
     const prevBgm = audioState.currentBgm;
     if (prevBgm) {
-      fadeVolume(prevBgm, 0, 800, () => {
+      if (options.immediate) {
+        const timer = fadeTimers.get(prevBgm);
+        if (timer) {
+          clearInterval(timer);
+          fadeTimers.delete(prevBgm);
+        }
         prevBgm.pause();
-      });
-      audioState.currentBgm = null;
+        prevBgm.volume = 0;
+      } else {
+        fadeVolume(prevBgm, 0, 800, () => {
+          prevBgm.pause();
+        });
+      }
     }
+    audioState.currentBgm = null;
     audioState.currentBgmKey = "";
   }
 
@@ -1320,6 +1337,7 @@
   }
 
   function desiredBgmKey() {
+    if (state.startOpActive) return null;
     if (state.titleActive) return "title";
     if (!state.openingDone) return "sankenzin";
     if (state.view === "battle" && state.battle) return desiredBattleBgmKey();
@@ -1626,6 +1644,7 @@
     state.newGamePlusActive = false;
     state.newGamePlusStartSnapshot = null;
     state.saveSlotPanelActive = false;
+    state.startOpActive = false;
     state.hasSave = false;
     restoreAllRuntimeBase({ fullHp: true });
     addLog("進行状況を初期化しました。");
@@ -1653,12 +1672,55 @@
   }
 
   function startFromTitle() {
+    if (state.startOpActive) return;
     resetSave();
     state.titleActive = false;
     state.hasSave = false;
-    setView("map");
-    syncBgm();
+    playStartOpeningMovie();
+  }
+
+  function playStartOpeningMovie() {
+    if (!startOpScreen || !startOpVideo) {
+      finishStartOpeningMovie();
+      return;
+    }
+    state.startOpActive = true;
+    startOpScreen.hidden = false;
+    document.body.classList.add("is-start-op-view");
+    stopBgm({ immediate: true });
     renderDom(true);
+
+    startOpVideo.onended = finishStartOpeningMovie;
+    startOpVideo.onerror = finishStartOpeningMovie;
+    startOpVideo.muted = false;
+    startOpVideo.playsInline = true;
+    try {
+      startOpVideo.currentTime = 0;
+    } catch {
+      // Ignore seek failures before metadata is ready.
+    }
+    const playPromise = startOpVideo.play();
+    if (playPromise?.catch) {
+      playPromise.catch(() => finishStartOpeningMovie());
+    }
+  }
+
+  function finishStartOpeningMovie() {
+    if (!state.startOpActive && startOpScreen?.hidden !== false) return;
+    state.startOpActive = false;
+    if (startOpVideo) {
+      startOpVideo.onended = null;
+      startOpVideo.onerror = null;
+      startOpVideo.pause();
+      try {
+        startOpVideo.currentTime = 0;
+      } catch {
+        // Ignore seek failures while closing the movie.
+      }
+    }
+    if (startOpScreen) startOpScreen.hidden = true;
+    document.body.classList.remove("is-start-op-view");
+    setView("map");
   }
 
   function continueFromTitle() {
@@ -1943,6 +2005,19 @@
     if (!/反射/.test(skill.description || "")) {
       skill.description = `${skill.description || ""} 味方全体が2秒間、敵の攻撃を反射する。`.trim();
     }
+  }
+
+  function applyShinjiWolfTrustSkill() {
+    const skill = skillById("bokaaaaaaan");
+    if (!skill) return;
+    skill.target = "enemy_nearest";
+    skill.effects = [{
+      type: "trust_convert",
+      statusId: "trust",
+      chance: 1,
+      durationSec: 999
+    }];
+    skill.description = "一番近い敵1体にステータス信用を付与し、ボス以外の雑魚敵ならその場で味方に変える。ボス級の敵には効かない。";
   }
 
   // オープニングを１ステップ進める
@@ -2240,6 +2315,7 @@
       state.skillById = new Map(state.skills.map((skill) => [skill.id, skill]));
       applyLineSliceAnimations();
       applyHaruluckyReflectSkill();
+      applyShinjiWolfTrustSkill();
       rememberBaseRuntimeData();
       state.unlockedAllyIds = new Set();
       state.selectedAllyId = "";
@@ -2423,6 +2499,9 @@
     if (titleScreen) {
       titleScreen.addEventListener("pointerdown", handleTitlePointerDown);
       titleScreen.addEventListener("click", handleActionClick);
+    }
+    if (startOpScreen) {
+      startOpScreen.addEventListener("click", finishStartOpeningMovie);
     }
 
     const mapCloseBtn = document.querySelector(".map-close-button");
@@ -4825,7 +4904,7 @@
 
   function canTrustConvertEnemy(enemy) {
     if (!enemy || enemy.hp <= 0) return false;
-    if (enemy.finalBoss || enemy.trueFinalBoss || enemy.allyBossId || enemy.bossFrames || enemy.asset) return false;
+    if (enemy.finalBoss || enemy.trueFinalBoss || enemy.allyBossId || enemy.bossFrames) return false;
     return !enemy.elite;
   }
 

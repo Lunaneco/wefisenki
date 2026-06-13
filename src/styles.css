@@ -540,6 +540,34 @@ h1 {
   pointer-events: auto;
 }
 
+.start-op-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 1800;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.start-op-screen[hidden] {
+  display: none;
+}
+
+.start-op-video {
+  width: 100vw;
+  height: 100dvh;
+  max-width: 100vw;
+  max-height: 100dvh;
+  object-fit: contain;
+  object-position: center;
+  background: #000;
+}
+
 .clear-result-overlay {
   position: fixed;
   inset: 0;
