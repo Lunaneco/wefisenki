@@ -22,12 +22,13 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260614-wefi-case1";
+  const DATA_VERSION = "20260614-energy-cap99999-1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
   const VOICE_VOLUME = 1.0;
   const SFX_VOLUME = 0.34;
+  const ENERGY_CAP = 99999;
   const BGM_TRACKS = {
     title: `${BGM_ROOT}/OP.mp3`,
     map: `${BGM_ROOT}/mapBGM.mp3`,
@@ -625,6 +626,19 @@
 
   function clamp(value, min, max) {
     return Math.max(min, Math.min(max, value));
+  }
+
+  function normalizeResources() {
+    state.resources.wfi = Math.max(0, Number(state.resources.wfi) || 0);
+    state.resources.energy = clamp(Number(state.resources.energy) || 0, 0, ENERGY_CAP);
+    state.resources.food = Math.max(0, Number(state.resources.food) || 0);
+  }
+
+  function addResource(resource, amount) {
+    const next = (Number(state.resources[resource]) || 0) + (Number(amount) || 0);
+    state.resources[resource] = resource === "energy"
+      ? clamp(next, 0, ENERGY_CAP)
+      : Math.max(0, next);
   }
 
   function lerp(a, b, t) {
@@ -1465,6 +1479,7 @@
 
   function createSavePayload(saveType = "auto", slot = null) {
     ensureSelectedAllyUnlocked();
+    normalizeResources();
     const charStatus = {};
     state.allies.forEach((ally) => {
       charStatus[ally.id] = {
@@ -1535,6 +1550,7 @@
       );
     }
     state.resources = { ...state.resources, ...(payload.resources || {}) };
+    normalizeResources();
     state.clearedStages = clearedStageIds;
     if (payload.charLevels && typeof payload.charLevels === "object") {
       state.charLevels = payload.charLevels;
@@ -3359,7 +3375,7 @@
 
       const reward = stageReward(battle.stage);
       state.resources.wfi += reward.wfi;
-      state.resources.energy = Math.min(15000, state.resources.energy + reward.energy);
+      addResource("energy", reward.energy);
       state.resources.food += reward.food;
       state.clearedStages.add(battle.stage.id);
       const joinedAllies = [];
@@ -4880,12 +4896,12 @@
         if (effect.stat === "energy_efficiency") {
           // エネルギーの獲得量を2倍に補正
           const energyGain = 70 * skillMult;
-          state.resources.energy = Math.min(15000, state.resources.energy + energyGain);
+          addResource("energy", energyGain);
         }
       } else if (effect.type === "resource_gain") {
         // リソース獲得量を2倍に補正
         const gainAmount = effect.amount * skillMult;
-        state.resources[effect.resource] = (state.resources[effect.resource] || 0) + gainAmount;
+        addResource(effect.resource, gainAmount);
         addParticle(ally.battleX, ally.battleY - 60, `+${gainAmount} ${effect.resource.toUpperCase()}`, "#f0c461", 1);
       } else if (effect.type === "self_dot") {
         // 自傷ダメージはデメリットなので2倍化の対象外とする
@@ -5051,12 +5067,16 @@
     };
     const option = options[item];
     if (!option) return;
+    if (option.resource === "energy" && state.resources.energy >= ENERGY_CAP) {
+      addLog("Energyは上限です。");
+      return;
+    }
     if (state.resources[option.costResource] < option.cost) {
       addLog(`${option.costResource === "energy" ? "Energy" : "WFI"}が足りません。`);
       return;
     }
     state.resources[option.costResource] -= option.cost;
-    state.resources[option.resource] += option.amount;
+    addResource(option.resource, option.amount);
     addLog(`${option.label} を補給しました。`);
   }
 
