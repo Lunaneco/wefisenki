@@ -22,7 +22,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260614-energy-cap99999-1";
+  const DATA_VERSION = "20260614-sue-bgm1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -43,6 +43,7 @@
     pacchi: `${BGM_ROOT}/pacchi.mp3`,
     line: `${BGM_ROOT}/line.mp3`,
     sakamusi: `${BGM_ROOT}/sakamusi.mp3`,
+    sue: `${BGM_ROOT}/sue.mp3`,
     ten: `${BGM_ROOT}/ten.mp3`,
     usamaru: `${BGM_ROOT}/usamaru.mp3`,
     hehehehehe: `${BGM_ROOT}/hehehehehe.mp3`,
@@ -71,6 +72,7 @@
     shinji_wolf: "pacchi",
     line: "line",
     sakamu_tengu: "sakamusi",
+    sue: "sue",
     ten: "ten",
     usamaru: "usamaru",
     hehehehehe: "hehehehehe"
