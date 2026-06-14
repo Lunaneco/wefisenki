@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>WeFi戦記 - 異界物流覇道録</title>
+    <link rel="stylesheet" href="src/styles.css?v=20260614-startop-video1">
+    <link rel="stylesheet" href="src/chat.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar" aria-label="resources">
+        <div class="brand">
+          <span class="crest" aria-hidden="true"></span>
+          <div>
+            <h1>WeFi戦記</h1>
+            <p id="chapter-label">博多出陣</p>
+          </div>
+        </div>
+        <div class="resources" id="resource-bar"></div>
+      </header>
+
+      <section class="game-layout">
+        <section class="play-surface" aria-label="game field">
+          <button class="map-close-button action-button" data-action="close-map-detail">閉じる ✕</button>
+          <canvas id="game-canvas" width="420" height="560"></canvas>
+          <div class="map-hotspots" id="map-hotspots" aria-label="stage pins"></div>
+          <div class="canvas-hud">
+            <div id="view-title"></div>
+            <div id="battle-clock"></div>
+          </div>
+          <div class="battle-overlay-controls" id="battle-overlay-controls" hidden></div>
+        </section>
+
+        <aside class="side-panel" id="side-panel" aria-label="context panel"></aside>
+      </section>
+
+      <section class="command-area">
+        <nav class="tabbar" aria-label="main navigation">
+          <button class="tab-button is-active" data-view="map">地図</button>
+          <button class="tab-button" data-view="battle">戦闘</button>
+          <button class="tab-button" data-view="logistics">兵站</button>
+          <button class="tab-button" data-view="chat" id="tab-chat-btn">チャット<span class="chat-tab-badge" id="chat-tab-badge"></span></button>
+        </nav>
+        <div class="quick-actions" id="quick-actions"></div>
+        <div class="roster-rail" id="roster-rail" aria-label="ally roster"></div>
+      </section>
+      <div class="title-screen" id="title-screen" hidden aria-label="title screen">
+        <img class="title-screen-art" src="title.png" alt="WeFi戦記">
+        <div class="title-menu" aria-label="title menu">
+          <button class="title-menu-button" data-action="title-start">
+            <span>Start</span>
+          </button>
+          <button class="title-menu-button" data-action="title-continue">
+            <span>Continue</span>
+          </button>
+        </div>
+      </div>
+      <div class="start-op-screen" id="start-op-screen" hidden aria-label="start opening movie">
+        <video class="start-op-video" id="start-op-video" src="STARTOP.mp4" playsinline preload="auto"></video>
+      </div>
+      <div class="clear-result-overlay" id="clear-result-overlay" hidden aria-label="clear result"></div>
+      <div class="boot-screen" id="boot-screen" aria-label="boot screen">
+        <div class="boot-start">
+          <button class="boot-tap-button" type="button">Tap</button>
+          <p class="boot-audio-note">※タップすると音が出ますのでご注意ください</p>
+        </div>
+        <p class="boot-status" id="boot-status"></p>
+      </div>
+    </main>
+
+    <script src="src/browser-data.js?v=20260531-shinji-trust2"></script>
+    <script src="src/game.js?v=20260614-sue-bgm1" defer></script>
+
+    <!-- Firebase SDK (Realtime Database) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <!-- チャット設定・本体 -->
+    <script src="src/firebase-config.js"></script>
+    <script src="src/chat.js"></script>
+  </body>
+</html>
