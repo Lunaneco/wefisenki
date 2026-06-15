@@ -22,7 +22,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260614-sue-bgm1";
+  const DATA_VERSION = "20260615-true-final-heheokun1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -126,13 +126,19 @@
     { speaker: "ダークツキネコ", text: "世界の全てが闇に包まれた今、俺が全てを終わらせる。" },
     { speaker: "ダークツキネコ", text: "混沌にせしめし、貴様らの魂の全て、俺の右腕に宿る、漆黒の炎で喰らい尽くしてくれようぞ" }
   ];
+  const HEHEOKUN_FINAL_BOSS_NAME = "へへへ〜へへーへへ";
+  const TSUKINEKO_TRANSFORM_DIALOGUE = [
+    { speaker: "ダークツキネコ", text: "うガガガ、私の封印を解くしかないな、この封印を解いたら、何が起こるかわからないが、うがーーーーー" },
+    { speaker: "ナレーション", text: "ダークツキねこは灰と化した、代わりに何かが現れた" },
+    { speaker: HEHEOKUN_FINAL_BOSS_NAME, text: "heyhey、俺はyo、だいたい友達、ヒップホッパー、お前ら俺のビートについて来れるかyo" }
+  ];
   const TSUKINEKO_STAGE_CLEAR = [
-    { speaker: "WeFi戦士", text: "俺たちは何も縛るつもりも、壊すつもりもない、ただ、豊かな地球で手を取り合って暮らしたいだけなんだ" },
-    { speaker: "へへへへへ", text: "子ども食堂で子ども達を笑顔にするたい" },
-    { speaker: "ダークツキネコ", text: "…クックック、闇にのまれていたのは俺自身だったということか…" },
-    { speaker: "ダークツキネコ", text: "そういうことなら、WeFiも、悪くないのかも、し、れ、な・・・" },
-    { speaker: "ナレーション", text: "ダークツキネコ消滅" },
-    { speaker: "WeFi戦士", text: "今度こそ全てが終わった…帰ろう、地球に" }
+    { speaker: HEHEOKUN_FINAL_BOSS_NAME, text: "これがWeFiの力かyo…" },
+    { speaker: "WeFi戦士", text: "違う、これは育った地球の力そのものだ" },
+    { speaker: HEHEOKUN_FINAL_BOSS_NAME, text: "…イカしてるna、もし俺の血圧が正常だったなら、もっと違う世界が見えていたのかもしれない…な…" },
+    { speaker: "ナレーション", text: "へへへ〜へへーへへは跡形もなく消滅した" },
+    { speaker: "へへへへへ", text: "一歩血圧が間違っていたら、みんなあーなってしまうのかもしれないな、戻ろう地球に、子ども食堂をやらんと" },
+    { speaker: "WeFi戦士", text: "おーーーいいね！！みんなでやろう子ども食堂、地球をもとに戻さないと！" }
   ];
 
   // === オープニング会話定義 ===
@@ -421,10 +427,13 @@
     mapAsset: FINAL_BOSS_STAGE.mapAsset,
     enemyAsset: null,
     enemyFrames: tsukinekoBossFramePaths(),
+    transformEnemyFrames: heheokunBossFramePaths(),
     secret: true,
     finalBoss: true,
     trueFinalBoss: true,
     finalBossName: "ダークツキネコ",
+    transformBossName: HEHEOKUN_FINAL_BOSS_NAME,
+    transformDialogue: TSUKINEKO_TRANSFORM_DIALOGUE,
     unlockCondition: "ng-plus-all-stages-cleared",
     revealWhenAvailable: true,
     clearImage: TRUE_CLEAR_RESULT_IMAGE,
@@ -681,14 +690,31 @@
 
   function tsukinekoBossFramePaths() {
     return {
-      idle: [7, 8, 9, 10, 11].map(tsukinekoSlice),
-      walk: [13, 14, 15, 17, 18, 19].map(tsukinekoSlice),
-      attack: [24, 25, 26, 27, 28].map(tsukinekoSlice),
-      skill: [30, 31, 32, 33, 34, 35].map(tsukinekoSlice),
-      damage: [75, 76].map(tsukinekoSlice),
-      down: [78, 79].map(tsukinekoSlice),
-      victory: [82, 83, 84].map(tsukinekoSlice),
+      idle: [3].map(tsukinekoSlice),
+      walk: [17, 18, 19, 20].map(tsukinekoSlice),
+      attack: [31, 32, 33, 34, 35, 36].map(tsukinekoSlice),
+      skill: [43, 44, 45, 46, 42].map(tsukinekoSlice),
+      damage: [59, 60, 61, 62].map(tsukinekoSlice),
+      down: [76, 78, 79, 82, 83].map(tsukinekoSlice),
+      victory: [3].map(tsukinekoSlice),
       effects: [50, 51, 52, 53, 55, 56, 57, 58, 59, 90, 91, 92, 93, 94, 95, 96, 97, 98].map(tsukinekoSlice)
+    };
+  }
+
+  function heheokunBossSlice(id) {
+    return `assets/enemies/shinlastboss/へへお君/heheokun_slices/heheokun_slices/heheokun_${id}.png`;
+  }
+
+  function heheokunBossFramePaths() {
+    return {
+      idle: [18].map(heheokunBossSlice),
+      walk: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39].map(heheokunBossSlice),
+      attack: [43, 44, 45, 42].map(heheokunBossSlice),
+      skill: [70, 71, 72, 73, 74, 75, 76, 77].map(heheokunBossSlice),
+      damage: [60, 61, 62].map(heheokunBossSlice),
+      down: [63, 64, 66, 67, 68, 69].map(heheokunBossSlice),
+      victory: [57, 58].map(heheokunBossSlice),
+      effects: [46, 47, 48, 52, 53, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92].map(heheokunBossSlice)
     };
   }
 
@@ -3402,7 +3428,7 @@
       if (!battle.stage.secret) {
         state.unlockedStageId = Math.max(state.unlockedStageId, clamp(battle.stage.id + 1, 1, STAGES.length));
       }
-      const finalBossName = battle.stage.finalBossName || battle.stage.name || "ラスボス";
+      const finalBossName = battle.finalBossNameOverride || battle.stage.finalBossName || battle.stage.name || "ラスボス";
       const isTrueFinalBoss = !!battle.stage.trueFinalBoss;
       const resultTitle = battle.stage.finalBoss
         ? "クリア"
@@ -3968,6 +3994,42 @@
     return applyEnemyLoopModifiers(enemy, { stage }, 222);
   }
 
+  function maybeTriggerTrueFinalBossMidpoint(enemy) {
+    const battle = state.battle;
+    if (!battle || !enemy?.trueFinalBoss || enemy.trueFinalBossTransformed) return false;
+    if (battle.stage?.id !== TRUE_FINAL_BOSS_STAGE_ID || !enemy.maxHp) return false;
+    if (enemy.hp > enemy.maxHp * 0.5) return false;
+
+    if (enemy.hp <= 0) {
+      enemy.hp = Math.max(1, Math.round(enemy.maxHp * 0.5));
+    }
+    enemy.trueFinalBossTransformed = true;
+    enemy.spriteKey = "heheokun_final_boss";
+    enemy.finalBossName = battle.stage.transformBossName || HEHEOKUN_FINAL_BOSS_NAME;
+    enemy.bossFrames = battle.stage.transformEnemyFrames || heheokunBossFramePaths();
+    enemy.drawBox = { w: 138, h: 154 };
+    enemy.finalBossPhase = 2;
+    enemy.status = {};
+    enemy.anim = "skill";
+    enemy.animUntil = (battle.elapsed || 0) + 1;
+    enemy.attackTimer = 0.92;
+    enemy.warpTimer = 1.25;
+    enemy.specialTimer = 1.7;
+    battle.finalBossNameOverride = enemy.finalBossName;
+    battle.trueFinalBossTransformed = true;
+    battle.projectiles = [];
+    battle.paused = true;
+    battle.dialogue = createBattleDialogue(
+      battle.stage.transformDialogue || TSUKINEKO_TRANSFORM_DIALOGUE,
+      "ダークツキネコ",
+      { finalButtonLabel: "戦闘開始", releasePauseOnFinal: true }
+    );
+    addLog(`${enemy.finalBossName} が現れました。`);
+    if (battle.dialogue) addLog(`${battle.dialogue.speaker}: ${battle.dialogue.text}`);
+    renderDom(true);
+    return true;
+  }
+
   function finalBossAttackProfile(enemy) {
     if (enemy.trueFinalBoss) return darkTsukinekoAttackProfile(enemy);
     const ratio = enemy.maxHp ? enemy.hp / enemy.maxHp : 1;
@@ -4330,10 +4392,15 @@
     updateAllies(dt);
     updateTrustedEnemies(dt);
     updateEnemies(dt);
+    if (battle.paused || battle.result) {
+      updateParticles(dt);
+      return;
+    }
     resolveBattleCrowding();
     updateProjectiles(dt);
     updateParticles(dt);
     maybeAutoSkill();
+    if (battle.enemies.some((enemy) => maybeTriggerTrueFinalBossMidpoint(enemy))) return;
 
     battle.enemies = battle.enemies.filter((enemy) => {
       if (enemy.hp > 0) return true;
@@ -4614,6 +4681,7 @@
     for (const enemy of battle.enemies) {
       tickStatus(enemy, dt);
       if (!enemy.trueFinalBoss && (enemy.status.sleep > 0 || enemy.status.stun > 0 || enemy.status.lock > 0)) continue;
+      if (maybeTriggerTrueFinalBossMidpoint(enemy)) return;
 
       enemy.battleX = Number.isFinite(enemy.battleX) ? enemy.battleX : enemy.x;
       enemy.battleY = Number.isFinite(enemy.battleY) ? enemy.battleY : enemy.y;
