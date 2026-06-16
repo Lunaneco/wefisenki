@@ -22,7 +22,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260615-true-final-heheokun1";
+  const DATA_VERSION = "20260616-button-response1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -1262,26 +1262,73 @@
 
   function scheduleLevelUpSfx(context) {
     const startAt = context.currentTime + 0.018;
-    const notes = [
-      { freq: 523.25, start: 0.00, duration: 0.11, gain: 0.72 },
-      { freq: 659.25, start: 0.09, duration: 0.12, gain: 0.82 },
-      { freq: 783.99, start: 0.18, duration: 0.18, gain: 1.00 }
-    ];
+    const master = context.createGain();
+    const compressor = context.createDynamicsCompressor();
+    master.gain.setValueAtTime(0.92, startAt);
+    master.connect(compressor);
+    compressor.connect(context.destination);
 
-    notes.forEach((note) => {
+    const playTone = ({ freq, start, duration, gain: peak, type = "triangle", endFreq = null }) => {
       const oscillator = context.createOscillator();
       const gain = context.createGain();
-      const time = startAt + note.start;
-      oscillator.type = "triangle";
-      oscillator.frequency.setValueAtTime(note.freq, time);
+      const time = startAt + start;
+      oscillator.type = type;
+      oscillator.frequency.setValueAtTime(freq, time);
+      if (endFreq) {
+        oscillator.frequency.exponentialRampToValueAtTime(endFreq, time + duration * 0.82);
+      }
       gain.gain.setValueAtTime(0.0001, time);
-      gain.gain.exponentialRampToValueAtTime(SFX_VOLUME * note.gain, time + 0.018);
-      gain.gain.exponentialRampToValueAtTime(0.0001, time + note.duration);
+      gain.gain.exponentialRampToValueAtTime(SFX_VOLUME * peak, time + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
       oscillator.connect(gain);
-      gain.connect(context.destination);
+      gain.connect(master);
       oscillator.start(time);
-      oscillator.stop(time + note.duration + 0.03);
+      oscillator.stop(time + duration + 0.04);
+    };
+
+    const fanfareNotes = [
+      { freq: 392.00, start: 0.00, duration: 0.16, gain: 0.54, type: "sine", endFreq: 523.25 },
+      { freq: 523.25, start: 0.02, duration: 0.12, gain: 0.62 },
+      { freq: 659.25, start: 0.10, duration: 0.13, gain: 0.76 },
+      { freq: 783.99, start: 0.18, duration: 0.15, gain: 0.90 },
+      { freq: 1046.50, start: 0.28, duration: 0.24, gain: 1.08, type: "sine" },
+      { freq: 1318.51, start: 0.34, duration: 0.18, gain: 0.56, type: "triangle" }
+    ];
+    fanfareNotes.forEach(playTone);
+
+    [1567.98, 2093.00, 2637.02, 3135.96].forEach((freq, index) => {
+      playTone({
+        freq,
+        start: 0.18 + index * 0.045,
+        duration: 0.09,
+        gain: 0.26 - index * 0.025,
+        type: "sine"
+      });
     });
+
+    const noiseDuration = 0.18;
+    const sampleRate = context.sampleRate;
+    const buffer = context.createBuffer(1, Math.floor(sampleRate * noiseDuration), sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < data.length; i += 1) {
+      const decay = 1 - i / data.length;
+      data[i] = (Math.random() * 2 - 1) * decay;
+    }
+    const sparkle = context.createBufferSource();
+    const filter = context.createBiquadFilter();
+    const gain = context.createGain();
+    const sparkleAt = startAt + 0.3;
+    sparkle.buffer = buffer;
+    filter.type = "highpass";
+    filter.frequency.setValueAtTime(3200, sparkleAt);
+    gain.gain.setValueAtTime(0.0001, sparkleAt);
+    gain.gain.exponentialRampToValueAtTime(SFX_VOLUME * 0.34, sparkleAt + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, sparkleAt + noiseDuration);
+    sparkle.connect(filter);
+    filter.connect(gain);
+    gain.connect(master);
+    sparkle.start(sparkleAt);
+    sparkle.stop(sparkleAt + noiseDuration + 0.02);
   }
 
   function playLevelUpSfx() {
@@ -2529,7 +2576,10 @@
     });
 
     quickActions.addEventListener("click", handleActionClick);
+    quickActions.addEventListener("pointerdown", handleImmediateActionPointerDown);
     sidePanel.addEventListener("click", handleActionClick);
+    sidePanel.addEventListener("pointerdown", handleImmediateActionPointerDown);
+    document.addEventListener("pointerdown", handleSaveSlotCloseEvent, { capture: true, passive: false });
     document.addEventListener("click", handleSaveSlotCloseEvent, true);
     document.addEventListener("touchend", handleSaveSlotCloseEvent, { capture: true, passive: false });
     if (mapHotspots) mapHotspots.addEventListener("click", handleActionClick);
@@ -2549,7 +2599,10 @@
     }
 
     const mapCloseBtn = document.querySelector(".map-close-button");
-    if (mapCloseBtn) mapCloseBtn.addEventListener("click", handleActionClick);
+    if (mapCloseBtn) {
+      mapCloseBtn.addEventListener("pointerdown", handleImmediateActionPointerDown);
+      mapCloseBtn.addEventListener("click", handleActionClick);
+    }
   }
 
   function setView(view) {
@@ -2629,6 +2682,57 @@
     }
     event.preventDefault();
     event.stopPropagation();
+  }
+
+  function performImmediateAction(action, button) {
+    if (!action || !button || button.disabled) return false;
+    if (action === "save") {
+      state.saveSlotPanelActive = true;
+      state.mapDetailActive = false;
+      renderDom(true);
+      return true;
+    }
+    if (action === "save-slot") {
+      saveManualSlot(button.dataset.slot);
+      renderDom(true);
+      return true;
+    }
+    if (action === "load-slot") {
+      const slotNumber = clamp(Math.floor(Number(button.dataset.slot) || 0), 1, SAVE_SLOT_COUNT);
+      loadSaveEntryFromPanel(SAVE_SLOT_KEYS[slotNumber - 1], `スロット${slotNumber}`);
+      return true;
+    }
+    if (action === "load-auto-save") {
+      loadSaveEntryFromPanel(STORAGE_KEY, "オートセーブ");
+      return true;
+    }
+    if (action === "close-save-slots") {
+      state.saveSlotPanelActive = false;
+      renderDom(true);
+      return true;
+    }
+    if (action === "close-roster-detail") {
+      state.selectedAllyId = "";
+      renderDom(true);
+      return true;
+    }
+    if (action === "close-map-detail") {
+      state.mapDetailActive = false;
+      renderDom(true);
+      return true;
+    }
+    return false;
+  }
+
+  function handleImmediateActionPointerDown(event) {
+    const button = closestActionTarget(event);
+    if (!button || button.disabled) return;
+    const action = button.dataset.action || "";
+    if (!performImmediateAction(action, button)) return;
+    button.dataset.pointerHandledAt = String(Date.now());
+    event.preventDefault();
+    event.stopPropagation();
+    if (typeof event.stopImmediatePropagation === "function") event.stopImmediatePropagation();
   }
 
   function handleSaveSlotCloseEvent(event) {
