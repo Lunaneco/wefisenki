@@ -22,7 +22,7 @@
   const STORAGE_KEY = "wefi-sengoku-save-v1";
   const SAVE_SLOT_COUNT = 3;
   const SAVE_SLOT_KEYS = Array.from({ length: SAVE_SLOT_COUNT }, (_, index) => `${STORAGE_KEY}-slot-${index + 1}`);
-  const DATA_VERSION = "20260616-button-response1";
+  const DATA_VERSION = "20260619-confusion-pressure1";
   const BGM_ROOT = "wefi戦記BGM";
   const BGM_VOLUME = 0.42;
   const BGM_DUCK_VOLUME = 0.04;
@@ -595,6 +595,7 @@
   };
   const runtimeBaseAllies = new Map();
   const runtimeBaseSkills = new Map();
+  const imageLoadPromises = new Map();
   // デバッグ用にグローバルへ公開（リリース前に削除すること）
   window.wfiDebugState = state;
 
@@ -702,7 +703,7 @@
   }
 
   function heheokunBossSlice(id) {
-    return `assets/enemies/shinlastboss/へへお君/heheokun_slices/heheokun_slices/heheokun_${id}.png`;
+    return `assets/enemies/shinlastboss/heheokun_slices/heheokun_slices/heheokun_${id}.png`;
   }
 
   function heheokunBossFramePaths() {
@@ -1076,27 +1077,47 @@
 
   function loadImage(src) {
     if (!src) return Promise.resolve(null);
-    if (state.images.has(src)) return Promise.resolve(state.images.get(src));
+    const cached = state.images.get(src);
+    if (cached) return Promise.resolve(cached);
+    if (imageLoadPromises.has(src)) return imageLoadPromises.get(src);
 
-    return new Promise((resolve) => {
-      const image = new Image();
-      image.onload = () => {
-        state.images.set(src, image);
-        resolve(image);
+    const promise = new Promise((resolve) => {
+      const attemptLoad = (attempt) => {
+        const loadedImage = new Image();
+        loadedImage.onload = () => {
+          state.images.set(src, loadedImage);
+          resolve(loadedImage);
+        };
+        loadedImage.onerror = () => {
+          state.images.delete(src);
+          if (attempt < 1) {
+            window.setTimeout(() => attemptLoad(attempt + 1), 80);
+            return;
+          }
+          resolve(null);
+        };
+        const cacheSafeSrc = window.location.protocol === "file:" || src.includes("?") || /^(data:|blob:)/.test(src)
+          ? src
+          : `${src}?v=${DATA_VERSION}`;
+        loadedImage.src = cacheSafeSrc;
       };
-      image.onerror = () => {
-        state.images.set(src, null);
-        resolve(null);
-      };
-      const cacheSafeSrc = window.location.protocol === "file:" || src.includes("?") || /^(data:|blob:)/.test(src)
-        ? src
-        : `${src}?v=${DATA_VERSION}`;
-      image.src = cacheSafeSrc;
+      attemptLoad(0);
     });
+    imageLoadPromises.set(src, promise);
+    promise.finally(() => imageLoadPromises.delete(src));
+    return promise;
   }
 
   function image(src) {
     return state.images.get(src) || null;
+  }
+
+  function bossFramePaths(frameSet) {
+    return [...new Set(Object.values(frameSet || {}).flat().filter(Boolean))];
+  }
+
+  function ensureBossFramesLoaded(frameSet) {
+    return Promise.all(bossFramePaths(frameSet).map(loadImage));
   }
 
   function menuSpriteForAlly(ally) {
@@ -1264,7 +1285,12 @@
     const startAt = context.currentTime + 0.018;
     const master = context.createGain();
     const compressor = context.createDynamicsCompressor();
-    master.gain.setValueAtTime(0.92, startAt);
+    master.gain.setValueAtTime(0.76, startAt);
+    compressor.threshold.setValueAtTime(-18, startAt);
+    compressor.knee.setValueAtTime(10, startAt);
+    compressor.ratio.setValueAtTime(12, startAt);
+    compressor.attack.setValueAtTime(0.004, startAt);
+    compressor.release.setValueAtTime(0.16, startAt);
     master.connect(compressor);
     compressor.connect(context.destination);
 
@@ -1296,39 +1322,20 @@
     ];
     fanfareNotes.forEach(playTone);
 
-    [1567.98, 2093.00, 2637.02, 3135.96].forEach((freq, index) => {
+    [1318.51, 1567.98, 2093.00].forEach((freq, index) => {
       playTone({
         freq,
-        start: 0.18 + index * 0.045,
-        duration: 0.09,
-        gain: 0.26 - index * 0.025,
+        start: 0.2 + index * 0.06,
+        duration: 0.12,
+        gain: 0.2 - index * 0.03,
         type: "sine"
       });
     });
 
-    const noiseDuration = 0.18;
-    const sampleRate = context.sampleRate;
-    const buffer = context.createBuffer(1, Math.floor(sampleRate * noiseDuration), sampleRate);
-    const data = buffer.getChannelData(0);
-    for (let i = 0; i < data.length; i += 1) {
-      const decay = 1 - i / data.length;
-      data[i] = (Math.random() * 2 - 1) * decay;
-    }
-    const sparkle = context.createBufferSource();
-    const filter = context.createBiquadFilter();
-    const gain = context.createGain();
-    const sparkleAt = startAt + 0.3;
-    sparkle.buffer = buffer;
-    filter.type = "highpass";
-    filter.frequency.setValueAtTime(3200, sparkleAt);
-    gain.gain.setValueAtTime(0.0001, sparkleAt);
-    gain.gain.exponentialRampToValueAtTime(SFX_VOLUME * 0.34, sparkleAt + 0.012);
-    gain.gain.exponentialRampToValueAtTime(0.0001, sparkleAt + noiseDuration);
-    sparkle.connect(filter);
-    filter.connect(gain);
-    gain.connect(master);
-    sparkle.start(sparkleAt);
-    sparkle.stop(sparkleAt + noiseDuration + 0.02);
+    [
+      { freq: 1046.5, start: 0.34, duration: 0.28, gain: 0.2 },
+      { freq: 1567.98, start: 0.39, duration: 0.22, gain: 0.13 }
+    ].forEach((note) => playTone({ ...note, type: "sine" }));
   }
 
   function playLevelUpSfx() {
@@ -2111,6 +2118,22 @@
     skill.description = "一番近い敵1体にステータス信用を付与し、ボス以外の雑魚敵ならその場で味方に変える。ボス級の敵には効かない。";
   }
 
+  function applyStatusBehaviorDescriptions() {
+    state.skills.forEach((skill) => {
+      const statusIds = new Set(
+        (skill.effects || [])
+          .filter((effect) => effect.type === "status")
+          .map((effect) => effect.statusId)
+      );
+      if (statusIds.has("confusion") && !/他の敵を攻撃/.test(skill.description || "")) {
+        skill.description = `${skill.description || ""} 混乱中の敵は一定時間、他の敵を攻撃する。混乱はボスには効かない。`.trim();
+      }
+      if (statusIds.has("pressure") && !/攻撃不能/.test(skill.description || "")) {
+        skill.description = `${skill.description || ""} 圧力中の敵は一定時間、攻撃不能になる。圧力はボスには効かない。`.trim();
+      }
+    });
+  }
+
   // オープニングを１ステップ進める
   function advanceOpening() {
     if (state.openingStep < OPENING_DIALOGUES.length - 1) {
@@ -2407,6 +2430,7 @@
       applyLineSliceAnimations();
       applyHaruluckyReflectSkill();
       applyShinjiWolfTrustSkill();
+      applyStatusBehaviorDescriptions();
       rememberBaseRuntimeData();
       state.unlockedAllyIds = new Set();
       state.selectedAllyId = "";
@@ -2447,6 +2471,7 @@
       imagePaths.add(LINE_MENU_SPRITE);
       imagePaths.add(TEN_ROSTER_PORTRAIT);
       collectPaths({ secretStages: SECRET_STAGES }, imagePaths);
+      bossFramePaths(heheokunBossFramePaths()).forEach((src) => imagePaths.add(src));
       imagePaths.add("title.png");
       imagePaths.add("titlebotton.png");
       // オープニング立ち絵の画像を事前ロード
@@ -4111,6 +4136,15 @@
     enemy.spriteKey = "heheokun_final_boss";
     enemy.finalBossName = battle.stage.transformBossName || HEHEOKUN_FINAL_BOSS_NAME;
     enemy.bossFrames = battle.stage.transformEnemyFrames || heheokunBossFramePaths();
+    enemy.lastRenderedBossFrame = enemy.bossFrames.idle?.find((src) => image(src)) || "";
+    ensureBossFramesLoaded(enemy.bossFrames).then(() => {
+      if (state.battle === battle && battle.enemies.includes(enemy)) {
+        enemy.lastRenderedBossFrame = enemy.bossFrames.idle?.find((src) => image(src))
+          || bossFramePaths(enemy.bossFrames).find((src) => image(src))
+          || enemy.lastRenderedBossFrame;
+        renderDom(true);
+      }
+    });
     enemy.drawBox = { w: 138, h: 154 };
     enemy.finalBossPhase = 2;
     enemy.status = {};
@@ -4780,15 +4814,65 @@
     return motion;
   }
 
+  function isBossStatusImmune(enemy) {
+    return !!(enemy?.elite || enemy?.finalBoss || enemy?.trueFinalBoss || enemy?.allyBossId || enemy?.bossFrames);
+  }
+
+  function nearestEnemyForConfusion(source) {
+    const battle = state.battle;
+    if (!battle) return null;
+    const candidates = battle.enemies.filter((enemy) => enemy !== source && enemy.hp > 0);
+    if (!candidates.length) return null;
+    return candidates.reduce((best, enemy) => {
+      const distance = Math.hypot(battleUnitX(enemy) - source.battleX, battleUnitY(enemy) - source.battleY);
+      const bestDistance = Math.hypot(battleUnitX(best) - source.battleX, battleUnitY(best) - source.battleY);
+      return distance < bestDistance ? enemy : best;
+    }, candidates[0]);
+  }
+
+  function updateConfusedEnemy(enemy, dt) {
+    const target = nearestEnemyForConfusion(enemy);
+    if (!target) return;
+
+    const isRanged = !enemy.meleeOnly && (enemy.type === "archer" || enemy.type === "rifleman" || enemy.type === "busho");
+    const range = isRanged ? (enemy.type === "busho" ? 260 : enemy.type === "rifleman" ? 230 : 190) : (enemy.elite ? 120 : 100);
+    const dist = Math.hypot(enemy.battleX - battleUnitX(target), enemy.battleY - battleUnitY(target));
+
+    if (dist <= range) {
+      if (enemy.status.pressure > 0) return;
+      enemy.attackTimer = Math.max(0, (enemy.attackTimer || 0) - dt);
+      if (enemy.attackTimer > 0) return;
+      const damage = Math.max(1, Math.round(enemy.attack * 0.72));
+      target.hp -= damage;
+      enemy.anim = "attack";
+      enemy.animUntil = (state.battle?.elapsed || 0) + 0.45;
+      addParticle(target.battleX, target.battleY - 42, `混乱 ${damage}`, statusColor("confusion"), 0.72);
+      enemy.attackTimer = Math.max(0.42, (enemy.elite ? 0.9 : 1.35) * (enemy.loopAttackIntervalMult || 1));
+      return;
+    }
+
+    const speed = enemy.speed * (enemy.status.slow > 0 ? 0.45 : 1);
+    const desiredX = clamp(battleUnitX(target) + range * 0.55, battleBounds().minX + 16, battleBounds().maxX - 12);
+    const desiredY = clamp(battleUnitY(target), battleBounds().minY + 16, battleBounds().maxY - 16);
+    moveToward(enemy, desiredX, desiredY, speed, dt);
+    enemy.x = enemy.battleX;
+    enemy.y = enemy.battleY;
+  }
+
   function updateEnemies(dt) {
     const battle = state.battle;
     for (const enemy of battle.enemies) {
+      if (enemy.hp <= 0) continue;
       tickStatus(enemy, dt);
       if (!enemy.trueFinalBoss && (enemy.status.sleep > 0 || enemy.status.stun > 0 || enemy.status.lock > 0)) continue;
       if (maybeTriggerTrueFinalBossMidpoint(enemy)) return;
 
       enemy.battleX = Number.isFinite(enemy.battleX) ? enemy.battleX : enemy.x;
       enemy.battleY = Number.isFinite(enemy.battleY) ? enemy.battleY : enemy.y;
+      if (enemy.status.confusion > 0) {
+        updateConfusedEnemy(enemy, dt);
+        continue;
+      }
       const target = targetAlly(enemy);
       const finalBossProfile = enemy.finalBoss ? updateFinalBossPhase(enemy, dt, target) : null;
       const isRanged = !enemy.meleeOnly && (enemy.type === "archer" || enemy.type === "rifleman" || enemy.type === "busho");
@@ -4798,6 +4882,7 @@
       const enemyRange = finalBossProfile ? baseEnemyRange : newGamePlusEnemyLaserRange(enemy, baseEnemyRange, isRanged);
       const dist = target ? Math.hypot(enemy.battleX - target.battleX, enemy.battleY - target.battleY) : 999;
       if (target && dist <= enemyRange) {
+        if (enemy.status.pressure > 0) continue;
         enemy.attackTimer -= dt;
         if (enemy.attackTimer <= 0) {
           // 三すくみ属性補正を適用して敵の攻撃ダメージを決定
@@ -4998,6 +5083,11 @@
         }
       } else if (effect.type === "status") {
         targets.forEach((enemy) => {
+          const bossImmuneStatus = effect.statusId === "confusion" || effect.statusId === "pressure";
+          if (bossImmuneStatus && isBossStatusImmune(enemy)) {
+            addParticle(enemy.x, enemy.y - 46, `${statusLabel(effect.statusId)}無効`, "#9aa3ad", 0.82);
+            return;
+          }
           if (Math.random() <= (effect.chance ?? 1)) {
             // 状態異常の付与時間を2倍に補正
             const duration = (effect.durationSec || 3) * skillMult;
@@ -6706,7 +6796,23 @@
       : (enemy.bossFrames?.idle || []);
     if (!frames.length) return "";
     const fps = animName === "skill" ? 9 : animName === "attack" ? 12 : 7;
-    return frames[Math.floor(elapsed * fps) % frames.length] || frames[0];
+    const preferredFrame = frames[Math.floor(elapsed * fps) % frames.length] || frames[0];
+    const loadedFrame = image(preferredFrame)
+      ? preferredFrame
+      : frames.find((src) => image(src))
+        || enemy.bossFrames?.idle?.find((src) => image(src))
+        || bossFramePaths(enemy.bossFrames).find((src) => image(src))
+        || (image(enemy.lastRenderedBossFrame) ? enemy.lastRenderedBossFrame : "");
+    if (loadedFrame) {
+      enemy.lastRenderedBossFrame = loadedFrame;
+      return loadedFrame;
+    }
+    loadImage(preferredFrame).then((loaded) => {
+      if (!loaded) return;
+      enemy.lastRenderedBossFrame = preferredFrame;
+      renderDom(true);
+    });
+    return enemy.lastRenderedBossFrame || "";
   }
 
   function drawEnemySprite(enemy, scale) {
