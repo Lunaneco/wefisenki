@@ -991,6 +991,8 @@ body.is-battle-view .app-shell {
   background: rgba(17, 22, 21, 0.96);
   text-align: left;
   cursor: pointer;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .ally-card.is-selected {

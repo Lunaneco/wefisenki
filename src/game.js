@@ -611,6 +611,10 @@
     lastX: 0,
     lastY: 0
   };
+  let lastRosterPointerSelection = {
+    allyId: "",
+    at: 0
+  };
   const battleKeys = new Set();
   const audioState = {
     unlocked: false,
@@ -2588,9 +2592,17 @@
     document.addEventListener("keydown", handleBattleKeyDown);
     document.addEventListener("keyup", handleBattleKeyUp);
 
+    rosterRail.addEventListener("pointerdown", handleRosterPointerDown);
     rosterRail.addEventListener("click", (event) => {
       const button = event.target.closest("[data-ally-id]");
       if (!button) return;
+      if (
+        button.dataset.allyId === lastRosterPointerSelection.allyId
+        && Date.now() - lastRosterPointerSelection.at < 700
+      ) {
+        event.preventDefault();
+        return;
+      }
       if (state.view === "battle" && state.battle && !state.battle.result) {
         selectBattleAlly(button.dataset.allyId);
       } else {
@@ -2682,6 +2694,31 @@
   function closestActionTarget(event) {
     const target = event.target instanceof Element ? event.target : event.target?.parentElement;
     return target?.closest?.("[data-action]") || null;
+  }
+
+  function handleRosterPointerDown(event) {
+    const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+    const button = target?.closest?.("[data-ally-id]");
+    if (
+      !button
+      || state.view !== "battle"
+      || !state.battle
+      || state.battle.result
+      || state.battle.dialogue
+    ) {
+      return;
+    }
+
+    const allyId = button.dataset.allyId || "";
+    if (!allyId) return;
+    lastRosterPointerSelection = {
+      allyId,
+      at: Date.now()
+    };
+    selectBattleAlly(allyId);
+    renderDom(true);
+    event.preventDefault();
+    event.stopPropagation();
   }
 
   function handleBattleOverlayPointerDown(event) {
@@ -3258,16 +3295,21 @@
     const current = activeBattleAlly();
     const x = Number.isFinite(current?.battleX) ? current.battleX : battle.moveTargetX || 96;
     const y = Number.isFinite(current?.battleY) ? current.battleY : battle.moveTargetY || 292;
+    const moveTargetX = Number.isFinite(battle.moveTargetX) ? battle.moveTargetX : x;
+    const moveTargetY = Number.isFinite(battle.moveTargetY) ? battle.moveTargetY : y;
+    const keepsMoving = Math.hypot(moveTargetX - x, moveTargetY - y) > 2
+      || (battlePointer.active && battlePointer.joystick)
+      || battleKeys.size > 0;
     next.battleX = x;
     next.battleY = y;
     next.visualDirection = current?.visualDirection || "front";
-    next.moving = false;
-    next.anim = "idle";
+    next.moving = keepsMoving;
+    next.anim = keepsMoving ? "move" : "idle";
     next.attackQueuedUntil = 0;
     next.animUntil = battle.elapsed + 0.25;
     battle.activeAllyId = next.id;
     state.selectedAllyId = next.id;
-    setBattleMoveTarget(x, y);
+    setBattleMoveTarget(moveTargetX, moveTargetY);
     addParticle(x, y - 58, "CHANGE", "#55afd7", 0.75);
     addLog(`${next.name} に交代。`);
     syncBgm();
