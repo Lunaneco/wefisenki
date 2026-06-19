@@ -615,6 +615,15 @@
     allyId: "",
     at: 0
   };
+  const rosterPointer = {
+    active: false,
+    pointerId: null,
+    allyId: "",
+    startX: 0,
+    startY: 0,
+    startScrollLeft: 0,
+    moved: false
+  };
   const battleKeys = new Set();
   const audioState = {
     unlocked: false,
@@ -2593,6 +2602,9 @@
     document.addEventListener("keyup", handleBattleKeyUp);
 
     rosterRail.addEventListener("pointerdown", handleRosterPointerDown);
+    document.addEventListener("pointermove", handleRosterPointerMove, { passive: false });
+    document.addEventListener("pointerup", handleRosterPointerUp, { passive: false });
+    document.addEventListener("pointercancel", handleRosterPointerCancel, { passive: false });
     rosterRail.addEventListener("click", (event) => {
       const button = event.target.closest("[data-ally-id]");
       if (!button) return;
@@ -2710,15 +2722,60 @@
     }
 
     const allyId = button.dataset.allyId || "";
-    if (!allyId) return;
+    if (!allyId || rosterPointer.active) return;
+    rosterPointer.active = true;
+    rosterPointer.pointerId = event.pointerId;
+    rosterPointer.allyId = allyId;
+    rosterPointer.startX = event.clientX;
+    rosterPointer.startY = event.clientY;
+    rosterPointer.startScrollLeft = rosterRail.scrollLeft;
+    rosterPointer.moved = false;
+    rosterRail.setPointerCapture?.(event.pointerId);
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  function handleRosterPointerMove(event) {
+    if (!rosterPointer.active || rosterPointer.pointerId !== event.pointerId) return;
+    const dx = event.clientX - rosterPointer.startX;
+    const dy = event.clientY - rosterPointer.startY;
+    if (Math.abs(dx) > 5 || Math.abs(dy) > 8) {
+      rosterPointer.moved = true;
+    }
+    if (rosterPointer.moved) {
+      rosterRail.scrollLeft = rosterPointer.startScrollLeft - dx;
+    }
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  function finishRosterPointer(event, selectOnTap) {
+    if (!rosterPointer.active || rosterPointer.pointerId !== event.pointerId) return;
+    const allyId = rosterPointer.allyId;
+    const shouldSelect = selectOnTap && !rosterPointer.moved;
     lastRosterPointerSelection = {
       allyId,
       at: Date.now()
     };
-    selectBattleAlly(allyId);
-    renderDom(true);
+    rosterRail.releasePointerCapture?.(event.pointerId);
+    rosterPointer.active = false;
+    rosterPointer.pointerId = null;
+    rosterPointer.allyId = "";
+    rosterPointer.moved = false;
+    if (shouldSelect) {
+      selectBattleAlly(allyId);
+      renderDom(true);
+    }
     event.preventDefault();
     event.stopPropagation();
+  }
+
+  function handleRosterPointerUp(event) {
+    finishRosterPointer(event, true);
+  }
+
+  function handleRosterPointerCancel(event) {
+    finishRosterPointer(event, false);
   }
 
   function handleBattleOverlayPointerDown(event) {

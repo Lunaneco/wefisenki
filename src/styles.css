@@ -978,6 +978,9 @@ body.is-battle-view .app-shell {
   grid-template-columns: repeat(10, minmax(84px, 1fr));
   gap: 6px;
   overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-behavior: auto;
+  touch-action: none;
   padding-bottom: 2px;
 }
 
