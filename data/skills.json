@@ -12,7 +12,7 @@
       "target": "enemy_area_self",
       "energyCost": 45,
       "cooldownSec": 28,
-      "description": "周囲の敵に光属性範囲ダメージを与え、圧力を付与する。自身は攻撃力が上がるが、短時間HPを消耗する。",
+      "description": "周囲の敵に光属性範囲ダメージを与え、一定時間攻撃不能になる圧力を付与する。圧力はボスには効かない。自身は攻撃力が上がるが、短時間HPを消耗する。",
       "effects": [
         {
           "type": "damage",
@@ -58,30 +58,20 @@
     },
     {
       "id": "bokaaaaaaan",
-      "name": "BoKaaaaaaan!!",
+      "name": "信用BoKaaaaaaan!!",
       "owner": "shinji_wolf",
       "kind": "active",
       "element": "impact",
-      "target": "enemy_front_arc",
+      "target": "enemy_nearest",
       "energyCost": 50,
       "cooldownSec": 24,
-      "description": "巨大ハンマーで前方範囲を叩き、敵をノックバックさせる。一定確率で気絶を付与する。",
+      "description": "一番近い敵1体にステータス信用を付与し、ボス以外の雑魚敵ならその場で味方に変える。ボス級の敵には効かない。",
       "effects": [
         {
-          "type": "damage",
-          "power": 390,
-          "area": "front_arc"
-        },
-        {
-          "type": "knockback",
-          "distance": 2.2,
-          "target": "hit_enemies"
-        },
-        {
-          "type": "status",
-          "statusId": "stun",
-          "chance": 0.55,
-          "durationSec": 3
+          "type": "trust_convert",
+          "statusId": "trust",
+          "chance": 1,
+          "durationSec": 999
         }
       ],
       "assets": {
@@ -247,7 +237,7 @@
       "target": "enemy_front_line",
       "energyCost": 38,
       "cooldownSec": 20,
-      "description": "紫の飛沫弾を連射し、毒・混乱・防御低下を付与する。",
+      "description": "紫の飛沫弾を連射し、毒・混乱・防御低下を付与する。混乱中の敵は他の敵を攻撃するが、ボスには効かない。",
       "effects": [
         {
           "type": "damage",
@@ -827,7 +817,7 @@
       "target": "enemy_all",
       "energyCost": 48,
       "cooldownSec": 30,
-      "description": "辞表と社畜バッグをばら撒き、敵全体にダメージと混乱を付与する。",
+      "description": "辞表と社畜バッグをばら撒き、敵全体にダメージと混乱を付与する。混乱中の敵は一定時間ほかの敵を攻撃するが、ボスには効かない。",
       "effects": [
         {
           "type": "damage",
@@ -872,7 +862,7 @@
       "target": "enemy_area",
       "energyCost": 44,
       "cooldownSec": 26,
-      "description": "幻影術師の名を借りた物理攻撃。分身で敵を惑わせながら杖で叩き込み、範囲ダメージと混乱を与える。",
+      "description": "幻影術師の名を借りた物理攻撃。分身で敵を惑わせながら杖で叩き込み、範囲ダメージと混乱を与える。混乱中の敵は一定時間ほかの敵を攻撃するが、ボスには効かない。",
       "effects": [
         {
           "type": "damage",
