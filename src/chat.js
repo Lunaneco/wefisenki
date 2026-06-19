@@ -6,6 +6,7 @@
 
   const NICK_STORAGE_KEY = "wefi-chat-nickname";
   const DEVICE_ID_KEY = "wefi-chat-device-id";
+  const LAST_READ_MESSAGE_KEY = "wefi-chat-last-read-message";
   const MAX_MESSAGES = 100;
   const MAX_MSG_LENGTH = 80;
   const MAX_NICK_LENGTH = 12;
@@ -22,6 +23,15 @@
   }
 
   const deviceId = getOrCreateDeviceId();
+
+  function getLastReadMessageKey() {
+    return localStorage.getItem(LAST_READ_MESSAGE_KEY) || "";
+  }
+
+  function saveLastReadMessageKey(messageKey) {
+    if (!messageKey) return;
+    localStorage.setItem(LAST_READ_MESSAGE_KEY, messageKey);
+  }
 
   function getNickname() {
     return localStorage.getItem(NICK_STORAGE_KEY) || "";
@@ -106,6 +116,8 @@
     isOpen: false,
     hasNick: false,
     unreadCount: 0,
+    lastReadMessageKey: getLastReadMessageKey(),
+    newestSeenMessageKey: "",
     lastSentAt: 0,
     dbListener: null,
   };
@@ -139,6 +151,7 @@
   function openPanel() {
     chatState.isOpen = true;
     elPanel.classList.add("is-open");
+    markMessagesRead(chatState.newestSeenMessageKey);
     chatState.unreadCount = 0;
     if (elTabBadge) {
       elTabBadge.textContent = "";
@@ -205,9 +218,18 @@
     closeNickModal();
   }
 
-  function renderMessage(msgData) {
+  function markMessagesRead(messageKey) {
+    if (!messageKey || messageKey <= chatState.lastReadMessageKey) return;
+    chatState.lastReadMessageKey = messageKey;
+    saveLastReadMessageKey(messageKey);
+  }
+
+  function renderMessage(msgData, messageKey = "") {
     const isMine = msgData.deviceId === deviceId;
     const isSystem = msgData.type === "system";
+    if (messageKey > chatState.newestSeenMessageKey) {
+      chatState.newestSeenMessageKey = messageKey;
+    }
 
     if (elEmptyHint) elEmptyHint.style.display = "none";
 
@@ -229,7 +251,9 @@
     elMessagesArea.appendChild(el);
     scrollToBottom();
 
-    if (!chatState.isOpen && !isMine && elTabBadge) {
+    if (chatState.isOpen) {
+      markMessagesRead(messageKey);
+    } else if (!isMine && messageKey > chatState.lastReadMessageKey && elTabBadge) {
       chatState.unreadCount++;
       elTabBadge.textContent = chatState.unreadCount > 99 ? "99+" : chatState.unreadCount;
       elTabBadge.classList.add("is-visible");
@@ -296,18 +320,39 @@
       const db = firebase.database();
       const messagesRef = db.ref("chat/messages").limitToLast(MAX_MESSAGES);
 
-      messagesRef.on(
-        "child_added",
-        (snapshot) => {
-          elErrorBar.classList.remove("is-visible");
-          const data = snapshot.val();
-          if (data) renderMessage(data);
-        },
-        (error) => {
-          console.error("Firebase listen error:", error);
-          elErrorBar.classList.add("is-visible");
-        }
-      );
+      const attachMessageListener = () => {
+        messagesRef.on(
+          "child_added",
+          (snapshot) => {
+            elErrorBar.classList.remove("is-visible");
+            const data = snapshot.val();
+            if (data) renderMessage(data, snapshot.key || "");
+          },
+          (error) => {
+            console.error("Firebase listen error:", error);
+            elErrorBar.classList.add("is-visible");
+          }
+        );
+      };
+
+      if (!chatState.lastReadMessageKey) {
+        messagesRef.once("value").then((snapshot) => {
+          let newestExistingKey = "";
+          snapshot.forEach((child) => {
+            if (child.key > newestExistingKey) newestExistingKey = child.key;
+          });
+          if (newestExistingKey) {
+            chatState.lastReadMessageKey = newestExistingKey;
+            saveLastReadMessageKey(newestExistingKey);
+          }
+          attachMessageListener();
+        }).catch((error) => {
+          console.error("Firebase initial read error:", error);
+          attachMessageListener();
+        });
+      } else {
+        attachMessageListener();
+      }
     } catch (e) {
       console.error("Firebase init error:", e);
       elErrorBar.classList.add("is-visible");
