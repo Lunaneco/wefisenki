@@ -624,6 +624,11 @@
     startScrollLeft: 0,
     moved: false
   };
+  let lastImmediateAction = {
+    action: "",
+    allyId: "",
+    at: 0
+  };
   const battleKeys = new Set();
   const audioState = {
     unlocked: false,
@@ -2805,6 +2810,11 @@
 
   function performImmediateAction(action, button) {
     if (!action || !button || button.disabled) return false;
+    if (action === "level-up") {
+      levelUpAlly(button.dataset.allyId);
+      renderDom(true);
+      return true;
+    }
     if (action === "save") {
       state.saveSlotPanelActive = true;
       state.mapDetailActive = false;
@@ -2848,6 +2858,11 @@
     if (!button || button.disabled) return;
     const action = button.dataset.action || "";
     if (!performImmediateAction(action, button)) return;
+    lastImmediateAction = {
+      action,
+      allyId: button.dataset.allyId || "",
+      at: Date.now()
+    };
     button.dataset.pointerHandledAt = String(Date.now());
     event.preventDefault();
     event.stopPropagation();
@@ -2885,6 +2900,15 @@
 
     const button = closestActionTarget(event);
     const action = button?.dataset.action || "";
+    if (
+      button
+      && action === lastImmediateAction.action
+      && (button.dataset.allyId || "") === lastImmediateAction.allyId
+      && Date.now() - lastImmediateAction.at < 700
+    ) {
+      event.preventDefault();
+      return;
+    }
     if (button?.dataset.pointerHandledAt) {
       const handledAt = Number(button.dataset.pointerHandledAt) || 0;
       if (Date.now() - handledAt < 700) {
@@ -3133,6 +3157,15 @@
       return;
     }
 
+    if (state.view === "roster") {
+      const picked = rosterAllyAtCanvasPoint(x, y);
+      if (picked) {
+        state.selectedAllyId = picked.id;
+        renderDom(true);
+      }
+      return;
+    }
+
     if (state.view === "map") {
       const secretStage = secretStageAtCanvasPoint(x, y);
       if (secretStage) {
@@ -3158,6 +3191,29 @@
         renderDom(true);
       }
     }
+  }
+
+  function rosterAllyAtCanvasPoint(x, y) {
+    const allies = playableAllies();
+    const positions = allyPositions(allies.length);
+    const compact = allies.length > 9;
+    const halfWidth = compact ? 32 : 38;
+    const topOffset = compact ? 76 : 84;
+    const bottomOffset = 28;
+
+    for (let index = allies.length - 1; index >= 0; index -= 1) {
+      const point = positions[index];
+      if (!point) continue;
+      if (
+        x >= point.x - halfWidth
+        && x <= point.x + halfWidth
+        && y >= point.y - topOffset
+        && y <= point.y + bottomOffset
+      ) {
+        return allies[index];
+      }
+    }
+    return null;
   }
 
   function secretStageAtCanvasPoint(x, y) {
