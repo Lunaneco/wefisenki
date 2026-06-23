@@ -51,6 +51,9 @@ const context = {
   escapeHtml(str) {
     return str;
   },
+  closestActionTarget(event) {
+    return event.target?.closest?.('[data-action]') || null;
+  },
   console: console
 };
 
@@ -151,6 +154,85 @@ console.log('サイドパネルタップ後: startNewGamePlus 呼び出し状況
 
 if (startNewGamePlusCalled !== true) {
   throw new Error('サイドパネルを一度タップした時点で startNewGamePlus が呼ばれる必要があります。');
+}
+
+console.log('自軍戦力の算出と比較判定を確認します...');
+const powerContext = {
+  clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  },
+  allyLevelMultiplier() {
+    return 1;
+  },
+  effectiveStagePower(stage) {
+    return stage.power;
+  },
+  playableAllies() {
+    return [];
+  },
+  formatNum(value) {
+    return Math.round(value).toLocaleString('ja-JP');
+  }
+};
+const powerScript = new vm.Script(`
+  ${extractFunction('allyCombatPower')}
+  ${extractFunction('currentArmyPower')}
+  ${extractFunction('stagePowerComparison')}
+`);
+vm.createContext(powerContext);
+powerScript.runInContext(powerContext);
+
+const sampleAlly = {
+  hp: 6300,
+  stats: { hp: 6300, attack: 380, defense: 240, speed: 94 }
+};
+if (powerContext.allyCombatPower(sampleAlly) !== 2474) {
+  throw new Error('Lv.1基準キャラの戦力がステージ1推奨値付近になっていません。');
+}
+if (powerContext.allyCombatPower({ ...sampleAlly, hp: 0 }) !== 0) {
+  throw new Error('戦闘不能キャラは自軍戦力から除外される必要があります。');
+}
+if (powerContext.stagePowerComparison({ power: 2500 }, 2474).label !== '適正') {
+  throw new Error('推奨戦力付近は「適正」と判定される必要があります。');
+}
+if (powerContext.stagePowerComparison({ power: 2500 }, 3000).label !== '余裕あり') {
+  throw new Error('推奨戦力を十分に上回る場合は「余裕あり」と判定される必要があります。');
+}
+if (powerContext.stagePowerComparison({ power: 2500 }, 2000).label !== '要強化') {
+  throw new Error('推奨戦力を大きく下回る場合は「要強化」と判定される必要があります。');
+}
+
+console.log('へへへへへの撃破時回復を確認します...');
+const heheheheAlly = {
+  id: 'hehehehehe',
+  hp: 5000,
+  maxHp: 6300,
+  battleX: 100,
+  battleY: 200
+};
+const killHealContext = {
+  HEHEHEHE_KILL_HEAL_RATIO: 0.005,
+  state: { heheheheheAwakened: false },
+  allyById(allyId) {
+    return allyId === heheheheAlly.id ? heheheheAlly : null;
+  },
+  addParticle() {}
+};
+const killHealScript = new vm.Script(extractFunction('healHeheheheOnKill'));
+vm.createContext(killHealContext);
+killHealScript.runInContext(killHealContext);
+
+const recoveredHp = killHealContext.healHeheheheOnKill({ lastHitAllyId: 'hehehehehe' });
+if (recoveredHp !== 32 || heheheheAlly.hp !== 5032) {
+  throw new Error('撃破時に最大HPの0.5%が回復する必要があります。');
+}
+heheheheAlly.hp = 0;
+if (killHealContext.healHeheheheOnKill({ lastHitAllyId: 'hehehehehe' }) !== 0) {
+  throw new Error('戦闘不能中の撃破回復で復活してはいけません。');
+}
+heheheheAlly.hp = heheheheAlly.maxHp;
+if (killHealContext.healHeheheheOnKill({ lastHitAllyId: 'other' }) !== 0) {
+  throw new Error('他キャラの撃破でへへへへへが回復してはいけません。');
 }
 
 console.log('--- すべてのテストに合格しました！ ---');

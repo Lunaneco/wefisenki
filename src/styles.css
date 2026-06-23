@@ -735,6 +735,54 @@ body.is-battle-view #battle-clock {
   font-size: 11px;
 }
 
+.map-power-summary {
+  flex: 0 0 auto;
+  min-width: 82px;
+  padding: 5px 7px;
+  border: 1px solid rgba(244, 207, 120, 0.58);
+  border-radius: 7px;
+  background: rgba(42, 35, 19, 0.72);
+  text-align: center;
+}
+
+.map-power-summary.is-safe {
+  border-color: rgba(126, 226, 168, 0.62);
+  background: rgba(18, 50, 36, 0.72);
+}
+
+.map-power-summary.is-danger {
+  border-color: rgba(255, 127, 120, 0.62);
+  background: rgba(58, 25, 25, 0.72);
+}
+
+.map-power-summary span,
+.map-power-summary small {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.1;
+}
+
+.map-power-summary strong {
+  display: block;
+  margin: 2px 0;
+  color: #fff4d4;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.map-power-summary.is-safe small {
+  color: #7ee2a8;
+}
+
+.map-power-summary.is-balanced small {
+  color: #f4cf78;
+}
+
+.map-power-summary.is-danger small {
+  color: #ff7f78;
+}
+
 .stat-grid,
 .logistics-grid,
 .skill-grid {
@@ -776,6 +824,108 @@ body.is-battle-view .app-shell {
   display: block;
   margin-top: 4px;
   font-size: 14px;
+}
+
+.power-comparison {
+  --power-color: #f4cf78;
+  --power-glow: rgba(244, 207, 120, 0.7);
+  margin: 10px 0;
+  padding: 9px;
+  border: 1px solid rgba(244, 207, 120, 0.52);
+  border-radius: 8px;
+  background: rgba(42, 35, 19, 0.62);
+}
+
+.power-comparison.is-safe {
+  --power-color: #7ee2a8;
+  --power-glow: rgba(126, 226, 168, 0.7);
+  border-color: rgba(126, 226, 168, 0.52);
+  background: rgba(18, 50, 36, 0.62);
+}
+
+.power-comparison.is-balanced {
+  --power-color: #f4cf78;
+  --power-glow: rgba(244, 207, 120, 0.7);
+}
+
+.power-comparison.is-danger {
+  --power-color: #ff7f78;
+  --power-glow: rgba(255, 127, 120, 0.7);
+  border-color: rgba(255, 127, 120, 0.52);
+  background: rgba(58, 25, 25, 0.62);
+}
+
+.power-comparison-values {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 8px;
+  align-items: end;
+}
+
+.power-comparison-values > div:last-child {
+  text-align: right;
+}
+
+.power-comparison-values span,
+.power-comparison-result span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.power-comparison-values small {
+  color: var(--power-color);
+  font-size: 9px;
+}
+
+.power-comparison-values strong {
+  display: block;
+  margin-top: 2px;
+  color: #fff4d4;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.power-comparison-values > i {
+  padding-bottom: 2px;
+  color: var(--power-color);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.power-comparison-result {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.power-comparison-result strong {
+  color: var(--power-color);
+  font-size: 13px;
+}
+
+.power-comparison-result span {
+  text-align: right;
+}
+
+.power-comparison-meter {
+  height: 5px;
+  margin-top: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.power-comparison-meter i {
+  display: block;
+  width: var(--value);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--power-color);
+  box-shadow: 0 0 10px var(--power-glow);
 }
 
 .command-area {
@@ -1463,7 +1613,7 @@ body.roster-swap-active .play-surface::after {
 
   .game-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(70px, 13dvh);
+    grid-template-rows: auto minmax(124px, 18dvh);
     gap: 5px;
     min-height: 0;
     overflow: hidden;
@@ -1484,11 +1634,13 @@ body.roster-swap-active .play-surface::after {
   }
 
   .side-panel {
-    height: min(112px, 14dvh);
-    min-height: 70px;
+    height: clamp(124px, 18dvh, 156px);
+    min-height: 124px;
     max-height: none;
     padding: 6px;
     overscroll-behavior: contain;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 
   .panel-title {
@@ -1513,6 +1665,15 @@ body.roster-swap-active .play-surface::after {
     font-size: 12px;
   }
 
+  .map-power-summary {
+    min-width: 78px;
+    padding: 4px 6px;
+  }
+
+  .map-power-summary strong {
+    font-size: 15px;
+  }
+
   .stat-grid {
     gap: 5px;
     margin: 6px 0;
@@ -1525,6 +1686,27 @@ body.roster-swap-active .play-surface::after {
   .stat strong {
     margin-top: 2px;
     font-size: 14px;
+  }
+
+  .power-comparison {
+    margin: 6px 0;
+    padding: 6px;
+  }
+
+  .power-comparison-values strong {
+    font-size: 16px;
+  }
+
+  .power-comparison-result {
+    margin-top: 5px;
+  }
+
+  .power-comparison-result span {
+    font-size: 9px;
+  }
+
+  .power-comparison-meter {
+    margin-top: 4px;
   }
 
   .section {

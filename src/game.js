@@ -30,6 +30,7 @@
   const SFX_VOLUME = 0.34;
   const ENERGY_CAP = 99999;
   const HEHEHEHE_LOGISTICS_FOOD_GAIN = 5;
+  const HEHEHEHE_KILL_HEAL_RATIO = 0.005;
   const BGM_TRACKS = {
     title: `${BGM_ROOT}/OP.mp3`,
     map: `${BGM_ROOT}/mapBGM.mp3`,
@@ -4901,6 +4902,28 @@
       state.heheheheheAwakened ? "#ffd166" : "#88f0a2",
       1.05
     );
+    healHeheheheOnKill(enemy);
+  }
+
+  function healHeheheheOnKill(enemy) {
+    if (!enemy || enemy.lastHitAllyId !== "hehehehehe") return 0;
+    const ally = allyById("hehehehehe");
+    if (!ally || ally.hp <= 0 || ally.maxHp <= 0) return 0;
+
+    const healAmount = Math.max(1, Math.round(ally.maxHp * HEHEHEHE_KILL_HEAL_RATIO));
+    const beforeHp = ally.hp;
+    ally.hp = Math.min(ally.maxHp, ally.hp + healAmount);
+    const recovered = Math.round(ally.hp - beforeHp);
+    if (recovered <= 0) return 0;
+
+    addParticle(
+      ally.battleX,
+      ally.battleY - 58,
+      `+${recovered} HP`,
+      state.heheheheheAwakened ? "#ffd166" : "#72e981",
+      0.9
+    );
+    return recovered;
   }
 
   function updateAllies(dt) {
@@ -8243,7 +8266,11 @@
           <h2>${stage.id}. ${escapeHtml(stage.name)}</h2>
           <p>${escapeHtml(stage.region)} / ${escapeHtml(stage.difficulty)}${isNewGamePlusActive() ? " / 2周目" : ""}</p>
         </div>
-        <span class="badge">選択可</span>
+        <div class="map-power-summary is-${comparison.tone}" aria-label="自軍戦力 ${comparison.armyPower}、評価 ${comparison.label}">
+          <span>自軍戦力</span>
+          <strong>${formatNum(comparison.armyPower)}</strong>
+          <small>${comparison.label}</small>
+        </div>
       </div>
       <div class="power-comparison is-${comparison.tone}">
         <div class="power-comparison-values">
