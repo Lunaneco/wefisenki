@@ -31,10 +31,6 @@
   const ENERGY_CAP = 99999;
   const HEHEHEHE_LOGISTICS_FOOD_GAIN = 5;
   const HEHEHEHE_KILL_HEAL_RATIO = 0.005;
-  const BATTLE_SWIPE_START_DISTANCE = 18;
-  const BATTLE_SWIPE_START_MAX_DURATION_MS = 240;
-  const BATTLE_SWIPE_SWITCH_DISTANCE = 48;
-  const BATTLE_SWIPE_MAX_DURATION_MS = 700;
   const BGM_TRACKS = {
     title: `${BGM_ROOT}/OP.mp3`,
     map: `${BGM_ROOT}/mapBGM.mp3`,
@@ -618,10 +614,7 @@
     stickY: 0,
     moved: false,
     lastX: 0,
-    lastY: 0,
-    pointerType: "",
-    startedAt: 0,
-    swipeMode: false
+    lastY: 0
   };
   let lastRosterPointerSelection = {
     allyId: "",
@@ -3419,9 +3412,6 @@
     battlePointer.moved = options.preserveMoved ? hadMoved : false;
     battlePointer.lastX = 0;
     battlePointer.lastY = 0;
-    battlePointer.pointerType = "";
-    battlePointer.startedAt = 0;
-    battlePointer.swipeMode = false;
     if (wasJoystick && options.stopAtAlly !== false) {
       const ally = activeBattleAlly();
       if (ally && ally.hp > 0) setBattleMoveTarget(ally.battleX, ally.battleY);
@@ -3446,9 +3436,6 @@
     battlePointer.moved = false;
     battlePointer.lastX = point.x;
     battlePointer.lastY = point.y;
-    battlePointer.pointerType = event.pointerType || "";
-    battlePointer.startedAt = Date.now();
-    battlePointer.swipeMode = false;
     if (!useJoystick) {
       setBattleMoveTarget(point.x, point.y);
     }
@@ -3462,28 +3449,6 @@
     const point = canvasPoint(event);
     const moveDx = point.x - battlePointer.lastX;
     const moveDy = point.y - battlePointer.lastY;
-    const totalDx = point.x - battlePointer.originX;
-    const totalDy = point.y - battlePointer.originY;
-    const touchPointer = battlePointer.pointerType === "touch" || battlePointer.pointerType === "pen";
-    if (
-      touchPointer
-      && !battlePointer.swipeMode
-      && Math.abs(totalDx) >= BATTLE_SWIPE_START_DISTANCE
-      && Math.abs(totalDx) >= Math.abs(totalDy) * 1.35
-      && Date.now() - battlePointer.startedAt <= BATTLE_SWIPE_START_MAX_DURATION_MS
-    ) {
-      battlePointer.swipeMode = true;
-      battlePointer.joystick = false;
-      const ally = activeBattleAlly();
-      if (ally && ally.hp > 0) setBattleMoveTarget(ally.battleX, ally.battleY);
-    }
-    if (battlePointer.swipeMode) {
-      battlePointer.moved = true;
-      battlePointer.lastX = point.x;
-      battlePointer.lastY = point.y;
-      event.preventDefault();
-      return;
-    }
     if (battlePointer.joystick) {
       const stickX = point.x - battlePointer.originX;
       const stickY = point.y - battlePointer.originY;
@@ -3502,29 +3467,8 @@
   function handleBattlePointerUp(event) {
     if (!battlePointer.active) return;
     if (battlePointer.pointerId !== event.pointerId) return;
-    const swipeStep = battleSwipeStep(battlePointer, event.type);
     resetBattlePointer({ preserveMoved: true });
     canvas.releasePointerCapture?.(event.pointerId);
-    if (swipeStep) {
-      cycleBattleAlly(swipeStep);
-      renderDom(true);
-      event.preventDefault();
-    }
-  }
-
-  function battleSwipeStep(pointer, eventType = "pointerup", endedAt = Date.now()) {
-    if (!pointer || eventType === "pointercancel" || !pointer.swipeMode) return 0;
-    const swipeDx = pointer.lastX - pointer.originX;
-    const swipeDy = pointer.lastY - pointer.originY;
-    const swipeDuration = endedAt - pointer.startedAt;
-    if (
-      Math.abs(swipeDx) < BATTLE_SWIPE_SWITCH_DISTANCE
-      || Math.abs(swipeDx) < Math.abs(swipeDy) * 1.25
-      || swipeDuration > BATTLE_SWIPE_MAX_DURATION_MS
-    ) {
-      return 0;
-    }
-    return swipeDx < 0 ? -1 : 1;
   }
 
   function handleBattleWheel(event) {
@@ -3680,19 +3624,6 @@
     addLog(`${next.name} に交代。`);
     syncBgm();
     return true;
-  }
-
-  function cycleBattleAlly(step) {
-    const allies = playableAllies().filter((ally) => ally.hp > 0);
-    if (allies.length <= 1) return false;
-
-    const current = activeBattleAlly();
-    const currentIndex = allies.findIndex((ally) => ally.id === current?.id);
-    const direction = step < 0 ? -1 : 1;
-    const nextIndex = currentIndex < 0
-      ? (direction < 0 ? allies.length - 1 : 0)
-      : (currentIndex + direction + allies.length) % allies.length;
-    return selectBattleAlly(allies[nextIndex].id);
   }
 
   function setBattleMoveTarget(x, y) {
