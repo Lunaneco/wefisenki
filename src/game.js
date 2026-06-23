@@ -1055,6 +1055,70 @@
     return Math.round((stage?.power || 0) * enemyPowerMultiplier());
   }
 
+  function allyCombatPower(ally) {
+    if (!ally) return 0;
+    const mult = allyLevelMultiplier(ally);
+    const maxHp = Math.max(1, Math.round((ally.stats?.hp || 0) * mult));
+    const currentHp = clamp(Number.isFinite(ally.hp) ? ally.hp : maxHp, 0, maxHp);
+    if (currentHp <= 0) return 0;
+
+    const attack = (ally.stats?.attack || 0) * mult;
+    const defense = (ally.stats?.defense || 0) * mult;
+    const speed = (ally.stats?.speed || 0) * mult;
+    return Math.round(currentHp * 0.2 + attack * 2 + defense * 1.5 + speed);
+  }
+
+  function currentArmyPower() {
+    return playableAllies().reduce((total, ally) => total + allyCombatPower(ally), 0);
+  }
+
+  function stagePowerComparison(stage, armyPower = currentArmyPower()) {
+    const recommendedPower = effectiveStagePower(stage);
+    const ratio = recommendedPower > 0 ? armyPower / recommendedPower : 1;
+    const difference = armyPower - recommendedPower;
+
+    if (armyPower <= 0) {
+      return {
+        armyPower,
+        recommendedPower,
+        ratio: 0,
+        tone: "danger",
+        label: "部隊未編成",
+        detail: "仲間を選択してください"
+      };
+    }
+    if (ratio >= 1.15) {
+      return {
+        armyPower,
+        recommendedPower,
+        ratio,
+        tone: "safe",
+        label: "余裕あり",
+        detail: `推奨を ${formatNum(difference)} 上回っています`
+      };
+    }
+    if (ratio >= 0.85) {
+      return {
+        armyPower,
+        recommendedPower,
+        ratio,
+        tone: "balanced",
+        label: "適正",
+        detail: difference >= 0
+          ? `推奨を ${formatNum(difference)} 上回っています`
+          : `推奨まであと ${formatNum(Math.abs(difference))}`
+      };
+    }
+    return {
+      armyPower,
+      recommendedPower,
+      ratio,
+      tone: "danger",
+      label: "要強化",
+      detail: `推奨まであと ${formatNum(Math.abs(difference))}`
+    };
+  }
+
   function stageReward(stage) {
     const reward = stage?.reward || { wfi: 0, energy: 0, food: 0 };
     return {
@@ -8171,6 +8235,8 @@
   function renderMapPanel() {
     const stage = selectedStage();
     const reward = stageReward(stage);
+    const comparison = stagePowerComparison(stage);
+    const armyCount = playableAllies().length;
     sidePanel.innerHTML = `
       <div class="panel-title">
         <div>
@@ -8179,11 +8245,31 @@
         </div>
         <span class="badge">選択可</span>
       </div>
+      <div class="power-comparison is-${comparison.tone}">
+        <div class="power-comparison-values">
+          <div>
+            <span>自軍戦力 <small>${armyCount}名</small></span>
+            <strong>${formatNum(comparison.armyPower)}</strong>
+          </div>
+          <i aria-hidden="true">VS</i>
+          <div>
+            <span>推奨戦力</span>
+            <strong>${formatNum(comparison.recommendedPower)}</strong>
+          </div>
+        </div>
+        <div class="power-comparison-result">
+          <strong>${comparison.label}</strong>
+          <span>${comparison.detail}</span>
+        </div>
+        <div class="power-comparison-meter" role="img" aria-label="推奨戦力に対する自軍戦力 ${Math.round(comparison.ratio * 100)}パーセント">
+          <i style="--value:${Math.min(100, comparison.ratio * 100)}%"></i>
+        </div>
+      </div>
       <div class="stat-grid">
-        <div class="stat"><span>推奨戦力</span><strong>${formatNum(effectiveStagePower(stage))}</strong></div>
         <div class="stat"><span>攻略状況</span><strong>${isStageCleared(stage) ? "制圧済み" : "未制圧"}</strong></div>
         <div class="stat"><span>報酬 WFI</span><strong>${formatNum(reward.wfi)}</strong></div>
         <div class="stat"><span>報酬 Energy</span><strong>${formatNum(reward.energy)}</strong></div>
+        <div class="stat"><span>残存兵力</span><strong>${playableAllies().filter((ally) => ally.hp > 0).length} / ${armyCount}</strong></div>
       </div>
       <div class="map-panel-actions">
         <button class="action-button primary" data-action="start-battle" ${isStageCleared(stage) ? "disabled" : ""}>
