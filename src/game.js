@@ -29,6 +29,7 @@
   const VOICE_VOLUME = 1.0;
   const SFX_VOLUME = 0.34;
   const ENERGY_CAP = 99999;
+  const HEHEHEHE_LOGISTICS_FOOD_GAIN = 5;
   const BGM_TRACKS = {
     title: `${BGM_ROOT}/OP.mp3`,
     map: `${BGM_ROOT}/mapBGM.mp3`,
@@ -561,6 +562,7 @@
     selectedStageId: 1,
     selectedAllyId: "",
     unlockedAllyIds: new Set(),
+    allyOrder: [],
     unlockedStageId: 1,
     clearedStages: new Set(),
     resources: {
@@ -591,7 +593,9 @@
     titleActive: true,
     startOpActive: false,
     saveSlotPanelActive: false,
-    hasSave: false
+    hasSave: false,
+    rosterSwapMode: false,
+    rosterSwapSourceId: ""
   };
   const runtimeBaseAllies = new Map();
   const runtimeBaseSkills = new Map();
@@ -669,6 +673,12 @@
     state.resources[resource] = resource === "energy"
       ? clamp(next, 0, ENERGY_CAP)
       : Math.max(0, next);
+  }
+
+  function markEnemyHitByAlly(enemy, ally) {
+    if (!enemy || !ally) return;
+    enemy.lastHitAllyId = ally.id || "";
+    enemy.lastHitAllyName = ally.name || "";
   }
 
   function lerp(a, b, t) {
@@ -897,8 +907,33 @@
     return !!id && state.unlockedAllyIds.has(id);
   }
 
+  function normalizeAllyOrder() {
+    const knownIds = state.allies.map((ally) => ally.id);
+    const knownSet = new Set(knownIds);
+    const nextOrder = [];
+    (Array.isArray(state.allyOrder) ? state.allyOrder : []).forEach((id) => {
+      if (knownSet.has(id) && !nextOrder.includes(id)) nextOrder.push(id);
+    });
+    knownIds.forEach((id) => {
+      if (!nextOrder.includes(id)) nextOrder.push(id);
+    });
+    state.allyOrder = nextOrder;
+    return nextOrder;
+  }
+
+  function orderedAllies(allies = state.allies) {
+    const order = normalizeAllyOrder();
+    const indexById = new Map(order.map((id, index) => [id, index]));
+    return [...allies].sort((a, b) => {
+      const ai = indexById.has(a.id) ? indexById.get(a.id) : 9999;
+      const bi = indexById.has(b.id) ? indexById.get(b.id) : 9999;
+      if (ai !== bi) return ai - bi;
+      return (a.order || 0) - (b.order || 0);
+    });
+  }
+
   function playableAllies() {
-    return state.allies.filter(isAllyUnlocked);
+    return orderedAllies(state.allies.filter(isAllyUnlocked));
   }
 
   function secretStageForUnlockAlly(allyId) {
@@ -945,6 +980,47 @@
 
   function selectedAlly() {
     return playableAllies().find((ally) => ally.id === state.selectedAllyId) || firstPlayableAlly();
+  }
+
+  function toggleRosterSwapMode() {
+    state.rosterSwapMode = !state.rosterSwapMode;
+    state.rosterSwapSourceId = "";
+    addLog(state.rosterSwapMode ? "入れ替えモードです。1人目の戦士を選択してください。" : "入れ替えモードを解除しました。");
+  }
+
+  function swapAllyOrder(aId, bId) {
+    if (!aId || !bId || aId === bId) return false;
+    const order = normalizeAllyOrder();
+    const aIndex = order.indexOf(aId);
+    const bIndex = order.indexOf(bId);
+    if (aIndex < 0 || bIndex < 0) return false;
+    [order[aIndex], order[bIndex]] = [order[bIndex], order[aIndex]];
+    state.allyOrder = order;
+    return true;
+  }
+
+  function handleRosterSwapSelection(allyId) {
+    if (!state.rosterSwapMode) return false;
+    const ally = allyById(allyId);
+    if (!ally || !isAllyUnlocked(ally.id)) return true;
+    if (!state.rosterSwapSourceId) {
+      state.rosterSwapSourceId = ally.id;
+      addLog(`${ally.name} を選択しました。入れ替える相手を選んでください。`);
+      return true;
+    }
+    if (state.rosterSwapSourceId === ally.id) {
+      state.rosterSwapSourceId = "";
+      addLog("1人目の選択を解除しました。");
+      return true;
+    }
+    const source = allyById(state.rosterSwapSourceId);
+    if (swapAllyOrder(state.rosterSwapSourceId, ally.id)) {
+      addLog(`${source?.name || "選択中の戦士"} と ${ally.name} の配置を入れ替えました。`);
+      state.rosterSwapSourceId = "";
+      saveGame();
+      addLog("続けて入れ替える場合は、1人目の戦士を選択してください。");
+    }
+    return true;
   }
 
   function isStageUnlocked(stage) {
@@ -1504,6 +1580,7 @@
       selectedStageId: 1,
       selectedAllyId: state.selectedAllyId,
       unlockedAllyIds: Array.from(state.unlockedAllyIds),
+      allyOrder: normalizeAllyOrder(),
       resources: cloneData(state.resources),
       clearedStages: [],
       charLevels: cloneData(state.charLevels),
@@ -1595,6 +1672,7 @@
       selectedStageId: state.selectedStageId,
       selectedAllyId: state.selectedAllyId,
       unlockedAllyIds: Array.from(state.unlockedAllyIds),
+      allyOrder: normalizeAllyOrder(),
       resources: state.resources,
       clearedStages: Array.from(state.clearedStages),
       // 追加データ
@@ -1649,6 +1727,12 @@
         payload.unlockedAllyIds.filter((id) => knownIds.has(id) && (state.newGamePlusActive || canRestoreUnlockedAlly(id, clearedStageIds)))
       );
     }
+    if (Array.isArray(payload.allyOrder)) {
+      state.allyOrder = payload.allyOrder;
+    } else {
+      state.allyOrder = [];
+    }
+    normalizeAllyOrder();
     state.resources = { ...state.resources, ...(payload.resources || {}) };
     normalizeResources();
     state.clearedStages = clearedStageIds;
@@ -1742,6 +1826,7 @@
     state.unlockedStageId = 1;
     state.selectedStageId = 1;
     state.unlockedAllyIds = new Set();
+    state.allyOrder = [];
     state.selectedAllyId = "";
     state.clearedStages = new Set();
     state.resources = { wfi: 0, energy: 0, food: 0 };
@@ -1760,6 +1845,8 @@
     state.newGamePlusActive = false;
     state.newGamePlusStartSnapshot = null;
     state.saveSlotPanelActive = false;
+    state.rosterSwapMode = false;
+    state.rosterSwapSourceId = "";
     state.startOpActive = false;
     state.hasSave = false;
     restoreAllRuntimeBase({ fullHp: true });
@@ -2443,6 +2530,7 @@
 
       applyAllyBalanceTuning(allAllyDefinitions);
       state.allies = allAllyDefinitions.map(buildRuntimeAlly);
+      normalizeAllyOrder();
       state.skills = allSkillDefinitions.map(cloneData);
       state.skillById = new Map(state.skills.map((skill) => [skill.id, skill]));
       applyLineSliceAnimations();
@@ -2623,6 +2711,10 @@
       if (state.view === "battle" && state.battle && !state.battle.result) {
         selectBattleAlly(button.dataset.allyId);
       } else {
+        if (state.view === "roster" && handleRosterSwapSelection(button.dataset.allyId)) {
+          renderDom(true);
+          return;
+        }
         state.selectedAllyId = button.dataset.allyId;
         if (state.view !== "battle") setView("roster");
       }
@@ -2682,6 +2774,10 @@
     if (state.view !== "battle") {
       battleKeys.clear();
       resetBattlePointer();
+    }
+    if (state.view !== "roster") {
+      state.rosterSwapMode = false;
+      state.rosterSwapSourceId = "";
     }
 
     document.querySelectorAll(".tab-button").forEach((button) => {
@@ -2812,6 +2908,11 @@
     if (!action || !button || button.disabled) return false;
     if (action === "level-up") {
       levelUpAlly(button.dataset.allyId);
+      renderDom(true);
+      return true;
+    }
+    if (action === "toggle-roster-swap") {
+      toggleRosterSwapMode();
       renderDom(true);
       return true;
     }
@@ -3012,6 +3113,9 @@
     } else if (action === "logistics") {
       buyLogistics(button.dataset.item);
       renderDom(true);
+    } else if (action === "toggle-roster-swap") {
+      toggleRosterSwapMode();
+      renderDom(true);
     } else if (action === "save") {
       state.saveSlotPanelActive = true;
       state.mapDetailActive = false;
@@ -3160,7 +3264,9 @@
     if (state.view === "roster") {
       const picked = rosterAllyAtCanvasPoint(x, y);
       if (picked) {
-        state.selectedAllyId = picked.id;
+        if (!handleRosterSwapSelection(picked.id)) {
+          state.selectedAllyId = picked.id;
+        }
         renderDom(true);
       }
       return;
@@ -4701,6 +4807,7 @@
       const gainedWfi = enemyWfiReward(enemy);
       state.resources.wfi += gainedWfi;
       addParticle(enemy.x, enemy.y - 26, `+${gainedWfi} WFI`, "#f4c75e", 1);
+      awardHeheheheKillLogistics(enemy);
       return false;
     });
 
@@ -4718,6 +4825,18 @@
     if (battle.baseHp <= 0 || playableAllies().every((ally) => ally.hp <= 0)) {
       finishBattle(false);
     }
+  }
+
+  function awardHeheheheKillLogistics(enemy) {
+    if (!enemy || enemy.lastHitAllyId !== "hehehehehe") return;
+    addResource("food", HEHEHEHE_LOGISTICS_FOOD_GAIN);
+    addParticle(
+      enemy.x,
+      enemy.y - 50,
+      `兵站 +${HEHEHEHE_LOGISTICS_FOOD_GAIN}`,
+      state.heheheheheAwakened ? "#ffd166" : "#88f0a2",
+      1.05
+    );
   }
 
   function updateAllies(dt) {
@@ -4846,6 +4965,7 @@
     baseDamage *= triangleMultiplier(allyRangeType(ally), enemyRangeType(target));
     const crit = Math.random() < (ally.buffs.lucky ? 0.24 : 0.1);
     const damage = baseDamage * (crit ? 1.85 : 1);
+    markEnemyHitByAlly(target, ally);
     target.hp -= damage;
     ally.attackQueuedUntil = 0;
     ally.skillGauge = clamp((ally.skillGauge || 0) + (crit ? 18 : 12), 0, 100);
@@ -5223,6 +5343,7 @@
           const mult = allyLevelMultiplier(ally);
           // ダメージを2倍に補正
           const damage = effect.power * (1 + (ally.stats.attack * mult) / 1500) * skillMult;
+          markEnemyHitByAlly(enemy, ally);
           enemy.hp -= damage;
           addParticle(enemy.x, enemy.y - 28, Math.round(damage), "#ffe6a6", 0.8);
         });
@@ -7415,13 +7536,26 @@
     allies.forEach((ally, index) => {
       const pos = positions[index];
       if (!pos) return;
+      if (state.rosterSwapMode && ally.id === state.rosterSwapSourceId) {
+        ctx.save();
+        ctx.fillStyle = "rgba(255, 210, 79, 0.2)";
+        ctx.strokeStyle = "#ffd24f";
+        ctx.lineWidth = 3;
+        ctx.shadowColor = "#ffd24f";
+        ctx.shadowBlur = 14;
+        ctx.beginPath();
+        ctx.ellipse(pos.x, pos.y - (compact ? 34 : 38), compact ? 34 : 39, compact ? 46 : 52, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+        ctx.restore();
+      }
       drawSprite(ally.assets.defaultSprite, pos.x, pos.y, compact ? 54 : 60, compact ? 72 : 80, 1);
       ctx.fillStyle = ally.id === state.selectedAllyId ? "#79d7ff" : "#f6edce";
       ctx.font = "700 10px sans-serif";
       ctx.textAlign = "center";
       ctx.fillText(ally.name.length > 8 ? `${ally.name.slice(0, 7)}...` : ally.name, pos.x, pos.y + 20);
     });
-    drawCanvasLabel(18, 520, "部隊編成", "#f4cf78");
+    drawCanvasLabel(18, 520, state.rosterSwapMode ? "入れ替える2人を順番に選択" : "部隊編成", state.rosterSwapMode ? "#ffd24f" : "#f4cf78");
   }
 
   function drawLogisticsPreview() {
@@ -7603,7 +7737,15 @@
 
     document.body.classList.toggle(
       "roster-detail-active",
-      state.view === "roster" && !!state.selectedAllyId && !state.showJoinCardAlly && !state.saveSlotPanelActive
+      state.view === "roster"
+        && !!state.selectedAllyId
+        && !state.rosterSwapMode
+        && !state.showJoinCardAlly
+        && !state.saveSlotPanelActive
+    );
+    document.body.classList.toggle(
+      "roster-swap-active",
+      state.view === "roster" && state.rosterSwapMode
     );
 
     document.body.classList.toggle(
@@ -7798,6 +7940,9 @@
       state.selectedAllyId,
       state.battle?.activeAllyId || "",
       state.battle ? "battle" : "idle",
+      state.rosterSwapMode ? "swap" : "normal",
+      state.rosterSwapSourceId,
+      normalizeAllyOrder().join(","),
       ...allies.map((ally) => `${ally.id}:${Math.round(ally.hp)}:${Math.round(ally.maxHp)}:${Math.floor((ally.skillGauge || 0) / 25)}`)
     ].join("|");
     if (rosterRail.dataset.signature === signature) return;
@@ -7810,8 +7955,10 @@
       const selected = activeOnField ? " is-selected" : "";
       const down = ally.hp <= 0 && state.battle ? " is-down" : "";
       const ready = activeOnField && canUseSkill(ally) && state.battle ? " is-skill-ready" : "";
+      const swapSource = state.rosterSwapMode && ally.id === state.rosterSwapSourceId ? " is-swap-source" : "";
+      const swapCandidate = state.rosterSwapMode && ally.id !== state.rosterSwapSourceId ? " is-swap-candidate" : "";
       return `
-        <button class="ally-card${selected}${down}${ready}" data-ally-id="${ally.id}">
+        <button class="ally-card${selected}${down}${ready}${swapSource}${swapCandidate}" data-ally-id="${ally.id}">
           <strong>${escapeHtml(ally.name)}</strong>
           <span>Lv.${allyLevel(ally.id)} ${escapeHtml(skillById(ally.primarySkillId)?.name || "")}</span>
           <img src="${escapeHtml(rosterPortraitForAlly(ally))}" alt="">
@@ -7829,6 +7976,9 @@
       state.selectedStageId,
       state.unlockedStageId,
       state.selectedAllyId,
+      state.rosterSwapMode ? "swap" : "normal",
+      state.rosterSwapSourceId,
+      normalizeAllyOrder().join(","),
       state.autoSkill ? "auto" : "manual",
       battle ? `${battle.paused ? "paused" : "run"}:${battle.result ? battle.result.title : "live"}` : "no-battle"
     ].join("|");
@@ -7849,8 +7999,12 @@
     } else if (state.view === "roster") {
       const stage = selectedStage();
       const cleared = isStageCleared(stage);
+      const swapLabel = state.rosterSwapMode
+        ? "入替中止"
+        : "入れ替え";
       quickActions.innerHTML = `
         <button class="action-button primary" data-action="start-battle" ${cleared ? "disabled" : ""}>${cleared ? "制圧済み" : "選択中へ出撃"}</button>
+        <button class="action-button ${state.rosterSwapMode ? "is-swap-active" : ""}" data-action="toggle-roster-swap">${swapLabel}</button>
         <button class="action-button" data-action="save">セーブ/ロード</button>
         <button class="action-button" data-action="go-title">タイトルへ</button>
       `;
@@ -8165,6 +8319,27 @@
   }
 
   function renderRosterPanel() {
+    if (state.rosterSwapMode) {
+      const source = state.rosterSwapSourceId ? allyById(state.rosterSwapSourceId) : null;
+      sidePanel.innerHTML = `
+        <div class="panel-title">
+          <div>
+            <h2>配置入れ替え</h2>
+            <p>${source
+              ? `${escapeHtml(source.name)} と入れ替える戦士を選択してください。`
+              : "配置を変更する1人目の戦士を選択してください。"}</p>
+          </div>
+          <span class="badge">${source ? "2人目" : "1人目"}</span>
+        </div>
+        <div class="section roster-swap-guide">
+          <strong>${source ? `選択中: ${escapeHtml(source.name)}` : "キャラをタップ"}</strong>
+          <p>入れ替え中はキャラステータス画面を開きません。キャンバス上または下のキャラアイコンから2人を順番に選択してください。</p>
+          <button class="action-button" data-action="toggle-roster-swap">入れ替えを中止</button>
+        </div>
+        ${renderLog()}
+      `;
+      return;
+    }
     const ally = selectedAlly();
     if (!ally) {
       sidePanel.innerHTML = `

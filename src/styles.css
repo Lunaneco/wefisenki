@@ -1008,6 +1008,83 @@ body.is-battle-view .app-shell {
   box-shadow: 0 0 10px rgba(85, 175, 215, 0.45);
 }
 
+.ally-card.is-swap-source {
+  border-color: #ffd24f;
+  background: rgba(70, 52, 14, 0.96);
+  box-shadow: inset 0 0 0 2px rgba(255, 210, 79, 0.52), 0 0 12px rgba(255, 210, 79, 0.38);
+}
+
+.ally-card.is-swap-source::after,
+.ally-card.is-swap-candidate::after {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  z-index: 2;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.ally-card.is-swap-source::after {
+  content: "選択中";
+  color: #211600;
+  background: #ffd24f;
+}
+
+.ally-card.is-swap-candidate::after {
+  content: "選択";
+  color: #fff1a8;
+  border: 1px solid rgba(255, 210, 79, 0.7);
+  background: rgba(37, 29, 8, 0.9);
+}
+
+.action-button.is-swap-active {
+  border-color: #ffd24f;
+  background: rgba(70, 52, 14, 0.96);
+  color: #fff1a8;
+}
+
+.roster-swap-guide {
+  display: grid;
+  gap: 10px;
+}
+
+.roster-swap-guide strong {
+  color: #ffd24f;
+}
+
+.roster-swap-guide p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+body.roster-swap-active .play-surface {
+  border-color: #ffd24f;
+  box-shadow: 0 0 0 2px rgba(255, 210, 79, 0.26), 0 0 18px rgba(255, 210, 79, 0.18);
+}
+
+body.roster-swap-active .play-surface::after {
+  content: "配置入れ替え中";
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 8;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border: 1px solid #ffd24f;
+  border-radius: 4px;
+  color: #fff1a8;
+  background: rgba(25, 19, 5, 0.92);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  pointer-events: none;
+}
+
 .ally-card.is-down {
   filter: grayscale(0.8);
   opacity: 0.62;
